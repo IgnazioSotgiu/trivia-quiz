@@ -1,45 +1,27 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+## Trivia Quiz
 
-Welcome USER_NAME,
+Trivia Quiz is an application to entertain and  to test the user knowledge with general questions.  
+The user will be able to choose the level of difficulty and the number of questions he wants to answer to.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+The goal is to build a simple website where the user will want to spend time playing in, share with friends and learn some new notions. At the same time the website will gain exposure, promoting brands, creating user database, create a leatherboard of the best players of Trivia Quiz.
 
-## Gitpod Reminders
+The owner goal is to get as many people as he can to play on his website, and get the company name promoted through user social media sharing.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+The user goal is to enjoy the challenge while improving knowledge.
 
-`python3 -m http.server`
+### User Stories:
+1. As a client I play Trivia Quiz to pass time.
+1. As a client I play Trivia Quiz to test and improve my knowledge.
+1. As a client I play Trivia Quiz to have fun with my friends.
+1. As a owner I create Trivia Quiz to attract people on my website.
+1. As a owner I create Trivia Quiz to get people registered on my website.
+1. As a owner I create Trivia Quiz to have people spending time in my website.
+1. As a owner I create Trivia Quiz to sell ads space on my website.
+1. As a owner I create Trivia Quiz to create a database on users information.
+1. As a owner I create Trivia Quiz to promote a smart way to improve knowledge.
+1. As a owner I create Trivia Quiz to enable people to challenge one another through social media platforms.
+1. As a owner I create Trivia Quiz to allow registered client to contribute to  the Q&A database creating new ones.
+1. As a owner I want to count how many people visit daily my website and for how long.
+1. As a owner I want the client to be able to download a small part of the database Q&A to use the application offline (Airplane Mode).
 
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+## Wireframes 
