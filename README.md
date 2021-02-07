@@ -25,3 +25,8 @@ The user goal is to enjoy the challenge while improving knowledge.
 1. As a owner I want the client to be able to download a small part of the database Q&A to use the application offline (Airplane Mode).
 
 ## Wireframes 
+
+## Credits
+Background image in homepage:  
+<a href='https://pngtree.com/free-backgrounds'>free background photos from pngtree.com</a>
+<a href='https://pngtree.com/free-backgrounds'>free background photos from pngtree.com</a>
