@@ -3,6 +3,7 @@
 body {
     min-height: 100vh;
     width: 100%;
+    color: #fafafa;
 
     background: url("../images/blue-background.jpg") no-repeat bottom right ; 
     -webkit-background-size: cover;
@@ -32,7 +33,7 @@ body {
     border-radius: 50%;
 }
 #logo > h1 {
-    padding-top: 30px;
+    padding-top: 40px;
 }
 .message-homepage {
     padding-top: 10px;
@@ -124,6 +125,29 @@ hr {
     font-size: 20px;
     color: #fafafa;
     padding-left: 10px;
+}
+/********************************end-of-test-page********************************************/
+.message-finish-test {
+    text-align: center;
+    line-height: 25px;
+    font-weight: 600;
+    color: #eca54c;
+    padding-top: 20px;
+    letter-spacing: 3px;
+    
+}
+.message-finish-test p {
+    padding-top: 10px;
+}
+.end-button-container {
+    text-align: center;
+}
+.end-button-container button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-top: 10px;
+
 }
 @media screen and (min-width:1000px) {
     .footer-container {
