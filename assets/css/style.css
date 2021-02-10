@@ -59,10 +59,12 @@ label {
     width: 150px;
     height: 150px;
     font-size: 30px;
-    color: #fafafa;
-    background-color: #28a745;
-    border-color: #eca54c;
     border-radius: 50%;
+}
+#start-button {
+    color: #111111;
+    background-color: #dfe2e0;
+    border-color: #eca54c;
 }
 p {
     margin-bottom: 5px;
