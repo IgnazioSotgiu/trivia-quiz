@@ -1,6 +1,8 @@
 let questionListArray;
 let difficultyLevel;
 let i = 0;
+let totCorrect = 0;
+let totIncorrect = 0;
 // wait for the DOM to finish loading page
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -87,7 +89,7 @@ function startQuestions(event) {
                 <button type="button" value="False " class="btn btn-danger answer-button">False</button>
             </div>
             <div class="counter-container">
-                <span id="correct-answers">Correct Answers</span><span id="correct-number">0</span><span id="incorrect-answers">Incorrect Answers</span><span id="incorrect-number">0</span>
+                <span id="correct-answers">Correct Answers</span><span id="correct-number">${totCorrect}</span><span id="incorrect-answers">Incorrect Answers</span><span id="incorrect-number">${totIncorrect}</span>
             </div>
         </div>`;
 
@@ -97,12 +99,14 @@ function startQuestions(event) {
         for (let button of buttons) {
             button.addEventListener("click", function() {
             if(this.getAttribute("value") == "questionListArray.results[i].correct_answer") {
-                incrementIncorrect();
+                incrementCorrect();
                 i++;
+                alert("Congratulations! Your answer is correct");
                 startQuestions()
             } else {
                 incrementIncorrect();
                 i++;
+                alert("Arrgh.... Your answer is incorrect. Keep practicing!");
                 startQuestions();
 
             }
@@ -111,30 +115,21 @@ function startQuestions(event) {
 
     }
 
-    }
-/*function checkAnswer(value)
-    let buttons = document.getElementsByClassName("answer-button");
-
-    for (let button of buttons) {
-        button.addEventListener("click", function() {
-            if (this.getAttribute("value") == "questionListArray.results[i].correct_answer") {
-                incrementCorrect();
-            } else {
-                incrementIncorrect();
-            }
-        });
-    }*/
-    //buttons = addEventListener(click, checkAnswer);
-
-function checkAnswer(event) {
-    
 }
 
 function incrementCorrect() {
 
+    let totCorrect = parseInt(document.getElementById("correct-number").innerText);
+    document.getElementById("correct-number").innerText = ++totCorrect;
+
 }
 
 function incrementIncorrect() {
+
+    totIncorrect = parseInt(document.getElementById("incorrect-number").innerHTML);
+    console.log(totIncorrect);
+    document.getElementById("incorrect-number").innerHTML = ++totIncorrect;
+    console.log(totIncorrect);
 
 }
 
