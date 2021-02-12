@@ -1,6 +1,6 @@
 let questionListArray;
 let difficultyLevel;
-
+let i = 0;
 // wait for the DOM to finish loading page
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -67,26 +67,67 @@ function getReady(difficultyLevel) {
 
 let myButton = document.getElementById("start-button");
 if(myButton) {
-    myButton.addEventListener("click", startQuestions(questionListArray));
+    myButton.addEventListener("click", startQuestions);
 }
 
-function startQuestions(questionListArray) {
-    console.log(questionListArray);
-    for(let i = 0; i < questionListArray.length; i++) {
+function startQuestions(event) {
+    console.log(questionListArray.results.length);
+    console.dir(questionListArray);
+     
+    if (i < questionListArray.results.length) {
+        document.getElementById("replace-question-container").innerHTML =
 
-        //$("#question-number").innerHTML(`Question # ${i+1}`);
-        //$("#question-text").innerHTML(questionListArray[i].question).value;
-        let newQuestion = 
             `<div class="question-container">
-            <h2 id="question-number">Question # ${i+1}</h2>
-            <hr>
-            <p id="question-text">${this.questionListArray}</p>
-        </div>`
+                <h2 id="question-number">Question # ${i+1}</h2>
+                <hr>
+                <p id="question-text">${questionListArray.results[i].question}</p>
+            </div>
+            <div class="user-answer-container">
+                <button type="button" value="True" class="btn btn-success answer-button">True</button>
+                <button type="button" value="False " class="btn btn-danger answer-button">False</button>
+            </div>
+            <div class="counter-container">
+                <span id="correct-answers">Correct Answers</span><span id="correct-number">0</span><span id="incorrect-answers">Incorrect Answers</span><span id="incorrect-number">0</span>
+            </div>
+        </div>`;
+
+
+        let buttons = document.getElementsByClassName("answer-button");
+
+        for (let button of buttons) {
+            button.addEventListener("click", function() {
+            if(this.getAttribute("value") == "questionListArray.results[i].correct_answer") {
+                incrementIncorrect();
+                i++;
+                startQuestions()
+            } else {
+                incrementIncorrect();
+                i++;
+                startQuestions();
+
+            }
+        });
+        }
+
     }
 
-}
-function checkAnswer() {
+    }
+/*function checkAnswer(value)
+    let buttons = document.getElementsByClassName("answer-button");
 
+    for (let button of buttons) {
+        button.addEventListener("click", function() {
+            if (this.getAttribute("value") == "questionListArray.results[i].correct_answer") {
+                incrementCorrect();
+            } else {
+                incrementIncorrect();
+            }
+        });
+    }*/
+    //buttons = addEventListener(click, checkAnswer);
+
+function checkAnswer(event) {
+    
 }
 
 function incrementCorrect() {

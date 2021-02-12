@@ -17,7 +17,7 @@
     <div id="navigation-bar" class="container-fluid navbar-container">
         <nav class="navbar navbar-dark navbar-expand">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="question-page.html">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
             </ul>
@@ -28,19 +28,21 @@
             <h1>Trivia<br>Quiz</h1>
         </div>
     </div>
-    <div class="message-homepage container-fluid">
-        <p>Welcome to the Trivia Quiz game. <br>Choose the difficulty level and start to play.</p>
-    </div>
-    <div class="container-fluid difficulty-selection-container ">
-        <input type="radio" id="easy" name="difficulty" value="easy" required>
-        <label for="easy">Easy</label>
-        <input type="radio" id="medium" name="difficulty" value="medium">
-        <label for="medium">Medium</label>
-        <input type="radio" id="hard" name="difficulty" value="hard">
-        <label for="hard">Hard</label>
-    </div>
-    <div class="start-button-container">
-        <a href=""><button onclick="startQuestions(questionListArray)" type="button" id="start-button" class="btn btn-success">Start</button></a>
+    <div id="replace-question-container">
+        <div class="message-homepage container-fluid">
+            <p>Welcome to the Trivia Quiz game. <br>Choose the difficulty level and start to play.</p>
+        </div>
+        <div class="container-fluid difficulty-selection-container ">
+            <input type="radio" id="easy" name="difficulty" value="easy" required>
+            <label for="easy">Easy</label>
+            <input type="radio" id="medium" name="difficulty" value="medium">
+            <label for="medium">Medium</label>
+            <input type="radio" id="hard" name="difficulty" value="hard">
+            <label for="hard">Hard</label>
+        </div>
+        <div class="start-button-container">
+            <button type="button" id="start-button" class="btn btn-success">Start</button>
+        </div>
     </div>
     <footer>
         <div class="container-fluid footer-container">
