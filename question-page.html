@@ -35,8 +35,32 @@
             <p id="question-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pellentesque in arcu non commodo. Nulla pharetra mi nec laoreet elementum.</p>
         </div>
         <div class="user-answer-container">
-            <button type="button" value="true" class="btn btn-success">True</button>
-            <button type="button" value="false " class="btn btn-danger">False</button>
+            <div class="row row-center radio-btn-answer-container">
+                <div class="col-6 col-sm-3">
+                    <input type="radio" id="opt-1" name="answer" value="easy" required>
+                    <br>
+                    <label for="opt-1">Easy</label>
+                </div>
+                <div class="col-6 col-sm-3">
+                    <input type="radio" id="opt-2" name="answer" value="medium">
+                    <br>
+                    <label for="opt-2">Medium</label>
+                </div>
+                <div class="col-6 col-sm-3">
+                    <input type="radio" id="opt-3" name="answer" value="hard">
+                    <br>
+                    <label for="opt-3">Hard</label>
+                </div>
+                <div class="col-6 col-sm-3">
+                    <input type="radio" id="opt-4" name="answer" value="hard">
+                    <br>
+                    <label for="opt-4">Hard</label>
+                </div>
+            </div>
+            <div>
+            <h2>Sorry question type not supported!</h2>
+            
+            </div>
         </div>
         <div class="counter-container">
             <span id="correct-answers">Correct Answers</span><span id="correct-number">0</span><span id="incorrect-answers">Incorrect Answers</span><span id="incorrect-number">0</span>

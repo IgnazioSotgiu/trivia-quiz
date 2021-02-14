@@ -56,7 +56,7 @@ function getReady(difficultyLevel) {
 function getQuestionArray(difficultyLevel){
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET" , `https://opentdb.com/api.php?amount=10&category=9&difficulty=${difficultyLevel}&type=boolean`);
+    xhr.open("GET" , `https://opentdb.com/api.php?amount=10&difficulty=${difficultyLevel}`);
     xhr.send("POST");
 
     xhr.onreadystatechange = function() {
@@ -89,15 +89,61 @@ function startQuestions(event) {
         console.log(questionListArray.results[i].correct_answer);
         let correctAnswer = questionListArray.results[i].correct_answer;
         document.getElementById("replace-question-container").innerHTML =
+
         `<div class="question-container">
             <h2 id="question-number">Question # ${i+1}</h2>
             <hr>
             <p id="question-text">${questionListArray.results[i].question}</p>
-        </div>
-        <div class="user-answer-container">
-            <button type="button" value="True" class="btn btn-success answer-button">True</button>
-            <button type="button" value="False" class="btn btn-danger answer-button">False</button>
-        </div>
+        </div>`
+        
+        if (questionListArray.results[i].type === "boolean") {
+            document.getElementById("replace-question-container").innerHTML +=
+            
+            `<div class="user-answer-container">
+                <button type="button" value="True" class="btn btn-success answer-button">True</button>
+                <button type="button" value="False" class="btn btn-danger answer-button">False</button>
+            </div>`
+            
+        } else if (questionListArray.results[i].type === "multiple") {
+            let possibleAnswers = [questionListArray.results[i].incorrect_answers[0],questionListArray.results[i].incorrect_answers[1], questionListArray.results[i].incorrect_answers[2],questionListArray.results[i].correct_answer];
+            
+            console.log(possibleAnswers);
+            shuffle(possibleAnswers);
+            console.log(possibleAnswers.length);
+            console.log(possibleAnswers);
+            document.getElementById("replace-question-container").innerHTML +=
+            `<div class="row row-center radio-btn-answer-container">
+                <div class="col-6 col-sm-3">
+                    <input class="answer-input" type="radio" id="opt-1" name="answer" value="${possibleAnswers[0]}+" required>
+                    <br>
+                    <label for="opt-1">${possibleAnswers[0]}</label>
+                </div>
+                <div class="col-6 col-sm-3">
+                    <input class="answer-input" type="radio" id="opt-2" name="answer" value="${possibleAnswers[1]}">
+                    <br>
+                    <label for="opt-2">${possibleAnswers[1]}</label>
+                </div>
+                <div class="col-6 col-sm-3">
+                    <input class="answer-input" type="radio" id="opt-3" name="answer" value="${possibleAnswers[2]}">
+                    <br>
+                    <label for="opt-3">${possibleAnswers[2]}</label>
+                </div>
+                <div class="col-6 col-sm-3">
+                    <input class="answer-input" type="radio" id="opt-4" name="answer" value="${possibleAnswers[3]}">
+                    <br>
+                    <label for="opt-4">${possibleAnswers[3]}</label>
+                </div>
+            </div>`
+        } else {
+            document.getElementById("replace-question-container").innerHTML +=
+            `<div>
+            <h2>Sorry ${questionListArray.results[i].type} question type not supported!</h2>
+            
+            </div>`
+
+        }
+        document.getElementById("replace-question-container").innerHTML +=
+        `</div>
         <div class="counter-container">
             <span id="correct-answers">Correct Answers</span><span id="correct-number">${totCorrect}</span><span id="incorrect-answers">Incorrect Answers</span><span id="incorrect-number">${totIncorrect}</span>
         </div>`;
@@ -107,6 +153,28 @@ function startQuestions(event) {
         
         for (let button of buttons) {
             button.addEventListener("click", function() {
+                let value = this.getAttribute("value");
+                console.log(value);
+                let correctMultipleChoiceAnswer = questionListArray.results[i].correct_answer;
+
+                if(value == correctMultipleChoiceAnswer) {
+                    incrementCorrect();
+                    i++;
+                    alert("Congratulations! Your answer is correct");
+                    startQuestions()
+                } else {
+                    incrementIncorrect();
+                    i++;
+                    alert("Arrgh.... Your answer is incorrect. Keep practicing!");
+                    startQuestions();
+                }
+            });
+        }
+        let answerInputs = document.getElementsByClassName("answer-input");
+        console.log(buttons);
+        
+        for (let answerInput of answerInputs) {
+            answerInput.addEventListener("click", function() {
                 let value = this.getAttribute("value");
                 console.log(value);
 
@@ -126,13 +194,13 @@ function startQuestions(event) {
 
     } else {
         calculatePercentageCorrect();
-        //console.log(typeof(result));
         giveTestEvaluation(result);
         displayEndPage(vote, result);
         
     }
 
 }
+
 // adding correct answer to the count
 function incrementCorrect() {
 
@@ -140,6 +208,7 @@ function incrementCorrect() {
     document.getElementById("correct-number").innerHTML = ++totCorrect;
 
 }
+
 // adding incorrect answer to the count
 function incrementIncorrect() {
 
@@ -149,11 +218,13 @@ function incrementIncorrect() {
     console.log(totIncorrect);
 
 }
+
 // calculate the percentage of correct answers
 function calculatePercentageCorrect() {
     result = (totCorrect*100)/questionListArray.results.length;
     return result;
 }
+
 // Depending of the value of the variable result 
 // evaluate the user performance in the test
 function giveTestEvaluation(result) {
@@ -188,3 +259,39 @@ function displayEndPage() {
             <a href="index.html"><button type="button" class="btn btn-warning">Home</button></a>
         </div>`;
 }
+/*
+function importArray(possibleAnswers) {
+
+    for (let index = 0; i < questionListArray.results[i].incorrect_answers.length[index]; i++) {
+        possibleAnswers += '"'+questionListArray.results[i].incorrect_answers+'"';
+    }
+    possibleAnswers += '"'+questionListArray.results[i].incorrect_answers+'"';
+    return possibleAnswers;
+}
+*/
+
+// function taken from stack overflow
+function shuffle(possibleAnswers) {
+    var currentIndex = possibleAnswers.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = possibleAnswers[currentIndex];
+        possibleAnswers[currentIndex] = possibleAnswers[randomIndex];
+        possibleAnswers[randomIndex] = temporaryValue;
+    }
+
+    return possibleAnswers;
+}
+/*
+for (let index = 0; index < questionListArray.results[i].incorrect_answers.length; index++) {
+                possibleAnswers += '"'+toString(questionListArray.results[i].incorrect_answers[index].value)+'",';
+            }
+            possibleAnswers += '"'+questionListArray.results[i].correct_answer+'"';
+*/
