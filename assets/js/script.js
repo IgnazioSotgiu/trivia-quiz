@@ -1,4 +1,4 @@
-
+// declare global variables
 
 let questionListArray;
 let difficultyLevel;
@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 getReady(difficultyLevel);
 
             }else {
-                alert("Incorrect value. Please select the difficulty level")
+                alert("Incorrect value. Please select the difficulty level");
+                throw "Error... Incorrect value... Aborting...";
                 }
             });
         }
@@ -60,7 +61,7 @@ function getQuestionArray(difficultyLevel){
     xhr.send("POST");
 
     xhr.onreadystatechange = function() {
-        
+
     if(this.readyState === 4 && this.status === 200) {
         questionListArray = JSON.parse(this.responseText);
         $("#start-button").css({"background-color": "#1fe24c"});
@@ -72,133 +73,135 @@ function getQuestionArray(difficultyLevel){
 
 // adding event listener waiting for the click of the start 
 // button to execute startQuestion function
+
 let myButton = document.getElementById("start-button");
-if(myButton) {
-    myButton.addEventListener("click", startQuestions);
-}
+myButton.addEventListener("click", startQuestions);
+
 
 // display the question on the array and creating a event listener
 // for the true and false button that the user will click to 
 // select the right answer
 
 function startQuestions(event) {
-    console.log(questionListArray.results.length);
-    console.dir(questionListArray);
-    
-    if (i < questionListArray.results.length) {
-        console.log(questionListArray.results[i].correct_answer);
-        let correctAnswer = questionListArray.results[i].correct_answer;
-        document.getElementById("replace-question-container").innerHTML =
-
-        `<div class="question-container">
-            <h2 id="question-number">Question # ${i+1}</h2>
-            <hr>
-            <p id="question-text">${questionListArray.results[i].question}</p>
-        </div>`
+    if(questionListArray) {    
+        console.log(questionListArray.results.length);
+        console.dir(questionListArray);
         
-        if (questionListArray.results[i].type === "boolean") {
-            document.getElementById("replace-question-container").innerHTML +=
-            
-            `<div class="user-answer-container">
-                <button type="button" value="True" class="btn btn-success answer-button">True</button>
-                <button type="button" value="False" class="btn btn-danger answer-button">False</button>
+        if (i < questionListArray.results.length) {
+            console.log(questionListArray.results[i].correct_answer);
+            let correctAnswer = questionListArray.results[i].correct_answer;
+            document.getElementById("replace-question-container").innerHTML =
+
+            `<div class="question-container">
+                <h2 id="question-number">Question # ${i+1}</h2>
+                <hr>
+                <p id="question-text">${questionListArray.results[i].question}</p>
             </div>`
             
-        } else if (questionListArray.results[i].type === "multiple") {
-            let possibleAnswers = [questionListArray.results[i].incorrect_answers[0],questionListArray.results[i].incorrect_answers[1], questionListArray.results[i].incorrect_answers[2],questionListArray.results[i].correct_answer];
-            
-            console.log(possibleAnswers);
-            shuffle(possibleAnswers);
-            console.log(possibleAnswers.length);
-            console.log(possibleAnswers);
+            if (questionListArray.results[i].type === "boolean") {
+                document.getElementById("replace-question-container").innerHTML +=
+                
+                `<div class="user-answer-container">
+                    <button type="button" value="True" class="btn btn-success answer-button">True</button>
+                    <button type="button" value="False" class="btn btn-danger answer-button">False</button>
+                </div>`
+                
+            } else if (questionListArray.results[i].type === "multiple") {
+                let possibleAnswers = [questionListArray.results[i].incorrect_answers[0],questionListArray.results[i].incorrect_answers[1], questionListArray.results[i].incorrect_answers[2],questionListArray.results[i].correct_answer];
+                
+                console.log(possibleAnswers);
+                shuffle(possibleAnswers);
+                console.log(possibleAnswers.length);
+                console.log(possibleAnswers);
+                document.getElementById("replace-question-container").innerHTML +=
+                `<div class="row row-center radio-btn-answer-container">
+                    <div class="col-6 col-sm-3">
+                        <input class="answer-input" type="radio" id="opt-1" name="answer" value="${possibleAnswers[0]}+" required>
+                        <br>
+                        <label for="opt-1">${possibleAnswers[0]}</label>
+                    </div>
+                    <div class="col-6 col-sm-3">
+                        <input class="answer-input" type="radio" id="opt-2" name="answer" value="${possibleAnswers[1]}">
+                        <br>
+                        <label for="opt-2">${possibleAnswers[1]}</label>
+                    </div>
+                    <div class="col-6 col-sm-3">
+                        <input class="answer-input" type="radio" id="opt-3" name="answer" value="${possibleAnswers[2]}">
+                        <br>
+                        <label for="opt-3">${possibleAnswers[2]}</label>
+                    </div>
+                    <div class="col-6 col-sm-3">
+                        <input class="answer-input" type="radio" id="opt-4" name="answer" value="${possibleAnswers[3]}">
+                        <br>
+                        <label for="opt-4">${possibleAnswers[3]}</label>
+                    </div>
+                </div>`
+            } else {
+                document.getElementById("replace-question-container").innerHTML +=
+                `<div>
+                <h2>Sorry ${questionListArray.results[i].type} question type not supported!</h2>
+                
+                </div>`
+
+            }
             document.getElementById("replace-question-container").innerHTML +=
-            `<div class="row row-center radio-btn-answer-container">
-                <div class="col-6 col-sm-3">
-                    <input class="answer-input" type="radio" id="opt-1" name="answer" value="${possibleAnswers[0]}+" required>
-                    <br>
-                    <label for="opt-1">${possibleAnswers[0]}</label>
-                </div>
-                <div class="col-6 col-sm-3">
-                    <input class="answer-input" type="radio" id="opt-2" name="answer" value="${possibleAnswers[1]}">
-                    <br>
-                    <label for="opt-2">${possibleAnswers[1]}</label>
-                </div>
-                <div class="col-6 col-sm-3">
-                    <input class="answer-input" type="radio" id="opt-3" name="answer" value="${possibleAnswers[2]}">
-                    <br>
-                    <label for="opt-3">${possibleAnswers[2]}</label>
-                </div>
-                <div class="col-6 col-sm-3">
-                    <input class="answer-input" type="radio" id="opt-4" name="answer" value="${possibleAnswers[3]}">
-                    <br>
-                    <label for="opt-4">${possibleAnswers[3]}</label>
-                </div>
-            </div>`
+            `</div>
+            <div class="counter-container">
+                <span id="correct-answers">Correct Answers</span><span id="correct-number">${totCorrect}</span><span id="incorrect-answers">Incorrect Answers</span><span id="incorrect-number">${totIncorrect}</span>
+            </div>`;
+            
+            let buttons = document.getElementsByClassName("answer-button");
+            console.log(buttons);
+            
+            for (let button of buttons) {
+                button.addEventListener("click", function() {
+                    let value = this.getAttribute("value");
+                    console.log(value);
+                    let correctMultipleChoiceAnswer = questionListArray.results[i].correct_answer;
+
+                    if(value == correctMultipleChoiceAnswer) {
+                        incrementCorrect();
+                        i++;
+                        alert("Congratulations! Your answer is correct");
+                        startQuestions()
+                    } else {
+                        incrementIncorrect();
+                        i++;
+                        alert("Arrgh.... Your answer is incorrect. Keep practicing!");
+                        startQuestions();
+                    }
+                });
+            }
+            let answerInputs = document.getElementsByClassName("answer-input");
+            console.log(buttons);
+            
+            for (let answerInput of answerInputs) {
+                answerInput.addEventListener("click", function() {
+                    let value = this.getAttribute("value");
+                    console.log(value);
+
+                    if(value == correctAnswer) {
+                        incrementCorrect();
+                        i++;
+                        alert("Congratulations! Your answer is correct");
+                        startQuestions()
+                    } else {
+                        incrementIncorrect();
+                        i++;
+                        alert("Arrgh.... Your answer is incorrect. Keep practicing!");
+                        startQuestions();
+                    }
+                });
+            }
+
         } else {
-            document.getElementById("replace-question-container").innerHTML +=
-            `<div>
-            <h2>Sorry ${questionListArray.results[i].type} question type not supported!</h2>
-            
-            </div>`
-
-        }
-        document.getElementById("replace-question-container").innerHTML +=
-        `</div>
-        <div class="counter-container">
-            <span id="correct-answers">Correct Answers</span><span id="correct-number">${totCorrect}</span><span id="incorrect-answers">Incorrect Answers</span><span id="incorrect-number">${totIncorrect}</span>
-        </div>`;
-        
-        let buttons = document.getElementsByClassName("answer-button");
-        console.log(buttons);
-        
-        for (let button of buttons) {
-            button.addEventListener("click", function() {
-                let value = this.getAttribute("value");
-                console.log(value);
-                let correctMultipleChoiceAnswer = questionListArray.results[i].correct_answer;
-
-                if(value == correctMultipleChoiceAnswer) {
-                    incrementCorrect();
-                    i++;
-                    alert("Congratulations! Your answer is correct");
-                    startQuestions()
-                } else {
-                    incrementIncorrect();
-                    i++;
-                    alert("Arrgh.... Your answer is incorrect. Keep practicing!");
-                    startQuestions();
-                }
-            });
-        }
-        let answerInputs = document.getElementsByClassName("answer-input");
-        console.log(buttons);
-        
-        for (let answerInput of answerInputs) {
-            answerInput.addEventListener("click", function() {
-                let value = this.getAttribute("value");
-                console.log(value);
-
-                if(value == correctAnswer) {
-                    incrementCorrect();
-                    i++;
-                    alert("Congratulations! Your answer is correct");
-                    startQuestions()
-                } else {
-                    incrementIncorrect();
-                    i++;
-                    alert("Arrgh.... Your answer is incorrect. Keep practicing!");
-                    startQuestions();
-                }
-            });
-        }
-
+            calculatePercentageCorrect();
+            giveTestEvaluation(result);
+            displayEndPage(vote, result);
+            }
     } else {
-        calculatePercentageCorrect();
-        giveTestEvaluation(result);
-        displayEndPage(vote, result);
-        
-    }
-
+        alert("Please select the difficulty level.");
+        }
 }
 
 // adding correct answer to the count
@@ -248,27 +251,18 @@ function giveTestEvaluation(result) {
 // Display the final screen with the results of the test
 
 function displayEndPage() {
-            document.getElementById("replace-question-container").innerHTML =
+    document.getElementById("replace-question-container").innerHTML =
 
-        `<div class="container-fluid message-finish-test">
-            <p>You have finished the game.<br><spam id="valuation"><h2>${vote}</h2></spam></p>
-            <p>Your score is:<br><span id="total-correct-answers">${totCorrect}</span> Correct answers<br><span id="final-incorrect-answers">${totIncorrect}</span> Incorrect answers</p>
-            <p>You got <span id="correct-precentage">${result}</span>% of correct answers!</p>
-        </div>
-        <div class="end-button-container">
-            <a href="index.html"><button type="button" class="btn btn-warning">Home</button></a>
-        </div>`;
+    `<div class="container-fluid message-finish-test">
+        <p>You have finished the game.<br><spam id="valuation"><h2>${vote}</h2></spam></p>
+        <p>Your score is:<br><span id="total-correct-answers">${totCorrect}</span> Correct answers<br><span id="final-incorrect-answers">${totIncorrect}</span> Incorrect answers</p>
+        <p>You got <span id="correct-precentage">${result}</span>% of correct answers!</p>
+    </div>
+    <div class="end-button-container">
+        <a href="index.html"><button type="button" class="btn btn-warning">Home</button></a>
+    </div>`;
 }
-/*
-function importArray(possibleAnswers) {
 
-    for (let index = 0; i < questionListArray.results[i].incorrect_answers.length[index]; i++) {
-        possibleAnswers += '"'+questionListArray.results[i].incorrect_answers+'"';
-    }
-    possibleAnswers += '"'+questionListArray.results[i].incorrect_answers+'"';
-    return possibleAnswers;
-}
-*/
 
 // function taken from stack overflow
 function shuffle(possibleAnswers) {
