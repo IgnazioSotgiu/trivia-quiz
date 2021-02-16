@@ -1,4 +1,4 @@
-// declare global variables
+// declare variables
 
 let questionListArray;
 let difficultyLevel;
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 // after the level of difficulty has bee chosen 
-// the function get ready does the 
+// the function get ready calls the get question array function
 //few more steps before the user press the start button
 
 function getReady(difficultyLevel) {
@@ -61,7 +61,7 @@ function getQuestionArray(difficultyLevel){
     xhr.send("POST");
 
     xhr.onreadystatechange = function() {
-
+    
     if(this.readyState === 4 && this.status === 200) {
         questionListArray = JSON.parse(this.responseText);
         $("#start-button").css({"background-color": "#1fe24c"});
@@ -83,12 +83,10 @@ myButton.addEventListener("click", startQuestions);
 // select the right answer
 
 function startQuestions(event) {
-    if(questionListArray) {    
-        console.log(questionListArray.results.length);
-        console.dir(questionListArray);
+    if(questionListArray) {
         
         if (i < questionListArray.results.length) {
-            console.log(questionListArray.results[i].correct_answer);
+
             let correctAnswer = questionListArray.results[i].correct_answer;
             document.getElementById("replace-question-container").innerHTML =
 
@@ -102,21 +100,20 @@ function startQuestions(event) {
                 document.getElementById("replace-question-container").innerHTML +=
                 
                 `<div class="user-answer-container">
-                    <button type="button" value="True" class="btn btn-success answer-button">True</button>
-                    <button type="button" value="False" class="btn btn-danger answer-button">False</button>
+                    <button type="button" value="True" class="btn btn-success boolean-answer-button">True</button>
+                    <button type="button" value="False" class="btn btn-danger boolean-answer-button">False</button>
                 </div>`
                 
             } else if (questionListArray.results[i].type === "multiple") {
+
                 let possibleAnswers = [questionListArray.results[i].incorrect_answers[0],questionListArray.results[i].incorrect_answers[1], questionListArray.results[i].incorrect_answers[2],questionListArray.results[i].correct_answer];
                 
-                console.log(possibleAnswers);
                 shuffle(possibleAnswers);
-                console.log(possibleAnswers.length);
-                console.log(possibleAnswers);
+
                 document.getElementById("replace-question-container").innerHTML +=
                 `<div class="row row-center radio-btn-answer-container">
                     <div class="col-6 col-sm-3">
-                        <input class="answer-input" type="radio" id="opt-1" name="answer" value="${possibleAnswers[0]}+" required>
+                        <input class="answer-input" type="radio" id="opt-1" name="answer" value="${possibleAnswers[0]}">
                         <br>
                         <label for="opt-1">${possibleAnswers[0]}</label>
                     </div>
@@ -150,35 +147,12 @@ function startQuestions(event) {
                 <span id="correct-answers">Correct Answers</span><span id="correct-number">${totCorrect}</span><span id="incorrect-answers">Incorrect Answers</span><span id="incorrect-number">${totIncorrect}</span>
             </div>`;
             
-            let buttons = document.getElementsByClassName("answer-button");
+            let buttons = document.getElementsByClassName("boolean-answer-button");
             console.log(buttons);
             
             for (let button of buttons) {
                 button.addEventListener("click", function() {
                     let value = this.getAttribute("value");
-                    console.log(value);
-                    let correctMultipleChoiceAnswer = questionListArray.results[i].correct_answer;
-
-                    if(value == correctMultipleChoiceAnswer) {
-                        incrementCorrect();
-                        i++;
-                        alert("Congratulations! Your answer is correct");
-                        startQuestions()
-                    } else {
-                        incrementIncorrect();
-                        i++;
-                        alert("Arrgh.... Your answer is incorrect. Keep practicing!");
-                        startQuestions();
-                    }
-                });
-            }
-            let answerInputs = document.getElementsByClassName("answer-input");
-            console.log(buttons);
-            
-            for (let answerInput of answerInputs) {
-                answerInput.addEventListener("click", function() {
-                    let value = this.getAttribute("value");
-                    console.log(value);
 
                     if(value == correctAnswer) {
                         incrementCorrect();
@@ -188,7 +162,26 @@ function startQuestions(event) {
                     } else {
                         incrementIncorrect();
                         i++;
-                        alert("Arrgh.... Your answer is incorrect. Keep practicing!");
+                        alert(`Arrgh.... Your answer is incorrect. Keep practicing!`);
+                        startQuestions();
+                    }
+                });
+            }
+            let answerInputs = document.getElementsByClassName("answer-input");
+            
+            for (let answerInput of answerInputs) {
+                answerInput.addEventListener("click", function() {
+                    let value = this.getAttribute("value");
+
+                    if(value == correctAnswer) {
+                        incrementCorrect();
+                        i++;
+                        alert("Congratulations! Your answer is correct");
+                        startQuestions();
+                    } else {
+                        incrementIncorrect();
+                        i++;
+                        alert(`Arrgh.... Your answer is incorrect. Keep practicing!`+ "\n" +`The correct answer was ${correctAnswer}`);
                         startQuestions();
                     }
                 });
@@ -216,9 +209,7 @@ function incrementCorrect() {
 function incrementIncorrect() {
 
     totIncorrect = parseInt(document.getElementById("incorrect-number").innerHTML);
-    console.log(totIncorrect);
     document.getElementById("incorrect-number").innerHTML = ++totIncorrect;
-    console.log(totIncorrect);
 
 }
 
