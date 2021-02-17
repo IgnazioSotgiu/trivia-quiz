@@ -5,11 +5,18 @@ body {
     width: 100%;
     color: #fafafa;
 
-    background: url("../images/blue-background.jpg") no-repeat bottom right ; 
+    background: url("../images/blue-background.jpg") no-repeat bottom right; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    }
+@media screen and (max-width: 575px){
+    html, body{
+        width:100%;
+        overflow-x:hidden;
+        height: 100%;
+        }
     }
 /****************************navbar******************************************/
 .navbar-dark .navbar-nav .nav-link {
@@ -81,8 +88,17 @@ p {
 .copyright-container {
     font-size: 15px;
 }
-.radio-btn-answer-container div {
+.btn-answer-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.btn-answer-container div {
     text-align: center;
+}
+.btn-secondary {
+    margin-top: 15px;
+    background-color: #4cecd7;
+    color: #000;
 }
 /**********************************question page*************************************/
 .question-container {
@@ -111,6 +127,7 @@ hr {
 }
 .counter-container {
     text-align: center;
+    margin-top: 15px;
 }
 #correct-answers {
     color: green;
@@ -161,8 +178,8 @@ hr {
     .question-container {
         padding: 10px 25%;
     }
-    .radio-btn-answer-container {
-        padding: 10px 15%;
+    .btn-answer-container {
+        padding: 10px 20%;
     }
 }
 @media screen and (max-width: 575px) {

@@ -111,26 +111,18 @@ function startQuestions(event) {
                 shuffle(possibleAnswers);
 
                 document.getElementById("replace-question-container").innerHTML +=
-                `<div class="row row-center radio-btn-answer-container">
-                    <div class="col-6 col-sm-3">
-                        <input class="answer-input" type="radio" id="opt-1" name="answer" value="${possibleAnswers[0]}">
-                        <br>
-                        <label for="opt-1">${possibleAnswers[0]}</label>
+                `<div class="row row-center btn-answer-container">
+                    <div class="col-12 col-sm-6">
+                        <button class=" btn btn-secondary multiple-answer-button" id="btn-1" type="button" name="answer" value="${possibleAnswers[0]}">${possibleAnswers[0]}</button>
                     </div>
-                    <div class="col-6 col-sm-3">
-                        <input class="answer-input" type="radio" id="opt-2" name="answer" value="${possibleAnswers[1]}">
-                        <br>
-                        <label for="opt-2">${possibleAnswers[1]}</label>
+                    <div class="col-12 col-sm-6">
+                        <button class="btn btn-secondary multiple-answer-button" id="btn-2" type="button" name="answer" value="${possibleAnswers[1]}">${possibleAnswers[1]}</button>
                     </div>
-                    <div class="col-6 col-sm-3">
-                        <input class="answer-input" type="radio" id="opt-3" name="answer" value="${possibleAnswers[2]}">
-                        <br>
-                        <label for="opt-3">${possibleAnswers[2]}</label>
+                    <div class="col-12 col-sm-6">
+                        <button class="btn btn-secondary multiple-answer-button" id="btn-3" type="button" name="answer" value="${possibleAnswers[2]}">${possibleAnswers[2]}</button>
                     </div>
-                    <div class="col-6 col-sm-3">
-                        <input class="answer-input" type="radio" id="opt-4" name="answer" value="${possibleAnswers[3]}">
-                        <br>
-                        <label for="opt-4">${possibleAnswers[3]}</label>
+                    <div class="col-12 col-sm-6">
+                        <button class="btn btn-secondary multiple-answer-button" id="btn-4" type="button" name="answer" value="${possibleAnswers[3]}">${possibleAnswers[3]}</button>
                     </div>
                 </div>`
             } else {
@@ -149,7 +141,7 @@ function startQuestions(event) {
             
             let buttons = document.getElementsByClassName("boolean-answer-button");
             console.log(buttons);
-            
+
             for (let button of buttons) {
                 button.addEventListener("click", function() {
                     let value = this.getAttribute("value");
@@ -167,10 +159,11 @@ function startQuestions(event) {
                     }
                 });
             }
-            let answerInputs = document.getElementsByClassName("answer-input");
+            let answerButtons = document.getElementsByClassName("multiple-answer-button");
+            console.log(answerButtons);
             
-            for (let answerInput of answerInputs) {
-                answerInput.addEventListener("click", function() {
+            for (let answerButton of answerButtons) {
+                answerButton.addEventListener("click", function() {
                     let value = this.getAttribute("value");
 
                     if(value == correctAnswer) {
@@ -256,6 +249,7 @@ function displayEndPage() {
 
 
 // function taken from stack overflow
+
 function shuffle(possibleAnswers) {
     var currentIndex = possibleAnswers.length, temporaryValue, randomIndex;
 
@@ -274,9 +268,3 @@ function shuffle(possibleAnswers) {
 
     return possibleAnswers;
 }
-/*
-for (let index = 0; index < questionListArray.results[i].incorrect_answers.length; index++) {
-                possibleAnswers += '"'+toString(questionListArray.results[i].incorrect_answers[index].value)+'",';
-            }
-            possibleAnswers += '"'+questionListArray.results[i].correct_answer+'"';
-*/
