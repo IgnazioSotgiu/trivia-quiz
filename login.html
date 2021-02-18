@@ -28,20 +28,32 @@
             <a href="index.html"><h1>Trivia<br>Quiz</h1></a>
         </div>
     </div>
-    <div id="replace-question-container">
-        <div class="message-homepage container-fluid">
-            <p>Welcome to the Trivia Quiz game. <br>Choose the difficulty level and start to play.</p>
-        </div>
-        <div class="container-fluid difficulty-selection-container">
-            <input class="difficulty-sel-input" type="radio" id="easy" name="difficulty" value="easy" required>
-            <label for="easy">Easy</label>
-            <input class="difficulty-sel-input" type="radio" id="medium" name="difficulty" value="medium">
-            <label for="medium">Medium</label>
-            <input class="difficulty-sel-input" type="radio" id="hard" name="difficulty" value="hard">
-            <label for="hard">Hard</label>
-        </div>
-        <div class="start-button-container">
-            <button type="button" id="start-button" class="btn btn-success">Start</button>
+    <div class="jumbotron">
+        <div class="login-form-container">
+            <h4>Please login to Trivia Quiz.</h4>
+            <form>
+                <div class="row">
+                    <div class="login-form-label col-12 col-md-6">
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="login-form-input col-12 col-md-6">
+                        <input type="email" class="email-input" id="email" placeholder="email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="login-form-label col-12 col-md-6">
+                        <label for="password">Enter Password</label>
+                    </div>
+                    <div class="login-form-input col-12 col-md-6">
+                        <input type="text" class="password" id="password" placeholder="password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="login-button col-12">
+                        <button type="send" class="btn btn-light">login</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     <footer>

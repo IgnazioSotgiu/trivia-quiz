@@ -28,20 +28,56 @@
             <a href="index.html"><h1>Trivia<br>Quiz</h1></a>
         </div>
     </div>
-    <div id="replace-question-container">
-        <div class="message-homepage container-fluid">
-            <p>Welcome to the Trivia Quiz game. <br>Choose the difficulty level and start to play.</p>
-        </div>
-        <div class="container-fluid difficulty-selection-container">
-            <input class="difficulty-sel-input" type="radio" id="easy" name="difficulty" value="easy" required>
-            <label for="easy">Easy</label>
-            <input class="difficulty-sel-input" type="radio" id="medium" name="difficulty" value="medium">
-            <label for="medium">Medium</label>
-            <input class="difficulty-sel-input" type="radio" id="hard" name="difficulty" value="hard">
-            <label for="hard">Hard</label>
-        </div>
-        <div class="start-button-container">
-            <button type="button" id="start-button" class="btn btn-success">Start</button>
+    <div class="jumbotron">
+        <div class="register-form-container">
+            <h4>Please register to Trivia Quiz.</h4>
+            <form>
+                <div class="row">
+                    <div class="registration-form-label col-12 col-md-6">
+                        <label for="first-name">First Name</label>
+                    </div>
+                    <div class="registration-form-input col-12 col-md-6">
+                        <input type="text" class="first-name-input" id="first-name" placeholder="First Name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="registration-form-label col-12 col-md-6">
+                        <label for="last-name">Last Name</label>
+                    </div>
+                    <div class="registration-form-input col12 col-md-6">
+                        <input type="text" class="last-name-input" id="last-name" placeholder="Last Name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="registration-form-label col-12 col-md-6">
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="registration-form-input col-12 col-md-6">
+                        <input type="email" class="email-input" id="email" placeholder="email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="registration-form-label col-12 col-md-6">
+                        <label for="password-1">Enter Password</label>
+                    </div>
+                    <div class="registration-form-input col-12 col-md-6">
+                        <input type="text" class="password" id="password-1" placeholder="password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="registration-form-label col-12 col-md-6">
+                        <label for="password-2">Confirm Password</label>
+                    </div>
+                    <div class="registration-form-input col-12 col-md-6">
+                        <input type="text" class="password" id="password-2" placeholder="password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="registration-button col-12">
+                        <button type="submit" class="btn btn-light">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     <footer>

@@ -12,7 +12,7 @@ let vote = "";
 // then collect the input to choose the level of difficulty
 
 document.addEventListener("DOMContentLoaded", function() {
-    let inputs = document.getElementsByTagName("input");
+    let inputs = document.getElementsByClassName("difficulty-sel-input");
     console.log(inputs);
 
     for(let input of inputs) {
@@ -88,6 +88,7 @@ function startQuestions(event) {
         if (i < questionListArray.results.length) {
 
             let correctAnswer = questionListArray.results[i].correct_answer;
+            console.log(correctAnswer);
             document.getElementById("replace-question-container").innerHTML =
 
             `<div class="question-container">
@@ -109,6 +110,7 @@ function startQuestions(event) {
                 let possibleAnswers = [questionListArray.results[i].incorrect_answers[0],questionListArray.results[i].incorrect_answers[1], questionListArray.results[i].incorrect_answers[2],questionListArray.results[i].correct_answer];
                 
                 shuffle(possibleAnswers);
+                console.log(possibleAnswers);
 
                 document.getElementById("replace-question-container").innerHTML +=
                 `<div class="row row-center btn-answer-container">
@@ -131,7 +133,7 @@ function startQuestions(event) {
                 <h2>Sorry ${questionListArray.results[i].type} question type not supported!</h2>
                 
                 </div>`
-
+            throw "Error... Incorrect question type... Aborting...";
             }
             document.getElementById("replace-question-container").innerHTML +=
             `</div>
@@ -145,6 +147,7 @@ function startQuestions(event) {
             for (let button of buttons) {
                 button.addEventListener("click", function() {
                     let value = this.getAttribute("value");
+                    let btnId = this.getAttribute("id");
 
                     if(value == correctAnswer) {
                         incrementCorrect();
@@ -165,13 +168,16 @@ function startQuestions(event) {
             for (let answerButton of answerButtons) {
                 answerButton.addEventListener("click", function() {
                     let value = this.getAttribute("value");
+                    let btnId = this.getAttribute("id");
 
                     if(value == correctAnswer) {
+                        changeGreenBgColor(btnId);
                         incrementCorrect();
                         i++;
                         alert("Congratulations! Your answer is correct");
                         startQuestions();
                     } else {
+                        changeRedBgColor(btnId);
                         incrementIncorrect();
                         i++;
                         alert(`Arrgh.... Your answer is incorrect. Keep practicing!`+ "\n" +`The correct answer was ${correctAnswer}`);
@@ -267,4 +273,40 @@ function shuffle(possibleAnswers) {
     }
 
     return possibleAnswers;
+}
+
+// Change selected button background to green if answer is correct
+function changeGreenBgColor(btnId) {
+    switch(btnId) {
+        case btnId === "btn-1":
+            $("#btn-1").css({"background-color": "#1fe24c"});
+            break;
+        case btnId === "btn-2":
+            $("#btn-2").css({"background-color": "#1fe24c"});
+            break;
+        case btnId === "btn-3":
+            $("#btn-3").css({"background-color": "#1fe24c"});
+            break;
+        case btnId === "btn-4":
+            $("#btn-4").css({"background-color": "#1fe24c"});
+            break;
+    }
+}
+
+// Change selected button background to red if answer is incorrect
+function changeRedBgColor(btnId) {
+    switch(btnId) {
+        case btnId === "btn-1":
+            $("#btn-1").css({"background-color": "red"});
+            break;
+        case btnId === "btn-2":
+            $("#btn-2").css({"background-color": "red"});
+            break;
+        case btnId === "btn-3":
+            $("#btn-3").css({"background-color": "red"});
+            break;
+        case btnId === "btn-4":
+            $("#btn-4").css({"background-color": "red"});
+            break;
+    }
 }
