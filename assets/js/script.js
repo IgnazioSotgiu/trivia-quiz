@@ -7,7 +7,6 @@ let totCorrect = 0;
 let totIncorrect = 0;
 let vote = "";
 
-
 // wait for the DOM to finish loading page
 // then collect the input to choose the level of difficulty
 
@@ -310,3 +309,32 @@ function changeRedBgColor(btnId) {
             break;
     }
 }
+/************************registration modal*************************/
+let registrationLink = document.getElementById("registration-link");
+let registrationModal = document.getElementById("registration-modal");
+registrationLink.addEventListener("click", function() {
+    //console.log(modal);
+
+    registrationModal.style.display = "block";
+
+    window.onclick = function(event) {
+    if (event.target == registrationModal) {
+        registrationModal.style.display = "none";
+        }
+    }
+});
+
+/**********************login modal******************************/
+let loginLink = document.getElementById("login-link");
+let loginModal = document.getElementById("login-modal");
+loginLink.addEventListener("click", function() {
+    //console.log(loginModal);
+
+    loginModal.style.display = "block";
+
+    window.onclick = function(event) {
+    if (event.target == loginModal) {
+        loginModal.style.display = "none";
+        }
+    }
+});

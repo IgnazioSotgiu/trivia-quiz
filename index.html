@@ -17,9 +17,9 @@
     <div id="navigation-bar" class="container-fluid navbar-container">
         <nav class="navbar navbar-dark navbar-expand">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                <li class="nav-item"><a class="nav-link" id="login-link" data-open="login-modal" data-toggle="login-modal" data-backdrop="false" href="#">Login</a></li>
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                <li class="nav-item"><a class="nav-link" id="registration-link" data-open="registration-modal" data-toggle="registration-modal" data-backdrop="false" href="#">Register</a></li>
             </ul>
         </nav>
     </div>
@@ -63,6 +63,97 @@
             </div>    
         </div>
     </footer>
+    <!-----------------registration modal------------------------->
+    <div class="modal" id="registration-modal">
+        <div class="jumbotron">
+            <div class="register-form-container">
+                <h4 class="registration-modal-header">Please register to Trivia Quiz.</h4>
+                <form>
+                    <div class="row">
+                        <div class="registration-form-label col-12 col-md-6">
+                            <label for="first-name">First Name</label>
+                        </div>
+                        <div class="registration-form-input col-12 col-md-6">
+                            <input type="text" class="first-name-input" id="first-name" placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="registration-form-label col-12 col-md-6">
+                            <label for="last-name">Last Name</label>
+                        </div>
+                        <div class="registration-form-input col12 col-md-6">
+                            <input type="text" class="last-name-input" id="last-name" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="registration-form-label col-12 col-md-6">
+                            <label for="email">Email Address</label>
+                        </div>
+                        <div class="registration-form-input col-12 col-md-6">
+                            <input type="email" class="email-input" id="email" placeholder="email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="registration-form-label col-12 col-md-6">
+                            <label for="password-1">Enter Password</label>
+                        </div>
+                        <div class="registration-form-input col-12 col-md-6">
+                            <input type="text" class="password" id="password-1" placeholder="password">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="registration-form-label col-12 col-md-6">
+                            <label for="password-2">Confirm Password</label>
+                        </div>
+                        <div class="registration-form-input col-12 col-md-6">
+                            <input type="text" class="password" id="password-2" placeholder="password">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="modal-btn-container col-12">
+                            <button id="registration-button" type="submit" class="btn btn-light">Submit</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="modal-cancel col-12">
+                            <a href="index.html">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------login modal------------------------------>
+    <div class="modal" id="login-modal">
+        <div class="jumbotron">
+            <div class="login-form-container">
+                <h4>Please login to Trivia Quiz.</h4>
+                <form>
+                    <div class="row">
+                        <div class="login-form-label col-12 col-md-6">
+                            <label for="login-email">Email Address</label>
+                        </div>
+                        <div class="login-form-input col-12 col-md-6">
+                            <input type="email" class="email-input" id="login-email" placeholder="email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="login-form-label col-12 col-md-6">
+                            <label for="password">Enter Password</label>
+                        </div>
+                        <div class="login-form-input col-12 col-md-6">
+                            <input type="text" class="password" id="password" placeholder="password">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="login-button col-12">
+                            <button type="send" class="btn btn-light">login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

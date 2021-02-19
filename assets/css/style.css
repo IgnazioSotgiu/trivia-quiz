@@ -177,18 +177,28 @@ hr {
     margin-top: 10px;
 
 }
-/***************************registration form**********************************/
+/***************************registration form modal**********************************/
+.modal {
+    position: fixed;
+    z-index: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#registration-modal {
+    display: none;
+}
 .jumbotron {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 0;
     padding: 20px;
     text-align: center;
     padding: 20px ;
-    background-color: transparent;
     border: 0.5px solid #eca54c;
     border-radius: 20px;
+    background: url("../images/blue-background.jpg") no-repeat bottom right;
 }
 .registration-form-label {
     text-align: right;
@@ -201,8 +211,18 @@ hr {
 input {
     border-radius: 10px;
 }
-.registration-button {
+.modal-btn-container {
     padding-top: 20px;
+}
+.modal-cancel {
+    padding-top: 10px;
+}
+.modal-cancel a {
+    color: #fafafa;
+}
+.modal-cancel a:hover {
+    color: #fafafa;
+    text-decoration: none;
 }
 /****************************login form*******************************/
 .login-form-label {
