@@ -14,6 +14,9 @@
     <title>Title</title>
 </head>
 <body>
+    <div class="container-fluid email-address-container">
+        <a id="contact-link" data-open="contact-modal" data-toggle="contact-modal" data-backdrop="false" href="#">yourtriviaquiz@gmail.com</a>
+    </div>
     <div id="navigation-bar" class="container-fluid navbar-container">
         <nav class="navbar navbar-dark navbar-expand">
             <ul class="navbar-nav mx-auto">
@@ -87,18 +90,18 @@
                     </div>
                     <div class="row">
                         <div class="registration-form-label col-12 col-md-6">
-                            <label for="email">Email Address</label>
+                            <label for="reg-email">Email Address</label>
                         </div>
                         <div class="registration-form-input col-12 col-md-6">
-                            <input type="email" class="email-input" id="email" placeholder="email">
+                            <input type="email" class="email-input" id="reg-email" placeholder="email">
                         </div>
                     </div>
                     <div class="row">
                         <div class="registration-form-label col-12 col-md-6">
-                            <label for="password-1">Enter Password</label>
+                            <label for="reg-password">Enter Password</label>
                         </div>
                         <div class="registration-form-input col-12 col-md-6">
-                            <input type="text" class="password" id="password-1" placeholder="password">
+                            <input type="password" class="password" id="reg-password" placeholder="password">
                         </div>
                     </div>
                     <div class="row">
@@ -106,7 +109,7 @@
                             <label for="password-2">Confirm Password</label>
                         </div>
                         <div class="registration-form-input col-12 col-md-6">
-                            <input type="text" class="password" id="password-2" placeholder="password">
+                            <input type="password" class="password" id="password-2" placeholder="password">
                         </div>
                     </div>
                     <div class="row">
@@ -148,6 +151,39 @@
                     <div class="row">
                         <div class="login-button col-12">
                             <button type="send" class="btn btn-light">login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------contact modal-------------------------->
+    <div class="modal" id="contact-modal">
+        <div class="jumbotron">
+            <div class="contact-form-container">
+                <h4>Welcome to Trivia Quiz contact form.</h4>
+                <h5>If you have any enquiry, suggestion, complain please let us know and will try to improve your experience!</h5>
+                <form>
+                    <div class="row contact-email-row">
+                        <div class="contact-form-label col-12">
+                            <label for="contact-email">Email Address</label>
+                        </div>
+                    </div>
+                    <div class="row">    
+                        <div class="contact-form-input col-12">
+                            <input type="email" class="email-input" id="contact-email" placeholder="email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="enquiry-container col-12">
+                            <label for="contact-enquiry">Request / Enquiry</label>
+                            <br>   
+                            <textarea class="request" id="contact-enquiry" name="subject" placeholder=""></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="contact-button col-12">
+                            <button type="send" class="btn btn-light">Submit</button>
                         </div>
                     </div>
                 </form>

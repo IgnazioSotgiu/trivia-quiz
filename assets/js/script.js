@@ -7,6 +7,10 @@ let totCorrect = 0;
 let totIncorrect = 0;
 let vote = "";
 
+//keep registeredUserDatabase in local storage
+let registeredUserDatabase = [];
+localStorage.setItem("registeredUserDatabase", JSON.stringify(registeredUserDatabase));
+
 // wait for the DOM to finish loading page
 // then collect the input to choose the level of difficulty
 
@@ -338,3 +342,48 @@ loginLink.addEventListener("click", function() {
         }
     }
 });
+
+/**********************contact modal******************************/
+let contactLink = document.getElementById("contact-link");
+let contactModal = document.getElementById("contact-modal");
+contactLink.addEventListener("click", function() {
+    //console.log(loginModal);
+
+    contactModal.style.display = "block";
+
+    window.onclick = function(event) {
+    if (event.target == contactModal) {
+        contactModal.style.display = "none";
+        }
+    }
+});
+/*
+// function to get the value from registration form
+// and save them as an object into array
+
+let registrationButton = document.getElementById("registration-button");
+registrationButton.addEventListener("click", function() {
+    let user = [];
+
+    if()
+
+    var storedUsers = JSON.parse(localStorage.getItem("registeredUserDatabase"));
+    console.log(storedUsers);
+
+    let emailCheck = document.getElementById("reg-email");
+    for(let j = 0; j < storedUsers.length; j++) {
+        if(storedUsers[j].email === emailCheck){
+            alert("This email address has been already registered"+ '/n/'+"Thank You!");
+            break;
+        }
+    }
+    user.firstName = document.getElementById("first-name").value;
+    user.lastName = document.getElementById("last-name").value;
+    user.email = document.getElementById("reg-email").value;
+    user.regPassword = document.getElementById("reg-password").value;
+    //user.acceptAds = document.getElementById("accept-ads").value;
+    console.log(user);
+
+    registeredUserDatabase.push(user);
+
+});*/

@@ -1,9 +1,10 @@
 ## Trivia Quiz
 
 Trivia Quiz is an application to entertain and  to test the user knowledge with general questions.  
-The user will be able to choose the level of difficulty and the number of questions he wants to answer to.
+The user will be able to choose the level of difficulty and then will get 10 questions about general knowledge.  
+The questions will be mixed True/False and multiple choice.
 
-The goal is to build a simple website where the user will want to spend time playing in, share with friends and learn some new notions. At the same time the website will gain exposure, promoting brands, creating user database, create a leatherboard of the best players of Trivia Quiz.
+The goal is to build a simple website where the user will want to spend time playing in, share with friends and learn some new notions. At the same time the website will gain exposure, promoting brands, creating user database, create a leaderboard of the best players of Trivia Quiz.
 
 The owner goal is to get as many people as he can to play on his website, and get the company name promoted through user social media sharing.
 
