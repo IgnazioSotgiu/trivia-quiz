@@ -78,7 +78,9 @@ function getQuestionArray(difficultyLevel){
 // button to execute startQuestion function
 
 let myButton = document.getElementById("start-button");
-myButton.addEventListener("click", startQuestions);
+if(myButton) {
+    myButton.addEventListener("click", startQuestions);
+}
 
 
 // display the question on the array and creating a event listener
@@ -316,47 +318,53 @@ function changeRedBgColor(btnId) {
 /************************registration modal*************************/
 let registrationLink = document.getElementById("registration-link");
 let registrationModal = document.getElementById("registration-modal");
-registrationLink.addEventListener("click", function() {
-    //console.log(modal);
+if(registrationLink) {
+    registrationLink.addEventListener("click", function() {
+        //console.log(modal);
 
-    registrationModal.style.display = "block";
+        registrationModal.style.display = "block";
 
-    window.onclick = function(event) {
-    if (event.target == registrationModal) {
-        registrationModal.style.display = "none";
+        window.onclick = function(event) {
+        if (event.target == registrationModal) {
+            registrationModal.style.display = "none";
+            }
         }
-    }
-});
+    });
+}
 
 /**********************login modal******************************/
 let loginLink = document.getElementById("login-link");
 let loginModal = document.getElementById("login-modal");
-loginLink.addEventListener("click", function() {
-    //console.log(loginModal);
+if(loginLink) {
+    loginLink.addEventListener("click", function() {
+        //console.log(loginModal);
 
-    loginModal.style.display = "block";
+        loginModal.style.display = "block";
 
-    window.onclick = function(event) {
-    if (event.target == loginModal) {
-        loginModal.style.display = "none";
+        window.onclick = function(event) {
+        if (event.target == loginModal) {
+            loginModal.style.display = "none";
+            }
         }
-    }
-});
+    });
+}
 
 /**********************contact modal******************************/
 let contactLink = document.getElementById("contact-link");
 let contactModal = document.getElementById("contact-modal");
-contactLink.addEventListener("click", function() {
-    //console.log(loginModal);
+if(contactLink) {
+    contactLink.addEventListener("click", function() {
+        //console.log(loginModal);
 
-    contactModal.style.display = "block";
+        contactModal.style.display = "block";
 
-    window.onclick = function(event) {
-    if (event.target == contactModal) {
-        contactModal.style.display = "none";
+        window.onclick = function(event) {
+        if (event.target == contactModal) {
+            contactModal.style.display = "none";
+            }
         }
-    }
-});
+    });
+}
 /*
 // function to get the value from registration form
 // and save them as an object into array
@@ -387,3 +395,9 @@ registrationButton.addEventListener("click", function() {
     registeredUserDatabase.push(user);
 
 });*/
+
+
+// choice category modal
+
+let categoryButtons = document.getElementsByClassName("category-choice-btn");
+console.log(categoryButtons);

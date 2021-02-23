@@ -394,3 +394,21 @@ input {
     }
 
 }
+/*****************category choice screen*****************************/
+.category-choice div button {
+    width: 100px;
+    height: 100px;
+    margin: 20px 10px;
+    background-color: #fafafa;
+    color: blueviolet;
+    padding-top: 10px;
+    border: 2px solid #111111;
+    border-radius: 10px;
+}
+.category-choice div button i {
+    font-size: 30px;
+}
+.category-name {
+    font-size: 15px;
+    color: #111111;
+}
