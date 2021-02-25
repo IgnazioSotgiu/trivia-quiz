@@ -397,7 +397,35 @@ registrationButton.addEventListener("click", function() {
 });*/
 
 
-// choice category modal
+// choice category modal mouseenter function
 
 let categoryButtons = document.getElementsByClassName("category-choice-btn");
 console.log(categoryButtons);
+for(let button of categoryButtons) {
+    button.addEventListener("mouseenter", function() {
+        this.style.backgroundColor = "orange";
+    });
+}
+
+// choice category modal mouseleave function
+
+categoryButtons = document.getElementsByClassName("category-choice-btn");
+console.log(categoryButtons);
+for(let button of categoryButtons) {
+    button.addEventListener("mouseleave", function() {
+        let bg = getComputedStyle(this);
+        console.log(bg['background-color']);
+        if(bg === "rgb(255, 165, 0)")
+        this.style.backgroundColor = "#fafafa";
+    });
+}
+
+// choice category modal change selected button function
+
+categoryButtons = document.getElementsByClassName("category-choice-btn");
+console.log(categoryButtons);
+for(let button of categoryButtons) {
+    button.addEventListener("click", function() {
+        this.style.backgroundColor = "green";
+    });
+}
