@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap');
-
 body {
     min-height: 100vh;
     width: 100%;
     color: #fafafa;
 
-    background: url("../images/blue-background.jpg") no-repeat bottom right; 
+    background: url("../images/background-home.png") no-repeat bottom right; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    }
+}
+.header-container-bg {
+    background: url("../images/home-header-dark.jpg") no-repeat bottom right; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 .email-address-container {
     margin-top: 20px;
     text-align: center;
@@ -22,19 +28,26 @@ body {
     color: rgba(255,255,255,.75);
     text-decoration: none;
 }
-@media screen and (max-width: 575px){
-    html, body{
-        width:100%;
-        overflow-x:hidden;
-        height: 100%;
-        }
-    }
 /****************************navbar******************************************/
+.navbar {
+    border-radius: 20px;
+    background-color: #eca54c;
+    color: #fafafa;
+}
 .navbar-dark .navbar-nav .nav-link {
     color: #fafafa;
-    font-size: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
+    font-size: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.navbar-brand {
+    padding-right: 30px;
+    display: none;
+}
+.dropdown-menu.show {
+    display: block;
+    background-color: #fbe8b0;
+    color: #000;
 }
 /*******************************logo*******************************************/
 .name-container {
@@ -45,6 +58,7 @@ body {
     height: 180px;
     margin: auto;
     text-align: center;
+    background-color: #000;
     color: #eca54c;
     border: 2px solid #eca54c;
     border-radius: 50%;
@@ -322,13 +336,82 @@ input {
     }
 }
 @media screen and (max-width: 575px) {
-    .navbar-dark .navbar-nav .nav-link {
-    color: #fafafa;
-    font-size: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-top: 10px;
+    html, body{
+        width:100%;
+        overflow-x:hidden;
+        height: 100%;
     }
+    body {
+        margin-top: 116px;
+    }
+    .name-container {
+        display: none;
+    }
+    .navbar-brand {
+        display: block;
+    }
+    .navbar {
+        background: url("../images/navbar-bg-mobile.jpg") no-repeat bottom right; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        width: 100%;
+        left: 0;
+        border-radius:0;
+        padding-left: 72px;
+    }
+        .navbar-dark .navbar-nav .nav-link {
+        color: #fafafa;
+        font-size: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: right;
+        margin-left: 40%;
+        background-color: rgba(0,0,0,0.8);
+        }
+        #navbar-brand-text {
+        color: #fafafa;
+        font-size: 15px;
+    }
+    .navbar-dark .navbar-brand {
+        border: 2px solid #fafafa;
+        border-radius: 50%;
+        padding-right: 0;
+        height: 100px;
+        width: 100px;
+        margin-right: 0;
+        text-align: center;
+        padding-top: 15px;
+        font-weight: 800;
+        background-color: #000;
+    }
+    .navbar-dark .navbar-toggler {
+        color: #fafafa;
+        border-color: #fafafa;
+        background-color: #000;
+    }
+    .dropdown-item {
+        text-align: right;
+        color: #fafafa;
+    }
+    .dropdown-menu.show {
+        display: block;
+        background-color: rgba(0, 0, 0, 0.80);
+        color: #fafafa;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        margin-left: 40%;
+    }
+    .dropdown-item:focus, .dropdown-item:hover {
+    color: rgba(255,255,255,.75);
+    text-decoration: none;
+    background-color: transparent;
+}
     .difficulty-selection-container {
         padding-left: 25px;
         padding-right: 0;
@@ -364,11 +447,6 @@ input {
     }
 }
 @media screen and (max-width:350px) {
-    html, body{
-        width:100%;
-        overflow-x:hidden;
-        height: 100%;
-    }
     .navbar {
         padding: 0;
     }

@@ -14,37 +14,38 @@
     <title>Title</title>
 </head>
 <body>
-    <div class="header-container header-container-bg">
-        <div class="name-container">
-            <div id="logo">
-                <a href="index.html"><h1>Trivia<br>Quiz</h1></a>
-            </div>
-        </div>
-    </div>
+    <!--<div class="container-fluid email-address-container">
+        <a id="contact-link" data-open="contact-modal" data-toggle="contact-modal" data-backdrop="false" href="#">yourtriviaquiz@gmail.com</a>
+    </div>-->
     <div id="navigation-bar" class="container-fluid navbar-container">
-        <nav class="navbar navbar-dark navbar-expand-sm">
-            <a href="index.html" class="navbar-brand mx-auto"><span id="navbar-brand-text">Trivia<br>Quiz</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTriviaQuizDropdown" aria-controls="navbarTriviaQuizDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTriviaQuizDropdown">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item nav-link"><i class="fas fa-moon" id="change-mode-icon"></i></li>
-                    <li class="nav-item"><a class="nav-link" href="choose-category.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" id="registration-link" data-open="registration-modal" data-toggle="registration-modal" data-backdrop="false" href="#">Register</a></li>
-                    <li class="nav-item"><a class="nav-link" id="login-link" data-open="login-modal" data-toggle="login-modal" data-backdrop="false" href="#">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" id="contact-link" data-open="contact-modal" data-toggle="contact-modal" data-backdrop="false" href="#">Contact</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="leaderboards.html" id="navbarLeaderboardsDropdownLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-hidden="false">Leaderboards</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarLeaderboardsDropdownLink">
-                            <a class="dropdown-item" href="top-ten-easy.html">Top 10 Easy</a>
-                            <a class="dropdown-item" href="top-ten-medium.html">Top 10 Medium</a>
-                            <a class="dropdown-item" href="top-ten-hard.html">Top 10 Hard</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+        <nav class="navbar navbar-dark navbar-expand">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" id="login-link" data-open="login-modal" data-toggle="login-modal" data-backdrop="false" href="#">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="choose-category.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" id="registration-link" data-open="registration-modal" data-toggle="registration-modal" data-backdrop="false" href="#">Register</a></li>
+            </ul>
         </nav>
+    </div>
+    <!--<div class="name-container">
+        <div id="logo">
+            <a href="index.html"><h1>Trivia<br>Quiz</h1></a>
+        </div>
+    </div>-->
+    <div id="replace-question-container">
+        <div class="message-homepage container-fluid">
+            <p>Welcome to the Trivia Quiz game. <br>Choose the difficulty level and start to play.</p>
+        </div>
+        <div class="container-fluid difficulty-selection-container">
+            <input class="difficulty-sel-input" type="radio" id="easy" name="difficulty" value="easy" required>
+            <label for="easy">Easy</label>
+            <input class="difficulty-sel-input" type="radio" id="medium" name="difficulty" value="medium">
+            <label for="medium">Medium</label>
+            <input class="difficulty-sel-input" type="radio" id="hard" name="difficulty" value="hard">
+            <label for="hard">Hard</label>
+        </div>
+        <div class="start-button-container">
+            <button type="button" id="start-button" class="btn btn-success">Start</button>
+        </div>
     </div>
     <footer>
         <div class="container-fluid footer-container">

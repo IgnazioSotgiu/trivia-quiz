@@ -65,9 +65,21 @@ here attach the user stories docs
 here attach the strategy plan owner website requirements trade Offs
 ****
 
-## Wireframes 
+## Wireframes
+
+## Bugs 
+I managed the bugs found through the issues section on the github repository. 
+Following the steps to trigger and report the bug:
+1. Give Short bug description.
+1. Steps to trigger the bug:
+* Click the element
+* What expect to happend
+* Error
+1. Description of the unwanted behevior.
 
 ## Credits
 Background image in homepage:  
 <a href='https://pngtree.com/free-backgrounds'>free background photos from pngtree.com</a>
 <a href='https://pngtree.com/free-backgrounds'>free background photos from pngtree.com</a>
+
+dark question mark band https://www.freepik.com/free-photo/color-interrogation-symbols_973682.htm#page=1&query=question%20mark&position=38
