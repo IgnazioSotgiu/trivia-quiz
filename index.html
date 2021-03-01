@@ -14,6 +14,7 @@
     <title>Title</title>
 </head>
 <body>
+    <!---------------------Header-------------------------->
     <div class="header-container header-container-bg">
         <div class="name-container">
             <div id="logo">
@@ -21,6 +22,7 @@
             </div>
         </div>
     </div>
+    <!-----------------------Navigation------------------->
     <div id="navigation-bar" class="container-fluid navbar-container">
         <nav class="navbar navbar-dark navbar-expand-sm">
             <a href="index.html" class="navbar-brand mx-auto"><span id="navbar-brand-text">Trivia<br>Quiz</span></a>
@@ -30,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarTriviaQuizDropdown">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item nav-link"><i class="fas fa-moon" id="change-mode-icon"></i></li>
-                    <li class="nav-item"><a class="nav-link" href="choose-category.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" id="registration-link" data-open="registration-modal" data-toggle="registration-modal" data-backdrop="false" href="#">Register</a></li>
                     <li class="nav-item"><a class="nav-link" id="login-link" data-open="login-modal" data-toggle="login-modal" data-backdrop="false" href="#">Login</a></li>
                     <li class="nav-item"><a class="nav-link" id="contact-link" data-open="contact-modal" data-toggle="contact-modal" data-backdrop="false" href="#">Contact</a></li>
@@ -45,6 +47,26 @@
                 </ul>
             </div>
         </nav>
+    </div>
+    <!--------------------Message / Question section--------------------->
+    <div id="replace-question-container">
+        <div class="message-homepage container-fluid">
+            <p>Welcome to the Trivia Quiz game. <br>Choose the Category and the Difficulty level and start to play...</p>
+        </div>
+        <div class="row game-choice">
+            <div class="col-6">
+                <button class="game-choice-btn" value="" type="" name="game"
+                    id="category-choice-link" data-open="category-choice-modal" data-toggle="category-choice-modal" data-backdrop="false" href="#">
+                    <i class="fas fa-question"><br><span class="category-choice-name">Category</span></i>
+                </button>
+            </div>
+            <div class="col-6">
+                <button class="game-choice-btn" value="" type="" name="game"
+                    id="difficulty-choice-link" data-open="difficulty-choice-modal" data-toggle="difficulty-choice-modal" data-backdrop="false" href="#">
+                    <i class="fas fa-signal"><br><span class="category-name">Level</span></i>
+                </button>
+            </div>
+        </div>
     </div>
     <footer>
         <div class="container-fluid footer-container">
@@ -186,6 +208,112 @@
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+    <!----------------------------category choice modal------------------------>
+    <div class="modal" id="category-choice-modal">
+        <div class="jumbotron">
+        <h2>Please select a category...</h2>
+        <div class="row category-choice">
+            <div class="col-6 col-sm-4 col-md-3">
+                <button class="category-choice-btn" value="general" type="radio" name="category">
+                    <i class="fas fa-brain"><br><span class="category-name">General</span></i>
+                </button>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+                <button class="category-choice-btn" value="book" type="radio" name="category">
+                    <i class="fas fa-book"><br><span class="category-name">Books</span></i>
+                </button>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+                <button class="category-choice-btn" value="film" type="radio" name="category">
+                    <i class="fas fa-film"><br><span class="category-name">Movies</span></i>
+                </button>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+                <button class="category-choice-btn" value="music" type="radio" name="category">
+                    <i class="fas fa-music"><br><span class="category-name">Music</span></i>
+                </button>
+            </div>
+        </div>
+        <div class="row category-choice">
+            <div class="col-6 col-sm-4 col-md-3">
+                <button class="category-choice-btn" value="tv" type="radio" name="category">
+                    <i class="fas fa-tv"><br><span class="category-name">TV</span></i>
+                </button>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+                <button class="category-choice-btn" value="video-games" type="radio" name="category">
+                    <i class="fas fa-gamepad"><br><span class="category-name">Videogames</span></i>
+                </button>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+                <button class="category-choice-btn" value="science-computer" type="radio" name="category">
+                    <i class="fas fa-laptop"><br><span class="category-name">Computer</span></i>
+                </button>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+                <button class="category-choice-btn" value="math" type="radio" name="category">
+                    <i class="fas fa-calculator"><br><span class="category-name">Math</span></i>
+                </button>
+            </div>
+        </div>
+        <div class="row category-choice">
+            <div class="col-6 col-sm-4 col-md-3">
+                <button class="category-choice-btn" value="sport" type="radio" name="category">
+                    <i class="fas fa-futbol"><br><span class="category-name">Sport</span></i>
+                </button>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+                <button class="category-choice-btn" value="geography" type="radio" name="category">
+                    <i class="fas fa-atlas"><br><span class="category-name">Geography</span></i>
+                </button>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+                <button class="category-choice-btn" value="history" type="radio" name="category">
+                    <i class="fas fa-history"><br><span class="category-name">History</span></i>
+                </button>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+                <button class="category-choice-btn" value="animals" type="radio" name="category">
+                    <i class="fas fa-paw"><br><span class="category-name">Animals</span></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--------------------------difficulty choice modal------------------->
+    <div class="modal" id="difficulty-choice-modal">
+        <div class="jumbotron message-homepage">
+        <h2>Please select Difficulty Level...</h2>
+        <div class="row difficulty-choice">
+            <div class="col-12 col-md-4">
+                <button class="difficulty-sel-input" value="easy" type="radio" id="easy" name="difficulty">
+                    <i class="fas fa-skiing"><br><span class="difficulty-name">Easy</span></i>
+                </button>
+            </div>
+            <div class="col-12 col-md-4">
+                <button class="difficulty-sel-input" value="medium" type="radio" id="medium" name="difficulty">
+                    <i class="far fa-arrow-alt-circle-right"><br><span class="difficulty-name">Medium</span></i>
+                </button>
+            </div>
+            <div class="col-12 col-md-4">
+                <button class="difficulty-sel-input" value="hard" type="radio" id="hard" name="difficulty">
+                    <i class="fas fa-mountain"><br><span class="difficulty-name">Hard</span></i>
+                </button>
+            </div>
+                <!--<div class="container-fluid difficulty-selection-container">
+                    <input class="difficulty-sel-input" type="radio" id="" name="difficulty" value="easy" required>
+                    <label for="easy">Easy</label>
+                    <input class="difficulty-sel-input" type="radio" id="medium" name="difficulty" value="medium">
+                    <label for="medium">Medium</label>
+                    <input class="difficulty-sel-input" type="radio" id="hard" name="difficulty" value="hard">
+                    <label for="hard">Hard</label>
+                </div>
+                <div class="start-button-container">
+                    <button type="button" id="start-button" class="btn btn-success">Start</button>
+                </div>-->
             </div>
         </div>
     </div>

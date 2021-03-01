@@ -365,6 +365,40 @@ if(contactLink) {
         }
     });
 }
+
+/**********************category choice modal******************************/
+let categoryChoiceLink = document.getElementById("category-choice-link");
+let categoryChoiceModal = document.getElementById("category-choice-modal");
+if(categoryChoiceLink) {
+    categoryChoiceLink.addEventListener("click", function() {
+        //console.log(loginModal);
+
+        categoryChoiceModal.style.display = "block";
+
+        window.onclick = function(event) {
+        if (event.target == categoryChoiceModal) {
+            categoryChoiceModal.style.display = "none";
+            }
+        }
+    });
+}
+
+/**********************difficulty choice modal******************************/
+let difficultyChoiceLink = document.getElementById("difficulty-choice-link");
+let difficultyChoiceModal = document.getElementById("difficulty-choice-modal");
+if(difficultyChoiceLink) {
+    difficultyChoiceLink.addEventListener("click", function() {
+        //console.log(loginModal);
+
+        difficultyChoiceModal.style.display = "block";
+
+        window.onclick = function(event) {
+        if (event.target == difficultyChoiceModal) {
+            difficultyChoiceModal.style.display = "none";
+            }
+        }
+    });
+}
 /*
 // function to get the value from registration form
 // and save them as an object into array
