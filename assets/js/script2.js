@@ -1,7 +1,6 @@
 // declare variables
 
 let questionListArray;
-let chosenCategory;
 let difficultyLevel;
 let i = 0;
 let totCorrect = 0;
@@ -16,34 +15,39 @@ localStorage.setItem("registeredUserDatabase", JSON.stringify(registeredUserData
 // then collect the input to choose the level of difficulty
 
 document.addEventListener("DOMContentLoaded", function() {
-});
-    /*let gameChoices = document.getElementsByClassName("game-choice-btn");
-    console.log(gameChoices);
+    let inputs = document.getElementsByClassName("difficulty-sel-input");
+    console.log(inputs);
 
-    for(let choice of gameChoices) {
-        choice.addEventListener("click", function() {
-            if (this.getAttribute("value") === "category") {
-                selectCategory();
-            } else if (this.getAttribute("value") === "difficulty") {
-                selectDifficultyLevel();
-                
-            } else {
+    for(let input of inputs) {
+        input.addEventListener("click", function() {
+            if (this.getAttribute("value") === "easy") {
+                difficultyLevel = this.getAttribute("value");
+                getReady(difficultyLevel);
+
+            }else if (this.getAttribute("value") === "medium") {
+                difficultyLevel = this.getAttribute("value");
+                getReady(difficultyLevel);
+
+            }else if (this.getAttribute("value") === "hard") {
+                difficultyLevel = this.getAttribute("value");
+                getReady(difficultyLevel);
+
+            }else {
                 alert("Incorrect value. Please select the difficulty level");
                 throw "Error... Incorrect value... Aborting...";
-            }
-        });
-    
-});*/
-
+                }
+            });
+        }
+    });
 
 // after the level of difficulty has bee chosen 
 // the function get ready calls the get question array function
-//few more steps before the user press the start button 
+//few more steps before the user press the start button
 
-function getReady(chosenCategory,  difficultyLevel) {
+function getReady(difficultyLevel) {
 
-    getQuestionArray(chosenCategory, difficultyLevel);
-    //alert(`You have select the ${difficultyLevel} level`);
+    getQuestionArray(difficultyLevel);
+    alert(`You have select the ${difficultyLevel} level`);
 
     setTimeout(function() {
         console.log(questionListArray);
@@ -53,31 +57,16 @@ function getReady(chosenCategory,  difficultyLevel) {
 // passing the difficulty level to a function for 
 // getting the list of question from remote api
 // and store it in a array questionListArray
-function getQuestionArray(difficultyLevel, chosenCategory){
+function getQuestionArray(difficultyLevel){
     let xhr = new XMLHttpRequest();
-    let amountQuestions;
 
-    switch(difficultyLevel) {
-        case "easy":
-            amountQuestions = 10;
-            break;
-        case "medium":
-            amountQuestions = 15;
-            break;
-        case "hard":
-            amountQuestions = 20;
-            break;
-    }
-
-    xhr.open("GET" , `https://opentdb.com/api.php?amount=${amountQuestions}&category=${chosenCategory}&difficulty=${difficultyLevel}`);
+    xhr.open("GET" , `https://opentdb.com/api.php?amount=10&difficulty=${difficultyLevel}`);
     xhr.send("POST");
 
     xhr.onreadystatechange = function() {
     
     if(this.readyState === 4 && this.status === 200) {
         questionListArray = JSON.parse(this.responseText);
-
-        createStartButton();
         $("#start-button").css({"background-color": "#1fe24c"});
 
         }
@@ -291,7 +280,7 @@ function shuffle(possibleAnswers) {
     return possibleAnswers;
 }
 
-/*// Change selected button background to green if answer is correct
+// Change selected button background to green if answer is correct
 function changeGreenBgColor(btnId) {
     switch(btnId) {
         case btnId === "btn-1":
@@ -307,9 +296,9 @@ function changeGreenBgColor(btnId) {
             $("#btn-4").css({"background-color": "#1fe24c"});
             break;
     }
-}*/
+}
 
-/*// Change selected button background to red if answer is incorrect
+// Change selected button background to red if answer is incorrect
 function changeRedBgColor(btnId) {
     switch(btnId) {
         case btnId === "btn-1":
@@ -325,7 +314,7 @@ function changeRedBgColor(btnId) {
             $("#btn-4").css({"background-color": "red"});
             break;
     }
-}*/
+}
 /************************registration modal*************************/
 let registrationLink = document.getElementById("registration-link");
 let registrationModal = document.getElementById("registration-modal");
@@ -378,7 +367,7 @@ if(contactLink) {
 }
 
 /**********************category choice modal******************************/
-/*let categoryChoiceLink = document.getElementById("category-choice-link");
+let categoryChoiceLink = document.getElementById("category-choice-link");
 let categoryChoiceModal = document.getElementById("category-choice-modal");
 if(categoryChoiceLink) {
     categoryChoiceLink.addEventListener("click", function() {
@@ -392,10 +381,10 @@ if(categoryChoiceLink) {
             }
         }
     });
-}*/
+}
 
 /**********************difficulty choice modal******************************/
-/*let difficultyChoiceLink = document.getElementById("difficulty-choice-link");
+let difficultyChoiceLink = document.getElementById("difficulty-choice-link");
 let difficultyChoiceModal = document.getElementById("difficulty-choice-modal");
 if(difficultyChoiceLink) {
     difficultyChoiceLink.addEventListener("click", function() {
@@ -409,7 +398,7 @@ if(difficultyChoiceLink) {
             }
         }
     });
-}*/
+}
 /*
 // function to get the value from registration form
 // and save them as an object into array
@@ -444,17 +433,17 @@ registrationButton.addEventListener("click", function() {
 
 // choice category modal mouseenter function
 
-/*let categoryButtons = document.getElementsByClassName("category-choice-btn");
+let categoryButtons = document.getElementsByClassName("category-choice-btn");
 console.log(categoryButtons);
 for(let button of categoryButtons) {
     button.addEventListener("mouseenter", function() {
         this.style.backgroundColor = "orange";
     });
-}*/
+}
 
 // choice category modal mouseleave function
 
-/*categoryButtons = document.getElementsByClassName("category-choice-btn");
+categoryButtons = document.getElementsByClassName("category-choice-btn");
 console.log(categoryButtons);
 for(let button of categoryButtons) {
     button.addEventListener("mouseleave", function() {
@@ -463,264 +452,14 @@ for(let button of categoryButtons) {
         if(bg === "rgb(255, 165, 0)")
         this.style.backgroundColor = "#fafafa";
     });
-}*/
+}
 
 // choice category modal change selected button function
-/*categoryButtons = document.getElementsByClassName("category-choice-btn");
+
+categoryButtons = document.getElementsByClassName("category-choice-btn");
 console.log(categoryButtons);
 for(let button of categoryButtons) {
     button.addEventListener("click", function() {
         this.style.backgroundColor = "green";
     });
-}*/
-function selectCategory(){
-    let categoryChoiceModal = document.getElementById("category-choice-modal");
-    categoryChoiceModal.style.display = "block";
-    let categories = document.getElementsByClassName("category-choice-btn");
-    console.log(categories);
-
-    for(let category of categories) {
-        category.addEventListener("click", function() {
-            switch(this.getAttribute("value")) {
-                case "general":
-                    chosenCategory = "9";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="general">
-                        <i class="fas fa-brain"><br><span class="category-name">General</span></i>
-                    </button>`
-                    break;
-
-                case "book":
-                    chosenCategory = "10";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="book">
-                        <i class="fas fa-book"><br><span class="category-name">Books</span></i>
-                    </button>`
-                    break;
-
-                case "film":
-                    chosenCategory = "11";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="film">
-                        <i class="fas fa-film"><br><span class="category-name">Movies</span></i>
-                    </button>`
-                    break;
-                    
-                case "music":
-                    chosenCategory = "12";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="music">
-                        <i class="fas fa-music"><br><span class="category-name">Music</span></i>
-                    </button>`
-                    break;
-
-                case "tv":
-                    chosenCategory = "14";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="tv">
-                        <i class="fas fa-tv"><br><span class="category-name">TV</span></i>
-                    </button>`
-                    break;
-
-                case "video-games":
-                    chosenCategory = "15";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="video-games">
-                        <i class="fas fa-gamepad"><br><span class="category-name">Videogames</span></i>
-                    </button>`
-                    break;
-
-                case "computer":
-                    chosenCategory = "18";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="computer">
-                        <i class="fas fa-laptop"><br><span class="category-name">Computer</span></i>
-                    </button>`
-                    break;
-
-                case "math":
-                    chosenCategory = "19";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="math">
-                        <i class="fas fa-calculator"><br><span class="category-name">Math</span></i>
-                    </button>`
-                    break;
-
-                case "sport":
-                    chosenCategory = "21";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="sport">
-                        <i class="fas fa-futbol"><br><span class="category-name">Sport</span></i>
-                    </button>`
-                    break;
-
-                case "geography":
-                    chosenCategory = "22";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="geography">
-                        <i class="fas fa-atlas"><br><span class="category-name">Geography</span></i>
-                    </button>`
-                    break;
-
-                case "history":
-                    chosenCategory = "23";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="history">
-                        <i class="fas fa-history"><br><span class="category-name">History</span></i>
-                    </button>`
-                    break;
-
-                case "animals":
-                    chosenCategory = "27";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="animals">
-                        <i class="fas fa-paw"><br><span class="category-name">Animals</span></i>
-                    </button>`
-                    break;
-            }
-        });
-    }
-    return chosenCategory;
-}
-
-
-function selectDifficultyLevel() {
-    let difficultyChoiceModal = document.getElementById("difficulty-choice-modal");
-    difficultyChoiceModal.style.display = "block";
-    let difficulties = document.getElementsByClassName("difficulty-sel-input");
-    console.log(difficulties);
-
-    for(let difficulty of difficulties) {
-        difficulty.addEventListener("click", function() {
-            if (this.getAttribute("value") === "easy") {
-                difficultyLevel = this.getAttribute("value");
-                this.style.backgroundColor = "rgb(42, 235, 42)";
-                this.style.color = "#000";
-                setTimeout(function(){
-                    difficultyChoiceModal.style.display = "none";
-                },1000);
-                document.getElementById("difficulty-container").innerHTML =
-                    `<button class="difficulty-sel-input" value="easy" type="radio" id="easy-btn" name="difficulty">
-                        <i class="fas fa-skiing"><br><span class="difficulty-name">Easy</span></i>
-                    </button>`
-                //getReady(difficultyLevel);
-
-            }else if (this.getAttribute("value") === "medium") {
-                difficultyLevel = this.getAttribute("value");
-                this.style.backgroundColor = "rgb(255, 238, 0)";
-                this.style.color = "#000";
-                setTimeout(function(){
-                    difficultyChoiceModal.style.display = "none";
-                },1000);
-                document.getElementById("difficulty-container").innerHTML =
-                    `<button class="difficulty-sel-input" value="medium" type="radio" id="medium-btn" name="difficulty">
-                        <i class="fas fa-arrow-alt-circle-right"><br><span class="difficulty-name">Medium</span></i>
-                    </button>`
-                //getReady(difficultyLevel);
-
-            }else if (this.getAttribute("value") === "hard") {
-                difficultyLevel = this.getAttribute("value");
-                this.style.backgroundColor = "rgb(250, 0, 0)";
-                this.style.color = "#000";
-                setTimeout(function(){
-                    difficultyChoiceModal.style.display = "none";
-                },1000);
-                document.getElementById("difficulty-container").innerHTML =
-                    `<button class="difficulty-sel-input" value="hard" type="radio" id="hard-btn" name="difficulty">
-                        <i class="fas fa-mountain"><br><span class="difficulty-name">Hard</span></i>
-                    </button>`
-                //getReady(difficultyLevel);
-
-            }else {
-                alert("Incorrect value. Please select the difficulty level");
-                throw "Error... Incorrect value... Aborting...";
-                }
-            
-        });
-    }
-    return difficultyLevel;
-}
-function createStartButton() {
-    document.getElementsByClassName("start-button-container").innerHTML =
-    `<button type="button" id="start-button" class="btn btn-success">Start</button>`;
-}
-
-function getReadyStart() {
-    let gameChoices = document.getElementsByClassName("game-choice-btn");
-    console.log(gameChoices);
-
-    for(let choice of gameChoices) {
-        choice.addEventListener("click", function() {
-            if (this.getAttribute("value") === "category") {
-                selectCategory();
-            } else if (this.getAttribute("value") === "difficulty") {
-                selectDifficultyLevel();
-                
-            } else {
-                alert("Incorrect value. Please select the difficulty level");
-                throw "Error... Incorrect value... Aborting...";
-            }
-        });
-    }
-    return chosenCategory , difficultyLevel;
 }

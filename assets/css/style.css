@@ -219,13 +219,13 @@ hr {
     display: none;
 }
 .jumbotron {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 0;
     padding: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
     text-align: center;
-    padding: 20px ;
     border: 0.5px solid #eca54c;
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.60);
@@ -305,6 +305,10 @@ input {
     }
     .btn-answer-container {
         padding: 10px 20%;
+    }
+    #replace-question-container {
+        margin-left: 150px;
+        margin-right: 150px;
     }
 }
 @media screen and (max-width: 767px) {
@@ -481,8 +485,6 @@ input {
     width: 100px;
     height: 100px;
     margin: 20px 10px;
-    background-color: #fafafa;
-    color: blueviolet;
     padding-top: 10px;
     border: 2px solid #111111;
     border-radius: 10px;
@@ -500,6 +502,10 @@ input {
     font-size: 15px;
     color: #111111;
 }
+#category-choice-link {
+    background-color: #fafafa;
+    color: blueviolet;
+}
 /*****************category choice screen*****************************/
 .category-choice div button {
     width: 100px;
@@ -514,11 +520,21 @@ input {
 .category-choice div button i {
     font-size: 30px;
 }
+.game-choice .col-4 {
+    text-align: center;
+}
 .category-name {
     font-size: 15px;
     color: #111111;
 }
+.chosen-category-choice-btn {
+    background-color: rgb(42, 235, 42);
+    color: #000;
+}
 /******************************level choice modal*****************************/
+.difficulty-choice {
+    margin: 0px 50px;
+}
 .difficulty-choice div button {
     width: 100px;
     height: 100px;
@@ -535,4 +551,17 @@ input {
 .difficulty-name {
     font-size: 15px;
     color: #111111;
+}
+#difficulty-choice-link {
+    background-color: #fafafa;
+    color: blueviolet;
+}
+#easy-btn {
+    background-color: rgb(42, 235, 42);
+}
+#medium-btn {
+    background-color: rgb(255, 238, 0);
+}
+#hard-btn {
+    background-color:rgb(250, 0, 0);
 }
