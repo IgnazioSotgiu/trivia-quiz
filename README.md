@@ -83,3 +83,7 @@ Background image in homepage:
 <a href='https://pngtree.com/free-backgrounds'>free background photos from pngtree.com</a>
 
 dark question mark band https://www.freepik.com/free-photo/color-interrogation-symbols_973682.htm#page=1&query=question%20mark&position=38
+
+green circle tick Animated icon by <a href='http://icons8.com'>Icons8</a>
+
+loading circles Animated icon by <a href='http://icons8.com'>Icons8</a>

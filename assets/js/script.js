@@ -16,33 +16,36 @@ localStorage.setItem("registeredUserDatabase", JSON.stringify(registeredUserData
 // then collect the input to choose the level of difficulty
 
 document.addEventListener("DOMContentLoaded", function() {
-});
-    /*let gameChoices = document.getElementsByClassName("game-choice-btn");
-    console.log(gameChoices);
-
-    for(let choice of gameChoices) {
-        choice.addEventListener("click", function() {
-            if (this.getAttribute("value") === "category") {
-                selectCategory();
-            } else if (this.getAttribute("value") === "difficulty") {
-                selectDifficultyLevel();
-                
-            } else {
-                alert("Incorrect value. Please select the difficulty level");
-                throw "Error... Incorrect value... Aborting...";
-            }
-        });
     
-});*/
+    createStartButton(getReadyStart);
+    getReadyStart();
+    
+    let startButton = document.getElementById("start-button");
+    startButton.addEventListener("click",function() {
+        if(chosenCategory && difficultyLevel) {
+            console.log(chosenCategory, difficultyLevel);
+            getReady(chosenCategory, difficultyLevel);
+
+
+
+            setTimeout(function() {
+                startQuestions(questionListArray);
+            }, 1000);
+
+        }
+
+    });
+
+});
 
 
 // after the level of difficulty has bee chosen 
 // the function get ready calls the get question array function
 //few more steps before the user press the start button 
 
-function getReady(chosenCategory,  difficultyLevel) {
+function getReady(difficultyLevel, chosenCategory) {
 
-    getQuestionArray(chosenCategory, difficultyLevel);
+    getQuestionArray(difficultyLevel, chosenCategory);
     //alert(`You have select the ${difficultyLevel} level`);
 
     setTimeout(function() {
@@ -53,21 +56,21 @@ function getReady(chosenCategory,  difficultyLevel) {
 // passing the difficulty level to a function for 
 // getting the list of question from remote api
 // and store it in a array questionListArray
-function getQuestionArray(difficultyLevel, chosenCategory){
+function getQuestionArray(chosenCategory, difficultyLevel){
     let xhr = new XMLHttpRequest();
     let amountQuestions;
+    console.log(difficultyLevel);
+    if(difficultyLevel == "easy") {
+        amountQuestions = "10";
+    } else if(difficultyLevel == "medium") {
+        amountQuestions = "13";
+    } else if(difficultyLevel == "hard") {
+        amountQuestions = "15";
+    } else (
+        console.log("error. not recognize difficulty choice")
+    )
 
-    switch(difficultyLevel) {
-        case "easy":
-            amountQuestions = 10;
-            break;
-        case "medium":
-            amountQuestions = 15;
-            break;
-        case "hard":
-            amountQuestions = 20;
-            break;
-    }
+    console.log(difficultyLevel, chosenCategory, amountQuestions);
 
     xhr.open("GET" , `https://opentdb.com/api.php?amount=${amountQuestions}&category=${chosenCategory}&difficulty=${difficultyLevel}`);
     xhr.send("POST");
@@ -76,8 +79,9 @@ function getQuestionArray(difficultyLevel, chosenCategory){
     
     if(this.readyState === 4 && this.status === 200) {
         questionListArray = JSON.parse(this.responseText);
+        console.log(questionListArray);
 
-        createStartButton();
+        //createStartButton();
         $("#start-button").css({"background-color": "#1fe24c"});
 
         }
@@ -88,10 +92,10 @@ function getQuestionArray(difficultyLevel, chosenCategory){
 // adding event listener waiting for the click of the start 
 // button to execute startQuestion function
 
-let myButton = document.getElementById("start-button");
+/*let myButton = document.getElementById("start-button");
 if(myButton) {
     myButton.addEventListener("click", startQuestions);
-}
+}*/
 
 
 // display the question on the array and creating a event listener
@@ -722,5 +726,21 @@ function getReadyStart() {
             }
         });
     }
-    return chosenCategory , difficultyLevel;
+    return chosenCategory, difficultyLevel;
 }
+    /*let gameChoices = document.getElementsByClassName("game-choice-btn");
+    console.log(gameChoices);
+
+    for(let choice of gameChoices) {
+        choice.addEventListener("click", function() {
+            if (this.getAttribute("value") === "category") {
+                selectCategory();
+            } else if (this.getAttribute("value") === "difficulty") {
+                selectDifficultyLevel();
+                
+            } else {
+                alert("Incorrect value. Please select the difficulty level");
+                throw "Error... Incorrect value... Aborting...";
+            }
+        });
+    }*/

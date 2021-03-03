@@ -54,23 +54,22 @@
             <p>Welcome to the Trivia Quiz game. <br>Choose the Category and the Difficulty level and start to play...</p>
         </div>
         <div class="row game-choice">
-            <div class="col-4" id="category-container">
+            <div class="col-6" id="category-container">
                 <button class="game-choice-btn" value="category" type="" name="game"
                     id="category-choice-link" data-open="category-choice-modal" data-toggle="category-choice-modal" data-backdrop="false" href="#">
                     <i class="fas fa-question"><br><span class="category-choice-name">Category</span></i>
                 </button>
             </div>
-            <div class="col-4 start-button-container">
-                <button type="button" id="start-button" class="btn btn-success">Start</button>
-            </div>
-            <div class="col-4" id="difficulty-container">
+            <div class="col-6" id="difficulty-container">
                 <button class="game-choice-btn" value="difficulty" type="" name="game"
                     id="difficulty-choice-link" data-open="difficulty-choice-modal" data-toggle="difficulty-choice-modal" data-backdrop="false" href="#">
                     <i class="fas fa-signal"><br><span class="category-name">Level</span></i>
                 </button>
             </div>
         </div>
-        
+        <div class="start-button-container">
+            <button type="button" id="start-button" class="btn btn-success"><i class="fas fa-hourglass-start"><br><span id="start-button-text">Start</span></i></button>
+        </div>
     </div>
     <footer>
         <div class="container-fluid footer-container">
