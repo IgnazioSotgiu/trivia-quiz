@@ -99,6 +99,7 @@ body {
     padding-top: 10px;
     border: 2px solid #000;
     border-radius: 10px;
+    box-shadow: none;
 }
 .start-button-container button i {
     font-size: 30px;

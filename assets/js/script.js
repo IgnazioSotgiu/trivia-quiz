@@ -8,34 +8,24 @@ let totCorrect = 0;
 let totIncorrect = 0;
 let vote = "";
 
-//keep registeredUserDatabase in local storage
+/*keep registeredUserDatabase in local storage
 let registeredUserDatabase = [];
-localStorage.setItem("registeredUserDatabase", JSON.stringify(registeredUserDatabase));
+localStorage.setItem("registeredUserDatabase", JSON.stringify(registeredUserDatabase));*/
 
 // wait for the DOM to finish loading page
 // then collect the input to choose the level of difficulty
 
 document.addEventListener("DOMContentLoaded", function() {
-    
-    createStartButton(getReadyStart);
-    getReadyStart();
+    //getReadyStart();
+
+    let categoryButton = document.getElementById("category-choice-link");
+    categoryButton.addEventListener("click", selectCategory);
+
+    let difficultyButton = document.getElementById("difficulty-choice-link");
+    difficultyButton.addEventListener("click", selectDifficultyLevel);
     
     let startButton = document.getElementById("start-button");
-    startButton.addEventListener("click",function() {
-        if(chosenCategory && difficultyLevel) {
-            console.log(chosenCategory, difficultyLevel);
-            getReady(chosenCategory, difficultyLevel);
-
-
-
-            setTimeout(function() {
-                startQuestions(questionListArray);
-            }, 1000);
-
-        }
-
-    });
-
+    startButton.addEventListener("click", checkSelection);
 });
 
 
@@ -161,47 +151,59 @@ function startQuestions(event) {
                 <span id="correct-answers">Correct Answers</span><span id="correct-number">${totCorrect}</span><span id="incorrect-answers">Incorrect Answers</span><span id="incorrect-number">${totIncorrect}</span>
             </div>`;
             
-            let buttons = document.getElementsByClassName("boolean-answer-button");
-            console.log(buttons);
+            let booleanAnswerButtons = document.getElementsByClassName("boolean-answer-button");
+            console.log(booleanAnswerButtons);
 
-            for (let button of buttons) {
+            for (let button of booleanAnswerButtons) {
                 button.addEventListener("click", function() {
                     let value = this.getAttribute("value");
                     let btnId = this.getAttribute("id");
 
                     if(value == correctAnswer) {
+                        this.style.backgroundColor = "green";
                         incrementCorrect();
                         i++;
-                        alert("Congratulations! Your answer is correct");
-                        startQuestions()
+                        //alert("Congratulations! Your answer is correct");
+                        setTimeout(function(){
+                            startQuestions();
+                        }, 1000); 
                     } else {
+                        this.style.backgroundColor = "red";
                         incrementIncorrect();
                         i++;
-                        alert(`Arrgh.... Your answer is incorrect. Keep practicing!`);
-                        startQuestions();
+                        //alert(`Arrgh.... Your answer is incorrect. Keep practicing!`);
+                        setTimeout(function(){
+                            startQuestions();
+                        }, 1000);
                     }
                 });
             }
-            let answerButtons = document.getElementsByClassName("multiple-answer-button");
-            console.log(answerButtons);
+            let multipleAnswerButtons = document.getElementsByClassName("multiple-answer-button");
+            console.log(multipleAnswerButtons);
             
-            for (let answerButton of answerButtons) {
+            for (let answerButton of multipleAnswerButtons) {
                 answerButton.addEventListener("click", function() {
                     let value = this.getAttribute("value");
                     let btnId = this.getAttribute("id");
 
                     if(value == correctAnswer) {
-                        changeGreenBgColor(btnId);
+                        //changeGreenBgColor(btnId);
+                        this.style.backgroundColor = "green";
                         incrementCorrect();
                         i++;
-                        alert("Congratulations! Your answer is correct");
-                        startQuestions();
+                        //alert("Congratulations! Your answer is correct");
+                        setTimeout(function(){
+                            startQuestions();
+                        }, 1000);
                     } else {
-                        changeRedBgColor(btnId);
+                        //changeRedBgColor(btnId);
+                        this.style.backgroundColor = "red";
                         incrementIncorrect();
                         i++;
-                        alert(`Arrgh.... Your answer is incorrect. Keep practicing!`+ "\n" +`The correct answer was ${correctAnswer}`);
-                        startQuestions();
+                        //alert(`Arrgh.... Your answer is incorrect. Keep practicing!`+ "\n" +`The correct answer was ${correctAnswer}`);
+                        setTimeout(function(){
+                            startQuestions();
+                        }, 1000);
                     }
                 });
             }
@@ -234,7 +236,7 @@ function incrementIncorrect() {
 
 // calculate the percentage of correct answers
 function calculatePercentageCorrect() {
-    result = (totCorrect*100)/questionListArray.results.length;
+    result = ((totCorrect*100)/questionListArray.results.length).toFixed(2);
     return result;
 }
 
@@ -311,9 +313,9 @@ function changeGreenBgColor(btnId) {
             $("#btn-4").css({"background-color": "#1fe24c"});
             break;
     }
-}*/
+}
 
-/*// Change selected button background to red if answer is incorrect
+// Change selected button background to red if answer is incorrect
 function changeRedBgColor(btnId) {
     switch(btnId) {
         case btnId === "btn-1":
@@ -482,6 +484,12 @@ function selectCategory(){
     categoryChoiceModal.style.display = "block";
     let categories = document.getElementsByClassName("category-choice-btn");
     console.log(categories);
+
+    window.onclick = function(event) {
+        if (event.target == categoryChoiceModal) {
+            categoryChoiceModal.style.display = "none";
+            }
+        }
 
     for(let category of categories) {
         category.addEventListener("click", function() {
@@ -654,6 +662,12 @@ function selectDifficultyLevel() {
     let difficulties = document.getElementsByClassName("difficulty-sel-input");
     console.log(difficulties);
 
+    window.onclick = function(event) {
+        if (event.target == difficultyChoiceModal) {
+            difficultyChoiceModal.style.display = "none";
+            }
+        }
+
     for(let difficulty of difficulties) {
         difficulty.addEventListener("click", function() {
             if (this.getAttribute("value") === "easy") {
@@ -704,12 +718,12 @@ function selectDifficultyLevel() {
     }
     return difficultyLevel;
 }
-function createStartButton() {
+/*function createStartButton() {
     document.getElementsByClassName("start-button-container").innerHTML =
-    `<button type="button" id="start-button" class="btn btn-success">Start</button>`;
-}
+    `<button type="button" id="start-button" class="btn btn-success"><i class="fas fa-hourglass-start"><br><span id="start-button-text">Start</span></i></button>`;
+}*/
 
-function getReadyStart() {
+/*function getReadyStart() {
     let gameChoices = document.getElementsByClassName("game-choice-btn");
     console.log(gameChoices);
 
@@ -727,7 +741,7 @@ function getReadyStart() {
         });
     }
     return chosenCategory, difficultyLevel;
-}
+}*/
     /*let gameChoices = document.getElementsByClassName("game-choice-btn");
     console.log(gameChoices);
 
@@ -744,3 +758,25 @@ function getReadyStart() {
             }
         });
     }*/
+
+function checkSelection() {
+
+    console.log(chosenCategory, difficultyLevel);
+
+    if(chosenCategory && difficultyLevel) {
+    
+        console.log(chosenCategory, difficultyLevel);
+        getReady(chosenCategory, difficultyLevel);
+
+        setTimeout(function() {
+            startQuestions(questionListArray);
+        }, 1000);
+    } else if(chosenCategory && !difficultyLevel) {
+        alert("please select a difficulty level");
+    } else if(!chosenCategory && difficultyLevel) {
+        alert("please select category");
+    } else {
+        alert("please select category and difficulty level to play")
+    }
+    
+}
