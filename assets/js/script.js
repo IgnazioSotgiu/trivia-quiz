@@ -780,3 +780,4 @@ function checkSelection() {
     }
     
 }
+// connecting the contact email with my gmail account using emailJs
