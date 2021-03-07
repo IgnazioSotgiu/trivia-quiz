@@ -784,7 +784,7 @@ function checkSelection() {
 
 
 
-$(function () {
+/*$(function () {
 
   // put your own error messages and/or message translation logic here
 
@@ -1029,4 +1029,4 @@ $(function () {
         event.preventDefault();
         return false;
     });
-});
+});*/

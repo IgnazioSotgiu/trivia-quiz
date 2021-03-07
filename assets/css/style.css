@@ -32,7 +32,7 @@ body {
 /****************************navbar******************************************/
 .navbar {
     border-radius: 20px;
-    background-color: #eca54c;
+    background-color: #713200;
     color: #fafafa;
 }
 .navbar-dark .navbar-nav .nav-link {
@@ -81,7 +81,7 @@ body {
     z-index: 1;
     padding-top: 8px;
 }
-#registration-form-logo {
+.small-trivia-logo {
     width: 100px;
     height: 100px;
     margin: auto;
@@ -92,7 +92,7 @@ body {
     border: 2px solid #fafafa;
     border-radius: 50%;
 }
-#registration-form-logo h3 {
+.small-trivia-logo h3 {
     color: #fafafa;
     font-weight: 600;
     text-decoration: none;
@@ -102,7 +102,7 @@ body {
     margin-top: -7px;
     color: #fafafa;
 }
-#registration-form-logo a:hover {
+.small-trivia-logo a:hover {
     text-decoration: none;
 }
 .message-homepage {
@@ -153,10 +153,14 @@ p {
     margin-bottom: 5px;
     font-size: 20px;
 }
+.footer-bg-color {
+    background-color: #713200;
+}
 .footer-container {
     padding: 20px 150px 5px;
     text-align: center;
     color: #fafafa;
+    margin-top: 60px;
 }
 .footer-container i {
     color: #fafafa;
@@ -184,7 +188,7 @@ p {
     color: #fafafa;
 }
 hr {
-    background-color: #eca54c;
+    background-color: #713200;
     height: 0.5px;
     width: 50%;
     margin-top: 0;
@@ -355,6 +359,12 @@ input {
     width: 80%;
     max-width: 600px;
     border-radius: 10px;
+}
+.home-link {
+    padding-top: 10px;
+}
+.home-link a {
+    color: #fafafa;
 }
 @media screen and (min-width:1000px) {
     .footer-container {

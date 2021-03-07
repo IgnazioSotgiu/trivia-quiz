@@ -10,13 +10,8 @@
     <link rel="icon" href="assets/images/favicon.ico" sizes="16x16" type="image/ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-hQpvDQiCJaD2H465dQfA717v7lu5qHWtDbWNPvaTJ0ID5xnPUlVXnKzq7b8YUkbN" crossorigin="anonymous">
-    <link href="https://triviaquizusers-3a90.restdb.io/assets/css/jquery.datetimepicker.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Title</title>
-
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
     </script>
@@ -45,18 +40,19 @@
             <div class="collapse navbar-collapse" id="navbarTriviaQuizDropdown">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item nav-link"><i class="fas fa-moon" id="change-mode-icon"></i></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="registration.html">Register</a></li>
-                    <li class="nav-item"><a class="nav-link" id="login-link" data-open="login-modal" data-toggle="login-modal" data-backdrop="false" href="#">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" id="contact-link" data-open="contact-modal" data-toggle="contact-modal" data-backdrop="false" href="#">Contact</a></li>
-                    <li class="nav-item dropdown">
+                    <!--<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>-->
+                    <li class="nav-item"><a class="nav-link" href="registration.html">Register For Our Newsletter</a></li>
+                    <!--<li class="nav-item"><a class="nav-link" id="login-link" data-open="login-modal" data-toggle="login-modal" data-backdrop="false" href="#">Login</a></li>-->
+                    <li class="nav-item"><a class="nav-link" id="contact-link" data-open="contact-modal" data-toggle="contact-modal" data-backdrop="false" href="#">Contact Us</a></li>
+                    <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="leaderboards.html" id="navbarLeaderboardsDropdownLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-hidden="false">Leaderboards</a>
                         <div class="dropdown-menu" aria-labelledby="navbarLeaderboardsDropdownLink">
                             <a class="dropdown-item" href="database1.html">Top 10 Easy</a>
                             <a class="dropdown-item" href="top-ten-medium.html">Top 10 Medium</a>
                             <a class="dropdown-item" href="top-ten-hard.html">Top 10 Hard</a>
                         </div>
-                    </li>
+                    </li>-->
+                    <li class="nav-item"><a class="nav-link" id="instruction" data-open="instruction-modal" data-toggle="instruction-modal" data-backdrop="false" href="#">Instructions</a></li>
                 </ul>
             </div>
         </nav>
@@ -84,7 +80,7 @@
             <button type="button" id="start-button" class="btn btn-success"><i class="fas fa-hourglass-start"><br><span id="start-button-text">Start</span></i></button>
         </div>
     </div>
-    <footer>
+    <footer class="footer-bg-color">
         <div class="container-fluid footer-container">
             <div class="row row-center social-media">
                 <div class="col-4 col-center">
@@ -191,34 +187,12 @@
             </div>
         </div>
     </div>-->
-    <!--------------------------------login modal------------------------------>
-    <div class="modal" id="login-modal">
+    <!--------------------------------instructions modal------------------------------>
+    <div class="modal" id="instructions-modal">
         <div class="jumbotron">
-            <div class="login-form-container">
-                <h4>Please login to Trivia Quiz.</h4>
-                <form>
-                    <div class="row">
-                        <div class="login-form-label col-12 col-md-6">
-                            <label for="login-email">Email Address</label>
-                        </div>
-                        <div class="login-form-input col-12 col-md-6">
-                            <input type="email" class="email-input" id="login-email" placeholder="email">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="login-form-label col-12 col-md-6">
-                            <label for="password">Enter Password</label>
-                        </div>
-                        <div class="login-form-input col-12 col-md-6">
-                            <input type="text" class="password" id="password" placeholder="password">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="login-button col-12">
-                            <button type="send" class="btn btn-light">login</button>
-                        </div>
-                    </div>
-                </form>
+            <div class="instructions-container">
+                <h4>About Trivia Quiz...</h4>
+                <p>game description...</p>
             </div>
         </div>
     </div>
@@ -253,12 +227,16 @@
                         <div class="enquiry-container col-12">
                             <label for="subject">Request / Enquiry</label>
                             <br>   
-                            <textarea class="request" id="contact-enquiry" name="subject" placeholder="" required></textarea>
+                            <textarea class="request" id="contact-enquiry" name="subject" placeholder="Write here your message" required></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="contact-button col-12">
-                            <button type="submit" id="contact-submit-btn" class="">Submit</button>
+                            <button type="submit" id="contact-submit-btn" class="btn btn-warning">Submit</button>
+                        </div>
+                    <div class="row"></div>    
+                        <div class="col-12 home-link">
+                            <a href="index.html">HOME</a>
                         </div>
                     </div>
                 </form>
@@ -366,9 +344,9 @@
     <script type="text/javascript" src="assets/js/script.js"></script>
     <script type="text/javascript" src="assets/js/sendEmail.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="https://triviaquizusers-3a90.restdb.io/assets/js/jquery-serialize-object.min.js"></script>
     <script src="https://triviaquizusers-3a90.restdb.io/assets/js/jquery.datetimepicker.full.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.5.1/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.5.1/lodash.min.js"></script>-->
 </body>
 </html>
