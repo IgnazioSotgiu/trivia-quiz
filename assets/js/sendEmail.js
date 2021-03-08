@@ -2,7 +2,7 @@
 // code from code institute and EmailJS website tutorials
 
 
-function sendMail(enquiryForm) {
+function sendMail() {
     emailjs.send("service_crlz8af","triviaquiz",{
         "from_name": document.getElementById("contact-name").value,
         "enquiry": document.getElementById("contact-enquiry").value,
@@ -11,7 +11,7 @@ function sendMail(enquiryForm) {
     .then (
         function(response) {
             console.log("success", response);
-            alert("Your email has been sent");
+            //alert("Your email has been sent");
         },
         function(error) {
             console.log("error", error);
@@ -21,15 +21,19 @@ function sendMail(enquiryForm) {
 
 }
 let contactBtn = document.getElementById("contact-submit-btn");
-contactBtn.addEventListener("click", function() {
+contactBtn.addEventListener("click", checkForm);
+
+function checkForm() {
     let contactName = document.getElementById("contact-name").value;
     let contactEmail = document.getElementById("contact-email").value;
     let contactEnquiry =document.getElementById("contact-enquiry").value;
 
     if(contactName && contactEmail && contactEnquiry) {
-        sendMail(enquiryForm);
+        sendMail();
+        alert("Your email has been sent");
+         
     } else {
         alert("Some fiels are not completed. Please complete the form.");
 
     }
-});
+}

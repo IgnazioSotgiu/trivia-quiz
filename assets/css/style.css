@@ -85,7 +85,6 @@ body {
     width: 100px;
     height: 100px;
     margin: auto;
-    padding-top: 10px;
     text-align: center;
     background-color: #000;
     color: #fafafa;
@@ -288,6 +287,11 @@ hr {
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.60);
 }
+.jumbotron-reg-form {
+    padding: 0;
+    max-width: 700px;
+    margin: 40px auto;
+}
 .form-control {
     width: 60%;
 }
@@ -388,6 +392,10 @@ input {
     .counter-container {
         margin: 20px 20%;
     }
+    .jumbotron-reg-form {
+    padding: 0;
+    margin: 40px 10%;
+    }
     .registration-form-label {
         text-align: center;
         padding-bottom: 0;
@@ -444,7 +452,7 @@ input {
         border-radius:0;
         padding-left: 72px;
     }
-        .navbar-dark .navbar-nav .nav-link {
+    .navbar-dark .navbar-nav .nav-link {
         color: #fafafa;
         font-size: 15px;
         padding-left: 20px;
@@ -452,8 +460,8 @@ input {
         text-align: right;
         margin-left: 40%;
         background-color: rgba(0,0,0,0.8);
-        }
-        #navbar-brand-text {
+    }
+    #navbar-brand-text {
         color: #fafafa;
         font-size: 15px;
     }
@@ -524,6 +532,10 @@ input {
         margin-right: 10px;
         margin-bottom: 0;
         padding: 20px;
+    }
+    .jumbotron-reg-form {
+    padding: 0;
+    margin: 20px 20px;
     }
 }
 @media screen and (max-width:350px) {
