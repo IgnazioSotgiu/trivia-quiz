@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 body {
     min-height: 100vh;
     height: auto;
     width: 100%;
     color: #fafafa;
+    font-family: Roboto, sans-serif;
 
     background: url("../images/background-home.png") no-repeat bottom right; 
     -webkit-background-size: cover;
@@ -145,6 +146,7 @@ body {
     /*display: none;*/
 }
 #start-button-text {
+    font-family: "Roboto";
     font-weight: 300;
     color: #000;
 }
@@ -310,6 +312,7 @@ hr {
     padding-top: 10px;
 }
 input {
+    color: #000;
     border-radius: 10px;
 }
 .modal-btn-container {
@@ -375,13 +378,13 @@ input {
         padding: 20px 250px 5px;
     }
     .counter-container {
-        margin: 20px 30%;
+        margin: 20px 20%;
     }
     .question-container {
         padding: 10px 25%;
     }
     .btn-answer-container {
-        padding: 10px 20%;
+        padding: 10px 15%;
     }
     #replace-question-container {
         margin-left: 150px;
@@ -583,6 +586,8 @@ input {
     font-size: 30px;
 }
 .category-choice-name {
+    font-family: "Roboto";
+    font-weight: 400;
     font-size: 15px;
     color: #111111;
 }
@@ -608,6 +613,8 @@ input {
     text-align: center;
 }
 .category-name {
+    font-family: "Roboto";
+    font-weight: 400;
     font-size: 15px;
     color: #111111;
 }
@@ -633,6 +640,8 @@ input {
     font-size: 30px;
 }
 .difficulty-name {
+    font-family: "Roboto";
+    font-weight: 400;
     font-size: 15px;
     color: #111111;
 }
@@ -648,4 +657,54 @@ input {
 }
 #hard-btn {
     background-color:rgb(250, 0, 0);
+}
+/*sweetalert style*/
+.swal-overlay {
+    background-color: rgba(0, 0, 0, 0.45);
+}
+.swal-modal {
+    background-color: #6b716e;
+    border: 0.5px solid #fafafa;
+    border-radius: 10px;
+}
+.swal-title {
+    margin: 0px;
+    font-size: 25px;
+    color: #000;
+    /*box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);*/
+    margin-bottom: 28px;
+}
+.swal-text {
+    background-color: #000;
+    padding: 17px;
+    border: 0.5px solid #Fafafa;
+    border-radius: 10px;
+    display: block;
+    margin: 22px;
+    text-align: center;
+    color: #fafafa;
+}
+.swal-footer {
+    text-align: center;
+    background-color: #000;
+    margin-top: 32px;
+    overflow: hidden;
+}
+.swal-button {
+    color: #fafafa;
+    padding: 7px 19px;
+    border-radius: 10px;
+    background-color: #713200;
+    font-size: 12px;
+}
+.swal-button:not([disabled]):hover {
+    background-color: rgba(113, 50, 0, 0.5);
+}
+.swal-icon--success__hide-corners {
+    width: 0; 
+    height: 0; 
+    background-color: transparent;
+}
+.swal-icon--success:after, .swal-icon--success:before {
+    content: none;
 }

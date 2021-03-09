@@ -8,15 +8,12 @@ let totCorrect = 0;
 let totIncorrect = 0;
 let vote = "";
 
-/*keep registeredUserDatabase in local storage
-let registeredUserDatabase = [];
-localStorage.setItem("registeredUserDatabase", JSON.stringify(registeredUserDatabase));*/
 
 // wait for the DOM to finish loading page
-// then collect the input to choose the level of difficulty
+//add event listeners for the category choice, the level 
+// of difficulty, and the start button.
 
 document.addEventListener("DOMContentLoaded", function() {
-    //getReadyStart();
 
     let categoryButton = document.getElementById("category-choice-link");
     categoryButton.addEventListener("click", selectCategory);
@@ -36,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function() {
 function getReady(difficultyLevel, chosenCategory) {
 
     getQuestionArray(difficultyLevel, chosenCategory);
-    //alert(`You have select the ${difficultyLevel} level`);
 
     setTimeout(function() {
         console.log(questionListArray);
@@ -56,11 +52,12 @@ function getQuestionArray(chosenCategory, difficultyLevel){
         amountQuestions = "13";
     } else if(difficultyLevel == "hard") {
         amountQuestions = "15";
-    } else (
-        console.log("error. not recognize difficulty choice")
-    )
+    } else {
+        console.log("Error. Difficulty choice not recognized");
+        throw("Error. Difficulty choice not recognized. Aborting....")
+    }
 
-    console.log(difficultyLevel, chosenCategory, amountQuestions);
+    //console.log(difficultyLevel, chosenCategory, amountQuestions);
 
     xhr.open("GET" , `https://opentdb.com/api.php?amount=${amountQuestions}&category=${chosenCategory}&difficulty=${difficultyLevel}`);
     xhr.send("POST");
@@ -71,22 +68,12 @@ function getQuestionArray(chosenCategory, difficultyLevel){
         questionListArray = JSON.parse(this.responseText);
         console.log(questionListArray);
 
-        //createStartButton();
         $("#start-button").css({"background-color": "#1fe24c"});
 
         }
     }
     return questionListArray;
 }
-
-// adding event listener waiting for the click of the start 
-// button to execute startQuestion function
-
-/*let myButton = document.getElementById("start-button");
-if(myButton) {
-    myButton.addEventListener("click", startQuestions);
-}*/
-
 
 // display the question on the array and creating a event listener
 // for the true and false button that the user will click to 
@@ -164,6 +151,11 @@ function startQuestions(event) {
                         incrementCorrect();
                         i++;
                         //alert("Congratulations! Your answer is correct");
+                        swal({
+                            title: "Good job!",
+                            icon: "success",
+                            button: "Next Question",
+                            });
                         setTimeout(function(){
                             startQuestions();
                         }, 1000); 
@@ -172,6 +164,11 @@ function startQuestions(event) {
                         incrementIncorrect();
                         i++;
                         //alert(`Arrgh.... Your answer is incorrect. Keep practicing!`);
+                        swal({
+                            title: "Incorrect!",
+                            icon: "error",
+                            button: "Next Question",
+                            });
                         setTimeout(function(){
                             startQuestions();
                         }, 1000);
@@ -192,6 +189,11 @@ function startQuestions(event) {
                         incrementCorrect();
                         i++;
                         //alert("Congratulations! Your answer is correct");
+                        swal({
+                            title: "Good job!",
+                            icon: "success",
+                            button: "Next Question",
+                            });
                         setTimeout(function(){
                             startQuestions();
                         }, 1000);
@@ -201,6 +203,12 @@ function startQuestions(event) {
                         incrementIncorrect();
                         i++;
                         //alert(`Arrgh.... Your answer is incorrect. Keep practicing!`+ "\n" +`The correct answer was ${correctAnswer}`);
+                        swal({
+                            title: "Incorrect!",
+                            icon: "error",                            
+                            text: `The correct answer was ${correctAnswer}`,
+                            button: "Next Question",
+                            });
                         setTimeout(function(){
                             startQuestions();
                         }, 1000);
@@ -297,47 +305,11 @@ function shuffle(possibleAnswers) {
     return possibleAnswers;
 }
 
-/*// Change selected button background to green if answer is correct
-function changeGreenBgColor(btnId) {
-    switch(btnId) {
-        case btnId === "btn-1":
-            $("#btn-1").css({"background-color": "#1fe24c"});
-            break;
-        case btnId === "btn-2":
-            $("#btn-2").css({"background-color": "#1fe24c"});
-            break;
-        case btnId === "btn-3":
-            $("#btn-3").css({"background-color": "#1fe24c"});
-            break;
-        case btnId === "btn-4":
-            $("#btn-4").css({"background-color": "#1fe24c"});
-            break;
-    }
-}
-
-// Change selected button background to red if answer is incorrect
-function changeRedBgColor(btnId) {
-    switch(btnId) {
-        case btnId === "btn-1":
-            $("#btn-1").css({"background-color": "red"});
-            break;
-        case btnId === "btn-2":
-            $("#btn-2").css({"background-color": "red"});
-            break;
-        case btnId === "btn-3":
-            $("#btn-3").css({"background-color": "red"});
-            break;
-        case btnId === "btn-4":
-            $("#btn-4").css({"background-color": "red"});
-            break;
-    }
-}*/
 /************************registration modal*************************/
-let registrationLink = document.getElementById("registration-link");
+/*let registrationLink = document.getElementById("registration-link");
 let registrationModal = document.getElementById("registration-modal");
 if(registrationLink) {
     registrationLink.addEventListener("click", function() {
-        //console.log(modal);
 
         registrationModal.style.display = "block";
 
@@ -347,7 +319,7 @@ if(registrationLink) {
             }
         }
     });
-}
+}*/
 
 /**********************login modal******************************/
 let instructionsLink = document.getElementById("instructions-link");

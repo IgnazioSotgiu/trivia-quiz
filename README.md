@@ -1,15 +1,13 @@
 ---
 ## Trivia Quiz
----
+---  
+
 Trivia Quiz is a website designed to entertain and encourage the users to test their knowledge on different fields or subjects, answering different questions, challenging them to improve their performance with different difficulty levels.    
 Before starting the game the user will be able to choose the category and the level of difficulty and then will start the question challenge. The question type is chosen randomly from the program, and can be a True/False or a multiple choice.  
-
----
-Add here the mockup image
-
----  
+Add here the mockup imag
 The goal is to build a simple website where the user will want to spend time playing in, share with friends and learn some new notions. The owner goal overtime is to gain exposure, promoting new challenges, selling advertising space, convince the users to register to the website to rank their performances with the other registered users, creating a database of users giving them the choice if they like to be contacted info regarding new features or upcoming challenges, create a leaderboard of the best players of Trivia Quiz on each different difficulty level.  
-The owner goal is to get as many people as he can to play on his website, and get the company name promoted through user social media sharing.
+The owner goal is to get as many people as he can to play on his website, and get the company name promoted through user social media sharing.  
+
 ---
 > - ### Content
 >> - [Website Structure](#website-structure)

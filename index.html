@@ -42,14 +42,6 @@
                     <li class="nav-item nav-link"><i class="fas fa-moon" id="change-mode-icon"></i></li>
                     <li class="nav-item"><a class="nav-link" href="registration.html">Register For Our Newsletter</a></li>
                     <li class="nav-item"><a class="nav-link" id="contact-link" data-open="contact-modal" data-toggle="contact-modal" data-backdrop="false" href="#">Contact Us</a></li>
-                    <!--<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="leaderboards.html" id="navbarLeaderboardsDropdownLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-hidden="false">Leaderboards</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarLeaderboardsDropdownLink">
-                            <a class="dropdown-item" href="database1.html">Top 10 Easy</a>
-                            <a class="dropdown-item" href="top-ten-medium.html">Top 10 Medium</a>
-                            <a class="dropdown-item" href="top-ten-hard.html">Top 10 Hard</a>
-                        </div>
-                    </li>-->
                     <li class="nav-item"><a class="nav-link" id="instructions-link" data-open="instructions-modal" data-toggle="instructions-modal" data-backdrop="false" href="#">Instructions</a></li>
                 </ul>
             </div>
@@ -75,7 +67,7 @@
             </div>
         </div>
         <div class="start-button-container">
-            <button type="button" id="start-button" class="btn btn-success"><i class="fas fa-hourglass-start"><br><span id="start-button-text">Start</span></i></button>
+            <button type="button" id="start-button" class="btn btn-success"><i class="fas fa-play"><br><span id="start-button-text">Start</span></i></button>
         </div>
     </div>
     <footer class="footer-bg-color">
@@ -97,94 +89,6 @@
             </div>    
         </div>
     </footer>
-    <!-----------------registration modal------------------------->
-    <!--<div class="modal" id="registration-modal">
-        <div class="jumbotron">
-            <div class="register-form-container">
-                <h4 class="registration-modal-header">Please register to Trivia Quiz.</h4>
-                <form role="form" id="trivia-users-form">-->
-                    <!--<div class="form-group">
-                    <label>First name: </label><input class="form-control" name="first-name" data-type="text" type="text">
-                    </div>-->
-                    <!--<div class="row form-group">
-                        <div class="registration-form-label col-12 col-md-6">
-                            <label for="first-name">First Name</label>
-                        </div>
-                        <div class="registration-form-input col-12 col-md-6">
-                            <input data-type="text" type="text" class="first-name-input form-control" id="first-name" name="first-name" placeholder="First Name">
-                        </div>
-                    </div>-->
-                    <!--<div class="form-group">
-                    <label>Last name: </label><input class="form-control" name="last-name" data-type="text" type="text">
-                    </div>-->
-                    <!--<div class="row form-group">
-                        <div class="registration-form-label col-12 col-md-6">
-                            <label for="last-name">Last Name</label>
-                        </div>
-                        <div class="registration-form-input col12 col-md-6">
-                            <input data-type="text" type="text" class="last-name-input form-control" id="last-name" name="last-name" placeholder="Last Name">
-                        </div>
-                    </div>-->
-                    <!--<div class="form-group">
-                    <label>Username: </label><input class="form-control" name="username" data-type="text" type="text">
-                    </div>-->
-                    <!--<div class="row form-group">
-                        <div class="registration-form-label col-12 col-md-6">
-                            <label for="username">Username</label>
-                        </div>
-                        <div class="registration-form-input col12 col-md-6">
-                            <input data-type="text" type="text" class="username-input form-control" id="username" name="username" placeholder="Username">
-                        </div>
-                    </div>-->
-                    <!--<div class="form-group">
-                    <label>Email: </label><input class="form-control" name="email" data-type="email" type="email">
-                    </div>-->
-                    <!--<div class="row form-group">
-                        <div class="registration-form-label col-12 col-md-6">
-                            <label for="reg-email">Email Address</label>
-                        </div>
-                        <div class="registration-form-input col-12 col-md-6">
-                            <input data-type="email" type="email" class="email-input form-control" id="reg-email" name="email" placeholder="email">
-                        </div>
-                    </div>-->
-                    <!--<div class="form-group">
-                    <label>Password: </label><input class="form-control" name="password" data-type="text" type="text">
-                    </div>-->
-                    <!--<div class="row form-group">
-                        <div class="registration-form-label col-12 col-md-6">
-                            <label for="reg-password">Enter Password</label>
-                        </div>
-                        <div class="registration-form-input col-12 col-md-6">
-                            <input data-type="password" type="password" class="password form-control" id="reg-password" name="password" placeholder="password">
-                        </div>
-                    </div>-->
-                    <!--<div class="form-group">
-                    <label>Confirm password: </label><input class="form-control" name="confirm-password" data-type="text" type="text" required>
-                    </div>-->
-                    <!--<div class="row form-group">
-                        <div class="registration-form-label col-12 col-md-6">
-                            <label for="confirm-password">Confirm Password</label>
-                        </div>
-                        <div class="registration-form-input col-12 col-md-6">
-                            <input data-type="password" type="password" class="password form-control" id="confirm-password" name="confirm-password" placeholder="Confirm Password">
-                        </div>
-                    </div>-->
-                    <!--<div class="form-group">
-                    <label>Newsletter: </label><input class="form-control" name="newsletter" data-type="bool" type="checkbox">
-                    </div>-->
-                    <!--<div class="form-group">
-                        <input class="newsletter form-control" data-type="bool" type="checkbox" id="newsletter" name="newsletter">
-                        <label for="newsletter">Yes, I would like to receive News and Updates</label>
-                    </div>
-
-
-                    <div id="fg-errors" class="form-group">
-                    </div>
-                    <button class="btn btn-primary btn-lg" id="btn-submit" type="submit" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Submitting...">Submit</button>
-                </form>
-            </div>
-        </div>
-    </div>-->
     <!--------------------------------instructions modal------------------------------>
     <div class="modal" id="instructions-modal">
         <div class="jumbotron">
@@ -203,22 +107,18 @@
                 <h5>If you have any enquiry, suggestion, complain please let us know and will try to improve your experience!</h5>
                 <form id="enquiryForm">
                     <div class="row contact-name-row">
-                        <div class="contact-form-label col-12">
+                        <div class="contact-form-label col-12 col-md-6">
                             <label for="name">Name</label>
-                        </div>
-                    </div>
-                    <div class="row">    
-                        <div class="contact-form-input col-12">
+                        </div>    
+                        <div class="contact-form-input col-12 col-md-6">
                             <input type="text" name="name" class="name-input" id="contact-name" placeholder="Name" required>
                         </div>
                     </div>
                     <div class="row contact-email-row">
-                        <div class="contact-form-label col-12">
+                        <div class="contact-form-label col-12 col-md-6">
                             <label for="email">Email Address</label>
-                        </div>
-                    </div>
-                    <div class="row">    
-                        <div class="contact-form-input col-12">
+                        </div>    
+                        <div class="contact-form-input col-12 col-md-6">
                             <input type="email" name="email" class="email-input" id="contact-email" placeholder="email" required>
                         </div>
                     </div>
@@ -337,15 +237,10 @@
             </div>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
     <script type="text/javascript" src="assets/js/sendEmail.js"></script>
-
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="https://triviaquizusers-3a90.restdb.io/assets/js/jquery-serialize-object.min.js"></script>
-    <script src="https://triviaquizusers-3a90.restdb.io/assets/js/jquery.datetimepicker.full.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.5.1/lodash.min.js"></script>-->
 </body>
 </html>
