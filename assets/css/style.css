@@ -5,21 +5,22 @@ body {
     width: 100%;
     color: #fafafa;
     font-family: Roboto, sans-serif;
-
-    background: url("../images/background-home.png") no-repeat bottom right; 
+}
+#background-container {
+    background: url("../images/background-dark.png") no-repeat bottom right; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
-.header-container-bg {
+#header-container-bg {
     background: url("../images/home-header-dark.jpg") no-repeat bottom right; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
-.email-address-container {
+/*.email-address-container {
     margin-top: 20px;
     text-align: center;
 }
@@ -29,7 +30,7 @@ body {
 .email-address-container a:hover {
     color: rgba(255,255,255,.75);
     text-decoration: none;
-}
+}*/
 /****************************navbar******************************************/
 .navbar {
     border-radius: 20px;
@@ -105,12 +106,21 @@ body {
 .small-trivia-logo a:hover {
     text-decoration: none;
 }
-.message-homepage {
-    padding: 30px 30px 10px;
+#replace-question-container {
+    margin: 0 100px;
+}
+#message-homepage {
+    padding: 30px;
+    margin-top: 20px;
     color: #eca54c;
     text-align: center;
     line-height: 40px;
     letter-spacing: 1px;
+    border-radius: 20px;
+}
+#message-homepage p {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .difficulty-selection-container {
     padding-left: 55px;
@@ -153,6 +163,7 @@ body {
 p {
     margin-bottom: 5px;
     font-size: 20px;
+    border-radius: 10px
 }
 .footer-bg-color {
     background-color: #713200;
@@ -186,7 +197,6 @@ p {
 .question-container {
     padding: 10px 20%;
     text-align: center;
-    color: #fafafa;
 }
 hr {
     background-color: #713200;
@@ -240,6 +250,9 @@ hr {
     color: #eca54c;
     padding-top: 20px;
     letter-spacing: 3px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 20px;
+    border-radius: 20px;
     
 }
 .message-finish-test p {
@@ -432,9 +445,13 @@ input {
         overflow-x:hidden;
         height: auto;
     }
-    .homepage-container {
-        margin-top: 116px;
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
     }
+    /*.homepage-container {
+        margin-top: 116px;
+    }*/
     .name-container {
         display: none;
     }
@@ -447,7 +464,6 @@ input {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        position: absolute;
         z-index: 1;
         top: 0;
         width: 100%;
@@ -508,11 +524,14 @@ input {
         padding-right: 0;
         font-size: 20px;
     }
+    .col-6 {
+        padding: 0;
+    }
     .difficulty-selection-container label {
         padding-right: 30px;
     }
     .counter-container {
-        margin: 20px 10px;
+        margin: 20px 0px;
     }
     #incorrect-answers {
     margin-left: 20px;
@@ -526,8 +545,14 @@ input {
         font-size: 15px;
         padding-top: 10px;
     }
+    #replace-question-container {
+    margin: 0 20px;
+    }    
     .question-container {
         padding: 10px 5%;
+        margin-top: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
     }
     .jumbotron {
         margin-top: 10px;
@@ -571,7 +596,7 @@ input {
 .game-choice div button {
     width: 100px;
     height: 100px;
-    margin: 20px 10px;
+    margin: 20px 0px;
     padding-top: 10px;
     border: 2px solid #111111;
     border-radius: 10px;

@@ -21,9 +21,9 @@
             })();
     </script>
 </head>
-<body class="homepage-container">
+<body class="homepage-container" id="background-container">
     <!---------------------Header-------------------------->
-    <div class="header-container header-container-bg">
+    <div class="header-container" id="header-container-bg">
         <div class="name-container">
             <div id="logo">
                 <a href="index.html"><h1>Trivia<br>Quiz</h1></a>
@@ -39,7 +39,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarTriviaQuizDropdown">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item nav-link"><i class="fas fa-moon" id="change-mode-icon"></i></li>
+                    <li class="nav-item nav-link" id="change-mode-icon"><i class="fas fa-sun" id="sun"></i></li>
                     <li class="nav-item"><a class="nav-link" href="registration.html">Register For Our Newsletter</a></li>
                     <li class="nav-item"><a class="nav-link" id="contact-link" data-open="contact-modal" data-toggle="contact-modal" data-backdrop="false" href="#">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" id="instructions-link" data-open="instructions-modal" data-toggle="instructions-modal" data-backdrop="false" href="#">Instructions</a></li>
@@ -49,19 +49,19 @@
     </div>
     <!--------------------Message / Question section--------------------->
     <div id="replace-question-container">
-        <div class="message-homepage container-fluid">
+        <div class="container-fluid" id="message-homepage">
             <p>Welcome to the Trivia Quiz game. <br>Choose the Category and the Difficulty level and start to play...</p>
         </div>
         <div class="row game-choice">
             <div class="col-6" id="category-container">
-                <button class="game-choice-btn" value="category" type="" name="game"
-                    id="category-choice-link" data-open="category-choice-modal" data-toggle="category-choice-modal" data-backdrop="false" href="#">
+                <button class="game-choice-btn" value="category" name="game"
+                    id="category-choice-link" data-open="category-choice-modal" data-toggle="category-choice-modal" data-backdrop="false">
                     <i class="fas fa-question"><br><span class="category-choice-name">Category</span></i>
                 </button>
             </div>
             <div class="col-6" id="difficulty-container">
-                <button class="game-choice-btn" value="difficulty" type="" name="game"
-                    id="difficulty-choice-link" data-open="difficulty-choice-modal" data-toggle="difficulty-choice-modal" data-backdrop="false" href="#">
+                <button class="game-choice-btn" value="difficulty" name="game"
+                    id="difficulty-choice-link" data-open="difficulty-choice-modal" data-toggle="difficulty-choice-modal" data-backdrop="false">
                     <i class="fas fa-signal"><br><span class="category-name">Level</span></i>
                 </button>
             </div>
@@ -108,7 +108,7 @@
                 <form id="enquiryForm">
                     <div class="row contact-name-row">
                         <div class="contact-form-label col-12 col-md-6">
-                            <label for="name">Name</label>
+                            <label>Name</label>
                         </div>    
                         <div class="contact-form-input col-12 col-md-6">
                             <input type="text" name="name" class="name-input" id="contact-name" placeholder="Name" required>
@@ -116,7 +116,7 @@
                     </div>
                     <div class="row contact-email-row">
                         <div class="contact-form-label col-12 col-md-6">
-                            <label for="email">Email Address</label>
+                            <label>Email Address</label>
                         </div>    
                         <div class="contact-form-input col-12 col-md-6">
                             <input type="email" name="email" class="email-input" id="contact-email" placeholder="email" required>
@@ -124,7 +124,7 @@
                     </div>
                     <div class="row">
                         <div class="enquiry-container col-12">
-                            <label for="subject">Request / Enquiry</label>
+                            <label>Request / Enquiry</label>
                             <br>   
                             <textarea class="request" id="contact-enquiry" name="subject" placeholder="Write here your message" required></textarea>
                         </div>
@@ -148,66 +148,66 @@
         <h2>Please select a category...</h2>
         <div class="row category-choice">
             <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="general" type="radio" name="category">
+                <button class="category-choice-btn" value="general" name="category">
                     <i class="fas fa-brain"><br><span class="category-name">General</span></i>
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="book" type="radio" name="category">
+                <button class="category-choice-btn" value="book" name="category">
                     <i class="fas fa-book"><br><span class="category-name">Books</span></i>
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="film" type="radio" name="category">
+                <button class="category-choice-btn" value="film" name="category">
                     <i class="fas fa-film"><br><span class="category-name">Movies</span></i>
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="music" type="radio" name="category">
+                <button class="category-choice-btn" value="music" name="category">
                     <i class="fas fa-music"><br><span class="category-name">Music</span></i>
                 </button>
             </div>
         </div>
         <div class="row category-choice">
             <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="tv" type="radio" name="category">
+                <button class="category-choice-btn" value="tv" name="category">
                     <i class="fas fa-tv"><br><span class="category-name">TV</span></i>
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="video-games" type="radio" name="category">
+                <button class="category-choice-btn" value="video-games" name="category">
                     <i class="fas fa-gamepad"><br><span class="category-name">Videogames</span></i>
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="computer" type="radio" name="category">
+                <button class="category-choice-btn" value="computer" name="category">
                     <i class="fas fa-laptop"><br><span class="category-name">Computer</span></i>
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="math" type="radio" name="category">
+                <button class="category-choice-btn" value="math" name="category">
                     <i class="fas fa-calculator"><br><span class="category-name">Math</span></i>
                 </button>
             </div>
         </div>
         <div class="row category-choice">
             <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="sport" type="radio" name="category">
+                <button class="category-choice-btn" value="sport" name="category">
                     <i class="fas fa-futbol"><br><span class="category-name">Sport</span></i>
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="geography" type="radio" name="category">
+                <button class="category-choice-btn" value="geography" name="category">
                     <i class="fas fa-atlas"><br><span class="category-name">Geography</span></i>
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="history" type="radio" name="category">
+                <button class="category-choice-btn" value="history" name="category">
                     <i class="fas fa-history"><br><span class="category-name">History</span></i>
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="animals" type="radio" name="category">
+                <button class="category-choice-btn" value="animals" name="category">
                     <i class="fas fa-paw"><br><span class="category-name">Animals</span></i>
                 </button>
             </div>
@@ -220,17 +220,17 @@
         <h2>Please select Difficulty Level...</h2>
             <div class="row difficulty-choice">
                 <div class="col-12 col-md-4">
-                    <button class="difficulty-sel-input" value="easy" type="radio" id="easy-btn" name="difficulty">
+                    <button class="difficulty-sel-input" value="easy" id="easy-btn" name="difficulty">
                         <i class="fas fa-skiing"><br><span class="difficulty-name">Easy</span></i>
                     </button>
                 </div>
                 <div class="col-12 col-md-4">
-                    <button class="difficulty-sel-input" value="medium" type="radio" id="medium-btn" name="difficulty">
+                    <button class="difficulty-sel-input" value="medium" id="medium-btn" name="difficulty">
                         <i class="far fa-arrow-alt-circle-right"><br><span class="difficulty-name">Medium</span></i>
                     </button>
                 </div>
                 <div class="col-12 col-md-4">
-                    <button class="difficulty-sel-input" value="hard" type="radio" id="hard-btn" name="difficulty">
+                    <button class="difficulty-sel-input" value="hard" id="hard-btn" name="difficulty">
                         <i class="fas fa-mountain"><br><span class="difficulty-name">Hard</span></i>
                     </button>
                 </div>

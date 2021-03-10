@@ -23,6 +23,10 @@ document.addEventListener("DOMContentLoaded", function() {
     
     let startButton = document.getElementById("start-button");
     startButton.addEventListener("click", checkSelection);
+
+    let changeIconModeToLight = document.getElementById("sun");
+    changeIconModeToLight.addEventListener("click", changeToLightMode);
+
 });
 
 
@@ -54,7 +58,7 @@ function getQuestionArray(chosenCategory, difficultyLevel){
         amountQuestions = "15";
     } else {
         console.log("Error. Difficulty choice not recognized");
-        throw("Error. Difficulty choice not recognized. Aborting....")
+        throw("Error. Difficulty choice not recognized. Aborting....");
     }
 
     //console.log(difficultyLevel, chosenCategory, amountQuestions);
@@ -71,7 +75,7 @@ function getQuestionArray(chosenCategory, difficultyLevel){
         $("#start-button").css({"background-color": "#1fe24c"});
 
         }
-    }
+    };
     return questionListArray;
 }
 
@@ -92,7 +96,7 @@ function startQuestions(event) {
                 <h2 id="question-number">Question # ${i+1}</h2>
                 <hr>
                 <p id="question-text">${questionListArray.results[i].question}</p>
-            </div>`
+            </div>`;
             
             if (questionListArray.results[i].type === "boolean") {
                 document.getElementById("replace-question-container").innerHTML +=
@@ -100,7 +104,7 @@ function startQuestions(event) {
                 `<div class="user-answer-container">
                     <button type="button" value="True" class="btn btn-success boolean-answer-button">True</button>
                     <button type="button" value="False" class="btn btn-danger boolean-answer-button">False</button>
-                </div>`
+                </div>`;
                 
             } else if (questionListArray.results[i].type === "multiple") {
 
@@ -123,13 +127,12 @@ function startQuestions(event) {
                     <div class="col-12 col-sm-6">
                         <button class="btn btn-secondary multiple-answer-button" id="btn-4" type="button" name="answer" value="${possibleAnswers[3]}">${possibleAnswers[3]}</button>
                     </div>
-                </div>`
+                </div>`;
             } else {
                 document.getElementById("replace-question-container").innerHTML +=
                 `<div>
                 <h2>Sorry ${questionListArray.results[i].type} question type not supported!</h2>
-                
-                </div>`
+                </div>`;
             throw "Error... Incorrect question type... Aborting...";
             }
             document.getElementById("replace-question-container").innerHTML +=
@@ -144,7 +147,6 @@ function startQuestions(event) {
             for (let button of booleanAnswerButtons) {
                 button.addEventListener("click", function() {
                     let value = this.getAttribute("value");
-                    let btnId = this.getAttribute("id");
 
                     if(value == correctAnswer) {
                         this.style.backgroundColor = "green";
@@ -154,7 +156,7 @@ function startQuestions(event) {
                         swal({
                             title: "Good job!",
                             icon: "success",
-                            button: "Next Question",
+                            button: "OK",
                             });
                         setTimeout(function(){
                             startQuestions();
@@ -167,7 +169,7 @@ function startQuestions(event) {
                         swal({
                             title: "Incorrect!",
                             icon: "error",
-                            button: "Next Question",
+                            button: "OK",
                             });
                         setTimeout(function(){
                             startQuestions();
@@ -181,7 +183,6 @@ function startQuestions(event) {
             for (let answerButton of multipleAnswerButtons) {
                 answerButton.addEventListener("click", function() {
                     let value = this.getAttribute("value");
-                    let btnId = this.getAttribute("id");
 
                     if(value == correctAnswer) {
                         //changeGreenBgColor(btnId);
@@ -192,7 +193,7 @@ function startQuestions(event) {
                         swal({
                             title: "Good job!",
                             icon: "success",
-                            button: "Next Question",
+                            button: "OK",
                             });
                         setTimeout(function(){
                             startQuestions();
@@ -207,7 +208,7 @@ function startQuestions(event) {
                             title: "Incorrect!",
                             icon: "error",                            
                             text: `The correct answer was ${correctAnswer}`,
-                            button: "Next Question",
+                            button: "OK",
                             });
                         setTimeout(function(){
                             startQuestions();
@@ -461,7 +462,7 @@ function selectCategory(){
         if (event.target == categoryChoiceModal) {
             categoryChoiceModal.style.display = "none";
             }
-        }
+        };
 
     for(let category of categories) {
         category.addEventListener("click", function() {
@@ -752,3 +753,32 @@ function checkSelection() {
     }
     
 }
+
+// change background to light mode
+function changeToLightMode() {
+    let headerBg = document.getElementById("header-container-bg");
+    headerBg.style.backgroundImage = 'url("../assets/images/home-header-light.jpg")';
+
+    let bodyBg = document.getElementById("background-container");
+    bodyBg.style.backgroundImage = 'url("../assets/images/background-light.jpg")';
+
+    let messageHomepage = document.getElementById("message-homepage");
+    messageHomepage.style.color = '#fafafa';
+    messageHomepage.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+
+    let instructionsModalBg = document.getElementById("instructions-modal");
+    instructionsModalBg.style.backgroundImage = 'url("../assets/images/background-light.jpg")';
+
+    let categoryModalBg = document.getElementById("category-choice-modal");
+    categoryModalBg.style.backgroundImage = 'url("../assets/images/background-light.jpg")';
+
+    let difficultyModalBg = document.getElementById("difficulty-choice-modal");
+    difficultyModalBg.style.backgroundImage = 'url("../assets/images/background-light.jpg")';
+
+    let contactModalBg = document.getElementById("contact-modal");
+    contactModalBg.style.backgroundImage = 'url("../assets/images/background-light.jpg")';
+    
+    let changeMode = document.getElementById("change-mode-icon");
+    changeMode.innerHTML = `<i class="fas fa-moon" id="moon"></i>`;
+}
+ 
