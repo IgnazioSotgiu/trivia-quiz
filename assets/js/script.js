@@ -1,12 +1,15 @@
 // declare variables
 
-let questionListArray;
-let chosenCategory;
-let difficultyLevel;
+let questionListArray = [];
+let chosenCategory = "";
+let difficultyLevel = "";
 let i = 0;
 let totCorrect = 0;
 let totIncorrect = 0;
 let vote = "";
+let overallCorrect = 0;
+let overallIncorrect = 0;
+let overallQuestions = 0;
 
 
 // wait for the DOM to finish loading page
@@ -14,6 +17,7 @@ let vote = "";
 // of difficulty, and the start button.
 
 document.addEventListener("DOMContentLoaded", function() {
+    
 
     startPage()
 });
@@ -21,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function() {
 // function startpage gets all the event listeners ready to start the game
 
 function startPage(){
+
+
     let categoryButton = document.getElementById("category-choice-link");
     categoryButton.addEventListener("click", selectCategory);
 
@@ -90,6 +96,7 @@ function startQuestions(event) {
     if(questionListArray) {
         
         if (i < questionListArray.results.length) {
+            overallQuestions++;
 
             let correctAnswer = questionListArray.results[i].correct_answer;
             console.log(correctAnswer);
@@ -154,6 +161,7 @@ function startQuestions(event) {
                     if(value == correctAnswer) {
                         this.style.backgroundColor = "green";
                         incrementCorrect();
+                        overallCorrect++;
                         i++;
                         //alert("Congratulations! Your answer is correct");
                         swal({
@@ -167,6 +175,7 @@ function startQuestions(event) {
                     } else {
                         this.style.backgroundColor = "red";
                         incrementIncorrect();
+                        overallIncorrect++;
                         i++;
                         //alert(`Arrgh.... Your answer is incorrect. Keep practicing!`);
                         swal({
@@ -191,6 +200,7 @@ function startQuestions(event) {
                         //changeGreenBgColor(btnId);
                         this.style.backgroundColor = "green";
                         incrementCorrect();
+                        overallCorrect++;
                         i++;
                         //alert("Congratulations! Your answer is correct");
                         swal({
@@ -205,6 +215,7 @@ function startQuestions(event) {
                         //changeRedBgColor(btnId);
                         this.style.backgroundColor = "red";
                         incrementIncorrect();
+                        overallIncorrect++;
                         i++;
                         //alert(`Arrgh.... Your answer is incorrect. Keep practicing!`+ "\n" +`The correct answer was ${correctAnswer}`);
                         swal({
@@ -221,9 +232,13 @@ function startQuestions(event) {
             }
 
         } else {
+            
             calculatePercentageCorrect();
+            overallPercentageCorrect();
             giveTestEvaluation(result);
-            displayEndPage(vote, result);
+            displayEndPage(vote, result, overallResult);
+            let continueButton = document.getElementById("continue-button");
+            continueButton.addEventListener("click", continueGame);
             }
     } else {
         alert("Please select the difficulty level.");
@@ -250,6 +265,11 @@ function incrementIncorrect() {
 function calculatePercentageCorrect() {
     result = ((totCorrect*100)/questionListArray.results.length).toFixed(2);
     return result;
+}
+function overallPercentageCorrect() {
+    overallResult = ((overallCorrect*100)/overallQuestions).toFixed(2);
+    console.log(overallResult);
+    return overallResult
 }
 
 // Depending of the value of the variable result 
@@ -279,11 +299,19 @@ function displayEndPage() {
 
     `<div class="container-fluid message-finish-test">
         <p>You have finished the game.<br><spam id="valuation"><h2>${vote}</h2></spam></p>
-        <p>Your score is:<br><span id="total-correct-answers">${totCorrect}</span> Correct answers<br><span id="final-incorrect-answers">${totIncorrect}</span> Incorrect answers</p>
+        <p>Your score for this session is:<br><span id="total-correct-answers">${totCorrect}</span> Correct answers<br><span id="final-incorrect-answers">${totIncorrect}</span> Incorrect answers</p>
         <p>You got <span id="correct-precentage">${result}</span>% of correct answers!</p>
+        <br>
+        <p>Your overall score:<br><span id="overall-correct-answers">${overallCorrect}</span> Correct answers<br><span id="overall-incorrect-answers">${overallIncorrect}</span> Incorrect answers</p>
+        <p>You got <span id="correct-precentage">${overallResult}</span>% of correct answers!</p>
     </div>
-    <div class="end-button-container">
-        <a href="index.html"><button type="button" class="btn btn-warning">Home</button></a>
+    <div class="row">
+        <div class="col-6 end-button-container">
+            <a href="index.html"><button type="button" class="btn btn-warning">Home</button></a>
+        </div>
+        <div class="col-6 end-button-container">
+            <button type="button" class="btn btn-warning" id="continue-button">Continue</button>
+        </div>
     </div>`;
 }
 
@@ -388,6 +416,7 @@ for(let button of categoryButtons) {
 
 
 function selectCategory(){
+    //let chosenCategory;
     let categoryChoiceModal = document.getElementById("category-choice-modal");
     categoryChoiceModal.style.display = "block";
     let categories = document.getElementsByClassName("category-choice-btn");
@@ -565,6 +594,7 @@ function selectCategory(){
 
 
 function selectDifficultyLevel() {
+    //let difficultyLevel;
     let difficultyChoiceModal = document.getElementById("difficulty-choice-modal");
     difficultyChoiceModal.style.display = "block";
     let difficulties = document.getElementsByClassName("difficulty-sel-input");
@@ -588,8 +618,7 @@ function selectDifficultyLevel() {
                 document.getElementById("difficulty-container").innerHTML =
                     `<button class="difficulty-sel-input" value="easy" type="radio" id="easy-btn" name="difficulty">
                         <i class="fas fa-skiing"><br><span class="difficulty-name">Easy</span></i>
-                    </button>`
-                //getReady(difficultyLevel);
+                    </button>`;
 
             }else if (this.getAttribute("value") === "medium") {
                 difficultyLevel = this.getAttribute("value");
@@ -601,8 +630,7 @@ function selectDifficultyLevel() {
                 document.getElementById("difficulty-container").innerHTML =
                     `<button class="difficulty-sel-input" value="medium" type="radio" id="medium-btn" name="difficulty">
                         <i class="fas fa-arrow-alt-circle-right"><br><span class="difficulty-name">Medium</span></i>
-                    </button>`
-                //getReady(difficultyLevel);
+                    </button>`;
 
             }else if (this.getAttribute("value") === "hard") {
                 difficultyLevel = this.getAttribute("value");
@@ -614,8 +642,7 @@ function selectDifficultyLevel() {
                 document.getElementById("difficulty-container").innerHTML =
                     `<button class="difficulty-sel-input" value="hard" type="radio" id="hard-btn" name="difficulty">
                         <i class="fas fa-mountain"><br><span class="difficulty-name">Hard</span></i>
-                    </button>`
-                //getReady(difficultyLevel);
+                    </button>`;
 
             }else {
                 alert("Incorrect value. Please select the difficulty level");
@@ -640,11 +667,23 @@ function checkSelection() {
             startQuestions(questionListArray);
         }, 1000);
     } else if(chosenCategory && !difficultyLevel) {
-        alert("please select a difficulty level");
+        //alert("please select a difficulty level");
+        swal({
+            text: "Please choose the difficulty level",
+            button: "OK",
+        });
     } else if(!chosenCategory && difficultyLevel) {
-        alert("please select category");
+        //alert("please select category");
+        swal({
+            text: "Please choose a category",
+            button: "OK",
+        });
     } else {
-        alert("please select category and difficulty level to play")
+        //alert("please select category and difficulty level to play");
+        swal({
+            text: "Please choose the difficulty level and a category before start",
+            button: "OK",
+        });
     }
     
 }
@@ -657,41 +696,41 @@ function changeMode() {
 
     if(themeValue === "dark") {
         document.body.classList.toggle('light-theme');
-        themeSwitch.setAttribute("value") = ("value", "light");
     } else {
         document.body.classList.toggle('dark-theme');
-        themeSwitch.setAttribute("value") = ("value", "dark");
     }
 }
-/*
-// change background to light mode
-function changeToLightMode() {
-    let headerBg = document.getElementById("header-container-bg");
-    headerBg.style.backgroundImage = 'url("../assets/images/home-header-light.jpg")';
 
-    let bodyBg = document.getElementById("background-container");
-    bodyBg.style.backgroundImage = 'url("../assets/images/background-light.jpg")';
+function continueGame() {
+    document.getElementById("replace-question-container").innerHTML =
+    `<div class="container-fluid" id="message-homepage">
+            <p>Welcome to the Trivia Quiz game. <br>Choose the Category and the Difficulty level and start to play...</p>
+        </div>
+        <div class="row game-choice">
+            <div class="col-6" id="category-container">
+                <button class="game-choice-btn" value="category" name="game"
+                    id="category-choice-link" data-open="category-choice-modal" data-toggle="category-choice-modal" data-backdrop="false">
+                    <i class="fas fa-question"><br><span class="category-choice-name">Category</span></i>
+                </button>
+            </div>
+            <div class="col-6" id="difficulty-container">
+                <button class="game-choice-btn" value="difficulty" name="game"
+                    id="difficulty-choice-link" data-open="difficulty-choice-modal" data-toggle="difficulty-choice-modal" data-backdrop="false">
+                    <i class="fas fa-signal"><br><span class="category-name">Level</span></i>
+                </button>
+            </div>
+        </div>
+        <div class="start-button-container">
+            <button type="button" id="start-button" class="btn btn-success"><i class="fas fa-play"><br><span id="start-button-text">Start</span></i></button>
+        </div>
+    </div>`;
 
-    let messageHomepage = document.getElementById("message-homepage");
-    messageHomepage.style.color = '#fafafa';
-    messageHomepage.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    totCorrect = 0;
+    totIncorrect = 0;
+    i = 0;
+    startPage();
 
-    let instructionsModalBg = document.getElementById("instructions-modal");
-    instructionsModalBg.style.backgroundImage = 'url("../assets/images/background-light.jpg")';
-
-    let categoryModalBg = document.getElementById("category-choice-modal");
-    categoryModalBg.style.backgroundImage = 'categoryModalBg';
-
-    let difficultyModalBg = document.getElementById("difficulty-choice-modal");
-    difficultyModalBg.style.backgroundImage = 'url("../assets/images/background-light.jpg")';
-
-    let contactModalBg = document.getElementById("contact-modal");
-    contactModalBg.style.backgroundImage = 'url("../assets/images/background-light.jpg")';
-    
-    let changeMode = document.getElementById("change-mode-icon");
-    changeMode.innerHTML = `<i class="fas fa-moon" id="moon"></i>`;
 }
-.dark-mode {
 
-}*/
+
  

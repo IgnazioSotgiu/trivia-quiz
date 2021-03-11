@@ -20,17 +20,6 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
-/*.email-address-container {
-    margin-top: 20px;
-    text-align: center;
-}
-.email-address-container a {
-    color: #fafafa;
-}
-.email-address-container a:hover {
-    color: rgba(255,255,255,.75);
-    text-decoration: none;
-}*/
 /****************************navbar******************************************/
 .navbar {
     border-radius: 20px;
@@ -46,11 +35,6 @@ body {
 .navbar-brand {
     padding-right: 30px;
     display: none;
-}
-.dropdown-menu.show {
-    display: block;
-    background-color: #fbe8b0;
-    color: #000;
 }
 /*******************************logo*******************************************/
 .name-container {
@@ -123,16 +107,16 @@ body {
     margin-left: 20px;
     margin-right: 20px;
 }
-.difficulty-selection-container {
+/*.difficulty-selection-container {
     padding-left: 55px;
     font-size: 25px;
     text-align: center;
     font-weight: 500;
     color: #eca54c;
-}
-.difficulty-selection-container label {
+}*/
+/*.difficulty-selection-container label {
     padding-right: 40px;
-}
+}*/
 .start-button-container {
     text-align: center;
 }
@@ -148,17 +132,16 @@ body {
 }
 .start-button-container button i {
     font-size: 30px;
-    color: blue;
+    color: rgb(66, 66, 114);
 }
 #start-button {
     color: #111111;
-    background-color: #dfe2e0;
+    background-color: #b0b9b3;
     border-color: #000;
-    /*display: none;*/
 }
 #start-button-text {
     font-family: "Roboto";
-    font-weight: 300;
+    font-weight: 400;
     color: #000;
 }
 p {
@@ -170,6 +153,9 @@ p {
     background-color: #713200;
 }
 .footer-container {
+    position: relative;
+    left: 0;
+    bottom: 0;
     padding: 20px 150px 5px;
     text-align: center;
     color: #fafafa;
@@ -199,6 +185,7 @@ p {
     margin-top: 10px;
     padding: 10px 20%;
     text-align: center;
+    color: var(--questionColor);
     background-color: var(--questionBgColor);
     border-radius: 20px;
 }
@@ -410,6 +397,10 @@ input {
     }
 }
 @media screen and (max-width: 767px) {
+    .navbar-dark .navbar-nav .nav-link {
+    padding-left: 10px;
+    padding-right: 10px;
+    }
     .counter-container {
         margin: 20px 0;
     }
@@ -559,7 +550,7 @@ input {
     .question-container {
         padding: 10px 5%;
         margin-top: 10px;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: var(--questionBgColor);
         border-radius: 20px;
     }
     .jumbotron {
@@ -746,11 +737,14 @@ input {
 :root {
   --headerBgLight: url("../images/home-header-light.jpg");
   --headerBgDark: url("../images/home-header-dark.jpg");
+  --navbarBgLight: url("../images/navbar-bg-light.jpg");
   --bodyBgLight: url("../images/background-light.jpg");
   --bodyBgDark: url("../images/background-dark.png");
   --whiteColor: #fafafa;
   --blackColor: #000;
   --goldenColor: #eca54c;
+  --rustyColor:#713200;
+  --whiteOverlayColor: rgba(255, 255, 255, 0.7);
   --darkOverlayColor: rgba(0, 0, 0, 0.5);
   --noOverlayColor: rgba(0, 0, 0, 0);
 }
@@ -759,20 +753,28 @@ input {
 .light-theme {
     --mainHeaderHomepage: var(--headerBgLight);
     --homepageBg: var(--bodyBgLight);
-    --messageHomepage: var(--whiteColor);
-    --messageHomepageBgColor: var(--darkOverlayColor);
-    --questionBgColor: var(--darkOverlayColor);
+    --navbarColor: var(--navbarBgLight);
+    --messageHomepage: var(--blackColor);
+    --messageHomepageBgColor: var(--whiteOverlayColor);
+    --questionColor: var(--blackColor);
+    --questionBgColor: var(--whiteOverlayColor);
     --modalBg: var(--bodyBgLight);
-    --messageFinishTest: var(--whiteColor);
-    --messageFinishTestBgColor: var(--darkOverlayColor);
+    --messageFinishTest: var(--blackColor);
+    --messageFinishTestBgColor: var(--whiteOverlayColor);
 }
 .dark-theme {
     --mainHeaderHomepage: var(--headerBgDark);
     --homepageBg: var(--bodyBgDark);
+    --navbarColor: var(--rustyColor);
     --messageHomepage: var(--goldenColor);
     --messageHomepageBgColor: var(--noOverlayColor);
+    --questionColor: var(--goldenColor);
     --questionBgColor: var(--noOverlayColor);
     --modalBg: var(--bodyBgDark);
     --messageFinishTest: var(--goldenColor);
     --messageFinishTestBgColor: var(--noOverlayColor);
+}
+
+* {
+  transition: background-color 0.6s ease, color 1s ease;
 }
