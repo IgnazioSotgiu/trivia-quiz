@@ -4,17 +4,17 @@ body {
     height: auto;
     width: 100%;
     color: #fafafa;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 #background-container {
-    background: url("../images/background-dark.png") no-repeat bottom right; 
+    background: var(--homepageBg) no-repeat bottom right; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 #header-container-bg {
-    background: url("../images/home-header-dark.jpg") no-repeat bottom right; 
+    background: var(--mainHeaderHomepage) no-repeat bottom right; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -112,7 +112,8 @@ body {
 #message-homepage {
     padding: 30px;
     margin-top: 20px;
-    color: #eca54c;
+    color: var(--messageHomepage);
+    background-color: var(--messageHomepageBgColor);
     text-align: center;
     line-height: 40px;
     letter-spacing: 1px;
@@ -195,8 +196,11 @@ p {
 }
 /**********************************question page*************************************/
 .question-container {
+    margin-top: 10px;
     padding: 10px 20%;
     text-align: center;
+    background-color: var(--questionBgColor);
+    border-radius: 20px;
 }
 hr {
     background-color: #713200;
@@ -244,13 +248,14 @@ hr {
 }
 /********************************end-of-test-page********************************************/
 .message-finish-test {
+    margin-top: 15px;
     text-align: center;
     line-height: 25px;
     font-weight: 600;
-    color: #eca54c;
+    color: var(--messageFinishTest);
     padding-top: 20px;
     letter-spacing: 3px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--messageFinishTestBgColor);
     padding-bottom: 20px;
     border-radius: 20px;
     
@@ -274,7 +279,7 @@ hr {
     z-index: 1000;
     align-items: center;
     justify-content: center;
-    background: url("../images/navbar-bg-mobile.jpg") no-repeat bottom right; 
+    background: var(--modalBg) no-repeat bottom right; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -372,7 +377,7 @@ input {
     padding-top: 20px;
 }
 .enquiry-container {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 #contact-enquiry {
     height: 150px;
@@ -406,7 +411,7 @@ input {
 }
 @media screen and (max-width: 767px) {
     .counter-container {
-        margin: 20px 20%;
+        margin: 20px 0;
     }
     .jumbotron-reg-form {
     padding: 0;
@@ -537,6 +542,9 @@ input {
     margin-left: 20px;
 }
     .footer-container {
+        position: relative;
+        bottom: 0;
+        left: 0;
         padding: 20px 20px 5px;
         text-align: center;
         color: #fafafa;
@@ -732,4 +740,39 @@ input {
 }
 .swal-icon--success:after, .swal-icon--success:before {
     content: none;
+}
+
+/* toggle dark/Dark mode*/
+:root {
+  --headerBgLight: url("../images/home-header-light.jpg");
+  --headerBgDark: url("../images/home-header-dark.jpg");
+  --bodyBgLight: url("../images/background-light.jpg");
+  --bodyBgDark: url("../images/background-dark.png");
+  --whiteColor: #fafafa;
+  --blackColor: #000;
+  --goldenColor: #eca54c;
+  --darkOverlayColor: rgba(0, 0, 0, 0.5);
+  --noOverlayColor: rgba(0, 0, 0, 0);
+}
+
+/*set light theme colors*/
+.light-theme {
+    --mainHeaderHomepage: var(--headerBgLight);
+    --homepageBg: var(--bodyBgLight);
+    --messageHomepage: var(--whiteColor);
+    --messageHomepageBgColor: var(--darkOverlayColor);
+    --questionBgColor: var(--darkOverlayColor);
+    --modalBg: var(--bodyBgLight);
+    --messageFinishTest: var(--whiteColor);
+    --messageFinishTestBgColor: var(--darkOverlayColor);
+}
+.dark-theme {
+    --mainHeaderHomepage: var(--headerBgDark);
+    --homepageBg: var(--bodyBgDark);
+    --messageHomepage: var(--goldenColor);
+    --messageHomepageBgColor: var(--noOverlayColor);
+    --questionBgColor: var(--noOverlayColor);
+    --modalBg: var(--bodyBgDark);
+    --messageFinishTest: var(--goldenColor);
+    --messageFinishTestBgColor: var(--noOverlayColor);
 }

@@ -15,6 +15,12 @@ let vote = "";
 
 document.addEventListener("DOMContentLoaded", function() {
 
+    startPage()
+});
+
+// function startpage gets all the event listeners ready to start the game
+
+function startPage(){
     let categoryButton = document.getElementById("category-choice-link");
     categoryButton.addEventListener("click", selectCategory);
 
@@ -24,10 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let startButton = document.getElementById("start-button");
     startButton.addEventListener("click", checkSelection);
 
-    let changeIconModeToLight = document.getElementById("sun");
-    changeIconModeToLight.addEventListener("click", changeToLightMode);
 
-});
+}
 
 
 // after the level of difficulty has bee chosen 
@@ -61,7 +65,6 @@ function getQuestionArray(chosenCategory, difficultyLevel){
         throw("Error. Difficulty choice not recognized. Aborting....");
     }
 
-    //console.log(difficultyLevel, chosenCategory, amountQuestions);
 
     xhr.open("GET" , `https://opentdb.com/api.php?amount=${amountQuestions}&category=${chosenCategory}&difficulty=${difficultyLevel}`);
     xhr.send("POST");
@@ -305,24 +308,9 @@ function shuffle(possibleAnswers) {
 
     return possibleAnswers;
 }
+/**************************modal section**************************** */
 
-/************************registration modal*************************/
-/*let registrationLink = document.getElementById("registration-link");
-let registrationModal = document.getElementById("registration-modal");
-if(registrationLink) {
-    registrationLink.addEventListener("click", function() {
-
-        registrationModal.style.display = "block";
-
-        window.onclick = function(event) {
-        if (event.target == registrationModal) {
-            registrationModal.style.display = "none";
-            }
-        }
-    });
-}*/
-
-/**********************login modal******************************/
+/****************************login modal******************************/
 let instructionsLink = document.getElementById("instructions-link");
 let instructionsModal = document.getElementById("instructions-modal");
 if(instructionsLink) {
@@ -356,39 +344,6 @@ if(contactLink) {
     });
 }
 
-/**********************category choice modal******************************/
-/*let categoryChoiceLink = document.getElementById("category-choice-link");
-let categoryChoiceModal = document.getElementById("category-choice-modal");
-if(categoryChoiceLink) {
-    categoryChoiceLink.addEventListener("click", function() {
-        //console.log(loginModal);
-
-        categoryChoiceModal.style.display = "block";
-
-        window.onclick = function(event) {
-        if (event.target == categoryChoiceModal) {
-            categoryChoiceModal.style.display = "none";
-            }
-        }
-    });
-}*/
-
-/**********************difficulty choice modal******************************/
-/*let difficultyChoiceLink = document.getElementById("difficulty-choice-link");
-let difficultyChoiceModal = document.getElementById("difficulty-choice-modal");
-if(difficultyChoiceLink) {
-    difficultyChoiceLink.addEventListener("click", function() {
-        //console.log(loginModal);
-
-        difficultyChoiceModal.style.display = "block";
-
-        window.onclick = function(event) {
-        if (event.target == difficultyChoiceModal) {
-            difficultyChoiceModal.style.display = "none";
-            }
-        }
-    });
-}*/
 /*
 // function to get the value from registration form
 // and save them as an object into array
@@ -431,27 +386,7 @@ for(let button of categoryButtons) {
     });
 }*/
 
-// choice category modal mouseleave function
 
-/*categoryButtons = document.getElementsByClassName("category-choice-btn");
-console.log(categoryButtons);
-for(let button of categoryButtons) {
-    button.addEventListener("mouseleave", function() {
-        let bg = getComputedStyle(this);
-        console.log(bg['background-color']);
-        if(bg === "rgb(255, 165, 0)")
-        this.style.backgroundColor = "#fafafa";
-    });
-}*/
-
-// choice category modal change selected button function
-/*categoryButtons = document.getElementsByClassName("category-choice-btn");
-console.log(categoryButtons);
-for(let button of categoryButtons) {
-    button.addEventListener("click", function() {
-        this.style.backgroundColor = "green";
-    });
-}*/
 function selectCategory(){
     let categoryChoiceModal = document.getElementById("category-choice-modal");
     categoryChoiceModal.style.display = "block";
@@ -691,46 +626,6 @@ function selectDifficultyLevel() {
     }
     return difficultyLevel;
 }
-/*function createStartButton() {
-    document.getElementsByClassName("start-button-container").innerHTML =
-    `<button type="button" id="start-button" class="btn btn-success"><i class="fas fa-hourglass-start"><br><span id="start-button-text">Start</span></i></button>`;
-}*/
-
-/*function getReadyStart() {
-    let gameChoices = document.getElementsByClassName("game-choice-btn");
-    console.log(gameChoices);
-
-    for(let choice of gameChoices) {
-        choice.addEventListener("click", function() {
-            if (this.getAttribute("value") === "category") {
-                selectCategory();
-            } else if (this.getAttribute("value") === "difficulty") {
-                selectDifficultyLevel();
-                
-            } else {
-                alert("Incorrect value. Please select the difficulty level");
-                throw "Error... Incorrect value... Aborting...";
-            }
-        });
-    }
-    return chosenCategory, difficultyLevel;
-}*/
-    /*let gameChoices = document.getElementsByClassName("game-choice-btn");
-    console.log(gameChoices);
-
-    for(let choice of gameChoices) {
-        choice.addEventListener("click", function() {
-            if (this.getAttribute("value") === "category") {
-                selectCategory();
-            } else if (this.getAttribute("value") === "difficulty") {
-                selectDifficultyLevel();
-                
-            } else {
-                alert("Incorrect value. Please select the difficulty level");
-                throw "Error... Incorrect value... Aborting...";
-            }
-        });
-    }*/
 
 function checkSelection() {
 
@@ -754,6 +649,21 @@ function checkSelection() {
     
 }
 
+let themeSwitch = document.getElementById("theme-switch");
+themeSwitch.addEventListener("click", changeMode);
+
+function changeMode() {
+    let themeValue = document.getElementById("theme-switch").value;
+
+    if(themeValue === "dark") {
+        document.body.classList.toggle('light-theme');
+        themeSwitch.setAttribute("value") = ("value", "light");
+    } else {
+        document.body.classList.toggle('dark-theme');
+        themeSwitch.setAttribute("value") = ("value", "dark");
+    }
+}
+/*
 // change background to light mode
 function changeToLightMode() {
     let headerBg = document.getElementById("header-container-bg");
@@ -770,7 +680,7 @@ function changeToLightMode() {
     instructionsModalBg.style.backgroundImage = 'url("../assets/images/background-light.jpg")';
 
     let categoryModalBg = document.getElementById("category-choice-modal");
-    categoryModalBg.style.backgroundImage = 'url("../assets/images/background-light.jpg")';
+    categoryModalBg.style.backgroundImage = 'categoryModalBg';
 
     let difficultyModalBg = document.getElementById("difficulty-choice-modal");
     difficultyModalBg.style.backgroundImage = 'url("../assets/images/background-light.jpg")';
@@ -781,4 +691,7 @@ function changeToLightMode() {
     let changeMode = document.getElementById("change-mode-icon");
     changeMode.innerHTML = `<i class="fas fa-moon" id="moon"></i>`;
 }
+.dark-mode {
+
+}*/
  

@@ -21,7 +21,7 @@
             })();
     </script>
 </head>
-<body class="homepage-container" id="background-container">
+<body class="homepage-container light-theme" id="background-container">
     <!---------------------Header-------------------------->
     <div class="header-container" id="header-container-bg">
         <div class="name-container">
@@ -39,7 +39,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarTriviaQuizDropdown">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item nav-link" id="change-mode-icon"><i class="fas fa-sun" id="sun"></i></li>
+                    <li class="nav-item nav-link" id="change-mode-icon"><i class="fas fa-adjust" id="theme-switch" value="dark"></i></li>
                     <li class="nav-item"><a class="nav-link" href="registration.html">Register For Our Newsletter</a></li>
                     <li class="nav-item"><a class="nav-link" id="contact-link" data-open="contact-modal" data-toggle="contact-modal" data-backdrop="false" href="#">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" id="instructions-link" data-open="instructions-modal" data-toggle="instructions-modal" data-backdrop="false" href="#">Instructions</a></li>
@@ -107,18 +107,22 @@
                 <h5>If you have any enquiry, suggestion, complain please let us know and will try to improve your experience!</h5>
                 <form id="enquiryForm">
                     <div class="row contact-name-row">
-                        <div class="contact-form-label col-12 col-md-6">
+                        <div class="contact-form-label col-12">
                             <label>Name</label>
-                        </div>    
-                        <div class="contact-form-input col-12 col-md-6">
+                        </div>
+                    </div>
+                    <div class="row">    
+                        <div class="contact-form-input col-12">
                             <input type="text" name="name" class="name-input" id="contact-name" placeholder="Name" required>
                         </div>
                     </div>
                     <div class="row contact-email-row">
-                        <div class="contact-form-label col-12 col-md-6">
+                        <div class="contact-form-label col-12">
                             <label>Email Address</label>
-                        </div>    
-                        <div class="contact-form-input col-12 col-md-6">
+                        </div>
+                    </div>
+                    <div class="row">    
+                        <div class="contact-form-input col-12">
                             <input type="email" name="email" class="email-input" id="contact-email" placeholder="email" required>
                         </div>
                     </div>
