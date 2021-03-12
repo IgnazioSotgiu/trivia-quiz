@@ -23,11 +23,11 @@ body {
 /****************************navbar******************************************/
 .navbar {
     border-radius: 20px;
-    background-color: #713200;
-    color: #fafafa;
+    background-color: var(--navbarBgColor);
+    color: var(--navbarTextColor);
 }
 .navbar-dark .navbar-nav .nav-link {
-    color: #fafafa;
+    color: var(--navbarTextColor);
     font-size: 15px;
     padding-left: 20px;
     padding-right: 20px;
@@ -150,7 +150,7 @@ p {
     border-radius: 10px
 }
 .footer-bg-color {
-    background-color: #713200;
+    background-color: var(--footerBgColor);
 }
 .footer-container {
     position: relative;
@@ -158,11 +158,11 @@ p {
     bottom: 0;
     padding: 20px 150px 5px;
     text-align: center;
-    color: #fafafa;
+    color: var(--footerTextColor);
     margin-top: 60px;
 }
 .footer-container i {
-    color: #fafafa;
+    color: var(--footerTextColor);
 }
 .copyright-container {
     font-size: 15px;
@@ -254,7 +254,7 @@ hr {
     text-align: center;
 }
 .end-button-container button {
-    width: 80px;
+    width: 100px;
     height: 80px;
     border-radius: 10px;
     margin-top: 10px;
@@ -455,7 +455,7 @@ input {
         display: block;
     }
     .navbar {
-        background: url("../images/navbar-bg-mobile.jpg") no-repeat bottom right; 
+        background: var(--navbarBgMobile) no-repeat bottom right; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -546,6 +546,7 @@ input {
     }
     #replace-question-container {
     margin: 0 20px;
+    min-height: 380px;
     }    
     .question-container {
         padding: 10px 5%;
@@ -563,6 +564,12 @@ input {
     .jumbotron-reg-form {
     padding: 0;
     margin: 20px 20px;
+    }
+    .footer-container {
+        background-color: var(--footerMobileBgColor);
+    }
+    .footer-container div i {
+        color: var(--footerMobileTextColor);
     }
 }
 @media screen and (max-width:350px) {
@@ -684,45 +691,54 @@ input {
 }
 /*sweetalert style*/
 .swal-overlay {
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.25);
 }
 .swal-modal {
-    background-color: #6b716e;
+    background-color: var(--swalModalBgColor);
     border: 0.5px solid #fafafa;
     border-radius: 10px;
+    width: 200px;
+    height: 200px;
 }
 .swal-title {
     margin: 0px;
     font-size: 25px;
-    color: #000;
-    /*box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);*/
+    color: var(--swalModalTitleColor);
     margin-bottom: 28px;
 }
 .swal-text {
-    background-color: #000;
+    background-color: var(--swalModalTextBgColor);
     padding: 17px;
     border: 0.5px solid #Fafafa;
     border-radius: 10px;
     display: block;
     margin: 22px;
     text-align: center;
-    color: #fafafa;
+    color: var(--swalModalTextColor);
 }
-.swal-footer {
+/*.swal-footer {
     text-align: center;
     background-color: #000;
     margin-top: 32px;
     overflow: hidden;
-}
+    display: none;
+}*/
 .swal-button {
-    color: #fafafa;
-    padding: 7px 19px;
-    border-radius: 10px;
-    background-color: #713200;
-    font-size: 12px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 200px;
+    background-color: transparent;
+    color: transparent;
+    z-index: 2;
 }
 .swal-button:not([disabled]):hover {
-    background-color: rgba(113, 50, 0, 0.5);
+    background-color: transparent;
+}
+.swal-button:focus {
+    outline: none;
+    box-shadow: none;
 }
 .swal-icon--success__hide-corners {
     width: 0; 
@@ -733,17 +749,20 @@ input {
     content: none;
 }
 
-/* toggle dark/Dark mode*/
+/* toggle Light/Dark mode*/
 :root {
   --headerBgLight: url("../images/home-header-light.jpg");
   --headerBgDark: url("../images/home-header-dark.jpg");
   --navbarBgLight: url("../images/navbar-bg-light.jpg");
+  --navbarBgDarkMobile: url("../images/navbar-bg-mobile-dark.jpg");
+  --navbarBgLightMobile: url("../images/navbar-bg-mobile-light.jpg");
   --bodyBgLight: url("../images/background-light.jpg");
   --bodyBgDark: url("../images/background-dark.png");
   --whiteColor: #fafafa;
   --blackColor: #000;
   --goldenColor: #eca54c;
   --rustyColor:#713200;
+  --rustyLightColor:#ff933d;
   --whiteOverlayColor: rgba(255, 255, 255, 0.7);
   --darkOverlayColor: rgba(0, 0, 0, 0.5);
   --noOverlayColor: rgba(0, 0, 0, 0);
@@ -753,7 +772,9 @@ input {
 .light-theme {
     --mainHeaderHomepage: var(--headerBgLight);
     --homepageBg: var(--bodyBgLight);
-    --navbarColor: var(--navbarBgLight);
+    --navbarBgColor: var(--rustyLightColor);
+    --navbarTextColor: var(--blackColor);
+    --navbarBgMobile: var(--navbarBgLightMobile);
     --messageHomepage: var(--blackColor);
     --messageHomepageBgColor: var(--whiteOverlayColor);
     --questionColor: var(--blackColor);
@@ -761,11 +782,21 @@ input {
     --modalBg: var(--bodyBgLight);
     --messageFinishTest: var(--blackColor);
     --messageFinishTestBgColor: var(--whiteOverlayColor);
+    --swalModalBgColor: var(--whiteColor);
+    --swalModalTitleColor: var(--blackColor);
+    --swalModalTextBgColor: var(--blackColor);
+    --swalModalTextColor: var(--whiteColor);
+    --footerBgColor: var(--rustyLightColor);
+    --footerTextColor: var(--blackColor);
+    --footerMobileBgColor: var(--blackColor);
+    --footerMobileTextColor:var(--whiteColor);
 }
 .dark-theme {
     --mainHeaderHomepage: var(--headerBgDark);
     --homepageBg: var(--bodyBgDark);
-    --navbarColor: var(--rustyColor);
+    --navbarBgColor: var(--rustyColor);
+    --navbarTextColor: var(--whiteColor);
+    --navbarBgMobile: var(--navbarBgDarkMobile);
     --messageHomepage: var(--goldenColor);
     --messageHomepageBgColor: var(--noOverlayColor);
     --questionColor: var(--goldenColor);
@@ -773,6 +804,15 @@ input {
     --modalBg: var(--bodyBgDark);
     --messageFinishTest: var(--goldenColor);
     --messageFinishTestBgColor: var(--noOverlayColor);
+    --swalModalBgColor: var(--rustyColor);
+    --swalModalTitleColor: var(--whiteColor);
+    --swalModalTextBgColor: var(--blackColor);
+    --swalModalTextColor: var(--whiteColor);
+    --footerBgColor: var(--rustyColor);
+    --footerTextColor: var(--whiteColor);
+    --footerMobileBgColor: var(--rustyColor);
+    --footerMobileTextColor:var(--whiteColor);
+
 }
 
 * {

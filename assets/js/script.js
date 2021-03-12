@@ -36,7 +36,6 @@ function startPage(){
     let startButton = document.getElementById("start-button");
     startButton.addEventListener("click", checkSelection);
 
-
 }
 
 
@@ -302,7 +301,7 @@ function displayEndPage() {
         <p>Your score for this session is:<br><span id="total-correct-answers">${totCorrect}</span> Correct answers<br><span id="final-incorrect-answers">${totIncorrect}</span> Incorrect answers</p>
         <p>You got <span id="correct-precentage">${result}</span>% of correct answers!</p>
         <br>
-        <p>Your overall score:<br><span id="overall-correct-answers">${overallCorrect}</span> Correct answers<br><span id="overall-incorrect-answers">${overallIncorrect}</span> Incorrect answers</p>
+        <p>Your overall score:<br><span>You have answered a total of ${overallQuestions} questions.</span><br><span id="overall-correct-answers">${overallCorrect}</span> Correct answers<br><span id="overall-incorrect-answers">${overallIncorrect}</span> Incorrect answers</p>
         <p>You got <span id="correct-precentage">${overallResult}</span>% of correct answers!</p>
     </div>
     <div class="row">
@@ -590,6 +589,7 @@ function selectCategory(){
         });
     }
     return chosenCategory;
+
 }
 
 
