@@ -824,3 +824,89 @@ input {
 * {
   transition: background-color 0.6s ease, color 1s ease;
 }
+/******************links to share result********************/
+.share-result-wrapper {
+    margin: 40px auto;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+
+}
+.toggle-button {
+    width: 250px;
+    height: 45px;
+    background-color: #ff933d;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.1s ease;
+}
+.toggle-button ul {
+    margin: 0;
+    padding: 0;
+}
+.toggle-button ul li a {
+    display: flex;
+    height: 45px;
+    align-items: center;
+    padding: 0 20px;
+}
+.toggle-button ul li a#share-btn {
+    justify-content: center;
+}
+.toggle-button ul li a#share-btn .text {
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 10px;
+    color: #000;
+    margin-right: 10px;
+}
+.toggle-button ul li a#share-btn .icon {
+    width: 35px;
+    height: 35px;
+    color: #111;
+    background-color: #713200;
+    display: inline-block;
+    border-radius: 50%;
+    transition: all 1s ease;
+    position: relative;
+}
+.toggle-button ul li a .icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fafafa;
+}
+.toggle-button ul li a.sm .icon {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: #713200;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.toggle-button ul li a .text {
+    letter-spacing: 2px;
+}
+.toggle-button ul li a.facebook .icon {
+    background-color: #3b5998;
+}
+.toggle-button ul li a.facebook .text {
+    color: #3b5998;
+}
+.toggle-button ul li a.twitter .icon {
+    background-color: #1da1f2;
+}
+.toggle-button ul li a.twitter .text {
+    color: #1da1f2;
+}
+.toggle-button ul li a.instagram .icon {
+    background-color: #c32aa3;
+}
+.toggle-button ul li a.instagram .text {
+    color: #c32aa3;
+}
+.toggle-button.active {
+    height: 200px;
+}

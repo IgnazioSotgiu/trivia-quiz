@@ -304,6 +304,29 @@ function displayEndPage() {
         <p>Your overall score:<br><span>You have answered a total of ${overallQuestions} questions.</span><br><span id="overall-correct-answers">${overallCorrect}</span> Correct answers<br><span id="overall-incorrect-answers">${overallIncorrect}</span> Incorrect answers</p>
         <p>You got <span id="correct-precentage">${overallResult}</span>% of correct answers!</p>
     </div>
+    <!--------------------share buttons popup--------------------->
+    <div class="share-result-wrapper container-fluid">
+        <div class="toggle-button" id="tggl-btn">
+            <ul>
+                <li><a href="#" id="share-btn">
+                    <span class="text">Share</span>
+                    <span class="icon"><i class="fas fa-share-alt"></i></span>
+                </a></li>
+                <li><a href="https://www.facebook.com/sharer/sharer.php?u=${window.location.href}" class="sm facebook">
+                    <span class="icon"><i class="fab fa-facebook"></i></span>
+                    <span class="text">Facebook</span>
+                </a></li>
+                <li><a href="https://twitter.com/intent/tweet?url=${window.location.href}&text=" class="sm twitter">
+                    <span class="icon"><i class="fab fa-twitter"></i></span>
+                    <span class="text">Twitter</span>
+                </a></li>
+                <li><a href="#" class="sm instagram">
+                    <span class="icon"><i class="fab fa-instagram"></i></span>
+                    <span class="text">Instagram</span>
+                </a></li>
+            </ul>
+        </div>
+    </div>
     <div class="row">
         <div class="col-6 end-button-container">
             <a href="index.html"><button type="button" class="btn btn-warning">Home</button></a>
@@ -736,5 +759,12 @@ function continueGame() {
 
 }
 
+
+let shareButton = document.querySelector("#share-btn");
+let toggleButton = document.querySelector("#tggl-btn");
+
+shareButton.addEventListener("click", function() {
+    toggleButton.classList.toggle("active");
+})
 
  
