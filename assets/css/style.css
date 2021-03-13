@@ -90,7 +90,9 @@ body {
 .small-trivia-logo a:hover {
     text-decoration: none;
 }
+/******************************homepage message container*******************/
 #replace-question-container {
+    min-height: 400px;
     margin: 0 100px;
 }
 #message-homepage {
@@ -107,24 +109,12 @@ body {
     margin-left: 20px;
     margin-right: 20px;
 }
-/*.difficulty-selection-container {
-    padding-left: 55px;
-    font-size: 25px;
-    text-align: center;
-    font-weight: 500;
-    color: #eca54c;
-}*/
-/*.difficulty-selection-container label {
-    padding-right: 40px;
-}*/
 .start-button-container {
     text-align: center;
 }
 .start-button-container  .btn-success {
-    width: 100px;
+    width: 200px;
     height: 100px;
-    background-color: #fafafa;
-    color: #000;
     padding-top: 10px;
     border: 2px solid #000;
     border-radius: 10px;
@@ -135,12 +125,10 @@ body {
     color: rgb(66, 66, 114);
 }
 #start-button {
-    color: #111111;
     background-color: #b0b9b3;
     border-color: #000;
 }
 #start-button-text {
-    font-family: "Roboto";
     font-weight: 400;
     color: #000;
 }
@@ -168,19 +156,7 @@ p {
     font-size: 15px;
     padding-top: 15px;
 }
-.btn-answer-container {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.btn-answer-container div {
-    text-align: center;
-}
-.btn-secondary {
-    margin-top: 15px;
-    background-color: #4cecd7;
-    color: #000;
-}
-/**********************************question page*************************************/
+/***********************question display and answers buttons************************/
 .question-container {
     margin-top: 10px;
     padding: 10px 20%;
@@ -207,6 +183,18 @@ hr {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+}
+.btn-answer-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.btn-answer-container div {
+    text-align: center;
+}
+.btn-secondary {
+    margin-top: 15px;
+    background-color: #4cecd7;
+    color: #000;
 }
 .counter-container {
     text-align: center;
@@ -258,9 +246,8 @@ hr {
     height: 80px;
     border-radius: 10px;
     margin-top: 10px;
-
 }
-/***************************registration form modal**********************************/
+/***************************modal**********************************/
 .modal {
     position: fixed;
     z-index: 1000;
@@ -272,11 +259,11 @@ hr {
     -o-background-size: cover;
     background-size: cover;
 }
-#registration-modal {
+/*#registration-modal {
     display: none;
-}
+}*/
 .registration {
-    background: url("../images/navbar-bg-mobile.jpg") no-repeat bottom right; 
+    background: var(--registrationBg) no-repeat bottom right; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -292,7 +279,8 @@ hr {
     text-align: center;
     border: 0.5px solid #eca54c;
     border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.60);
+    background-color: rgba(0, 0, 0, 0.70);
+    color: var(--registrationText);
 }
 .jumbotron-reg-form {
     padding: 0;
@@ -689,7 +677,22 @@ input {
 #hard-btn {
     background-color:rgb(250, 0, 0);
 }
-/*sweetalert style*/
+/****************************instructions modal************************/
+.instructions-container {
+    line-height: 35px;
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+#hr-instructions {
+    background-color: #fafafa;
+}
+.instructions-container div {
+    text-align: center;
+}
+#exit-instructions {
+    margin: 0;
+}
+/***********************************sweetalert style*********************/
 .swal-overlay {
     background-color: rgba(0, 0, 0, 0.25);
 }
@@ -789,7 +792,9 @@ input {
     --footerBgColor: var(--rustyLightColor);
     --footerTextColor: var(--blackColor);
     --footerMobileBgColor: var(--blackColor);
-    --footerMobileTextColor:var(--whiteColor);
+    --footerMobileTextColor: var(--whiteColor);
+    --registrationBg: var(--bodyBgLight);
+    --registrationText: var(--whiteColor);
 }
 .dark-theme {
     --mainHeaderHomepage: var(--headerBgDark);
@@ -812,9 +817,10 @@ input {
     --footerTextColor: var(--whiteColor);
     --footerMobileBgColor: var(--rustyColor);
     --footerMobileTextColor:var(--whiteColor);
-
+    --registrationBg: var(--bodyBgDark);
+    --registrationText: var(--whiteColor);
 }
-
+/****************transition dark to white mode*********/
 * {
   transition: background-color 0.6s ease, color 1s ease;
 }

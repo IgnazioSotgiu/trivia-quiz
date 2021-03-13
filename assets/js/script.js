@@ -337,14 +337,18 @@ function shuffle(possibleAnswers) {
 }
 /**************************modal section**************************** */
 
-/****************************login modal******************************/
+/****************************instructions modal******************************/
 let instructionsLink = document.getElementById("instructions-link");
 let instructionsModal = document.getElementById("instructions-modal");
 if(instructionsLink) {
     instructionsLink.addEventListener("click", function() {
-        //console.log(loginModal);
+        
 
         instructionsModal.style.display = "block";
+        let exitInstructions = document.getElementById("exit-instructions");
+        exitInstructions.addEventListener("click", function() {
+            instructionsModal.style.display = "none";
+        });
 
         window.onclick = function(event) {
         if (event.target == instructionsModal) {
