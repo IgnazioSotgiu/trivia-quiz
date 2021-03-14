@@ -17,6 +17,18 @@ let overallQuestions = 0;
 // of difficulty, and the start button.
 
 document.addEventListener("DOMContentLoaded", function() {
+
+    let mainLogo = document.getElementById("logo");
+    let mainLogoRight = document.getElementById("logo-right");
+    mainLogo.style.left = "50%";
+    mainLogoRight.style.right = "50%";
+
+    mainLogo.style.transform = "translate(-50%)";
+    mainLogoRight.style.transform = "translate(50%)";
+
+    $("#logo").animate({ 
+        left: "-=30px",
+      }, 2000 );
     
 
     startPage()
@@ -308,7 +320,7 @@ function displayEndPage() {
     <div class="share-result-wrapper container-fluid">
         <div class="toggle-button" id="tggl-btn">
             <ul>
-                <li><a href="#" id="share-btn">
+                <li><a href="" id="share-btn">
                     <span class="text">Share</span>
                     <span class="icon"><i class="fas fa-share-alt"></i></span>
                 </a></li>
@@ -335,6 +347,15 @@ function displayEndPage() {
             <button type="button" class="btn btn-warning" id="continue-button">Continue</button>
         </div>
     </div>`;
+
+        
+    let shareButton = document.querySelector("#share-btn");
+    let toggleButton = document.querySelector("#tggl-btn");
+        
+        shareButton.addEventListener("click", function() {
+            toggleButton.classList.toggle("active");
+    });
+
 }
 
 
@@ -758,13 +779,5 @@ function continueGame() {
     startPage();
 
 }
-
-
-let shareButton = document.querySelector("#share-btn");
-let toggleButton = document.querySelector("#tggl-btn");
-
-shareButton.addEventListener("click", function() {
-    toggleButton.classList.toggle("active");
-})
 
  

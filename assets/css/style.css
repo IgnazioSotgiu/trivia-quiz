@@ -37,25 +37,59 @@ body {
     display: none;
 }
 /*******************************logo*******************************************/
-.name-container {
-    text-align: center;
+.header-container {
+    position: relative;
+    height: 180px;
 }
 #logo {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 180px;
     height: 180px;
-    margin: auto;
+    /*margin: auto;*/
     text-align: center;
     background-color: #000;
     color: #eca54c;
+    /*border: 2px solid #eca54c;*/
+    border-radius: 50%;
+}
+#logo {
+    -webkit-transition:  5s ease;
+    transition:  5s ease;
+}
+#logo-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 180px;
+    height: 180px;
+    /*margin: auto;*/
+    text-align: center;
+    background-color: transparent;
+    color: #eca54c;
     border: 2px solid #eca54c;
     border-radius: 50%;
+}
+#logo-right {
+    -webkit-transition: 5s ease;
+    transition: 5s ease;
 }
 #logo h1 {
     padding-top: 40px;
     color: #eca54c;
     text-decoration: none;
+    display: none;
+}
+#logo-right h1 {
+    padding-top: 40px;
+    color: #eca54c;
+    text-decoration: none;
 }
 #logo a:hover {
+    text-decoration: none;
+}
+#logo-right a:hover {
     text-decoration: none;
 }
 .registration-header-container {
@@ -817,8 +851,8 @@ input {
     --footerTextColor: var(--whiteColor);
     --footerMobileBgColor: var(--rustyColor);
     --footerMobileTextColor:var(--whiteColor);
-    --registrationBg: var(--bodyBgDark);
-    --registrationText: var(--whiteColor);
+    --registrationBg: var(--goldenColor);
+    --registrationText: var(--blackColor);
 }
 /****************transition dark to white mode*********/
 * {
