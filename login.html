@@ -14,104 +14,27 @@
     <title>Title</title>
 </head>
 <body>
-    <div id="navigation-bar" class="container-fluid navbar-container">
-        <nav class="navbar navbar-dark navbar-expand">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+    <div class="share-result-wrapper container-fluid">
+        <div class="toggle-button" id="tggl-btn">
+            <ul>
+                <li><a href="" id="share-btn">
+                    <span class="text">Share</span>
+                    <span class="icon"><i class="fas fa-share-alt"></i></span>
+                </a></li>
+                <li><a href="https://www.facebook.com/sharer/sharer.php?u=${window.location.href}" class="sm facebook">
+                    <span class="icon"><i class="fab fa-facebook"></i></span>
+                    <span class="text">Facebook</span>
+                </a></li>
+                <li><a href="https://twitter.com/intent/tweet?url=${window.location.href}&text=" class="sm twitter">
+                    <span class="icon"><i class="fab fa-twitter"></i></span>
+                    <span class="text">Twitter</span>
+                </a></li>
+                <li><a href="#" class="sm instagram">
+                    <span class="icon"><i class="fab fa-instagram"></i></span>
+                    <span class="text">Instagram</span>
+                </a></li>
             </ul>
-        </nav>
-    </div>
-    <div class="name-container">
-        <div id="logo">
-            <a href="index.html"><h1>Trivia<br>Quiz</h1></a>
         </div>
-    </div>
-    <div class="jumbotron">
-        <div class="login-form-container">
-            <h4>Please login to Trivia Quiz.</h4>
-            <form>
-                <div class="row">
-                    <div class="login-form-label col-12 col-md-6">
-                        <label for="email">Email Address</label>
-                    </div>
-                    <div class="login-form-input col-12 col-md-6">
-                        <input type="email" class="email-input" id="email" placeholder="email">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="login-form-label col-12 col-md-6">
-                        <label for="password">Enter Password</label>
-                    </div>
-                    <div class="login-form-input col-12 col-md-6">
-                        <input type="text" class="password" id="password" placeholder="password">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="login-button col-12">
-                        <button type="send" class="btn btn-light">login</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <footer>
-        <div class="container-fluid footer-container">
-            <div class="row row-center social-media">
-                <div class="col-4 col-center">
-                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                </div>
-                <div class="col-4 col-center">
-                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                </div>
-                <div class="col-4 col-center">
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="copyright-container">
-                <div><i class="far fa-copyright">Copyright Ignazio Sotgiu 2021</i>
-                </div>
-            </div>    
-        </div>
-    </footer>
-    <div class="modal" id="contact-modal">
-        <div class="jumbotron">
-            <div class="contact-form-container">
-                <h4>Welcome to Trivia Quiz contact form.</h4>
-                <h5>If you have any enquiry, suggestion, complain please let us know and will try to improve your experience!</h5>
-                <form>
-                    <div class="row">
-                        <div class="email-form-label col-12 col-md-6">
-                            <label for="contact-email">Email Address</label>
-                        </div>
-                        <div class="login-form-input col-12 col-md-6">
-                            <input type="email" class="email-input" id="contact-email" placeholder="email">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="enquiry-container col-12">
-                            <label for="contact-enquiry">Request / Enquiry</label>
-                            <br>   
-                            <textarea class="request" id="contact-enquiry" name="subject" placeholder="" style="height:200px"></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="contact-button col-12">
-                            <button type="send" class="btn btn-light">Submit</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-------------popup message----------->
-    <div class="hidden-message-container hidden-message-position hidden-message-bg">
-        <div class="hidden-message-text">
-            <p class="message-text">ok.... write here your message</p>
-        </div>
-        <button class="hidden-message-button btn btn-warning">Ok</button>
     </div>
 
 

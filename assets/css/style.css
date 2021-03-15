@@ -279,7 +279,7 @@ hr {
     width: 100px;
     height: 80px;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 100px;
 }
 /***************************modal**********************************/
 .modal {
@@ -467,10 +467,7 @@ input {
         padding-left: 0;
         padding-right: 0;
     }
-    /*.homepage-container {
-        margin-top: 116px;
-    }*/
-    .name-container {
+    .header-container {
         display: none;
     }
     .navbar-brand {
@@ -860,14 +857,19 @@ input {
 }
 /******************links to share result********************/
 .share-result-wrapper {
-    margin: 40px auto;
+    margin: 100px auto;
     text-align: center;
     position: relative;
     width: 100%;
     height: auto;
+    z-index: 1;
 
 }
 .toggle-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 250px;
     height: 45px;
     background-color: #ff933d;
@@ -942,5 +944,5 @@ input {
     color: #c32aa3;
 }
 .toggle-button.active {
-    height: 200px;
+    height: 150px;
 }

@@ -18,6 +18,8 @@ let overallQuestions = 0;
 
 document.addEventListener("DOMContentLoaded", function() {
 
+    //logo animation
+
     let mainLogo = document.getElementById("logo");
     let mainLogoRight = document.getElementById("logo-right");
     mainLogo.style.left = "50%";
@@ -25,11 +27,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     mainLogo.style.transform = "translate(-50%)";
     mainLogoRight.style.transform = "translate(50%)";
-
-    $("#logo").animate({ 
-        left: "-=30px",
-      }, 2000 );
-    
 
     startPage()
 });
@@ -317,24 +314,20 @@ function displayEndPage() {
         <p>You got <span id="correct-precentage">${overallResult}</span>% of correct answers!</p>
     </div>
     <!--------------------share buttons popup--------------------->
-    <div class="share-result-wrapper container-fluid">
+    <div class="share-result-wrapper container-fluid" id="share-box">
         <div class="toggle-button" id="tggl-btn">
             <ul>
                 <li><a href="" id="share-btn">
                     <span class="text">Share</span>
                     <span class="icon"><i class="fas fa-share-alt"></i></span>
                 </a></li>
-                <li><a href="https://www.facebook.com/sharer/sharer.php?u=${window.location.href}" class="sm facebook">
+                <li><a href="https://www.facebook.com/sharer/sharer.php?u=${window.location.href}" class="sm facebook" target="_blank">
                     <span class="icon"><i class="fab fa-facebook"></i></span>
                     <span class="text">Facebook</span>
                 </a></li>
-                <li><a href="https://twitter.com/intent/tweet?url=${window.location.href}&text=" class="sm twitter">
+                <li><a href="https://twitter.com/intent/tweet?url=${window.location.href}&text=" class="sm twitter" target="_blank">
                     <span class="icon"><i class="fab fa-twitter"></i></span>
                     <span class="text">Twitter</span>
-                </a></li>
-                <li><a href="#" class="sm instagram">
-                    <span class="icon"><i class="fab fa-instagram"></i></span>
-                    <span class="text">Instagram</span>
                 </a></li>
             </ul>
         </div>
@@ -351,8 +344,9 @@ function displayEndPage() {
         
     let shareButton = document.querySelector("#share-btn");
     let toggleButton = document.querySelector("#tggl-btn");
+    let shareBox = document.querySelector(".share-result-wrapper");
         
-        shareButton.addEventListener("click", function() {
+        shareBox.addEventListener("mouseenter", function() {
             toggleButton.classList.toggle("active");
     });
 
