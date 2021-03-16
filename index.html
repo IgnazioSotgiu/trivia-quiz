@@ -21,225 +21,229 @@
             })();
     </script>
 </head>
-<body class="homepage-container light-theme" id="background-container">
-    <!---------------------Header-------------------------->
-    <div class="header-container" id="header-container-bg">
-        <div id="logo">
-            <a href="index.html"><h1>Trivia<br>Quiz</h1></a>
-        </div>
-        <div id="logo-right">
-            <a href="index.html"><h1>Trivia<br>Quiz</h1></a>
-        </div>
-    </div>
-    <!-----------------------Navigation------------------->
-    <div id="navigation-bar" class="container-fluid navbar-container">
-        <nav class="navbar navbar-dark navbar-expand-sm">
-            <a href="index.html" class="navbar-brand mx-auto"><span id="navbar-brand-text">Trivia<br>Quiz</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTriviaQuizDropdown" aria-controls="navbarTriviaQuizDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTriviaQuizDropdown">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item nav-link" id="change-mode-icon"><i class="fas fa-adjust" id="theme-switch" value="dark"></i></li>
-                    <li class="nav-item"><a class="nav-link" href="register.html">Register For Our Newsletter</a></li>
-                    <li class="nav-item"><a class="nav-link" id="contact-link" data-open="contact-modal" data-toggle="contact-modal" data-backdrop="false" href="#">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" id="instructions-link" data-open="instructions-modal" data-toggle="instructions-modal" data-backdrop="false" href="#">Instructions</a></li>
-                </ul>
+<body>
+    <div class="homepage-container light-theme" id="background-container">
+        <!---------------------Header-------------------------->
+        <div class="header-container" id="header-container-bg">
+            <div id="logo">
+                <a href="index.html"><h1>Trivia<br>Quiz</h1></a>
             </div>
-        </nav>
-    </div>
-    <!--------------------Message / Question section--------------------->
-    <div id="replace-question-container">
-        <div class="container-fluid" id="message-homepage">
-            <p>Welcome to the Trivia Quiz game. <br>Choose the Category and the Difficulty level and start to play...</p>
+            <div id="logo-right">
+                <a href="index.html"><h1>Trivia<br>Quiz</h1></a>
+            </div>
         </div>
-        <div class="row game-choice">
-            <div class="col-6" id="category-container">
-                <button class="game-choice-btn" value="category" name="game"
-                    id="category-choice-link" data-open="category-choice-modal" data-toggle="category-choice-modal" data-backdrop="false">
-                    <i class="fas fa-question"><br><span class="category-choice-name">Category</span></i>
+        <!-----------------------Navigation------------------->
+        <div id="navigation-bar" class="container-fluid navbar-container">
+            <nav class="navbar navbar-dark navbar-expand-sm">
+                <a href="index.html" class="navbar-brand mx-auto"><span id="navbar-brand-text">Trivia<br>Quiz</span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTriviaQuizDropdown" aria-controls="navbarTriviaQuizDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-            </div>
-            <div class="col-6" id="difficulty-container">
-                <button class="game-choice-btn" value="difficulty" name="game"
-                    id="difficulty-choice-link" data-open="difficulty-choice-modal" data-toggle="difficulty-choice-modal" data-backdrop="false">
-                    <i class="fas fa-signal"><br><span class="category-name">Level</span></i>
-                </button>
-            </div>
-        </div>
-        <div class="start-button-container">
-            <button type="button" id="start-button" class="btn btn-success"><i class="fas fa-play"><br><span id="start-button-text">Start</span></i></button>
-        </div>
-    </div>
-    <footer class="footer-bg-color">
-        <div class="container-fluid footer-container">
-            <div class="row row-center social-media">
-                <div class="col-4 col-center">
-                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <div class="collapse navbar-collapse" id="navbarTriviaQuizDropdown">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item nav-link" id="change-mode-icon"><i class="fas fa-adjust" id="theme-switch" value="dark"></i></li>
+                        <li class="nav-item"><a class="nav-link" href="register.html">Register For Our Newsletter</a></li>
+                        <li class="nav-item"><a class="nav-link" id="contact-link" data-open="contact-modal" data-toggle="contact-modal" data-backdrop="false" href="#">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" id="instructions-link" data-open="instructions-modal" data-toggle="instructions-modal" data-backdrop="false" href="#">Instructions</a></li>
+                    </ul>
                 </div>
-                <div class="col-4 col-center">
-                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </nav>
+        </div>
+        <!--------------------Message / Question section--------------------->
+        <div id="replace-question-container">
+            <div class="homepage-start-container">
+                <div class="container-fluid" id="message-homepage">
+                    <p>Welcome to the Trivia Quiz game. <br>Choose the Category and the Difficulty level and start to play...</p>
                 </div>
-                <div class="col-4 col-center">
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <div class="row game-choice">
+                    <div class="col-6" id="category-container">
+                        <button class="game-choice-btn" value="category" name="game"
+                            id="category-choice-link" data-open="category-choice-modal" data-toggle="category-choice-modal" data-backdrop="false">
+                            <i class="fas fa-question"><br><span class="category-choice-name">Category</span></i>
+                        </button>
+                    </div>
+                    <div class="col-6" id="difficulty-container">
+                        <button class="game-choice-btn" value="difficulty" name="game"
+                            id="difficulty-choice-link" data-open="difficulty-choice-modal" data-toggle="difficulty-choice-modal" data-backdrop="false">
+                            <i class="fas fa-signal"><br><span class="category-name">Level</span></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="start-button-container">
+                    <button type="button" id="start-button" class="btn btn-success"><i class="fas fa-play"><br><span id="start-button-text">Start</span></i></button>
                 </div>
             </div>
-            <div class="copyright-container">
-                <div><i class="far fa-copyright">Copyright Ignazio Sotgiu 2021</i>
+        </div>
+        <footer class="footer-bg-color">
+            <div class="container-fluid footer-container">
+                <div class="row row-center social-media">
+                    <div class="col-4 col-center">
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                    <div class="col-4 col-center">
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="col-4 col-center">
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
-            </div>    
-        </div>
-    </footer>
-    <!--------------------------------instructions modal------------------------------>
-    <div class="modal" id="instructions-modal">
-        <div class="jumbotron">
-            <div class="instructions-container">
-                <h4>About Trivia Quiz...</h4>
-                <hr id="hr-instructions">
-                <p>Welcome to Trivia Quiz game.<br>Are you ready to test yourself answering challenging questions on your favourite category?<br>Choose a category and a difficulty level and then you can start the game.<br>The questions will be True/False or Multiple Choice, and the program will select them for you randomly...<br>10 Questions for the easy level<br>13 Questions for the medium level <br>15 Questions for the hard level <br>At the end of the game the program will judge you performance...<br>You can continue the game choosing the continue button, which will keep your score while you are starting a new round of questions, or you can reset the count starting a new session clicking the home button.<br><br>Good Luck and enjoy.<br><br>Trivia Quiz Team.
-                </p>
-                <button class="btn btn-danger" id="exit-instructions">exit</button>
+                <div class="copyright-container">
+                    <div><i class="far fa-copyright">Copyright Ignazio Sotgiu 2021</i>
+                    </div>
+                </div>    
             </div>
-        </div>
-    </div>
-   <!--------------------------------contact modal-------------------------->
-    <div class="modal" id="contact-modal">
-        <div class="jumbotron">
-            <div class="contact-form-container">
-                <h4>Welcome to Trivia Quiz contact form.</h4>
-                <h5>If you have any enquiry, suggestion, complain please let us know and will try to improve your experience!</h5>
-                <form id="enquiryForm">
-                    <div class="row contact-name-row">
-                        <div class="contact-form-label col-12">
-                            <label>Name</label>
-                        </div>
-                    </div>
-                    <div class="row">    
-                        <div class="contact-form-input col-12">
-                            <input type="text" name="name" class="name-input" id="contact-name" placeholder="Name" required>
-                        </div>
-                    </div>
-                    <div class="row contact-email-row">
-                        <div class="contact-form-label col-12">
-                            <label>Email Address</label>
-                        </div>
-                    </div>
-                    <div class="row">    
-                        <div class="contact-form-input col-12">
-                            <input type="email" name="email" class="email-input" id="contact-email" placeholder="email" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="enquiry-container col-12">
-                            <label>Request / Enquiry</label>
-                            <br>   
-                            <textarea class="request" id="contact-enquiry" name="subject" placeholder="Write here your message" required></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="contact-button col-12">
-                            <button data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Submitting..." type="submit" id="contact-submit-btn" class="btn btn-warning">Submit</button>
-                        </div>
-                    <div class="row"></div>    
-                        <div class="col-12 home-link">
-                            <a href="index.html">HOME</a>
-                        </div>
-                    </div>
-                </form>
+        </footer>
+        <!--------------------------------instructions modal------------------------------>
+        <div class="modal" id="instructions-modal">
+            <div class="jumbotron">
+                <div class="instructions-container">
+                    <h4>About Trivia Quiz...</h4>
+                    <hr id="hr-instructions">
+                    <p>Welcome to Trivia Quiz game.<br>Are you ready to test yourself answering challenging questions on your favourite category?<br>Choose a category and a difficulty level and then you can start the game.<br>The questions will be True/False or Multiple Choice, and the program will select them for you randomly...<br>10 Questions for the easy level<br>13 Questions for the medium level <br>15 Questions for the hard level <br>At the end of the game the program will judge you performance...<br>You can continue the game choosing the continue button, which will keep your score while you are starting a new round of questions, or you can reset the count starting a new session clicking the home button.<br><br>Good Luck and enjoy.<br><br>Trivia Quiz Team.
+                    </p>
+                    <button class="btn btn-danger" id="exit-instructions">exit</button>
+                </div>
             </div>
         </div>
-    </div>
-    <!----------------------------category choice modal------------------------>
-    <div class="modal" id="category-choice-modal">
-        <div class="jumbotron">
-        <h2>Please select a category...</h2>
-        <div class="row category-choice">
-            <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="general" name="category">
-                    <i class="fas fa-brain"><br><span class="category-name">General</span></i>
-                </button>
-            </div>
-            <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="book" name="category">
-                    <i class="fas fa-book"><br><span class="category-name">Books</span></i>
-                </button>
-            </div>
-            <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="film" name="category">
-                    <i class="fas fa-film"><br><span class="category-name">Movies</span></i>
-                </button>
-            </div>
-            <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="music" name="category">
-                    <i class="fas fa-music"><br><span class="category-name">Music</span></i>
-                </button>
-            </div>
-        </div>
-        <div class="row category-choice">
-            <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="tv" name="category">
-                    <i class="fas fa-tv"><br><span class="category-name">TV</span></i>
-                </button>
-            </div>
-            <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="video-games" name="category">
-                    <i class="fas fa-gamepad"><br><span class="category-name">Videogames</span></i>
-                </button>
-            </div>
-            <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="computer" name="category">
-                    <i class="fas fa-laptop"><br><span class="category-name">Computer</span></i>
-                </button>
-            </div>
-            <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="math" name="category">
-                    <i class="fas fa-calculator"><br><span class="category-name">Math</span></i>
-                </button>
+    <!--------------------------------contact modal-------------------------->
+        <div class="modal" id="contact-modal">
+            <div class="jumbotron">
+                <div class="contact-form-container">
+                    <h4>Welcome to Trivia Quiz contact form.</h4>
+                    <h5>If you have any enquiry, suggestion, complain please let us know and will try to improve your experience!</h5>
+                    <form id="enquiryForm">
+                        <div class="row contact-name-row">
+                            <div class="contact-form-label col-12">
+                                <label>Name</label>
+                            </div>
+                        </div>
+                        <div class="row">    
+                            <div class="contact-form-input col-12">
+                                <input type="text" name="name" class="name-input" id="contact-name" placeholder="Name" required>
+                            </div>
+                        </div>
+                        <div class="row contact-email-row">
+                            <div class="contact-form-label col-12">
+                                <label>Email Address</label>
+                            </div>
+                        </div>
+                        <div class="row">    
+                            <div class="contact-form-input col-12">
+                                <input type="email" name="email" class="email-input" id="contact-email" placeholder="email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="enquiry-container col-12">
+                                <label>Request / Enquiry</label>
+                                <br>   
+                                <textarea class="request" id="contact-enquiry" name="subject" placeholder="Write here your message" required></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="contact-button col-12">
+                                <button data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Submitting..." type="submit" id="contact-submit-btn" class="btn btn-warning">Submit</button>
+                            </div>
+                        <div class="row"></div>    
+                            <div class="col-12 home-link">
+                                <a href="index.html">HOME</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="row category-choice">
-            <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="sport" name="category">
-                    <i class="fas fa-futbol"><br><span class="category-name">Sport</span></i>
-                </button>
-            </div>
-            <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="geography" name="category">
-                    <i class="fas fa-atlas"><br><span class="category-name">Geography</span></i>
-                </button>
-            </div>
-            <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="history" name="category">
-                    <i class="fas fa-history"><br><span class="category-name">History</span></i>
-                </button>
-            </div>
-            <div class="col-6 col-md-3">
-                <button class="category-choice-btn" value="animals" name="category">
-                    <i class="fas fa-paw"><br><span class="category-name">Animals</span></i>
-                </button>
-            </div>
-        </div>
-    </div>
-    </div>
-    <!--------------------------difficulty choice modal------------------->
-    <div class="modal" id="difficulty-choice-modal">
-        <div class="jumbotron message-homepage">
-        <h2>Please select Difficulty Level...</h2>
-            <div class="row difficulty-choice">
-                <div class="col-12 col-md-4">
-                    <button class="difficulty-sel-input" value="easy" id="easy-btn" name="difficulty">
-                        <i class="fas fa-skiing"><br><span class="difficulty-name">Easy</span></i>
+        <!----------------------------category choice modal------------------------>
+        <div class="modal" id="category-choice-modal">
+            <div class="jumbotron">
+            <h2>Please select a category...</h2>
+            <div class="row category-choice">
+                <div class="col-6 col-md-3">
+                    <button class="category-choice-btn" value="general" name="category">
+                        <i class="fas fa-brain"><br><span class="category-name">General</span></i>
                     </button>
                 </div>
-                <div class="col-12 col-md-4">
-                    <button class="difficulty-sel-input" value="medium" id="medium-btn" name="difficulty">
-                        <i class="far fa-arrow-alt-circle-right"><br><span class="difficulty-name">Medium</span></i>
+                <div class="col-6 col-md-3">
+                    <button class="category-choice-btn" value="book" name="category">
+                        <i class="fas fa-book"><br><span class="category-name">Books</span></i>
                     </button>
                 </div>
-                <div class="col-12 col-md-4">
-                    <button class="difficulty-sel-input" value="hard" id="hard-btn" name="difficulty">
-                        <i class="fas fa-mountain"><br><span class="difficulty-name">Hard</span></i>
+                <div class="col-6 col-md-3">
+                    <button class="category-choice-btn" value="film" name="category">
+                        <i class="fas fa-film"><br><span class="category-name">Movies</span></i>
                     </button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <button class="category-choice-btn" value="music" name="category">
+                        <i class="fas fa-music"><br><span class="category-name">Music</span></i>
+                    </button>
+                </div>
+            </div>
+            <div class="row category-choice">
+                <div class="col-6 col-md-3">
+                    <button class="category-choice-btn" value="tv" name="category">
+                        <i class="fas fa-tv"><br><span class="category-name">TV</span></i>
+                    </button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <button class="category-choice-btn" value="video-games" name="category">
+                        <i class="fas fa-gamepad"><br><span class="category-name">Videogames</span></i>
+                    </button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <button class="category-choice-btn" value="computer" name="category">
+                        <i class="fas fa-laptop"><br><span class="category-name">Computer</span></i>
+                    </button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <button class="category-choice-btn" value="math" name="category">
+                        <i class="fas fa-calculator"><br><span class="category-name">Math</span></i>
+                    </button>
+                </div>
+            </div>
+            <div class="row category-choice">
+                <div class="col-6 col-md-3">
+                    <button class="category-choice-btn" value="sport" name="category">
+                        <i class="fas fa-futbol"><br><span class="category-name">Sport</span></i>
+                    </button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <button class="category-choice-btn" value="geography" name="category">
+                        <i class="fas fa-atlas"><br><span class="category-name">Geography</span></i>
+                    </button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <button class="category-choice-btn" value="history" name="category">
+                        <i class="fas fa-history"><br><span class="category-name">History</span></i>
+                    </button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <button class="category-choice-btn" value="animals" name="category">
+                        <i class="fas fa-paw"><br><span class="category-name">Animals</span></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--------------------------difficulty choice modal------------------->
+        <div class="modal" id="difficulty-choice-modal">
+            <div class="jumbotron message-homepage">
+            <h2>Please select Difficulty Level...</h2>
+                <div class="row difficulty-choice">
+                    <div class="col-12 col-md-4">
+                        <button class="difficulty-sel-input" value="easy" id="easy-btn" name="difficulty">
+                            <i class="fas fa-skiing"><br><span class="difficulty-name">Easy</span></i>
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <button class="difficulty-sel-input" value="medium" id="medium-btn" name="difficulty">
+                            <i class="far fa-arrow-alt-circle-right"><br><span class="difficulty-name">Medium</span></i>
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <button class="difficulty-sel-input" value="hard" id="hard-btn" name="difficulty">
+                            <i class="fas fa-mountain"><br><span class="difficulty-name">Hard</span></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

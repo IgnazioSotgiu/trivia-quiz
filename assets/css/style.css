@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 body {
+    font-family: "Roboto", sans-serif;
+}
+.homepage-container {
+    position: relative;
     min-height: 100vh;
     height: auto;
     width: 100%;
     color: #fafafa;
-    font-family: "Roboto", sans-serif;
 }
 #background-container {
     background: var(--homepageBg) no-repeat bottom right; 
@@ -131,7 +134,7 @@ body {
 }
 #message-homepage {
     padding: 30px;
-    margin-top: 20px;
+    margin-top: 60px;
     color: var(--messageHomepage);
     background-color: var(--messageHomepageBgColor);
     text-align: center;
@@ -144,6 +147,7 @@ body {
     margin-right: 20px;
 }
 .start-button-container {
+    margin: 100px 10%;
     text-align: center;
 }
 .start-button-container  .btn-success {
@@ -171,17 +175,13 @@ p {
     font-size: 20px;
     border-radius: 10px
 }
-.footer-bg-color {
-    background-color: var(--footerBgColor);
-}
 .footer-container {
     position: relative;
-    left: 0;
-    bottom: 0;
+    margin-top: 100px;
     padding: 20px 150px 5px;
     text-align: center;
+    background-color: var(--footerBgColor);
     color: var(--footerTextColor);
-    margin-top: 60px;
 }
 .footer-container i {
     color: var(--footerTextColor);
@@ -192,7 +192,7 @@ p {
 }
 /***********************question display and answers buttons************************/
 .question-container {
-    margin-top: 10px;
+    margin-top: 50px;
     padding: 10px 20%;
     text-align: center;
     color: var(--questionColor);
@@ -207,6 +207,7 @@ hr {
     margin-bottom: 10px;
 }
 .user-answer-container {
+    margin: 100px 50px;
     text-align: center;
     padding: 10px;
 }
@@ -219,11 +220,13 @@ hr {
     border-radius: 50%;
 }
 .btn-answer-container {
+    margin: 50px 0;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 .btn-answer-container div {
     text-align: center;
+    padding-top: 20px;
 }
 .btn-secondary {
     margin-top: 15px;
@@ -234,7 +237,7 @@ hr {
     text-align: center;
     background-color: #fafafa;
     border-radius: 10px;
-    margin: 20px 20%;
+    margin: 50px 10%;
 }
 #correct-answers {
     color: green;
@@ -297,16 +300,19 @@ hr {
     display: none;
 }*/
 .registration {
-    background: var(--registrationBg) no-repeat bottom right; 
+    background: url("../images/registration-bg-light.jpg") no-repeat bottom right; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    color: #fafafa;
 }
 .jumbotron {
-    margin-top: 20px;
-    margin-left: 10%;
-    margin-right: 10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
     padding: 20px;
     max-height: 90vh;
     overflow-y: auto;
@@ -621,7 +627,7 @@ input {
 .game-choice div button {
     width: 100px;
     height: 100px;
-    margin: 20px 0px;
+    margin-top: 50px;
     padding-top: 10px;
     border: 2px solid #111111;
     border-radius: 10px;
