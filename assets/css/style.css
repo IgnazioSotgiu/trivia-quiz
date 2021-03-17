@@ -50,11 +50,9 @@ body {
     left: 0;
     width: 180px;
     height: 180px;
-    /*margin: auto;*/
     text-align: center;
     background-color: #000;
     color: #eca54c;
-    /*border: 2px solid #eca54c;*/
     border-radius: 50%;
 }
 #logo {
@@ -296,9 +294,6 @@ hr {
     -o-background-size: cover;
     background-size: cover;
 }
-/*#registration-modal {
-    display: none;
-}*/
 .registration {
     background: url("../images/registration-bg-light.jpg") no-repeat bottom right; 
     -webkit-background-size: cover;
@@ -361,19 +356,7 @@ input {
     color: #fafafa;
     text-decoration: none;
 }
-/****************************login form*******************************/
-.login-form-label {
-    text-align: right;
-    padding-top: 10px;
-}
-.login-form-input {
-    text-align: left;
-    padding-top: 10px;
-}
-.login-button {
-    padding-top: 20px;
-}
-/******************************contact form******************************/
+/******************************contact form modal******************************/
 .contact-email-row {
     margin-top: 30px;
 }
@@ -426,15 +409,15 @@ input {
 }
 @media screen and (max-width: 767px) {
     .navbar-dark .navbar-nav .nav-link {
-    padding-left: 10px;
-    padding-right: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .counter-container {
         margin: 20px 0;
     }
     .jumbotron-reg-form {
-    padding: 0;
-    margin: 40px 10%;
+        padding: 0;
+        margin: 40px 10%;
     }
     .registration-form-label {
         text-align: center;
@@ -536,10 +519,10 @@ input {
         margin-left: 40%;
     }
     .dropdown-item:focus, .dropdown-item:hover {
-    color: rgba(255,255,255,.75);
-    text-decoration: none;
-    background-color: transparent;
-}
+        color: rgba(255,255,255,.75);
+        text-decoration: none;
+        background-color: transparent;
+    }
     .difficulty-selection-container {
         padding-left: 25px;
         padding-right: 0;
@@ -555,8 +538,8 @@ input {
         margin: 20px 0px;
     }
     #incorrect-answers {
-    margin-left: 20px;
-}
+        margin-left: 20px;
+    }
     .footer-container {
         position: relative;
         bottom: 0;
@@ -570,8 +553,8 @@ input {
         padding-top: 10px;
     }
     #replace-question-container {
-    margin: 0 20px;
-    min-height: 380px;
+        margin: 0 20px;
+        min-height: 380px;
     }    
     .question-container {
         padding: 10px 5%;
@@ -587,8 +570,8 @@ input {
         padding: 20px;
     }
     .jumbotron-reg-form {
-    padding: 0;
-    margin: 20px 20px;
+        padding: 0;
+        margin: 20px 20px;
     }
     .footer-container {
         background-color: var(--footerMobileBgColor);
@@ -621,9 +604,8 @@ input {
         font-size: 10px;
         padding-top: 10px;
     }
-
 }
-/*****************game choice**********************************/
+/*****************homepage game choice section**********************************/
 .game-choice div button {
     width: 100px;
     height: 100px;
@@ -651,7 +633,7 @@ input {
     background-color: #fafafa;
     color: blueviolet;
 }
-/*****************category choice screen*****************************/
+/*****************category choice modal*****************************/
 .category-choice div button {
     width: 100px;
     height: 100px;
@@ -729,7 +711,7 @@ input {
 #exit-instructions {
     margin: 0;
 }
-/***********************************sweetalert style*********************/
+/***********************************sweet alert modal style*********************/
 .swal-overlay {
     background-color: rgba(0, 0, 0, 0.25);
 }
@@ -756,13 +738,6 @@ input {
     text-align: center;
     color: var(--swalModalTextColor);
 }
-/*.swal-footer {
-    text-align: center;
-    background-color: #000;
-    margin-top: 32px;
-    overflow: hidden;
-    display: none;
-}*/
 .swal-button {
     position: fixed;
     top: 0;
@@ -789,7 +764,7 @@ input {
     content: none;
 }
 
-/* toggle Light/Dark mode*/
+/* toggle Light/Dark mode color variables */
 :root {
   --headerBgLight: url("../images/home-header-light.jpg");
   --headerBgDark: url("../images/home-header-dark.jpg");
@@ -807,7 +782,6 @@ input {
   --darkOverlayColor: rgba(0, 0, 0, 0.5);
   --noOverlayColor: rgba(0, 0, 0, 0);
 }
-
 /*set light theme colors*/
 .light-theme {
     --mainHeaderHomepage: var(--headerBgLight);
@@ -869,7 +843,6 @@ input {
     width: 100%;
     height: auto;
     z-index: 1;
-
 }
 .toggle-button {
     position: absolute;
