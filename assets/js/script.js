@@ -205,7 +205,6 @@ function startQuestions(event) {
                     let value = this.getAttribute("value");
 
                     if(value == correctAnswer) {
-                        //changeGreenBgColor(btnId);
                         this.style.backgroundColor = "green";
                         incrementCorrect();
                         overallCorrect++;
@@ -401,7 +400,6 @@ let contactLink = document.getElementById("contact-link");
 let contactModal = document.getElementById("contact-modal");
 if(contactLink) {
     contactLink.addEventListener("click", function() {
-        //console.log(loginModal);
 
         contactModal.style.display = "block";
 
@@ -410,6 +408,10 @@ if(contactLink) {
             contactModal.style.display = "none";
             }
         }
+        let contactHomeLink = document.getElementById("contact-home-link");
+        contactHomeLink.addEventListener("click", function() {
+            contactModal.style.display = "none";
+        });
     });
 }
 
@@ -734,13 +736,9 @@ let themeSwitch = document.getElementById("theme-switch");
 themeSwitch.addEventListener("click", changeMode);
 
 function changeMode() {
-    let themeValue = document.getElementById("theme-switch").value;
-
-    if(themeValue === "dark") {
-        document.body.classList.toggle('light-theme');
-    } else {
-        document.body.classList.toggle('dark-theme');
-    }
+    let themeValue = document.getElementById("theme-switch");
+    document.body.classList.toggle('light-theme');
+    document.body.classList.toggle('dark-theme');
 }
 
 function continueGame() {

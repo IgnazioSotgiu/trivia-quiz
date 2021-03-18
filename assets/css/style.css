@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 body {
+    position: relative;
+    min-height: 100vh;
     font-family: "Roboto", sans-serif;
 }
 .homepage-container {
-    position: relative;
-    min-height: 100vh;
     height: auto;
     width: 100%;
     color: #fafafa;
@@ -127,12 +127,11 @@ body {
 }
 /******************************homepage message container*******************/
 #replace-question-container {
-    min-height: 400px;
-    margin: 0 100px;
+    min-height: 500px;
+    margin: 50px 100px;
 }
 #message-homepage {
     padding: 30px;
-    margin-top: 60px;
     color: var(--messageHomepage);
     background-color: var(--messageHomepageBgColor);
     text-align: center;
@@ -173,9 +172,12 @@ p {
     font-size: 20px;
     border-radius: 10px
 }
+/*****************************footer***************************/
+footer {
+    position: absolute;
+    width: 100%;
+}
 .footer-container {
-    position: relative;
-    margin-top: 100px;
     padding: 20px 150px 5px;
     text-align: center;
     background-color: var(--footerBgColor);
@@ -190,7 +192,7 @@ p {
 }
 /***********************question display and answers buttons************************/
 .question-container {
-    margin-top: 50px;
+    margin-top: 100px;
     padding: 10px 20%;
     text-align: center;
     color: var(--questionColor);
@@ -218,7 +220,7 @@ hr {
     border-radius: 50%;
 }
 .btn-answer-container {
-    margin: 50px 0;
+    margin: 80px 0;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -295,6 +297,7 @@ hr {
     background-size: cover;
 }
 .registration {
+    height: 100vh;
     background: url("../images/registration-bg-light.jpg") no-repeat bottom right; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -320,7 +323,6 @@ hr {
 .jumbotron-reg-form {
     padding: 0;
     max-width: 700px;
-    margin: 40px auto;
 }
 .form-control {
     width: 60%;
@@ -357,6 +359,9 @@ input {
     text-decoration: none;
 }
 /******************************contact form modal******************************/
+.contact-form-container {
+    color: var(--modalText);
+}
 .contact-email-row {
     margin-top: 30px;
 }
@@ -390,6 +395,9 @@ input {
     color: #fafafa;
 }
 @media screen and (min-width:1000px) {
+    body {
+        min-height: 100vh;
+    }
     .footer-container {
         padding: 20px 250px 5px;
     }
@@ -408,6 +416,9 @@ input {
     }
 }
 @media screen and (max-width: 767px) {
+    body {
+        min-height: 100vh;
+    }
     .navbar-dark .navbar-nav .nav-link {
         padding-left: 10px;
         padding-right: 10px;
@@ -417,7 +428,6 @@ input {
     }
     .jumbotron-reg-form {
         padding: 0;
-        margin: 40px 10%;
     }
     .registration-form-label {
         text-align: center;
@@ -451,6 +461,9 @@ input {
         width:100%;
         overflow-x:hidden;
         height: auto;
+    }
+    body {
+        min-height: 100vh;
     }
     .container-fluid {
         padding-left: 0;
@@ -553,7 +566,7 @@ input {
         padding-top: 10px;
     }
     #replace-question-container {
-        margin: 0 20px;
+        margin: 10px 20px;
         min-height: 380px;
     }    
     .question-container {
@@ -570,6 +583,11 @@ input {
         padding: 20px;
     }
     .jumbotron-reg-form {
+        position: absolute;
+        height: 80vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         padding: 0;
         margin: 20px 20px;
     }
@@ -581,8 +599,11 @@ input {
     }
 }
 @media screen and (max-width:350px) {
+    body {
+        min-height: 100vh;
+    }
     .navbar {
-        padding: 0;
+        padding-left: 72px;
     }
     .container-fluid {
         padding: 0;
@@ -617,7 +638,7 @@ input {
 .game-choice {
     margin: 20px 50px;
 }
-.game-choice .col-6 {
+.game-choice .col-sm-6 {
     text-align: center;
 }
 .game-choice div button i {
@@ -698,6 +719,7 @@ input {
 }
 /****************************instructions modal************************/
 .instructions-container {
+    color: var(--modalText);
     line-height: 35px;
     font-family: 'Roboto';
     font-weight: 300;
@@ -794,6 +816,7 @@ input {
     --questionColor: var(--blackColor);
     --questionBgColor: var(--whiteOverlayColor);
     --modalBg: var(--bodyBgLight);
+    --modalText: var(--whiteColor);
     --messageFinishTest: var(--blackColor);
     --messageFinishTestBgColor: var(--whiteOverlayColor);
     --swalModalBgColor: var(--whiteColor);
@@ -818,6 +841,7 @@ input {
     --questionColor: var(--goldenColor);
     --questionBgColor: var(--noOverlayColor);
     --modalBg: var(--bodyBgDark);
+    --modalText: var(--whiteColor);
     --messageFinishTest: var(--goldenColor);
     --messageFinishTestBgColor: var(--noOverlayColor);
     --swalModalBgColor: var(--rustyColor);
