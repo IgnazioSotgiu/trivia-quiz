@@ -747,13 +747,13 @@ function continueGame() {
             <p>Welcome to the Trivia Quiz game. <br>Choose the Category and the Difficulty level and start to play...</p>
         </div>
         <div class="row game-choice">
-            <div class="col-6" id="category-container">
+            <div class="col-12 col-sm-6" id="category-container">
                 <button class="game-choice-btn" value="category" name="game"
                     id="category-choice-link" data-open="category-choice-modal" data-toggle="category-choice-modal" data-backdrop="false">
                     <i class="fas fa-question"><br><span class="category-choice-name">Category</span></i>
                 </button>
             </div>
-            <div class="col-6" id="difficulty-container">
+            <div class="col-12 col-sm-6" id="difficulty-container">
                 <button class="game-choice-btn" value="difficulty" name="game"
                     id="difficulty-choice-link" data-open="difficulty-choice-modal" data-toggle="difficulty-choice-modal" data-backdrop="false">
                     <i class="fas fa-signal"><br><span class="category-name">Level</span></i>

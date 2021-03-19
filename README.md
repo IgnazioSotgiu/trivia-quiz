@@ -3,14 +3,15 @@
 ---  
 
 Trivia Quiz is a website designed to entertain and encourage the users to test their knowledge on different fields or subjects, answering different questions, challenging them to improve their performance with different difficulty levels.    
-Before starting the game the user will be able to choose the category and the level of difficulty and then will start the question challenge. The question type is chosen randomly from the program, and can be a True/False or a multiple choice.  
-Add here the mockup imag
-The goal is to build a simple website where the user will want to spend time playing in, share with friends and learn some new notions. The owner goal overtime is to gain exposure, promoting new challenges, overtime selling advertising space, creating a database of users giving them the choice if they like to be contacted info regarding new features or upcoming challenges.  
+Before starting the game the user will be able to choose the category and the level of difficulty and then will start the question challenge. The question type is chosen randomly from the remote api, and can be a True/False or a multiple choice.  
+![](./assets/docs/mockup-trivia-quiz.png)
+The goal is to build a simple website where the user will want to spend time playing in, share with friends and learn some new notions. The owner goal overtime is to gain exposure, promoting new challenges, selling advertising space, developing the range of games, creating a database of users giving them the choice if they like to be contacted info regarding new features or upcoming challenges.  
 The owner goal is to get as many people as he can to play on his website, and get the company name promoted through user social media sharing.  
 
 ---
 > - ### Content
->> - [Website Structure](#website-structure)
+>> - [Website Structure](#website-structure) 
+>> - [User Stories](#user-stories)
 
 
 
@@ -26,35 +27,55 @@ The owner goal is to get as many people as he can to play on his website, and ge
 
 
 
-## Website Structure  
-The Trivia Quiz website is composed of one homepage, all the pages and modal can be accessed from the homepage with different buttons and links. The links present in the navbar connect to the registration form page, the contact form and also a link for the game instructions. In the navbar is also present the adjust icon to change between Light and Dark Theme. From the homepage the user can choose the difficulty level and the category with 2 other popup screens, and after the choice the user will be able to start the game. At the end of the end of the game page will show the user performance of the game with the overall performance of the session.
-
----
-### here the website structure file
----
+## Website Structure   
+The Trivia Quiz website is composed of one homepage and the registration for newsletter page. The links present in the navbar connect to the registration page, a link to open a modal with the contact form and also a modal for the game instructions.
+  
+  ---
+  ![](./assets/docs/trivia-quiz-site-structure.png)  
+   
+  ---  
+ In the navbar is also present the adjust icon to change between Light and Dark Theme. From the homepage the user can choose the difficulty level and the category with 2 other modals windows.  
+ After the selections are made the start button will show the users the questions and in the end after the last question the user will be present with a screen of the result of the performance in the end of the page window.
+ 
 The website has a linear structure with only 2 pages, Homepage and Registration Page.
 
-### User Stories and Trade Offs:
-1. As a user I play Trivia Quiz to relax and learn new things.
+## User Stories  
+Find the user stories in [this link](./assets/docs/user-stories-trivia-quiz.pdf).  
+Find the trade-offs in [this link](./assets/docs/strategy-plane-trivia-quiz.pdf).
+1. As a user I play Trivia Quiz to relax and learn new information about topics I'm interested in.
 1. As a user I like to be able to choose which category the questions are related to.
 1. As a user I play Trivia Quiz to test and improve my knowledge.
 1. As a user i like to be able to change background color to dark or light mode for a more relaxing game.
 1. As a user I like to share my results on social media platforms.
 1. As a user i want to be able to contact the owner to give feedback.
 1. As a owner I create an interactive Trivia Quiz Website to attract and entertain people on my website.
-1. As a owner i want my website to have appealing design and color theme choice to make the user experiense more pleasant and enjoiable. 
-1. As a owner I create Trivia Quiz to attract people and be able to sell ads space on my website.
+1. As a owner i want my website to have appealing design and color theme choice to make the user experiense more pleasant and enjoiable.
 1. As a owner I create Trivia Quiz to create a database newsletter contacts.
 1. As a owner I create Trivia Quiz to enable people to challenge one another sharing their best results.
 1. As a owner I create Trivia Quiz contact form to allow client to contribute with game improvements ideas.
-1. As a owner I want to attract more users by promoting special challenges with prizes to be won.python
-1. As a owner I want to create a mobile app to enable the user to play offline(Airplane Mode).
-****
-here attach the user stories docs
-here attach the strategy plan owner website requirements trade Offs
-****
+1. As a owner i want to create a interactive game.
+1. As a owner i want my website to have appealing effects and colors.
+1. As a owner i want to create a newsletter registration form to allow users that wish to do so to enter they details.  
+1. As a owner i want to store the details of subscriber in a database for promotions updates and general info.  
+1. As a owner i want my website to have links to the main social media.   
+1. As a owner i want my website to have a contact form to allow user to leave feedbacks.  
+1. As a owner i want my website to have a light/dark mode button to allow user to choose the theme they prefer.
 
-## Wireframes
+## future possible development:  
+1. Overtime after a good numbers of users promote ads space for sale in the website.  
+1. Add a timer to the game to increase difficulty.  
+1. Create form where users can add new Q&A to the question database.  
+1. Develop a mobile app to play Trivia Quiz, with a offline plane mode.
+
+
+## Wireframes  
+The wireframes were done using balsamiq
+
+[Homepage Trivia Quiz](./assets/wireframes/trivia-quiz-wireframes-homepage.pdf)    
+[Question Page](./assets/wireframes/trivia-quiz-wireframes-question-section.pdf)  
+[End of the Game Page](./assets/wireframes/trivia-quiz-wireframes-end-of-game-section.pdf)  
+[Category and Difficulty level modals](./assets/wireframes/wireframes-category-difficulty-level-modals.pdf)  
+[Registration and Contact forms](./assets/wireframes/registration-and-contact-form-wireframes.pdf)
 
 ## Bugs 
 I managed the bugs found through the issues section on the github repository. 
