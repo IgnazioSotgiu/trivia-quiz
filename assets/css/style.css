@@ -733,7 +733,7 @@ input {
 #exit-instructions {
     margin: 0;
 }
-/***********************************sweet alert modal style*********************/
+/***********************************swal modal style*********************/
 .swal-overlay {
     background-color: rgba(0, 0, 0, 0.25);
 }

@@ -177,9 +177,10 @@ function startQuestions(event) {
                             icon: "success",
                             button: "OK",
                             });
-                        setTimeout(function(){
+                        $(".swal-button, .swal-overlay").click(startQuestions);
+                        /*setTimeout(function(){
                             startQuestions();
-                        }, 1000); 
+                        }, 1000); */
                     } else {
                         this.style.backgroundColor = "red";
                         incrementIncorrect();
@@ -191,9 +192,10 @@ function startQuestions(event) {
                             icon: "error",
                             button: "OK",
                             });
-                        setTimeout(function(){
+                        $(".swal-button, .swal-overlay").click(startQuestions);
+                        /*setTimeout(function(){
                             startQuestions();
-                        }, 1000);
+                        }, 1000);*/
                     }
                 });
             }
@@ -209,15 +211,15 @@ function startQuestions(event) {
                         incrementCorrect();
                         overallCorrect++;
                         i++;
-                        //alert("Congratulations! Your answer is correct");
                         swal({
                             title: "Good job!",
                             icon: "success",
                             button: "OK",
                             });
-                        setTimeout(function(){
+                        $(".swal-button, .swal-overlay").click(startQuestions);
+                        /*setTimeout(function(){
                             startQuestions();
-                        }, 1000);
+                        }, 1000);*/
                     } else {
                         //changeRedBgColor(btnId);
                         this.style.backgroundColor = "red";
@@ -231,9 +233,10 @@ function startQuestions(event) {
                             text: `The correct answer was ${correctAnswer}`,
                             button: "OK",
                             });
-                        setTimeout(function(){
+                        $(".swal-button, .swal-overlay").click(startQuestions);
+                        /*setTimeout(function(){
                             startQuestions();
-                        }, 1000);
+                        }, 1000);*/
                     }
                 });
             }
@@ -638,7 +641,6 @@ function selectCategory(){
 
 
 function selectDifficultyLevel() {
-    //let difficultyLevel;
     let difficultyChoiceModal = document.getElementById("difficulty-choice-modal");
     difficultyChoiceModal.style.display = "block";
     let difficulties = document.getElementsByClassName("difficulty-sel-input");
@@ -713,18 +715,24 @@ function checkSelection() {
     } else if(chosenCategory && !difficultyLevel) {
         //alert("please select a difficulty level");
         swal({
+            icon: "info",
+            title: "Not yet!",
             text: "Please choose the difficulty level",
             button: "OK",
         });
     } else if(!chosenCategory && difficultyLevel) {
         //alert("please select category");
         swal({
-            text: "Please choose a category",
+            icon: "info",
+            title: "Not yet!",
+            text: "Please select a category",
             button: "OK",
         });
     } else {
         //alert("please select category and difficulty level to play");
         swal({
+            icon: "info",
+            title: "Not yet!",
             text: "Please choose the difficulty level and a category before start",
             button: "OK",
         });
