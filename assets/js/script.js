@@ -28,6 +28,12 @@ document.addEventListener("DOMContentLoaded", function() {
     mainLogo.style.transform = "translate(-50%)";
     mainLogoRight.style.transform = "translate(50%)";
 
+    let hintMobileMessage = document.getElementById("hint-mobile-message");
+    hintMobileMessage.addEventListener("click", function() {
+        $("#hint-mobile-text").slideToggle("slow");
+    });
+
+
     startPage()
 });
 
