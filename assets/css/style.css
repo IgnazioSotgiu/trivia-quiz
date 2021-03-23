@@ -117,7 +117,17 @@ html, body {
 /******************************homepage message container*******************/
 .main-page-game-container {
     position: relative;
+}
+.start-btn-section {
+    display: none;
+}
+.go-btn-section {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 100px 200px;
+}
+.start-btn-section {
     flex-direction: column;
     justify-content: center;
     margin: 50px 100px 200px;
@@ -151,7 +161,7 @@ html, body {
 #hint-mobile-text {
     display: none;
 }
-#message-homepage {
+.message-home {
     padding: 30px;
     color: var(--messageHomepage);
     background-color: var(--messageHomepageBgColor);
@@ -161,16 +171,16 @@ html, body {
     border-radius: 20px;
     line-height: 60px;
 }
-#message-homepage p {
+.message-home p {
     margin-left: 20px;
     margin-right: 20px;
     font-size: 30px;
 }
 .start-button-container {
-    margin: 100px 10%;
     text-align: center;
 }
 .start-button-container  .btn-success {
+    margin-top: 100px;
     width: 200px;
     height: 100px;
     padding-top: 10px;
@@ -432,7 +442,7 @@ input {
     .btn-answer-container {
         padding: 10px 15%;
     }
-    #replace-question-container {
+    .main-page-game-container {
         margin-left: 150px;
         margin-right: 150px;
     }
@@ -442,7 +452,7 @@ input {
         padding-left: 10px;
         padding-right: 10px;
     }
-    #message-homepage p {
+    .message-home p {
         font-size: 20px;
     }
     .counter-container {
@@ -570,7 +580,7 @@ input {
         padding: 10px;
         display: none;
     }
-    #message-homepage{
+    .message-home{
         display: none;
     }
     .difficulty-selection-container {
@@ -606,7 +616,7 @@ input {
         font-size: 15px;
         padding-top: 10px;
     }
-    #replace-question-container {
+    .main-page-game-container {
         margin: 0;
         min-height: 380px;
     }    

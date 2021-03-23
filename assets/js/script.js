@@ -10,32 +10,15 @@ let vote = "";
 let overallCorrect = 0;
 let overallIncorrect = 0;
 let overallQuestions = 0;
-let questionRound = 1;
-
-
+let questionRound = 2;
 // wait for the DOM to finish loading page
 //add event listeners for the category choice, the level 
 // of difficulty, and the start button.
-
 document.addEventListener("DOMContentLoaded", function() {
     logoAnimation();
     startPage()
-
 });
 
-
-// after the level of difficulty has bee chosen 
-// the function get ready calls the get question array function
-//few more steps before the user press the start button 
-
-function getReady(difficultyLevel, chosenCategory) {
-
-    getQuestionArray(difficultyLevel, chosenCategory);
-
-    setTimeout(function() {
-        console.log(questionListArray);
-        }, 500);
-}
 
 // passing the difficulty level to a function for 
 // getting the list of question from remote api
@@ -43,14 +26,14 @@ function getReady(difficultyLevel, chosenCategory) {
 function getQuestionArray(chosenCategory, difficultyLevel){
     let xhr = new XMLHttpRequest();
     let amountQuestions;
-    console.log(difficultyLevel);
-    if(difficultyLevel == "easy") {
+    console.log(typeof(difficultyLevel));
+    if(difficultyLevel === "easy") {
         amountQuestions = "10";
-    } else if(difficultyLevel == "medium") {
+    } else if(difficultyLevel === "medium") {
         amountQuestions = "13";
-    } else if(difficultyLevel == "hard") {
+    } else if(difficultyLevel === "hard") {
         amountQuestions = "15";
-    } else {
+    } else{
         console.log("Error. Difficulty choice not recognized");
         throw("Error. Difficulty choice not recognized. Aborting....");
     }
@@ -144,34 +127,10 @@ function startQuestions(event) {
 
                     if(value == correctAnswer) {
                         this.style.backgroundColor = "green";
-                        incrementCorrect();
-                        overallCorrect++;
-                        i++;
-                        //alert("Congratulations! Your answer is correct");
-                        swal({
-                            title: "Good job!",
-                            icon: "success",
-                            button: "OK",
-                            });
-                        $(".swal-button, .swal-overlay").click(startQuestions);
-                        /*setTimeout(function(){
-                            startQuestions();
-                        }, 1000); */
+                        answerIsCorrect();
                     } else {
                         this.style.backgroundColor = "red";
-                        incrementIncorrect();
-                        overallIncorrect++;
-                        i++;
-                        //alert(`Arrgh.... Your answer is incorrect. Keep practicing!`);
-                        swal({
-                            title: "Incorrect!",
-                            icon: "error",
-                            button: "OK",
-                            });
-                        $(".swal-button, .swal-overlay").click(startQuestions);
-                        /*setTimeout(function(){
-                            startQuestions();
-                        }, 1000);*/
+                        booleanAnswerIsIncorrect();
                     }
                 });
             }
@@ -184,35 +143,10 @@ function startQuestions(event) {
 
                     if(value == correctAnswer) {
                         this.style.backgroundColor = "green";
-                        incrementCorrect();
-                        overallCorrect++;
-                        i++;
-                        swal({
-                            title: "Good job!",
-                            icon: "success",
-                            button: "OK",
-                            });
-                        $(".swal-button, .swal-overlay").click(startQuestions);
-                        /*setTimeout(function(){
-                            startQuestions();
-                        }, 1000);*/
+                        answerIsCorrect();
                     } else {
-                        //changeRedBgColor(btnId);
                         this.style.backgroundColor = "red";
-                        incrementIncorrect();
-                        overallIncorrect++;
-                        i++;
-                        //alert(`Arrgh.... Your answer is incorrect. Keep practicing!`+ "\n" +`The correct answer was ${correctAnswer}`);
-                        swal({
-                            title: "Incorrect!",
-                            icon: "error",                            
-                            text: `The correct answer was ${correctAnswer}`,
-                            button: "OK",
-                            });
-                        $(".swal-button, .swal-overlay").click(startQuestions);
-                        /*setTimeout(function(){
-                            startQuestions();
-                        }, 1000);*/
+                        multipleChoiceAnswerIsIncorrect(correctAnswer);
                     }
                 });
             }
@@ -537,6 +471,9 @@ function startPage(){
 }*/
     let startGameButton = document.getElementById("start-game-button");
     startGameButton.addEventListener("click", selectCategory);
+
+    startButton = document.getElementById("start-button");
+    startButton.addEventListener("click", startQuestions);
 }
 //***************category selection function************************* */
 function selectCategory(){
@@ -560,7 +497,7 @@ function selectCategory(){
                     setTimeout(function(){
                         categoryChoiceModal.style.display = "none";
                         selectDifficultyLevel(chosenCategory);
-                    },1000);
+                    },500);
                     break;
 
                 case "book":
@@ -749,22 +686,68 @@ function selectDifficultyLevel() {
                 },1000);
                 break;
             }
-        createStartButton(chosenCategory, difficultyLevel);
+        showStartButton(chosenCategory, difficultyLevel);
         });
     }
     return difficultyLevel;
 }
 /**********************Create start button after the category and level selection ****** */
-function createStartButton(chosenCategory, difficultyLevel) {
-    getReady(chosenCategory, difficultyLevel)
-    document.getElementById("message-homepage").innerHTML = 
-    `<p>Ready to start!!!! <br>Good Luck.. and Enjoy!!</p>`;
+function showStartButton(chosenCategory, difficultyLevel) {
+    getQuestionArray(chosenCategory, difficultyLevel);
+    
+    let goButtonSection = document.getElementById("go-button-section");
+    goButtonSection.style.display = "none";
 
-    document.getElementById("homepage-btn-container").innerHTML = 
-    `<div class="start-button-container">
-        <button type="button" id="start-button" class="btn btn-success"><i class="fas fa-play"><br><span id="start-button-text">Start</span></i></button>
-    </div>`;
+    let startButtonSection = document.getElementById("start-button-section");
+    startButtonSection.style.display = "flex";   
+}
 
-    startButton = document.getElementById("start-button");
-    startButton.addEventListener("click", startQuestions);
+/*****************function correct answer*************** */
+function answerIsCorrect() {
+    incrementCorrect();
+    overallCorrect++;
+    i++;
+    $(".swal-button, .swal-overlay").css("display", "block");
+    swal({
+        title: "Good job!",
+        icon: "success",
+        button: "OK",
+    });
+    setTimeout(function(){
+        $(".swal-button, .swal-overlay").css("display", "none");
+        startQuestions();
+    }, 1000);
+}
+/*****************function incorrect boolean answer*********** */
+function booleanAnswerIsIncorrect() {
+    incrementIncorrect();
+    overallIncorrect++;
+    i++;
+    $(".swal-button, .swal-overlay").css("display", "block");
+    swal({
+        title: "Incorrect!",
+        icon: "error",
+        button: "OK",
+        });
+    setTimeout(function(){
+        $(".swal-button, .swal-overlay").css("display", "none");
+        startQuestions();
+    }, 1000);
+}
+function multipleChoiceAnswerIsIncorrect(correctAnswer) {
+    incrementIncorrect();
+    overallIncorrect++;
+    i++;
+    $(".swal-button, .swal-overlay").css("display", "block");
+    swal({
+        title: "Incorrect!",
+        icon: "error",                            
+        text: `The correct answer was ${correctAnswer}`,
+        button: "OK",
+        });
+    setTimeout(function(){
+        $(".swal-button, .swal-overlay").css("display", "none");
+        startQuestions();
+    }, 1500);
+
 }
