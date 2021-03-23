@@ -426,14 +426,26 @@ function changeMode() {
 
 function continueGame() {
     document.getElementById("replace-question-container").innerHTML =
-    `<div class="container-fluid" id="message-homepage">
+    `<div class="go-btn-section" id="go-button-section">
+        <div class="container-fluid message-home" id="message-homepage">
             <p>Ready to go Again?<br>This is your round number ${questionRound}</p>
         </div>
         <div class="row">
             <div class="col-12" id="homepage-btn-container">
                 <button class="start-game-btn" id="start-game-button"><i class="fas fa-arrow-right"></i><br><span class="button-text">GO!!!</span></button>
             </div>
-        </div>`
+        </div>
+    </div>
+    <div class="start-btn-section" id="start-button-section">
+        <div class="container-fluid message-home">
+            <p>Ready to start!!!! <br>Good Luck.. and Enjoy!!</p>
+        </div>
+        <div class="row">
+            <div class="col-12 start-button-container">
+                <button type="button" id="start-button" class=" start-game-button btn btn-success"><i class="fas fa-play"><br><span id="start-button-text">Start</span></i></button>
+            </div>
+        </div>
+    </div>`
     questionRound++;
     totCorrect = 0;
     totIncorrect = 0;

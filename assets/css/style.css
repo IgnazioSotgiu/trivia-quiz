@@ -148,6 +148,13 @@ html, body {
 .button-text {
     font-size: 30px;
 }
+.main-page-game-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 100px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 
 
 
@@ -443,6 +450,9 @@ input {
         padding: 10px 15%;
     }
     .main-page-game-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 100px;
         margin-left: 150px;
         margin-right: 150px;
     }
@@ -565,7 +575,16 @@ input {
         text-decoration: none;
         background-color: transparent;
     }
-    #hint-mobile-message, #hint-mobile-text {
+    .go-btn-section {
+        margin: 50px 10px;
+    }
+    .start-btn-section {
+        margin: 50px 10px;
+    }
+    .start-button-container .btn-success {
+        margin-top: 0px;
+    }
+    /*#hint-mobile-message, #hint-mobile-text {
         display: block;
         text-align: center;
         margin-top: 10px;
@@ -579,10 +598,7 @@ input {
         margin: 10px;
         padding: 10px;
         display: none;
-    }
-    .message-home{
-        display: none;
-    }
+    }*/
     .difficulty-selection-container {
         padding-left: 25px;
         padding-right: 0;
@@ -615,10 +631,6 @@ input {
     .copyright-container {
         font-size: 15px;
         padding-top: 10px;
-    }
-    .main-page-game-container {
-        margin: 0;
-        min-height: 380px;
     }    
     .question-container {
         padding: 10px 5%;
