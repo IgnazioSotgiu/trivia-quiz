@@ -10,6 +10,7 @@ let vote = "";
 let overallCorrect = 0;
 let overallIncorrect = 0;
 let overallQuestions = 0;
+let questionRound = 1;
 
 
 // wait for the DOM to finish loading page
@@ -17,41 +18,10 @@ let overallQuestions = 0;
 // of difficulty, and the start button.
 
 document.addEventListener("DOMContentLoaded", function() {
-
-    //logo animation
-
-    let mainLogo = document.getElementById("logo");
-    let mainLogoRight = document.getElementById("logo-right");
-    mainLogo.style.left = "50%";
-    mainLogoRight.style.right = "50%";
-
-    mainLogo.style.transform = "translate(-50%)";
-    mainLogoRight.style.transform = "translate(50%)";
-
-    let hintMobileMessage = document.getElementById("hint-mobile-message");
-    hintMobileMessage.addEventListener("click", function() {
-        $("#hint-mobile-text").slideToggle("slow");
-    });
-
-
+    logoAnimation();
     startPage()
+
 });
-
-// function startpage gets all the event listeners ready to start the game
-
-function startPage(){
-
-
-    let categoryButton = document.getElementById("category-choice-link");
-    categoryButton.addEventListener("click", selectCategory);
-
-    let difficultyButton = document.getElementById("difficulty-choice-link");
-    difficultyButton.addEventListener("click", selectDifficultyLevel);
-    
-    let startButton = document.getElementById("start-button");
-    startButton.addEventListener("click", checkSelection);
-
-}
 
 
 // after the level of difficulty has bee chosen 
@@ -467,8 +437,109 @@ for(let button of categoryButtons) {
 }*/
 
 
+
+
+
+
+/*function checkSelection() {
+
+    console.log(chosenCategory, difficultyLevel);
+
+    if(chosenCategory && difficultyLevel) {
+    
+        console.log(chosenCategory, difficultyLevel);
+        getReady(chosenCategory, difficultyLevel);
+
+        setTimeout(function() {
+            startQuestions(questionListArray);
+        }, 1000);
+    } else if(chosenCategory && !difficultyLevel) {
+        //alert("please select a difficulty level");
+        swal({
+            icon: "info",
+            title: "Not yet!",
+            text: "Please choose the difficulty level",
+            button: "OK",
+        });
+    } else if(!chosenCategory && difficultyLevel) {
+        //alert("please select category");
+        swal({
+            icon: "info",
+            title: "Not yet!",
+            text: "Please select a category",
+            button: "OK",
+        });
+    } else {
+        //alert("please select category and difficulty level to play");
+        swal({
+            icon: "info",
+            title: "Not yet!",
+            text: "Please choose the difficulty level and a category before start",
+            button: "OK",
+        });
+    }
+    
+}*/
+
+let themeSwitch = document.getElementById("theme-switch");
+themeSwitch.addEventListener("click", changeMode);
+
+function changeMode() {
+    let themeValue = document.getElementById("theme-switch");
+    document.body.classList.toggle('light-theme');
+    document.body.classList.toggle('dark-theme');
+}
+
+function continueGame() {
+    document.getElementById("replace-question-container").innerHTML =
+    `<div class="container-fluid" id="message-homepage">
+            <p>Ready to go Again?<br>This is your round number ${questionRound}</p>
+        </div>
+        <div class="row">
+            <div class="col-12" id="homepage-btn-container">
+                <button class="start-game-btn" id="start-game-button"><i class="fas fa-arrow-right"></i><br><span class="button-text">GO!!!</span></button>
+            </div>
+        </div>`
+    questionRound++;
+    totCorrect = 0;
+    totIncorrect = 0;
+    i = 0;
+    startPage();
+
+}
+//********************************************************************************* *//
+//********************************************************************************** */
+
+function logoAnimation(){
+    let mainLogo = document.getElementById("logo");
+    let mainLogoRight = document.getElementById("logo-right");
+    mainLogo.style.left = "50%";
+    mainLogoRight.style.right = "50%";
+
+    mainLogo.style.transform = "translate(-50%)";
+    mainLogoRight.style.transform = "translate(50%)";
+
+    /*let hintMobileMessage = document.getElementById("hint-mobile-message");
+    hintMobileMessage.addEventListener("click", function() {
+        $("#hint-mobile-text").slideToggle("slow");
+    });*/
+}
+// function startpage gets all the event listeners ready to start the game
+function startPage(){
+    /*let categoryButton = document.getElementById("category-choice-link");
+    categoryButton.addEventListener("click", selectCategory);
+
+    let difficultyButton = document.getElementById("difficulty-choice-link");
+    difficultyButton.addEventListener("click", selectDifficultyLevel);
+    
+    let startButton = document.getElementById("start-button");
+    startButton.addEventListener("click", checkSelection);
+}*/
+    let startGameButton = document.getElementById("start-game-button");
+    startGameButton.addEventListener("click", selectCategory);
+}
+//***************category selection function************************* */
 function selectCategory(){
-    //let chosenCategory;
     let categoryChoiceModal = document.getElementById("category-choice-modal");
     categoryChoiceModal.style.display = "block";
     let categories = document.getElementsByClassName("category-choice-btn");
@@ -486,14 +557,10 @@ function selectCategory(){
                 case "general":
                     chosenCategory = "9";
                     this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
                     setTimeout(function(){
                         categoryChoiceModal.style.display = "none";
+                        selectDifficultyLevel(chosenCategory);
                     },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="general">
-                        <i class="fas fa-brain"><br><span class="category-name">General</span></i>
-                    </button>`
                     break;
 
                 case "book":
@@ -641,11 +708,11 @@ function selectCategory(){
             }
         });
     }
-    return chosenCategory;
-
+    return difficultyLevel;
+    return chosenCategory
 }
 
-
+/******************************difficulty level selection function************** */
 function selectDifficultyLevel() {
     let difficultyChoiceModal = document.getElementById("difficulty-choice-modal");
     difficultyChoiceModal.style.display = "block";
@@ -660,130 +727,44 @@ function selectDifficultyLevel() {
 
     for(let difficulty of difficulties) {
         difficulty.addEventListener("click", function() {
-            if (this.getAttribute("value") === "easy") {
+            switch(this.getAttribute("value")) {
+                case "easy":
                 difficultyLevel = this.getAttribute("value");
-                this.style.backgroundColor = "rgb(42, 235, 42)";
-                this.style.color = "#000";
+                setTimeout(function(){
+                    difficultyChoiceModal.style.display = "none";
+                },500);
+                break;
+
+                case "medium":
+                difficultyLevel = this.getAttribute("value");
                 setTimeout(function(){
                     difficultyChoiceModal.style.display = "none";
                 },1000);
-                document.getElementById("difficulty-container").innerHTML =
-                    `<button class="difficulty-sel-input" value="easy" type="radio" id="easy-btn" name="difficulty">
-                        <i class="fas fa-skiing"><br><span class="difficulty-name">Easy</span></i>
-                    </button>`;
+                break;
 
-            }else if (this.getAttribute("value") === "medium") {
+                case "hard":
                 difficultyLevel = this.getAttribute("value");
-                this.style.backgroundColor = "rgb(255, 238, 0)";
-                this.style.color = "#000";
                 setTimeout(function(){
                     difficultyChoiceModal.style.display = "none";
                 },1000);
-                document.getElementById("difficulty-container").innerHTML =
-                    `<button class="difficulty-sel-input" value="medium" type="radio" id="medium-btn" name="difficulty">
-                        <i class="fas fa-arrow-alt-circle-right"><br><span class="difficulty-name">Medium</span></i>
-                    </button>`;
-
-            }else if (this.getAttribute("value") === "hard") {
-                difficultyLevel = this.getAttribute("value");
-                this.style.backgroundColor = "rgb(250, 0, 0)";
-                this.style.color = "#000";
-                setTimeout(function(){
-                    difficultyChoiceModal.style.display = "none";
-                },1000);
-                document.getElementById("difficulty-container").innerHTML =
-                    `<button class="difficulty-sel-input" value="hard" type="radio" id="hard-btn" name="difficulty">
-                        <i class="fas fa-mountain"><br><span class="difficulty-name">Hard</span></i>
-                    </button>`;
-
-            }else {
-                alert("Incorrect value. Please select the difficulty level");
-                throw "Error... Incorrect value... Aborting...";
-                }
-            
+                break;
+            }
+        createStartButton(chosenCategory, difficultyLevel);
         });
     }
     return difficultyLevel;
 }
+/**********************Create start button after the category and level selection ****** */
+function createStartButton(chosenCategory, difficultyLevel) {
+    getReady(chosenCategory, difficultyLevel)
+    document.getElementById("message-homepage").innerHTML = 
+    `<p>Ready to start!!!! <br>Good Luck.. and Enjoy!!</p>`;
 
-function checkSelection() {
-
-    console.log(chosenCategory, difficultyLevel);
-
-    if(chosenCategory && difficultyLevel) {
-    
-        console.log(chosenCategory, difficultyLevel);
-        getReady(chosenCategory, difficultyLevel);
-
-        setTimeout(function() {
-            startQuestions(questionListArray);
-        }, 1000);
-    } else if(chosenCategory && !difficultyLevel) {
-        //alert("please select a difficulty level");
-        swal({
-            icon: "info",
-            title: "Not yet!",
-            text: "Please choose the difficulty level",
-            button: "OK",
-        });
-    } else if(!chosenCategory && difficultyLevel) {
-        //alert("please select category");
-        swal({
-            icon: "info",
-            title: "Not yet!",
-            text: "Please select a category",
-            button: "OK",
-        });
-    } else {
-        //alert("please select category and difficulty level to play");
-        swal({
-            icon: "info",
-            title: "Not yet!",
-            text: "Please choose the difficulty level and a category before start",
-            button: "OK",
-        });
-    }
-    
-}
-
-let themeSwitch = document.getElementById("theme-switch");
-themeSwitch.addEventListener("click", changeMode);
-
-function changeMode() {
-    let themeValue = document.getElementById("theme-switch");
-    document.body.classList.toggle('light-theme');
-    document.body.classList.toggle('dark-theme');
-}
-
-function continueGame() {
-    document.getElementById("replace-question-container").innerHTML =
-    `<div class="container-fluid" id="message-homepage">
-            <p>Welcome to the Trivia Quiz game. <br>Choose the Category and the Difficulty level and start to play...</p>
-        </div>
-        <div class="row game-choice">
-            <div class="col-12 col-sm-6" id="category-container">
-                <button class="game-choice-btn" value="category" name="game"
-                    id="category-choice-link" data-open="category-choice-modal" data-toggle="category-choice-modal" data-backdrop="false">
-                    <i class="fas fa-question"><br><span class="category-choice-name">Category</span></i>
-                </button>
-            </div>
-            <div class="col-12 col-sm-6" id="difficulty-container">
-                <button class="game-choice-btn" value="difficulty" name="game"
-                    id="difficulty-choice-link" data-open="difficulty-choice-modal" data-toggle="difficulty-choice-modal" data-backdrop="false">
-                    <i class="fas fa-signal"><br><span class="category-name">Level</span></i>
-                </button>
-            </div>
-        </div>
-        <div class="start-button-container">
-            <button type="button" id="start-button" class="btn btn-success"><i class="fas fa-play"><br><span id="start-button-text">Start</span></i></button>
-        </div>
+    document.getElementById("homepage-btn-container").innerHTML = 
+    `<div class="start-button-container">
+        <button type="button" id="start-button" class="btn btn-success"><i class="fas fa-play"><br><span id="start-button-text">Start</span></i></button>
     </div>`;
 
-    totCorrect = 0;
-    totIncorrect = 0;
-    i = 0;
-    startPage();
-
+    startButton = document.getElementById("start-button");
+    startButton.addEventListener("click", startQuestions);
 }
-
- 

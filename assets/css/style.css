@@ -1,24 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 html, body {
     overflow-x: hidden;
-    max-width: 100%;
+    width: 100%;
     height: auto;
     min-height: 100vh;
     font-family: "Roboto", sans-serif;
     }
-.homepage-container {
-    height: auto;
-    width: 100%;
-    color: #fafafa;
-}
-#background-container {
+.background-container {
     background: var(--homepageBg) no-repeat bottom right; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
-#header-container-bg {
+.header-container-bg {
     background: var(--mainHeaderHomepage) no-repeat bottom right; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -56,8 +51,6 @@ html, body {
     background-color: #000;
     color: #eca54c;
     border-radius: 50%;
-}
-#logo {
     -webkit-transition:  5s ease;
     transition:  5s ease;
 }
@@ -72,15 +65,10 @@ html, body {
     color: #eca54c;
     border: 2px solid #eca54c;
     border-radius: 50%;
-}
-#logo-right {
     -webkit-transition: 5s ease;
     transition: 5s ease;
 }
 #logo h1 {
-    padding-top: 40px;
-    color: #eca54c;
-    text-decoration: none;
     display: none;
 }
 #logo-right h1 {
@@ -118,7 +106,7 @@ html, body {
     font-weight: 600;
     text-decoration: none;
 }
-#reg-home-link {
+.registration-form-home-link {
     font-size: 10px;
     margin-top: -7px;
     color: #fafafa;
@@ -127,12 +115,41 @@ html, body {
     text-decoration: none;
 }
 /******************************homepage message container*******************/
+.main-page-game-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 100px 200px;
+}
+.start-game-btn {
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    padding-top: 10px;
+    border: 2px solid #111111;
+    border-radius: 10px;
+    font-weight: 400;
+}
+.start-game-btn i {
+    font-size: 30px;
+    color: #c32aa3;
+}
+.button-text {
+    font-size: 30px;
+}
+
+
+
+
+.main-page-game-container .col-12 {
+    text-align: center;
+}
 #hint-mobile-message {
     display: none;
 }
-#replace-question-container {
-    min-height: 500px;
-    margin: 50px 100px;
+#hint-mobile-text {
+    display: none;
 }
 #message-homepage {
     padding: 30px;
@@ -142,6 +159,7 @@ html, body {
     line-height: 40px;
     letter-spacing: 1px;
     border-radius: 20px;
+    line-height: 60px;
 }
 #message-homepage p {
     margin-left: 20px;
@@ -401,6 +419,8 @@ input {
 }
 @media screen and (min-width:1000px) {
     .footer-container {
+        position: absolute;
+        bottom: 0;
         padding: 20px 250px 5px;
     }
     .counter-container {
