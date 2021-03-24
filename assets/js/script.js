@@ -73,18 +73,15 @@ function startPage(){
     startButton.addEventListener("click", startQuestions);
 }
 //***************category selection function************************* */
-function selectCategory(){
+function selectCategory() {
     let categoryChoiceModal = document.getElementById("category-choice-modal");
     categoryChoiceModal.style.display = "block";
     let categories = document.getElementsByClassName("category-choice-btn");
-    console.log(categories);
-
     window.onclick = function(event) {
         if (event.target == categoryChoiceModal) {
             categoryChoiceModal.style.display = "none";
             }
         };
-
     for(let category of categories) {
         category.addEventListener("click", function() {
             switch(this.getAttribute("value")) {
@@ -96,149 +93,97 @@ function selectCategory(){
                         selectDifficultyLevel(chosenCategory);
                     },500);
                     break;
-
                 case "book":
                     chosenCategory = "10";
                     this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
                     setTimeout(function(){
                         categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="book">
-                        <i class="fas fa-book"><br><span class="category-name">Books</span></i>
-                    </button>`
+                        selectDifficultyLevel(chosenCategory);
+                    },500);
                     break;
-
                 case "film":
                     chosenCategory = "11";
                     this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
                     setTimeout(function(){
                         categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="film">
-                        <i class="fas fa-film"><br><span class="category-name">Movies</span></i>
-                    </button>`
+                        selectDifficultyLevel(chosenCategory);
+                    },500);
                     break;
-                    
                 case "music":
                     chosenCategory = "12";
                     this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
                     setTimeout(function(){
                         categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="music">
-                        <i class="fas fa-music"><br><span class="category-name">Music</span></i>
-                    </button>`
+                        selectDifficultyLevel(chosenCategory);
+                    },500);
                     break;
-
                 case "tv":
                     chosenCategory = "14";
                     this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
                     setTimeout(function(){
                         categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="tv">
-                        <i class="fas fa-tv"><br><span class="category-name">TV</span></i>
-                    </button>`
+                        selectDifficultyLevel(chosenCategory);
+                    },500);
                     break;
-
                 case "video-games":
                     chosenCategory = "15";
                     this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
                     setTimeout(function(){
                         categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="video-games">
-                        <i class="fas fa-gamepad"><br><span class="category-name">Videogames</span></i>
-                    </button>`
+                        selectDifficultyLevel(chosenCategory);
+                    },500);
                     break;
-
                 case "computer":
                     chosenCategory = "18";
                     this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
                     setTimeout(function(){
                         categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="computer">
-                        <i class="fas fa-laptop"><br><span class="category-name">Computer</span></i>
-                    </button>`
+                        selectDifficultyLevel(chosenCategory);
+                    },500);
                     break;
-
                 case "math":
                     chosenCategory = "19";
                     this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
                     setTimeout(function(){
                         categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="math">
-                        <i class="fas fa-calculator"><br><span class="category-name">Math</span></i>
-                    </button>`
+                        selectDifficultyLevel(chosenCategory);
+                    },500);
                     break;
-
                 case "sport":
                     chosenCategory = "21";
                     this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
                     setTimeout(function(){
                         categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="sport">
-                        <i class="fas fa-futbol"><br><span class="category-name">Sport</span></i>
-                    </button>`
+                        selectDifficultyLevel(chosenCategory);
+                    },500);
                     break;
-
                 case "geography":
                     chosenCategory = "22";
                     this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
                     setTimeout(function(){
                         categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="geography">
-                        <i class="fas fa-atlas"><br><span class="category-name">Geography</span></i>
-                    </button>`
+                        selectDifficultyLevel(chosenCategory);
+                    },500);
                     break;
-
                 case "history":
                     chosenCategory = "23";
                     this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
                     setTimeout(function(){
                         categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="history">
-                        <i class="fas fa-history"><br><span class="category-name">History</span></i>
-                    </button>`
+                        selectDifficultyLevel(chosenCategory);
+                    },500);
                     break;
-
                 case "animals":
                     chosenCategory = "27";
                     this.style.backgroundColor = "rgb(42, 235, 42)";
-                    this.style.color = "#000";
                     setTimeout(function(){
                         categoryChoiceModal.style.display = "none";
-                    },1000);
-                    document.getElementById("category-container").innerHTML =
-                    `<button class="chosen-category-choice-btn" value="animals">
-                        <i class="fas fa-paw"><br><span class="category-name">Animals</span></i>
-                    </button>`
+                        selectDifficultyLevel(chosenCategory);
+                    },500);
                     break;
+                default:
+                    alert("Error! Choice not recognized");
+                    throw ("Error! Choice not recognized... Aborting..");
             }
         });
     }
@@ -251,14 +196,11 @@ function selectDifficultyLevel() {
     let difficultyChoiceModal = document.getElementById("difficulty-choice-modal");
     difficultyChoiceModal.style.display = "block";
     let difficulties = document.getElementsByClassName("difficulty-sel-input");
-    console.log(difficulties);
-
     window.onclick = function(event) {
         if (event.target == difficultyChoiceModal) {
             difficultyChoiceModal.style.display = "none";
             }
         }
-
     for(let difficulty of difficulties) {
         difficulty.addEventListener("click", function() {
             switch(this.getAttribute("value")) {
