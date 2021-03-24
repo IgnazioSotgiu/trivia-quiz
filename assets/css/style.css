@@ -13,13 +13,6 @@ html, body {
     -o-background-size: cover;
     background-size: cover;
 }
-.header-container-bg {
-    background: var(--mainHeaderHomepage) no-repeat bottom right; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
 /****************************navbar******************************************/
 .navbar {
     border-radius: 20px;
@@ -37,6 +30,13 @@ html, body {
     display: none;
 }
 /*******************************logo*******************************************/
+.header-container-bg {
+    background: var(--mainHeaderHomepage) no-repeat bottom right; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 .header-container {
     position: relative;
     height: 180px;
@@ -82,50 +82,42 @@ html, body {
 #logo-right a:hover {
     text-decoration: none;
 }
-.registration-header-container {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 116px;
-    position: relative;
-    z-index: 1;
-    padding-top: 8px;
-}
-.small-trivia-logo {
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    text-align: center;
-    background-color: #000;
-    color: #fafafa;
-    border: 2px solid #fafafa;
-    border-radius: 50%;
-}
-.small-trivia-logo h3 {
-    color: #fafafa;
-    font-weight: 600;
-    text-decoration: none;
-}
-.registration-form-home-link {
-    font-size: 10px;
-    margin-top: -7px;
-    color: #fafafa;
-}
-.small-trivia-logo a:hover {
-    text-decoration: none;
-}
 /******************************homepage message container*******************/
 .main-page-game-container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    }
+.main-page-game-container .col-12 {
+    text-align: center;
 }
-.start-btn-section {
-    display: none;
+.message-home {
+    padding: 30px;
+    color: var(--messageHomepage);
+    background-color: var(--messageHomepageBgColor);
+    text-align: center;
+    line-height: 40px;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    line-height: 60px;
 }
+.message-home p {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 30px;
+}
+/*******buttons container homepage*************/
 .go-btn-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 50px 100px 200px;
+}
+.start-btn-section {
+    display: none;
 }
 .start-btn-section {
     flex-direction: column;
@@ -145,44 +137,15 @@ html, body {
     font-size: 30px;
     color: #c32aa3;
 }
-.button-text {
+.go-button-text {
     font-size: 30px;
 }
-.main-page-game-container {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 100px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-
-
-
-.main-page-game-container .col-12 {
-    text-align: center;
-}
-#hint-mobile-message {
+/*#hint-mobile-message {
     display: none;
 }
 #hint-mobile-text {
     display: none;
-}
-.message-home {
-    padding: 30px;
-    color: var(--messageHomepage);
-    background-color: var(--messageHomepageBgColor);
-    text-align: center;
-    line-height: 40px;
-    letter-spacing: 1px;
-    border-radius: 20px;
-    line-height: 60px;
-}
-.message-home p {
-    margin-left: 20px;
-    margin-right: 20px;
-    font-size: 30px;
-}
+}*/
 .start-button-container {
     text-align: center;
 }
@@ -199,18 +162,13 @@ html, body {
     font-size: 30px;
     color: rgb(66, 66, 114);
 }
-#start-button {
+.start-game-button {
     background-color: #b0b9b3;
     border-color: #000;
 }
-#start-button-text {
+.start-button-text {
     font-weight: 400;
     color: #000;
-}
-p {
-    margin-bottom: 5px;
-    font-size: 20px;
-    border-radius: 10px
 }
 /*****************************footer***************************/
 footer {
@@ -239,40 +197,48 @@ footer {
     background-color: var(--questionBgColor);
     border-radius: 20px;
 }
-hr {
+.question-container p {
+    margin-bottom: 5px;
+    font-size: 20px;
+    border-radius: 10px
+}
+.question-container hr {
     background-color: #713200;
     height: 0.5px;
     width: 50%;
     margin-top: 0;
     margin-bottom: 10px;
 }
-.user-answer-container {
+/***********boolean answer buttons**************/
+.boolean-answer-container {
     margin: 100px 50px;
     text-align: center;
     padding: 10px;
 }
-.btn-danger {
-    margin-left: 100px;
-}
-.user-answer-container button {
+.boolean-answer-container button {
     width: 60px;
     height: 60px;
     border-radius: 50%;
 }
-.btn-answer-container {
+.boolean-answer-container .btn-danger {
+    margin-left: 100px;
+}
+/***********multiple answer buttons***************/
+.multiple-answer-container {
     margin: 80px 0;
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.btn-answer-container div {
+.multiple-answer-container div {
     text-align: center;
     padding-top: 20px;
 }
-.btn-secondary {
+.multiple-answer-container .btn-secondary {
     margin-top: 15px;
     background-color: #4cecd7;
     color: #000;
 }
+/***********counter container*****************/
 .counter-container {
     text-align: center;
     background-color: #fafafa;
@@ -310,7 +276,6 @@ hr {
     background-color: var(--messageFinishTestBgColor);
     padding-bottom: 20px;
     border-radius: 20px;
-    
 }
 .message-finish-test p {
     padding-top: 10px;
@@ -324,18 +289,7 @@ hr {
     border-radius: 10px;
     margin: 50px 0 30px;
 }
-/***************************modal**********************************/
-.modal {
-    position: fixed;
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    background: var(--modalBg) no-repeat bottom right; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+/*******registration form header**************/
 .registration {
     height: 100vh;
     background: url("../images/registration-bg-light.jpg") no-repeat bottom right; 
@@ -345,20 +299,37 @@ hr {
     background-size: cover;
     color: #fafafa;
 }
-.jumbotron {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    padding: 20px;
-    max-height: 90vh;
-    overflow-y: auto;
+.registration-header-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 116px;
+    position: relative;
+    z-index: 1;
+    padding-top: 8px;
+}
+.small-trivia-logo {
+    width: 100px;
+    height: 100px;
+    margin: auto;
     text-align: center;
-    border: 0.5px solid #eca54c;
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.70);
-    color: var(--modalText);
+    background-color: #000;
+    color: #fafafa;
+    border: 2px solid #fafafa;
+    border-radius: 50%;
+}
+.small-trivia-logo h3 {
+    color: #fafafa;
+    font-weight: 600;
+    text-decoration: none;
+}
+.registration-form-home-link {
+    font-size: 10px;
+    margin-top: -7px;
+    color: #fafafa;
+}
+.small-trivia-logo a:hover {
+    text-decoration: none;
 }
 .jumbotron-reg-form {
     padding: 0;
@@ -381,14 +352,41 @@ hr {
     text-align: left;
     padding-top: 10px;
 }
-input {
+.registration-form-input input {
     color: #000;
     border-radius: 10px;
 }
-.modal-btn-container {
-    padding-top: 20px;
+/***************************modal**********************************/
+.modal {
+    position: fixed;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    background: var(--modalBg) no-repeat bottom right; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
-.modal-cancel {
+.jumbotron {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: center;
+    border: 0.5px solid #eca54c;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.70);
+    color: var(--modalText);
+}
+/*.modal-btn-container {
+    padding-top: 20px;
+}*/
+/*.modal-cancel {
     padding-top: 10px;
 }
 .modal-cancel a {
@@ -397,7 +395,7 @@ input {
 .modal-cancel a:hover {
     color: #fafafa;
     text-decoration: none;
-}
+}*/
 /******************************contact form modal******************************/
 .contact-form-container {
     color: var(--modalText);
@@ -435,26 +433,26 @@ input {
     color: #fafafa;
 }
 @media screen and (min-width:1000px) {
-    .footer-container {
-        position: absolute;
-        bottom: 0;
-        padding: 20px 250px 5px;
-    }
-    .counter-container {
-        margin: 20px 20%;
-    }
-    .question-container {
-        padding: 10px 25%;
-    }
-    .btn-answer-container {
-        padding: 10px 15%;
-    }
     .main-page-game-container {
         display: flex;
         flex-direction: column;
         margin-bottom: 100px;
         margin-left: 150px;
         margin-right: 150px;
+    }
+    .question-container {
+        padding: 10px 25%;
+    }
+    .multiple-answer-container {
+        padding: 10px 15%;
+    }
+    .counter-container {
+        margin: 20px 20%;
+    }
+    .footer-container {
+        position: absolute;
+        bottom: 0;
+        padding: 20px 250px 5px;
     }
 }
 @media screen and (max-width: 767px) {
@@ -479,7 +477,7 @@ input {
         text-align: center;
         padding-top: 0;
     }
-    .login-form-label {
+    /*.login-form-label {
         text-align: center;
         padding-bottom: 0;
     }
@@ -487,23 +485,21 @@ input {
         text-align: center;
         padding-top: 0;
         padding-bottom: 10px;
-    }
+    }*/
     .contact-form-label {
-        text-align: center;
         padding-bottom: 0;
     }
     .contact-form-input {
-        text-align: center;
         padding-top: 0;
         padding-bottom: 10px;
     }
 }
 @media screen and (max-width: 575px) {
-    html, body {
+    /*html, body {
         width:100%;
         overflow-x: hidden;
         height: auto;
-    }
+    }*/
     .container-fluid {
         padding-left: 0;
         padding-right: 0;
@@ -511,6 +507,7 @@ input {
     .header-container {
         display: none;
     }
+    /********navbar mobile*******/
     .navbar-brand {
         display: block;
     }
@@ -604,20 +601,15 @@ input {
         padding-right: 0;
         font-size: 20px;
     }
-    .col-6 {
-        padding: 0;
-    }
     .difficulty-selection-container label {
         padding-right: 30px;
     }
-    .start-button-container {
-    margin: 50px 0;
-    text-align: center;
+    .category-choice .col-6 {
+        padding: 0;
     }
-    .user-answer-container {
-        margin: 50px 10px;
+    .start-button-container {
+        margin: 50px 0;
         text-align: center;
-        padding: 10px;
     }
     .counter-container {
         margin: 20px 0px;
@@ -632,6 +624,10 @@ input {
         padding: 20px 20px 5px;
         text-align: center;
         color: #fafafa;
+        background-color: var(--footerMobileBgColor);
+    }
+    .footer-container div i {
+        color: var(--footerMobileTextColor);
     }
     .copyright-container {
         font-size: 15px;
@@ -643,8 +639,16 @@ input {
         background-color: var(--questionBgColor);
         border-radius: 20px;
     }
-    .btn-answer-container {
-    margin: 50px 0 20px;
+    .boolean-answer-container {
+        margin: 50px 10px;
+        text-align: center;
+        padding: 10px;
+    }
+    .multiple-answer-container {
+        margin: 50px 0 20px;
+    }
+    .btn-end-test .col-6 {
+        padding: 0;
     }
     .jumbotron-reg-form {
         position: absolute;
@@ -655,12 +659,6 @@ input {
         padding: 0;
         margin: 20px 20px;
     }
-    .footer-container {
-        background-color: var(--footerMobileBgColor);
-    }
-    .footer-container div i {
-        color: var(--footerMobileTextColor);
-    }
 }
 @media screen and (max-width:350px) {
     .navbar {
@@ -669,8 +667,11 @@ input {
     .container-fluid {
         padding: 0;
     }
-    p {
+    .message-home p {
         font-size: 18px;
+    }
+    .jumbotron {
+        padding: 0;
     }
     .difficulty-selection-container {
         padding-left: 10px;
@@ -688,7 +689,7 @@ input {
     }
 }
 /*****************homepage game choice section**********************************/
-.game-choice div button {
+/*.game-choice div button {
     width: 100px;
     height: 100px;
     margin-top: 30px;
@@ -704,17 +705,17 @@ input {
 }
 .game-choice div button i {
     font-size: 30px;
-}
-.category-choice-name {
+}*/
+/*.category-choice-name {
     font-family: "Roboto";
     font-weight: 400;
     font-size: 15px;
     color: #111111;
-}
-#category-choice-link {
+}*/
+/*#category-choice-link {
     background-color: #fafafa;
     color: blueviolet;
-}
+}*/
 /*****************category choice modal*****************************/
 .category-choice div button {
     width: 100px;
@@ -729,19 +730,19 @@ input {
 .category-choice div button i {
     font-size: 30px;
 }
-.game-choice .col-4 {
+/*.game-choice .col-4 {
     text-align: center;
-}
+}*/
 .category-name {
     font-family: "Roboto";
     font-weight: 400;
     font-size: 15px;
     color: #111111;
 }
-.chosen-category-choice-btn {
+/*.chosen-category-choice-btn {
     background-color: rgb(42, 235, 42);
     color: #000;
-}
+}*/
 /******************************level choice modal*****************************/
 .difficulty-choice {
     margin: 0px 50px;
@@ -765,10 +766,10 @@ input {
     font-size: 15px;
     color: #111111;
 }
-#difficulty-choice-link {
+/*#difficulty-choice-link {
     background-color: #fafafa;
     color: blueviolet;
-}
+}*/
 #easy-btn {
     background-color: rgb(42, 235, 42);
 }
@@ -925,6 +926,7 @@ input {
   transition: background-color 0.6s ease, color 1s ease;
 }
 /******************links to share result********************/
+/**************code taken fron youtube tutorial https://www.youtube.com/watch?v=YcEshVZNA5E*/
 .share-result-wrapper {
     margin: 100px auto;
     text-align: center;

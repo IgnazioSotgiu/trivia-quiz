@@ -355,7 +355,7 @@ function displayQuestion() {
 /******************function display boolean true / false buttons************* */
 function displayBooleanAnswerButtons() {
     document.getElementById("replace-question-container").innerHTML +=
-    `<div class="user-answer-container">
+    `<div class="boolean-answer-container">
         <button type="button" value="True" class="btn btn-success boolean-answer-button">True</button>
         <button type="button" value="False" class="btn btn-danger boolean-answer-button">False</button>
     </div>`;
@@ -365,7 +365,7 @@ function displayMultipleChoiceAnswerButtons() {
     let possibleAnswers = [questionListArray.results[i].incorrect_answers[0],questionListArray.results[i].incorrect_answers[1], questionListArray.results[i].incorrect_answers[2],questionListArray.results[i].correct_answer];
     shuffle(possibleAnswers);
     document.getElementById("replace-question-container").innerHTML +=
-    `<div class="row row-center btn-answer-container">
+    `<div class="row row-center multiple-answer-container">
         <div class="col-12 col-sm-6">
             <button class=" btn btn-secondary multiple-answer-button" id="btn-1" type="button" name="answer" value="${possibleAnswers[0]}">${possibleAnswers[0]}</button>
         </div>
@@ -497,7 +497,7 @@ function displayEndPage() {
             </ul>
         </div>
     </div>
-    <div class="row">
+    <div class="row btn-end-test">
         <div class="col-6 end-button-container">
             <a href="index.html"><button type="button" class="btn btn-warning">Home</button></a>
         </div>
