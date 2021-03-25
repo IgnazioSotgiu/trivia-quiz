@@ -11,7 +11,6 @@ function sendMail() {
     .then (
         function(response) {
             console.log("success", response);
-            //alert("Your email has been sent");
         },
         function(error) {
             console.log("error", error);
@@ -33,50 +32,63 @@ function checkForm(event) {
 
     if(contactName && validEmail && contactEnquiry) {
         sendMail();
-        $(".swal-button, .swal-overlay").css("display", "block");
-        swal({
-            title: "Success!",
-            icon: "success",
-            text: `Your email has been sent`,
-            button: "OK",
-        });
-        setTimeout(function(){
-            $(".swal-button, .swal-overlay").css("display", "none");
-            $("#contact-modal").css("display", "none");
-        }, 2000);
-         
+        messageSuccess();
+        
     } else {
-        if(!contactName){
-            $(".swal-button, .swal-overlay").css("display", "block");
-            swal({
-                title: "Error!",
-                icon: "info",
-                text: `Please enter your name`,
-                button: "OK",
-            });
-        } else if(!contactEmail) {
-            $(".swal-button, .swal-overlay").css("display", "block");
-            swal({
-                title: "Error!",
-                icon: "info",
-                text: `Please enter a valid email address`,
-                button: "OK",
-            });
-        } else {
-            $(".swal-button, .swal-overlay").css("display", "block");
-            swal({
-                title: "Error!",
-                icon: "info",
-                text: `Please enter a message`,
-                button: "OK",
-            });
-        }
-
+        messageMissingField(contactName, validEmail, contactEnquiry);
     }
 }
-function validateEmail(email) 
-    {
-        var re = /\S+@\S+\.\S+/;
-        return re.test(email);
+function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
+function messageMissingField(contactName, validEmail, contactEnquiry) {
+    if(!contactName){
+        $(".swal-button, .swal-overlay").css("display", "block");
+        swal({
+            title: "Error!",
+            icon: "info",
+            text: `Please enter your name`,
+            button: "OK",
+        });
+    } else if(!validEmail) {
+        $(".swal-button, .swal-overlay").css("display", "block");
+        swal({
+            title: "Error!",
+            icon: "info",
+            text: `Please enter a valid email address`,
+            button: "OK",
+        });
+    } else if(!contactEnquiry) {
+        $(".swal-button, .swal-overlay").css("display", "block");
+        swal({
+            title: "Error!",
+            icon: "info",
+            text: `Please enter a message`,
+            button: "OK",
+        });
+    } else {
+        $(".swal-button, .swal-overlay").css("display", "block");
+        swal({
+            title: "Error!",
+            icon: "info",
+            text: `Please fill form correctly`,
+            button: "OK",
+        });
     }
+}
+function messageSuccess() {
+    $(".swal-button, .swal-overlay").css("display", "block");
+    swal({
+        title: "Success!",
+        icon: "success",
+        text: `Your email has been sent`,
+        button: "OK",
+    });
+    setTimeout(function(){
+        $(".swal-button, .swal-overlay").css("display", "none");
+        $("#contact-modal").css("display", "none");
+    }, 2000);
+}
     
