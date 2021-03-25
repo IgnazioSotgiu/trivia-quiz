@@ -6,6 +6,9 @@ html, body {
     min-height: 100vh;
     font-family: "Roboto", sans-serif;
     }
+body {
+    overflow-x: hidden;
+}
 .background-container {
     background: var(--homepageBg) no-repeat bottom right; 
     -webkit-background-size: cover;
@@ -432,6 +435,301 @@ footer {
 .home-link a {
     color: #fafafa;
 }
+/******************links to share result********************/
+/**************code taken fron youtube tutorial https://www.youtube.com/watch?v=YcEshVZNA5E*/
+.share-result-wrapper {
+    margin: 100px auto;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+.toggle-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 45px;
+    background-color: #ff933d;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.1s ease;
+}
+.toggle-button ul {
+    margin: 0;
+    padding: 0;
+}
+.toggle-button ul li a {
+    display: flex;
+    height: 45px;
+    align-items: center;
+    padding: 0 20px;
+}
+.toggle-button ul li a#share-btn {
+    justify-content: center;
+}
+.toggle-button ul li a#share-btn .text {
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 10px;
+    color: #000;
+    margin-right: 10px;
+}
+.toggle-button ul li a#share-btn .icon {
+    width: 35px;
+    height: 35px;
+    color: #111;
+    background-color: #713200;
+    display: inline-block;
+    border-radius: 50%;
+    transition: all 1s ease;
+    position: relative;
+}
+.toggle-button ul li a .icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fafafa;
+}
+.toggle-button ul li a.sm .icon {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: #713200;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.toggle-button ul li a .text {
+    letter-spacing: 2px;
+}
+.toggle-button ul li a.facebook .icon {
+    background-color: #3b5998;
+}
+.toggle-button ul li a.facebook .text {
+    color: #3b5998;
+}
+.toggle-button ul li a.twitter .icon {
+    background-color: #1da1f2;
+}
+.toggle-button ul li a.twitter .text {
+    color: #1da1f2;
+}
+.toggle-button.active {
+    height: 150px;
+}
+/*************************sweet alert modal style*********************/
+.swal-overlay {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+.swal-modal {
+    background-color: var(--swalModalBgColor);
+    border: 0.5px solid #fafafa;
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+}
+.swal-title {
+    margin: 0px;
+    font-size: 25px;
+    color: var(--swalModalTitleColor);
+    margin-bottom: 28px;
+}
+.swal-text {
+    background-color: var(--swalModalTextBgColor);
+    padding: 17px;
+    border: 0.5px solid #Fafafa;
+    border-radius: 10px;
+    display: block;
+    margin: 22px;
+    text-align: center;
+    color: var(--swalModalTextColor);
+}
+.swal-button {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 200px;
+    background-color: transparent;
+    color: transparent;
+    z-index: 2;
+}
+.swal-button:not([disabled]):hover {
+    background-color: transparent;
+}
+.swal-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+.swal-icon--success__hide-corners {
+    width: 0; 
+    height: 0; 
+    background-color: transparent;
+}
+.swal-icon--success:after, .swal-icon--success:before {
+    content: none;
+}
+/* toggle Light/Dark mode color variables */
+:root {
+  --headerBgLight: url("../images/home-header-light.jpg");
+  --headerBgDark: url("../images/home-header-dark.jpg");
+  --navbarBgLight: url("../images/navbar-bg-light.jpg");
+  --navbarBgDarkMobile: url("../images/navbar-bg-mobile-dark.jpg");
+  --navbarBgLightMobile: url("../images/navbar-bg-mobile-light.jpg");
+  --bodyBgLight: url("../images/background-light.jpg");
+  --bodyBgDark: url("../images/background-dark.png");
+  --whiteColor: #fafafa;
+  --blackColor: #000;
+  --goldenColor: #eca54c;
+  --rustyColor:#713200;
+  --rustyLightColor:#ff933d;
+  --whiteOverlayColor: rgba(255, 255, 255, 0.7);
+  --darkOverlayColor: rgba(0, 0, 0, 0.5);
+  --noOverlayColor: rgba(0, 0, 0, 0);
+}
+/*set light theme colors*/
+.light-theme {
+    --mainHeaderHomepage: var(--headerBgLight);
+    --homepageBg: var(--bodyBgLight);
+    --navbarBgColor: var(--rustyLightColor);
+    --navbarTextColor: var(--blackColor);
+    --navbarBgMobile: var(--navbarBgLightMobile);
+    --messageHomepage: var(--blackColor);
+    --messageHomepageBgColor: var(--whiteOverlayColor);
+    --questionColor: var(--blackColor);
+    --questionBgColor: var(--whiteOverlayColor);
+    --modalBg: var(--bodyBgLight);
+    --modalText: var(--whiteColor);
+    --messageFinishTest: var(--blackColor);
+    --messageFinishTestBgColor: var(--whiteOverlayColor);
+    --swalModalBgColor: var(--whiteColor);
+    --swalModalTitleColor: var(--blackColor);
+    --swalModalTextBgColor: var(--blackColor);
+    --swalModalTextColor: var(--whiteColor);
+    --footerBgColor: var(--rustyLightColor);
+    --footerTextColor: var(--blackColor);
+    --footerMobileBgColor: var(--blackColor);
+    --footerMobileTextColor: var(--whiteColor);
+    --registrationBg: var(--bodyBgLight);
+    --registrationText: var(--whiteColor);
+    --hintMobileBgColor: var(--rustyLightColor);
+    --hintMobileTextColor: var(--blackColor);
+}
+.dark-theme {
+    --mainHeaderHomepage: var(--headerBgDark);
+    --homepageBg: var(--bodyBgDark);
+    --navbarBgColor: var(--rustyColor);
+    --navbarTextColor: var(--whiteColor);
+    --navbarBgMobile: var(--navbarBgDarkMobile);
+    --messageHomepage: var(--goldenColor);
+    --messageHomepageBgColor: var(--noOverlayColor);
+    --questionColor: var(--goldenColor);
+    --questionBgColor: var(--noOverlayColor);
+    --modalBg: var(--bodyBgDark);
+    --modalText: var(--whiteColor);
+    --messageFinishTest: var(--goldenColor);
+    --messageFinishTestBgColor: var(--noOverlayColor);
+    --swalModalBgColor: var(--rustyColor);
+    --swalModalTitleColor: var(--whiteColor);
+    --swalModalTextBgColor: var(--blackColor);
+    --swalModalTextColor: var(--whiteColor);
+    --footerBgColor: var(--rustyColor);
+    --footerTextColor: var(--whiteColor);
+    --footerMobileBgColor: var(--rustyColor);
+    --footerMobileTextColor:var(--whiteColor);
+    --registrationBg: var(--goldenColor);
+    --registrationText: var(--blackColor);
+    --hintMobileBgColor: var(--rustyColor);
+    --hintMobileTextColor: var(--whiteColor);
+}
+/****************transition dark to white mode*********/
+* {
+  transition: background-color 0.6s ease, color 1s ease;
+}
+/******************modals section************************/
+/*****************category choice modal*****************************/
+.category-choice div button {
+    width: 100px;
+    height: 100px;
+    margin: 20px 10px;
+    background-color: #fafafa;
+    color: blueviolet;
+    padding-top: 10px;
+    border: 2px solid #111111;
+    border-radius: 10px;
+}
+.category-choice div button i {
+    font-size: 30px;
+}
+/*.game-choice .col-4 {
+    text-align: center;
+}*/
+.category-name {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 15px;
+    color: #111111;
+}
+/*.chosen-category-choice-btn {
+    background-color: rgb(42, 235, 42);
+    color: #000;
+}*/
+/******************************level choice modal*****************************/
+.difficulty-choice {
+    margin: 0px 50px;
+}
+.difficulty-choice div button {
+    width: 100px;
+    height: 100px;
+    margin: 20px 10px;
+    background-color: #fafafa;
+    color: blueviolet;
+    padding-top: 10px;
+    border: 2px solid #111111;
+    border-radius: 10px;
+}
+.difficulty-choice div button i {
+    font-size: 30px;
+}
+.difficulty-name {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 15px;
+    color: #111111;
+}
+/*#difficulty-choice-link {
+    background-color: #fafafa;
+    color: blueviolet;
+}*/
+#easy-btn {
+    background-color: rgb(42, 235, 42);
+}
+#medium-btn {
+    background-color: rgb(255, 238, 0);
+}
+#hard-btn {
+    background-color:rgb(250, 0, 0);
+}
+/****************************instructions modal************************/
+.instructions-container {
+    color: var(--modalText);
+    line-height: 35px;
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+#hr-instructions {
+    background-color: #fafafa;
+}
+.instructions-container div {
+    text-align: center;
+}
+#exit-instructions {
+    margin: 0;
+}
+/****************responsive elements**********************/
 @media screen and (min-width:1000px) {
     .main-page-game-container {
         display: flex;
@@ -477,15 +775,6 @@ footer {
         text-align: center;
         padding-top: 0;
     }
-    /*.login-form-label {
-        text-align: center;
-        padding-bottom: 0;
-    }
-    .login-form-input {
-        text-align: center;
-        padding-top: 0;
-        padding-bottom: 10px;
-    }*/
     .contact-form-label {
         padding-bottom: 0;
     }
@@ -495,11 +784,11 @@ footer {
     }
 }
 @media screen and (max-width: 575px) {
-    /*html, body {
+    html, body {
         width:100%;
         overflow-x: hidden;
         height: auto;
-    }*/
+    }
     .container-fluid {
         padding-left: 0;
         padding-right: 0;
@@ -635,7 +924,7 @@ footer {
     }    
     .question-container {
         padding: 10px 5%;
-        margin: 50px 10px;
+        margin: 50px 10px 0;
         background-color: var(--questionBgColor);
         border-radius: 20px;
     }
@@ -716,303 +1005,3 @@ footer {
     background-color: #fafafa;
     color: blueviolet;
 }*/
-/*****************category choice modal*****************************/
-.category-choice div button {
-    width: 100px;
-    height: 100px;
-    margin: 20px 10px;
-    background-color: #fafafa;
-    color: blueviolet;
-    padding-top: 10px;
-    border: 2px solid #111111;
-    border-radius: 10px;
-}
-.category-choice div button i {
-    font-size: 30px;
-}
-/*.game-choice .col-4 {
-    text-align: center;
-}*/
-.category-name {
-    font-family: "Roboto";
-    font-weight: 400;
-    font-size: 15px;
-    color: #111111;
-}
-/*.chosen-category-choice-btn {
-    background-color: rgb(42, 235, 42);
-    color: #000;
-}*/
-/******************************level choice modal*****************************/
-.difficulty-choice {
-    margin: 0px 50px;
-}
-.difficulty-choice div button {
-    width: 100px;
-    height: 100px;
-    margin: 20px 10px;
-    background-color: #fafafa;
-    color: blueviolet;
-    padding-top: 10px;
-    border: 2px solid #111111;
-    border-radius: 10px;
-}
-.difficulty-choice div button i {
-    font-size: 30px;
-}
-.difficulty-name {
-    font-family: "Roboto";
-    font-weight: 400;
-    font-size: 15px;
-    color: #111111;
-}
-/*#difficulty-choice-link {
-    background-color: #fafafa;
-    color: blueviolet;
-}*/
-#easy-btn {
-    background-color: rgb(42, 235, 42);
-}
-#medium-btn {
-    background-color: rgb(255, 238, 0);
-}
-#hard-btn {
-    background-color:rgb(250, 0, 0);
-}
-/****************************instructions modal************************/
-.instructions-container {
-    color: var(--modalText);
-    line-height: 35px;
-    font-family: 'Roboto';
-    font-weight: 300;
-}
-#hr-instructions {
-    background-color: #fafafa;
-}
-.instructions-container div {
-    text-align: center;
-}
-#exit-instructions {
-    margin: 0;
-}
-/***********************************swal modal style*********************/
-.swal-overlay {
-    background-color: rgba(0, 0, 0, 0.25);
-}
-.swal-modal {
-    background-color: var(--swalModalBgColor);
-    border: 0.5px solid #fafafa;
-    border-radius: 10px;
-    width: 200px;
-    height: 200px;
-}
-.swal-title {
-    margin: 0px;
-    font-size: 25px;
-    color: var(--swalModalTitleColor);
-    margin-bottom: 28px;
-}
-.swal-text {
-    background-color: var(--swalModalTextBgColor);
-    padding: 17px;
-    border: 0.5px solid #Fafafa;
-    border-radius: 10px;
-    display: block;
-    margin: 22px;
-    text-align: center;
-    color: var(--swalModalTextColor);
-}
-.swal-button {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 300px;
-    width: 200px;
-    background-color: transparent;
-    color: transparent;
-    z-index: 2;
-}
-.swal-button:not([disabled]):hover {
-    background-color: transparent;
-}
-.swal-button:focus {
-    outline: none;
-    box-shadow: none;
-}
-.swal-icon--success__hide-corners {
-    width: 0; 
-    height: 0; 
-    background-color: transparent;
-}
-.swal-icon--success:after, .swal-icon--success:before {
-    content: none;
-}
-
-/* toggle Light/Dark mode color variables */
-:root {
-  --headerBgLight: url("../images/home-header-light.jpg");
-  --headerBgDark: url("../images/home-header-dark.jpg");
-  --navbarBgLight: url("../images/navbar-bg-light.jpg");
-  --navbarBgDarkMobile: url("../images/navbar-bg-mobile-dark.jpg");
-  --navbarBgLightMobile: url("../images/navbar-bg-mobile-light.jpg");
-  --bodyBgLight: url("../images/background-light.jpg");
-  --bodyBgDark: url("../images/background-dark.png");
-  --whiteColor: #fafafa;
-  --blackColor: #000;
-  --goldenColor: #eca54c;
-  --rustyColor:#713200;
-  --rustyLightColor:#ff933d;
-  --whiteOverlayColor: rgba(255, 255, 255, 0.7);
-  --darkOverlayColor: rgba(0, 0, 0, 0.5);
-  --noOverlayColor: rgba(0, 0, 0, 0);
-}
-/*set light theme colors*/
-.light-theme {
-    --mainHeaderHomepage: var(--headerBgLight);
-    --homepageBg: var(--bodyBgLight);
-    --navbarBgColor: var(--rustyLightColor);
-    --navbarTextColor: var(--blackColor);
-    --navbarBgMobile: var(--navbarBgLightMobile);
-    --messageHomepage: var(--blackColor);
-    --messageHomepageBgColor: var(--whiteOverlayColor);
-    --questionColor: var(--blackColor);
-    --questionBgColor: var(--whiteOverlayColor);
-    --modalBg: var(--bodyBgLight);
-    --modalText: var(--whiteColor);
-    --messageFinishTest: var(--blackColor);
-    --messageFinishTestBgColor: var(--whiteOverlayColor);
-    --swalModalBgColor: var(--whiteColor);
-    --swalModalTitleColor: var(--blackColor);
-    --swalModalTextBgColor: var(--blackColor);
-    --swalModalTextColor: var(--whiteColor);
-    --footerBgColor: var(--rustyLightColor);
-    --footerTextColor: var(--blackColor);
-    --footerMobileBgColor: var(--blackColor);
-    --footerMobileTextColor: var(--whiteColor);
-    --registrationBg: var(--bodyBgLight);
-    --registrationText: var(--whiteColor);
-    --hintMobileBgColor: var(--rustyLightColor);
-    --hintMobileTextColor: var(--blackColor);
-}
-.dark-theme {
-    --mainHeaderHomepage: var(--headerBgDark);
-    --homepageBg: var(--bodyBgDark);
-    --navbarBgColor: var(--rustyColor);
-    --navbarTextColor: var(--whiteColor);
-    --navbarBgMobile: var(--navbarBgDarkMobile);
-    --messageHomepage: var(--goldenColor);
-    --messageHomepageBgColor: var(--noOverlayColor);
-    --questionColor: var(--goldenColor);
-    --questionBgColor: var(--noOverlayColor);
-    --modalBg: var(--bodyBgDark);
-    --modalText: var(--whiteColor);
-    --messageFinishTest: var(--goldenColor);
-    --messageFinishTestBgColor: var(--noOverlayColor);
-    --swalModalBgColor: var(--rustyColor);
-    --swalModalTitleColor: var(--whiteColor);
-    --swalModalTextBgColor: var(--blackColor);
-    --swalModalTextColor: var(--whiteColor);
-    --footerBgColor: var(--rustyColor);
-    --footerTextColor: var(--whiteColor);
-    --footerMobileBgColor: var(--rustyColor);
-    --footerMobileTextColor:var(--whiteColor);
-    --registrationBg: var(--goldenColor);
-    --registrationText: var(--blackColor);
-    --hintMobileBgColor: var(--rustyColor);
-    --hintMobileTextColor: var(--whiteColor);
-}
-/****************transition dark to white mode*********/
-* {
-  transition: background-color 0.6s ease, color 1s ease;
-}
-/******************links to share result********************/
-/**************code taken fron youtube tutorial https://www.youtube.com/watch?v=YcEshVZNA5E*/
-.share-result-wrapper {
-    margin: 100px auto;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    height: auto;
-    z-index: 1;
-}
-.toggle-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 250px;
-    height: 45px;
-    background-color: #ff933d;
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.1s ease;
-}
-.toggle-button ul {
-    margin: 0;
-    padding: 0;
-}
-.toggle-button ul li a {
-    display: flex;
-    height: 45px;
-    align-items: center;
-    padding: 0 20px;
-}
-.toggle-button ul li a#share-btn {
-    justify-content: center;
-}
-.toggle-button ul li a#share-btn .text {
-    font-weight: 500;
-    font-size: 24px;
-    letter-spacing: 10px;
-    color: #000;
-    margin-right: 10px;
-}
-.toggle-button ul li a#share-btn .icon {
-    width: 35px;
-    height: 35px;
-    color: #111;
-    background-color: #713200;
-    display: inline-block;
-    border-radius: 50%;
-    transition: all 1s ease;
-    position: relative;
-}
-.toggle-button ul li a .icon i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fafafa;
-}
-.toggle-button ul li a.sm .icon {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    background-color: #713200;
-    border-radius: 50%;
-    margin-right: 15px;
-}
-.toggle-button ul li a .text {
-    letter-spacing: 2px;
-}
-.toggle-button ul li a.facebook .icon {
-    background-color: #3b5998;
-}
-.toggle-button ul li a.facebook .text {
-    color: #3b5998;
-}
-.toggle-button ul li a.twitter .icon {
-    background-color: #1da1f2;
-}
-.toggle-button ul li a.twitter .text {
-    color: #1da1f2;
-}
-.toggle-button ul li a.instagram .icon {
-    background-color: #c32aa3;
-}
-.toggle-button ul li a.instagram .text {
-    color: #c32aa3;
-}
-.toggle-button.active {
-    height: 150px;
-}
