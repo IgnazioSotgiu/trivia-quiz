@@ -1,7 +1,5 @@
 // connecting the contact email with my gmail account using emailJs
 // code from code institute and EmailJS website tutorials
-
-
 function sendMail() {
     emailjs.send("service_crlz8af","triviaquiz",{
         "from_name": document.getElementById("contact-name").value,
@@ -11,13 +9,12 @@ function sendMail() {
     .then (
         function(response) {
             console.log("success", response);
+            messageSuccess();
         },
         function(error) {
             console.log("error", error);
-            alert(" Error Your email has not been sent");
-
+            messageError();
         });
-
 }
 let contactBtn = document.getElementById("contact-submit-btn");
 contactBtn.addEventListener("click", checkForm);
@@ -27,17 +24,15 @@ function checkForm(event) {
     let contactName = document.getElementById("contact-name").value;
     let contactEmail = document.getElementById("contact-email").value;
     let contactEnquiry =document.getElementById("contact-enquiry").value;
-
     let validEmail = validateEmail(contactEmail);
-
     if(contactName && validEmail && contactEnquiry) {
         sendMail();
-        messageSuccess();
-        
     } else {
         messageMissingField(contactName, validEmail, contactEnquiry);
     }
 }
+
+/************function taken from stack overflow*********** */
 function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
@@ -78,6 +73,7 @@ function messageMissingField(contactName, validEmail, contactEnquiry) {
         });
     }
 }
+
 function messageSuccess() {
     $(".swal-button, .swal-overlay").css("display", "block");
     swal({
@@ -89,6 +85,19 @@ function messageSuccess() {
     setTimeout(function(){
         $(".swal-button, .swal-overlay").css("display", "none");
         $("#contact-modal").css("display", "none");
-    }, 2000);
+    }, 3000);
+}
+
+function messageError() {
+    $(".swal-button, .swal-overlay").css("display", "block");
+    swal({
+        title: "Error!",
+        icon: "error",
+        text: `there was a problem! Your email has not been sent`,
+        button: "OK",
+    });
+    setTimeout(function(){
+        $(".swal-button, .swal-overlay").css("display", "none");
+    }, 3000);
 }
     
