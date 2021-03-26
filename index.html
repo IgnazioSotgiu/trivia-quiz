@@ -33,7 +33,8 @@
             <div class="collapse navbar-collapse" id="navbarTriviaQuizDropdown">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item nav-link" id="change-mode-icon"><i class="fas fa-adjust" id="theme-switch" value="dark"></i></li>
-                    <li class="nav-item"><a class="nav-link" href="register.html">Register For Our Newsletter</a></li>
+                    <!--<li class="nav-item"><a class="nav-link" href="register.html">Register For Our Newsletter</a></li>-->
+                    <li class="nav-item"><a class="nav-link" id="registration-link" data-open="registration-modal" data-toggle="registration-modal" data-backdrop="false" href="#">Register For Our Newsletter</a></li>
                     <li class="nav-item"><a class="nav-link" id="contact-link" data-open="contact-modal" data-toggle="contact-modal" data-backdrop="false" href="#">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" id="instructions-link" data-open="instructions-modal" data-toggle="instructions-modal" data-backdrop="false" href="#">Instructions</a></li>
                 </ul>
@@ -82,6 +83,47 @@
             </div>    
         </div>
     </footer>
+    <!----------------------------registration modal---------------------------------->
+    <div class="modal" id="registration-modal">
+        <div class="jumbotron registration-jumbotron">
+            <div class="registration-form-container">
+                <div class="row">
+                    <div class="d-none d-md-block col-md-6">
+                        <div class="registration-image-container">
+                            <img class="registration-image" src="./assets/images/subscribe-7039.png" alt="subscribe">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h4 class="registration-form-title">Subscribe to Our Newsletter!</h4>
+                        <h6 class="registration-form-message">Get news and updates from Trivia Quiz Team.</h6>
+                        <form id="registration-form" class="reg-newsletter-form">
+                            <div class="row">    
+                                <div class="registration-form-input col-12">
+                                    <input type="text" name="name" class="name-input" id="registration-name" placeholder="Name" required>
+                                </div>
+                            </div>
+                            <div class="row">    
+                                <div class="registration-form-input col-12">
+                                    <input type="email" name="email" class="email-input" id="registration-email" placeholder="email" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="subscription-container col-12">
+                                    <input class="newsletter" data-type="bool" type="checkbox" id="newsletter" name="newsletter">
+                                    <label for="newsletter">Yes, I would like to receive News and Updates</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="registration-button col-12">
+                                    <button type="submit" value="submit" id="registration-submit-btn" class="btn btn-warning">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--------------------------------instructions modal------------------------------>
     <div class="modal" id="instructions-modal">
         <div class="jumbotron">
@@ -94,7 +136,7 @@
             </div>
         </div>
     </div>
-   <!--------------------------------contact modal-------------------------->
+    <!--------------------------------contact modal-------------------------->
     <div class="modal" id="contact-modal">
         <div class="jumbotron">
             <div class="contact-form-container">
@@ -120,8 +162,6 @@
                             </div>
                             <div class="row">
                                 <div class="enquiry-container col-12">
-                                    <!--<label>Request / Enquiry</label>
-                                    <br>-->   
                                     <textarea class="request" id="contact-enquiry" name="subject" placeholder="Write here your message" required></textarea>
                                 </div>
                             </div>

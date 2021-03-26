@@ -584,6 +584,19 @@ if(contactLink) {
         }
     });
 }
+/**********************registration modal******************************/
+let registrationLink = document.getElementById("registration-link");
+let registrationModal = document.getElementById("registration-modal");
+if(registrationLink) {
+    registrationLink.addEventListener("click", function() {
+        registrationModal.style.display = "block";
+        window.onclick = function(event) {
+        if (event.target == registrationModal) {
+            registrationModal.style.display = "none";
+            }
+        }
+    });
+}
 /********************switching dark light mode************************** */
 let themeSwitch = document.getElementById("theme-switch");
 themeSwitch.addEventListener("click", changeMode);

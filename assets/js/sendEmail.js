@@ -55,20 +55,12 @@ function messageMissingField(contactName, validEmail, contactEnquiry) {
             text: `Please enter a valid email address`,
             button: "OK",
         });
-    } else if(!contactEnquiry) {
-        $(".swal-button, .swal-overlay").css("display", "block");
-        swal({
-            title: "Error!",
-            icon: "info",
-            text: `Please enter a message`,
-            button: "OK",
-        });
     } else {
         $(".swal-button, .swal-overlay").css("display", "block");
         swal({
             title: "Error!",
             icon: "info",
-            text: `Please fill form correctly`,
+            text: `Please enter a message`,
             button: "OK",
         });
     }
@@ -99,5 +91,43 @@ function messageError() {
     setTimeout(function(){
         $(".swal-button, .swal-overlay").css("display", "none");
     }, 3000);
+}
+
+
+//******sending email with details for registration to Newsletter****** */
+let registrationBtn = document.getElementById("registration-submit-btn");
+contactBtn.addEventListener("click", checkRegistrationForm);
+
+function checkRegistarationForm(event) {
+    event.preventDefault();
+    let registrationName = document.getElementById("registration-name").value;
+    let registrationEmail = document.getElementById("registration-email").value;
+    let newsletter = document.getElementById("newsletter").value;
+    let validRegistrationEmail = validateEmail(registrationEmail);
+    if(registrationName && validRegistrationEmail) {
+        sendRegistrationMail();
+    } else {
+        messageMissingRegistrationField(contactName, validEmail);
+    }
+}
+
+function messageMissingRegistrationField(registrationName, validRegistrationEmail) {
+    if(!registrationName){
+        $(".swal-button, .swal-overlay").css("display", "block");
+        swal({
+            title: "Error!",
+            icon: "info",
+            text: `Please enter your name`,
+            button: "OK",
+        });
+    } else {
+        $(".swal-button, .swal-overlay").css("display", "block");
+        swal({
+            title: "Error!",
+            icon: "info",
+            text: `Please enter a valid email address`,
+            button: "OK",
+        });
+    }
 }
     
