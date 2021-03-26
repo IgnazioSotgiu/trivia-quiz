@@ -96,18 +96,19 @@ function messageError() {
 
 //******sending email with details for registration to Newsletter****** */
 let registrationBtn = document.getElementById("registration-submit-btn");
-contactBtn.addEventListener("click", checkRegistrationForm);
+registrationBtn.addEventListener("click", checkRegistrationForm);
 
-function checkRegistarationForm(event) {
+function checkRegistrationForm(event) {
     event.preventDefault();
     let registrationName = document.getElementById("registration-name").value;
     let registrationEmail = document.getElementById("registration-email").value;
-    let newsletter = document.getElementById("newsletter").value;
     let validRegistrationEmail = validateEmail(registrationEmail);
-    if(registrationName && validRegistrationEmail) {
+    let newsletter = document.getElementById("newsletter").checked;
+
+    if(registrationName && validRegistrationEmail && newsletter) {
         sendRegistrationMail();
     } else {
-        messageMissingRegistrationField(contactName, validEmail, newsletter);
+        messageMissingRegistrationField(registrationName, validRegistrationEmail, newsletter);
     }
 }
 
@@ -137,5 +138,21 @@ function messageMissingRegistrationField(registrationName, validRegistrationEmai
             button: "OK",
         });
     }
+}
+
+function sendRegistrationMail() {
+    emailjs.send("service_crlz8af","template_ibq6on3",{
+        "from_name": document.getElementById("registration-name").value,
+        "from_email": document.getElementById("registration-email").value,
+    })
+    .then (
+        function(response) {
+            console.log("success", response);
+            messageSuccess();
+        },
+        function(error) {
+            console.log("error", error);
+            messageError();
+        });
 }
     
