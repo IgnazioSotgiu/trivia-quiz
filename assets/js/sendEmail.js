@@ -107,11 +107,11 @@ function checkRegistarationForm(event) {
     if(registrationName && validRegistrationEmail) {
         sendRegistrationMail();
     } else {
-        messageMissingRegistrationField(contactName, validEmail);
+        messageMissingRegistrationField(contactName, validEmail, newsletter);
     }
 }
 
-function messageMissingRegistrationField(registrationName, validRegistrationEmail) {
+function messageMissingRegistrationField(registrationName, validRegistrationEmail, newsletter) {
     if(!registrationName){
         $(".swal-button, .swal-overlay").css("display", "block");
         swal({
@@ -120,12 +120,20 @@ function messageMissingRegistrationField(registrationName, validRegistrationEmai
             text: `Please enter your name`,
             button: "OK",
         });
-    } else {
+    } else if(!validRegistrationEmail) {
         $(".swal-button, .swal-overlay").css("display", "block");
         swal({
             title: "Error!",
             icon: "info",
             text: `Please enter a valid email address`,
+            button: "OK",
+        });
+    } else {
+        $(".swal-button, .swal-overlay").css("display", "block");
+        swal({
+            title: "Error!",
+            icon: "info",
+            text: `Please tick the Newsletter box before submitting`,
             button: "OK",
         });
     }
