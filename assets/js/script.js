@@ -582,10 +582,6 @@ if(contactLink) {
             contactModal.style.display = "none";
             }
         }
-        let contactHomeLink = document.getElementById("contact-home-link");
-        contactHomeLink.addEventListener("click", function() {
-            contactModal.style.display = "none";
-        });
     });
 }
 /********************switching dark light mode************************** */

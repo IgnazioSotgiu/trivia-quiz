@@ -400,28 +400,48 @@ footer {
     text-decoration: none;
 }*/
 /******************************contact form modal******************************/
+.contact-image-container {
+    height: 100%;
+    width: 100%;
+}
+.contact-image {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .contact-form-container {
     color: var(--modalText);
+}
+.contact-form-title {
+    margin-bottom: 20px;
+}
+.contact-form-message {
+    margin-bottom: 30px;
 }
 .contact-email-row {
     margin-top: 30px;
 }
-.contact-form-label {
+/*.contact-form-label {
     text-align: center;
     padding-top: 10px;
-}
-.contact-form-label label {
+}*/
+/*.contact-form-label label {
     margin-bottom: 0;
-}
+}*/
 .contact-form-input {
     text-align: center;
-    padding-top: 10px;
+    padding-top: 30px;
+}
+.contact-form-input input {
+    border-radius: 10px;
 }
 .contact-button {
     padding-top: 20px;
 }
 .enquiry-container {
-    margin-top: 10px;
+    margin-top: 40px;
 }
 #contact-enquiry {
     height: 150px;
@@ -429,8 +449,13 @@ footer {
     max-width: 600px;
     border-radius: 10px;
 }
+.contact-button .btn-warning {
+    background-color: #713200;
+    color: #fafafa;
+    border-radius: 10px;
+}
 .home-link {
-    padding-top: 10px;
+    padding-top: 30px;
 }
 .home-link a {
     color: #fafafa;
