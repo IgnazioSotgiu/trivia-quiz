@@ -359,33 +359,7 @@ footer {
     color: #000;
     border-radius: 10px;
 }
-/***************************modal**********************************/
-.modal {
-    position: fixed;
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    background: var(--modalBg) no-repeat bottom right; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-.jumbotron {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    padding: 20px;
-    max-height: 90vh;
-    overflow-y: auto;
-    text-align: center;
-    border: 0.5px solid #eca54c;
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.70);
-    color: var(--modalText);
-}
+
 /*.modal-btn-container {
     padding-top: 20px;
 }*/
@@ -399,67 +373,6 @@ footer {
     color: #fafafa;
     text-decoration: none;
 }*/
-/******************************contact form modal******************************/
-.contact-image-container {
-    height: 100%;
-    width: 100%;
-}
-.contact-image {
-    width: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.contact-form-container {
-    color: var(--modalText);
-}
-.contact-form-title {
-    margin-bottom: 20px;
-}
-.contact-form-message {
-    margin-bottom: 30px;
-}
-.contact-email-row {
-    margin-top: 30px;
-}
-/*.contact-form-label {
-    text-align: center;
-    padding-top: 10px;
-}*/
-/*.contact-form-label label {
-    margin-bottom: 0;
-}*/
-.contact-form-input {
-    text-align: center;
-    padding-top: 30px;
-}
-.contact-form-input input {
-    border-radius: 10px;
-}
-.contact-button {
-    padding-top: 20px;
-}
-.enquiry-container {
-    margin-top: 40px;
-}
-#contact-enquiry {
-    height: 150px;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-}
-.contact-button .btn-warning {
-    background-color: #713200;
-    color: #fafafa;
-    border-radius: 10px;
-}
-.home-link {
-    padding-top: 30px;
-}
-.home-link a {
-    color: #fafafa;
-}
 /******************links to share result********************/
 /**************code taken fron youtube tutorial https://www.youtube.com/watch?v=YcEshVZNA5E*/
 .share-result-wrapper {
@@ -642,6 +555,8 @@ footer {
     --registrationText: var(--whiteColor);
     --hintMobileBgColor: var(--rustyLightColor);
     --hintMobileTextColor: var(--blackColor);
+    --contactSubmitBtnBg: var(--rustyLightColor);
+    --contactSubmitBtnText: var(--blackColor);
 }
 .dark-theme {
     --mainHeaderHomepage: var(--headerBgDark);
@@ -669,12 +584,89 @@ footer {
     --registrationText: var(--blackColor);
     --hintMobileBgColor: var(--rustyColor);
     --hintMobileTextColor: var(--whiteColor);
+    --contactSubmitBtnBg: var(--rustyColor);
+    --contactSubmitBtnText: var(--whiteColor);
 }
 /****************transition dark to white mode*********/
 * {
   transition: background-color 0.6s ease, color 1s ease;
 }
 /******************modals section************************/
+/***************************modal**********************************/
+.modal {
+    position: fixed;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    background: var(--modalBg) no-repeat bottom right; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.jumbotron {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: center;
+    border: 0.5px solid #eca54c;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.70);
+    color: var(--modalText);
+}
+/******************************contact form modal******************************/
+.contact-image-container {
+    height: 100%;
+    width: 100%;
+}
+.contact-image {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.contact-form-container {
+    color: var(--modalText);
+}
+.contact-form-title {
+    margin-bottom: 20px;
+}
+.contact-form-message {
+    margin-bottom: 30px;
+}
+.contact-email-row {
+    margin-top: 30px;
+}
+.contact-form-input {
+    text-align: center;
+    padding-top: 30px;
+}
+.contact-form-input input {
+    border-radius: 10px;
+}
+.contact-button {
+    padding-top: 20px;
+}
+.enquiry-container {
+    margin-top: 40px;
+}
+#contact-enquiry {
+    height: 150px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+.contact-button .btn-warning {
+    background-color: var(--contactSubmitBtnBg);
+    color: var(--contactSubmitBtnText);
+    border-radius: 10px;
+}
 /*****************category choice modal*****************************/
 .category-choice div button {
     width: 100px;
