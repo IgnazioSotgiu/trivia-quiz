@@ -77,6 +77,7 @@ function messageSuccess() {
     setTimeout(function(){
         $(".swal-button, .swal-overlay").css("display", "none");
         $("#contact-modal").css("display", "none");
+        $("#registration-modal").css("display", "none");
     }, 3000);
 }
 

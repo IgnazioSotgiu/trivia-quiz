@@ -598,10 +598,10 @@ if(registrationLink) {
     });
 }
 /********************switching dark light mode************************** */
-let themeSwitch = document.getElementById("theme-switch");
-themeSwitch.addEventListener("click", changeMode);
+let darkLightToggle = document.getElementById("dark-light-toggle");
+darkLightToggle.addEventListener("click", changeMode);
 function changeMode() {
-    let themeValue = document.getElementById("theme-switch");
+    let darkLightToggle = document.getElementById("dark-light-toggle");
     document.body.classList.toggle('light-theme');
     document.body.classList.toggle('dark-theme');
 }

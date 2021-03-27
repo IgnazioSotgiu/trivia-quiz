@@ -103,4 +103,6 @@ Image by <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribu
 Image by <a href="https://pixabay.com/users/manuchi-1728328/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2462431">Денис Марчук</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2462431">Pixabay</a>   
 Icon by <a href='https://iconpacks.net/?utm_source=link-attribution&utm_content=1204'>Iconpacks</a>  
 Icon by <a href='https://iconpacks.net/?utm_source=link-attribution&utm_content=1204'>Iconpacks</a>  
-Icon by <a href='https://iconpacks.net/?utm_source=link-attribution&utm_content=7039'>Iconpacks</a>
+Icon by <a href='https://iconpacks.net/?utm_source=link-attribution&utm_content=7039'>Iconpacks</a>  
+Icon by <a href='https://iconpacks.net/?utm_source=link-attribution&utm_content=6695'>Iconpacks</a>  
+Icon by <a href='https://iconpacks.net/?utm_source=link-attribution&utm_content=3334'>Iconpacks</a>
