@@ -14,6 +14,16 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="dark-theme background-container">
+    <!-------------toggle dark light button----------------------->
+    <div>
+        <!--<input type="checkbox" class="nav-item nav-link dark-light-toggle" id="change-mode-icon"><i class="fas fa-adjust" id="theme-switch" value="dark"></i>-->
+        <input type="checkbox" class="dark-light-toggle" id="dark-light-toggle">
+        <label for="dark-light-toggle" class="change-mode-icon">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+        </label>
+    </div>
     <!---------------------Header-------------------------->
     <div class="header-container header-container-bg">
         <div id="logo">
@@ -32,15 +42,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarTriviaQuizDropdown">
                 <ul class="navbar-nav mx-auto">
-                    <div>
-                        <!--<input type="checkbox" class="nav-item nav-link dark-light-toggle" id="change-mode-icon"><i class="fas fa-adjust" id="theme-switch" value="dark"></i>-->
-                        <input type="checkbox" class="dark-light-toggle" id="dark-light-toggle">
-                        <label for="dark-light-toggle" class="change-mode-icon">
-                            <i class="fas fa-moon"></i>
-                            <i class="fas fa-sun"></i>
-                            <div class="ball"></div>
-                        </label>
-                    </div>
                     <li class="nav-item"><a class="nav-link" id="registration-link" data-open="registration-modal" data-toggle="registration-modal" data-backdrop="false" href="#">Register For Our Newsletter</a></li>
                     <li class="nav-item"><a class="nav-link" id="contact-link" data-open="contact-modal" data-toggle="contact-modal" data-backdrop="false" href="#">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" id="instructions-link" data-open="instructions-modal" data-toggle="instructions-modal" data-backdrop="false" href="#">Instructions</a></li>
