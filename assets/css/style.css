@@ -357,7 +357,8 @@ footer {
     margin-top: 15px;
     text-align: center;
     line-height: 25px;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 20px;
     color: var(--messageFinishTest);
     padding-top: 20px;
     letter-spacing: 3px;
@@ -709,7 +710,7 @@ footer {
     text-align: center;
     border: 0.5px solid #eca54c;
     border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.70);
+    background-color: rgba(0, 0, 0, 0.80);
     color: var(--modalText);
 }
 /******************************contact form modal******************************/
@@ -876,14 +877,22 @@ footer {
     font-family: 'Roboto';
     font-weight: 300;
 }
-#hr-instructions {
+.instructions-container p {
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+}
+.hr-instructions {
     background-color: #fafafa;
 }
 .instructions-container div {
     text-align: center;
 }
-#exit-instructions {
+.exit-instructions {
     margin: 0;
+    border-color: #dc3545;
+    width: 200px;
+    border-radius: 50px;
 }
 /****************responsive elements**********************/
 @media screen and (min-width:1000px) {
@@ -1163,3 +1172,6 @@ footer {
     background-color: #fafafa;
     color: blueviolet;
 }*/
+div .introjs-helperLayer .introjs-fixedTooltip {
+    border: 1px solid #fafafa;
+}

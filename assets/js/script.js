@@ -542,20 +542,19 @@ function shuffle(possibleAnswers) {
 /****************************instructions modal******************************/
 let instructionsLink = document.getElementById("instructions-link");
 let instructionsModal = document.getElementById("instructions-modal");
-if(instructionsLink) {
-    instructionsLink.addEventListener("click", function() {
-        instructionsModal.style.display = "block";
-        let exitInstructions = document.getElementById("exit-instructions");
-        exitInstructions.addEventListener("click", function() {
-            instructionsModal.style.display = "none";
-        });
-        window.onclick = function(event) {
-        if (event.target == instructionsModal) {
-            instructionsModal.style.display = "none";
-            }
-        }
+instructionsLink.addEventListener("click", function() {
+    instructionsModal.style.display = "block";
+    introJs().start();
+    let exitInstructions = document.getElementById("exit-instructions");
+    exitInstructions.addEventListener("click", function() {
+        instructionsModal.style.display = "none";
     });
-}
+    window.onclick = function(event) {
+    if (event.target == instructionsModal) {
+        instructionsModal.style.display = "none";
+        }
+    }
+});
 /**********************contact modal******************************/
 let contactLink = document.getElementById("contact-link");
 let contactModal = document.getElementById("contact-modal");
