@@ -467,10 +467,10 @@ function displayEndPage() {
     <div class="share-result-wrapper container-fluid" id="share-box">
         <div class="toggle-button" id="tggl-btn">
             <ul>
-                <li><a href="" id="share-btn">
+                <li><button id="share-btn">
                     <span class="text">Share</span>
                     <span class="icon"><i class="fas fa-share-alt"></i></span>
-                </a></li>
+                </button></li>
                 <li><a href="https://www.facebook.com/sharer/sharer.php?u=${window.location.href}" class="sm facebook" target="_blank">
                     <span class="icon"><i class="fab fa-facebook"></i></span>
                     <span class="text">Facebook</span>
@@ -490,11 +490,11 @@ function displayEndPage() {
             <button type="button" class="btn btn-warning" id="continue-button">Continue</button>
         </div>
     </div>`;
-    let shareButton = document.querySelector("#share-btn");
-    let toggleButton = document.querySelector("#tggl-btn");
-    let shareBox = document.querySelector(".share-result-wrapper");
-    shareBox.addEventListener("mouseenter", function() {
-    toggleButton.classList.toggle("active");
+    let shareButton = document.getElementById("share-btn");
+    let toggleButton = document.getElementById("tggl-btn");
+    let shareBox = document.getElementById("share-box");
+    shareBox.addEventListener("click", function() {
+        toggleButton.classList.toggle("active");
     });
 }
 /************function to continue with new round of questions keeping the overall score */
