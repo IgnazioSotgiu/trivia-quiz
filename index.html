@@ -51,17 +51,17 @@
     </div>
     <!--------------------Message / Question section--------------------->
     <section class="main-page-game-container" id="replace-question-container">
+        <div class="container-fluid message-home" id="message-homepage">
+            <p>Welcome to the Trivia Quiz game. <br>Are You Ready to Play??</p>
+        </div>
         <div class="go-btn-section" id="go-button-section">
-            <div class="container-fluid message-home" id="message-homepage">
-                <p>Welcome to the Trivia Quiz game. <br>Are You Ready to Play??</p>
-            </div>
             <div class="row">
                 <div class="col-12" id="homepage-btn-container">
-                    <button class="start-game-btn" id="start-game-button"><i class="fas fa-arrow-right"></i><br><span class="go-button-text">GO!!!</span></button>
+                    <button class="start-game-btn" id="start-game-button"><span class="go-button-text">Start</span></button>
                 </div>
             </div>
         </div>
-        <div class="start-btn-section" id="start-button-section">
+        <!--<div class="start-btn-section" id="start-button-section">
             <div class="container-fluid message-home">
                 <p>Ready to start!!!! <br>Good Luck.. and Enjoy!!</p>
             </div>
@@ -70,10 +70,20 @@
                     <button type="button" id="start-button" class=" start-game-button btn btn-success"><i class="fas fa-play"><br><span class="start-button-text">Start</span></i></button>
                 </div>
             </div>
+        </div>-->
+        <div class="start-btn-section" id="countdown-section">
+            <div class="container-fluid message-home">
+                <p>Ready to start!!!! <br>Good Luck.. and Enjoy!!</p>
+            </div>
+            <div class="countdown-container">
+                <div class="countdown-timer">
+                    <div class="time-left" id="time-left"></div>
+                </div>
+            </div>
         </div>
     </section>
-    <footer class="footer-bg-color">
-        <div class="container-fluid footer-container">
+    <footer>
+        <div class="container-fluid footer-container footer-bg-color">
             <div class="row row-center social-media">
                 <div class="col-4 col-center">
                     <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>

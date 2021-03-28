@@ -69,8 +69,8 @@ function startPage(){
     let startGameButton = document.getElementById("start-game-button");
     startGameButton.addEventListener("click", selectCategory);
 
-    startButton = document.getElementById("start-button");
-    startButton.addEventListener("click", startQuestions);
+    /*startButton = document.getElementById("start-button");
+    startButton.addEventListener("click", startQuestions);*/
 }
 //***************category selection function************************* */
 function selectCategory() {
@@ -225,20 +225,44 @@ function selectDifficultyLevel() {
                 },1000);
                 break;
             }
-        showStartButton(chosenCategory, difficultyLevel);
+        //showStartButton(chosenCategory, difficultyLevel);
+        showCountdown(chosenCategory, difficultyLevel);
         });
     }
     return difficultyLevel;
 }
 /**********************Create start button after the category and level selection ****** */
-function showStartButton(chosenCategory, difficultyLevel) {
+function showCountdown(chosenCategory, difficultyLevel) {
     getQuestionArray(chosenCategory, difficultyLevel);
+
+    let messageHomepage = document.getElementById("message-homepage");
+    messageHomepage.style.display = "none";
     
     let goButtonSection = document.getElementById("go-button-section");
     goButtonSection.style.display = "none";
 
-    let startButtonSection = document.getElementById("start-button-section");
-    startButtonSection.style.display = "flex";   
+    /*let startButtonSection = document.getElementById("start-button-section");
+    startButtonSection.style.display = "flex"; */
+    let countdownSection = document.getElementById("countdown-section");
+    countdownSection.style.display = "flex";
+    countdown();
+}
+//***************************countdown sequence*********************** */
+function countdown() {
+    let timeLeftDisplay = document.getElementById("time-left");
+    let timeLeft = 3;
+
+    setInterval(function() {
+        if(timeLeft <= 0) {
+            clearInterval(timeLeft = 0);
+        }
+        timeLeftDisplay.innerHTML = timeLeft;
+        timeLeft -= 1;
+    }, 1000);
+    setTimeout(function() {
+        startQuestions()
+    }, 3800);
+
 }
 // passing the difficulty level to a function for 
 // getting the list of question from remote api
@@ -392,8 +416,13 @@ function incorrectQuestionTypeMessage() {
 function displayCorrectIncorrectCounter() {
     document.getElementById("replace-question-container").innerHTML +=
     `</div>
-    <div class="counter-container">
-        <span id="correct-answers">Correct Answers</span><span id="correct-number">${totCorrect}</span><span id="incorrect-answers">Incorrect Answers</span><span id="incorrect-number">${totIncorrect}</span>
+    <div class="row counter-container">
+        <div class="col-12 col-sm-6">
+            <span id="correct-answers">Correct Answers</span><span id="correct-number">${totCorrect}</span>
+        </div>
+        <div class="col-12 col-sm-6">
+            <span id="incorrect-answers">Incorrect Answers</span><span id="incorrect-number">${totIncorrect}</span>
+        </div>    
     </div>`;
 }
 /*************** function check if boolean answer is correct******************** */
