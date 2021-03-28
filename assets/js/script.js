@@ -1,36 +1,3 @@
-/*
-// function to get the value from registration form
-// and save them as an object into array
-
-let registrationButton = document.getElementById("registration-button");
-registrationButton.addEventListener("click", function() {
-    let user = [];
-
-    //if()
-
-    var storedUsers = JSON.parse(localStorage.getItem("registeredUserDatabase"));
-    console.log(storedUsers);
-
-    let emailCheck = document.getElementById("reg-email");
-    for(let j = 0; j < storedUsers.length; j++) {
-        if(storedUsers[j].email === emailCheck){
-            alert("This email address has been already registered"+ '/n/'+"Thank You!");
-            break;
-        }
-    }
-    user.firstName = document.getElementById("first-name").value;
-    user.lastName = document.getElementById("last-name").value;
-    user.email = document.getElementById("reg-email").value;
-    user.regPassword = document.getElementById("reg-password").value;
-    //user.acceptAds = document.getElementById("accept-ads").value;
-    console.log(user);
-
-    registeredUserDatabase.push(user);
-
-});*/
-
-//********************************************************************************* *//
-//********************************************************************************** */
 // declare global variables
 let questionListArray = [];
 let chosenCategory = "";
@@ -48,7 +15,7 @@ let questionRound = 2;
 // of difficulty, and the start button.
 document.addEventListener("DOMContentLoaded", function() {
     logoAnimation();
-    startPage()
+    startPage();
 });
 function logoAnimation(){
     let mainLogo = document.getElementById("logo");
@@ -58,19 +25,11 @@ function logoAnimation(){
 
     mainLogo.style.transform = "translate(-50%)";
     mainLogoRight.style.transform = "translate(50%)";
-
-    /*let hintMobileMessage = document.getElementById("hint-mobile-message");
-    hintMobileMessage.addEventListener("click", function() {
-        $("#hint-mobile-text").slideToggle("slow");
-    });*/
 }
-// function startpage gets all the event listeners ready to start the game
-function startPage(){
+/****************function start page*************** */
+function startPage() {
     let startGameButton = document.getElementById("start-game-button");
     startGameButton.addEventListener("click", selectCategory);
-
-    /*startButton = document.getElementById("start-button");
-    startButton.addEventListener("click", startQuestions);*/
 }
 //***************category selection function************************* */
 function selectCategory() {
@@ -225,7 +184,6 @@ function selectDifficultyLevel() {
                 },1000);
                 break;
             }
-        //showStartButton(chosenCategory, difficultyLevel);
         showCountdown(chosenCategory, difficultyLevel);
         });
     }
@@ -241,8 +199,6 @@ function showCountdown(chosenCategory, difficultyLevel) {
     let goButtonSection = document.getElementById("go-button-section");
     goButtonSection.style.display = "none";
 
-    /*let startButtonSection = document.getElementById("start-button-section");
-    startButtonSection.style.display = "flex"; */
     let countdownSection = document.getElementById("countdown-section");
     countdownSection.style.display = "flex";
     countdown();
@@ -544,23 +500,23 @@ function displayEndPage() {
 /************function to continue with new round of questions keeping the overall score */
 function continueGame() {
     document.getElementById("replace-question-container").innerHTML =
-    `<div class="go-btn-section" id="go-button-section">
-        <div class="container-fluid message-home" id="message-homepage">
-            <p>Ready to go Again?<br>This is your round number ${questionRound}</p>
-        </div>
+    `<div class="container-fluid message-home" id="message-homepage">
+        <p>Get ready for round number ${questionRound}</p>
+    </div>
+    <div class="go-btn-section" id="go-button-section">
         <div class="row">
             <div class="col-12" id="homepage-btn-container">
-                <button class="start-game-btn" id="start-game-button"><i class="fas fa-arrow-right"></i><br><span class="button-text">GO!!!</span></button>
+                <button class="start-game-btn" id="start-game-button"><span class="go-button-text">Start</span></button>
             </div>
         </div>
     </div>
-    <div class="start-btn-section" id="start-button-section">
+    <div class="start-btn-section" id="countdown-section">
         <div class="container-fluid message-home">
             <p>Ready to start!!!! <br>Good Luck.. and Enjoy!!</p>
         </div>
-        <div class="row">
-            <div class="col-12 start-button-container">
-                <button type="button" id="start-button" class=" start-game-button btn btn-success"><i class="fas fa-play"><br><span id="start-button-text">Start</span></i></button>
+        <div class="countdown-container">
+            <div class="countdown-timer">
+                <div class="time-left" id="time-left"></div>
             </div>
         </div>
     </div>`

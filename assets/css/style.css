@@ -137,6 +137,7 @@ body {
     text-align: center;
 }
 .message-home {
+    margin-top: 50px;
     padding: 30px;
     color: var(--messageHomepage);
     background-color: var(--messageHomepageBgColor);
@@ -164,7 +165,7 @@ body {
 .start-btn-section {
     flex-direction: column;
     justify-content: center;
-    margin: 50px 100px 200px;
+    margin: 20px 100px 200px;
 }
 .start-game-btn {
     position: absolute;
@@ -231,6 +232,7 @@ body {
 .countdown-container {
     position: relative;
     display: flex;
+    margin-top: 50px;
     width: 100%;
     height: 200px;
 }
@@ -241,7 +243,7 @@ body {
     transform: translate(-50%, -50%);
     width: 250px;
     height: 250px;
-    border: 10px #eca54c solid;
+    border: 10px var(--countdownCircleColor) solid;
     border-radius: 50%;
 }
 .time-left {
@@ -251,7 +253,7 @@ body {
     transform: translate(-50%, -50%);
     font-size: 200px;
     font-weight: 300;
-    color: #eca54c;
+    color: var(--countdownColor);
     transition: 0.2s ease;
 
 
@@ -277,7 +279,7 @@ footer {
 }
 /***********************question display and answers buttons************************/
 .question-container {
-    margin-top: 100px;
+    margin-top: 50px;
     padding: 10px 20%;
     text-align: center;
     color: var(--questionColor);
@@ -643,6 +645,8 @@ footer {
     --contactSubmitBtnBg: var(--rustyLightColor);
     --contactSubmitBtnText: var(--blackColor);
     --changeModeIconBg: var(--darkBlueColor);
+    --countdownColor: var(--blackColor);
+    --countdownCircleColor: var(--blackColor);
 }
 .dark-theme {
     --mainHeaderHomepage: var(--headerBgDark);
@@ -673,6 +677,8 @@ footer {
     --contactSubmitBtnBg: var(--rustyColor);
     --contactSubmitBtnText: var(--whiteColor);
     --changeModeIconBg: var(--lightBlueColor);
+    --countdownColor: var(--rustyColor);
+    --countdownCircleColor: var(--rustyColor);
 }
 /****************transition dark to white mode*********/
 * {
@@ -1020,7 +1026,7 @@ footer {
         margin: 50px 10px;
     }
     .start-btn-section {
-        margin: 50px 10px;
+        margin: 20px 10px;
     }
     .start-button-container .btn-success {
         margin-top: 0px;
