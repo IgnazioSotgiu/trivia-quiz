@@ -608,7 +608,7 @@ button#share-btn:focus {
 }
 /****************transition dark to white mode*********/
 * {
-  transition: background-color 0.6s ease, color 1s ease;
+    transition: background-color 0.6s ease, color 1s ease;
 }
 
 /**************add border to introjs element*******************/
@@ -873,9 +873,9 @@ button#share-btn:focus {
         display: none;
     }
     .change-mode-icon {
-    right: 20px;
-    top: 20px;
-    z-index: 2;
+        right: 20px;
+        top: 20px;
+        z-index: 2;
     }
     /********navbar mobile*******/
     .navbar-brand {

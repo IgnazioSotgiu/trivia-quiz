@@ -25,7 +25,6 @@ function logoAnimation(){
     let mainLogoRight = document.getElementById("logo-right");
     mainLogo.style.left = "50%";
     mainLogoRight.style.right = "50%";
-
     mainLogo.style.transform = "translate(-50%)";
     mainLogoRight.style.transform = "translate(50%)";
 }
@@ -46,110 +45,14 @@ function selectCategory() {
         };
     for(let category of categories) {
         category.addEventListener("click", function() {
-            switch(this.getAttribute("value")) {
-                case "general":
-                    chosenCategory = "9";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                        selectDifficultyLevel(chosenCategory);
-                    },500);
-                    break;
-                case "book":
-                    chosenCategory = "10";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                        selectDifficultyLevel(chosenCategory);
-                    },500);
-                    break;
-                case "film":
-                    chosenCategory = "11";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                        selectDifficultyLevel(chosenCategory);
-                    },500);
-                    break;
-                case "music":
-                    chosenCategory = "12";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                        selectDifficultyLevel(chosenCategory);
-                    },500);
-                    break;
-                case "tv":
-                    chosenCategory = "14";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                        selectDifficultyLevel(chosenCategory);
-                    },500);
-                    break;
-                case "video-games":
-                    chosenCategory = "15";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                        selectDifficultyLevel(chosenCategory);
-                    },500);
-                    break;
-                case "computer":
-                    chosenCategory = "18";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                        selectDifficultyLevel(chosenCategory);
-                    },500);
-                    break;
-                case "math":
-                    chosenCategory = "19";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                        selectDifficultyLevel(chosenCategory);
-                    },500);
-                    break;
-                case "sport":
-                    chosenCategory = "21";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                        selectDifficultyLevel(chosenCategory);
-                    },500);
-                    break;
-                case "geography":
-                    chosenCategory = "22";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                        selectDifficultyLevel(chosenCategory);
-                    },500);
-                    break;
-                case "history":
-                    chosenCategory = "23";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                        selectDifficultyLevel(chosenCategory);
-                    },500);
-                    break;
-                case "animals":
-                    chosenCategory = "27";
-                    this.style.backgroundColor = "rgb(42, 235, 42)";
-                    setTimeout(function(){
-                        categoryChoiceModal.style.display = "none";
-                        selectDifficultyLevel(chosenCategory);
-                    },500);
-                    break;
-                default:
-                    alert("Error! Choice not recognized");
-                    throw ("Error! Choice not recognized... Aborting..");
-            }
+            chosenCategory = this.getAttribute("value");
+            this.style.backgroundColor = "rgb(42, 235, 42)";
+            setTimeout(function(){
+                categoryChoiceModal.style.display = "none";
+                selectDifficultyLevel(chosenCategory);
+            },500);   
         });
     }
-    return difficultyLevel, chosenCategory;
 }
 
 /******************************difficulty level selection function************** */
@@ -164,32 +67,13 @@ function selectDifficultyLevel() {
         };
     for(let difficulty of difficulties) {
         difficulty.addEventListener("click", function() {
-            switch(this.getAttribute("value")) {
-                case "easy":
-                difficultyLevel = this.getAttribute("value");
-                setTimeout(function(){
-                    difficultyChoiceModal.style.display = "none";
-                },500);
-                break;
-
-                case "medium":
-                difficultyLevel = this.getAttribute("value");
-                setTimeout(function(){
-                    difficultyChoiceModal.style.display = "none";
-                },1000);
-                break;
-
-                case "hard":
-                difficultyLevel = this.getAttribute("value");
-                setTimeout(function(){
-                    difficultyChoiceModal.style.display = "none";
-                },1000);
-                break;
-            }
-        showCountdown(chosenCategory, difficultyLevel);
+            difficultyLevel = this.getAttribute("value");
+            setTimeout(function(){
+                difficultyChoiceModal.style.display = "none";
+                showCountdown(chosenCategory, difficultyLevel);
+            },500);
         });
     }
-    return difficultyLevel;
 }
 /**********************Create start button after the category and level selection ****** */
 function showCountdown(chosenCategory, difficultyLevel) {
