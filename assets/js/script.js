@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */ 
 // declare global variables
 let questionListArray = [];
 let chosenCategory = "";
@@ -10,6 +11,8 @@ let overallCorrect = 0;
 let overallIncorrect = 0;
 let overallQuestions = 0;
 let questionRound = 2;
+let result;
+let overallResult;
 // wait for the DOM to finish loading page
 //add event listeners for the category choice, the level 
 // of difficulty, and the start button.
@@ -146,8 +149,7 @@ function selectCategory() {
             }
         });
     }
-    return difficultyLevel;
-    return chosenCategory
+    return difficultyLevel, chosenCategory;
 }
 
 /******************************difficulty level selection function************** */
@@ -159,7 +161,7 @@ function selectDifficultyLevel() {
         if (event.target == difficultyChoiceModal) {
             difficultyChoiceModal.style.display = "none";
             }
-        }
+        };
     for(let difficulty of difficulties) {
         difficulty.addEventListener("click", function() {
             switch(this.getAttribute("value")) {
@@ -216,7 +218,7 @@ function countdown() {
         timeLeft -= 1;
     }, 1000);
     setTimeout(function() {
-        startQuestions()
+        startQuestions();
     }, 3800);
 
 }
@@ -226,7 +228,6 @@ function countdown() {
 function getQuestionArray(chosenCategory, difficultyLevel){
     let xhr = new XMLHttpRequest();
     let amountQuestions;
-    console.log(typeof(difficultyLevel));
     if(difficultyLevel === "easy") {
         amountQuestions = "10";
     } else if(difficultyLevel === "medium") {
@@ -431,8 +432,7 @@ function calculatePercentageCorrect() {
 // calculate the overall percentace of correct answers of the game session
 function overallPercentageCorrect() {
     overallResult = ((overallCorrect*100)/overallQuestions).toFixed(2);
-    console.log(overallResult);
-    return overallResult
+    return overallResult;
 }
 // Depending of the value of the variable result 
 // evaluate the user performance in the test
@@ -490,7 +490,6 @@ function displayEndPage() {
             <button type="button" class="btn btn-warning" id="continue-button">Continue</button>
         </div>
     </div>`;
-    let shareButton = document.getElementById("share-btn");
     let toggleButton = document.getElementById("tggl-btn");
     let shareBox = document.getElementById("share-box");
     shareBox.addEventListener("click", function() {
@@ -519,7 +518,7 @@ function continueGame() {
                 <div class="time-left" id="time-left"></div>
             </div>
         </div>
-    </div>`
+    </div>`;
     questionRound++;
     totCorrect = 0;
     totIncorrect = 0;
@@ -553,7 +552,7 @@ instructionsLink.addEventListener("click", function() {
     if (event.target == instructionsModal) {
         instructionsModal.style.display = "none";
         }
-    }
+    };
 });
 /**********************contact modal******************************/
 let contactLink = document.getElementById("contact-link");
@@ -565,7 +564,7 @@ if(contactLink) {
         if (event.target == contactModal) {
             contactModal.style.display = "none";
             }
-        }
+        };
     });
 }
 /**********************registration modal******************************/
@@ -578,14 +577,13 @@ if(registrationLink) {
         if (event.target == registrationModal) {
             registrationModal.style.display = "none";
             }
-        }
+        };
     });
 }
 /********************switching dark light mode************************** */
 let darkLightToggle = document.getElementById("dark-light-toggle");
 darkLightToggle.addEventListener("click", changeMode);
 function changeMode() {
-    let darkLightToggle = document.getElementById("dark-light-toggle");
     document.body.classList.toggle('light-theme');
     document.body.classList.toggle('dark-theme');
 }

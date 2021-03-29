@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 // connecting the contact email with my gmail account using emailJs
 // code from code institute and EmailJS website tutorials
 function sendMail() {
