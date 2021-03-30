@@ -185,10 +185,6 @@ body {
 .start-game-btn:focus {
     outline: none;
 }
-.start-game-btn i {
-    font-size: 30px;
-    color: #c32aa3;
-}
 .start-button-text {
     font-size: 40px;
     letter-spacing: 10px;
@@ -199,29 +195,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.start-button-container {
-    text-align: center;
-}
-.start-button-container  .btn-success {
-    margin-top: 100px;
-    width: 200px;
-    height: 100px;
-    padding-top: 10px;
-    border: 2px solid #000;
-    border-radius: 10px;
-    box-shadow: none;
-}
-.start-button-container button i {
-    font-size: 30px;
-    color: rgb(66, 66, 114);
-}
-.start-game-button {
-    background-color: #b0b9b3;
-    border-color: #000;
-}
 .start-button-text {
     font-weight: 400;
-    color: #000;
+    color: #fafafa;
 }
 /**************countdown***************************/
 .countdown-container {
@@ -319,6 +295,7 @@ footer {
     margin-top: 15px;
     background-color: #4cecd7;
     color: #000;
+    border-radius: 50px;
 }
 /***********counter container*****************/
 .counter-container {
@@ -328,11 +305,11 @@ footer {
     margin: 50px 10%;
 }
 #correct-answers {
-    color: green;
+    color: #008000;
     font-weight: 600;
 }
 #incorrect-answers {
-    color: red;
+    color: #ff0000;
     font-weight: 600;
 }
 #correct-number {
@@ -366,10 +343,25 @@ footer {
     text-align: center;
 }
 .end-button-container button {
-    width: 100px;
-    height: 80px;
-    border-radius: 10px;
     margin: 50px 0 30px;
+    width: 250px;
+    height: 50px;
+    margin-top: 30px;
+    padding-top: 10px;
+    border: 2px solid #111111;
+    border-radius: 50px;
+    font-weight: 400;
+    color: #fafafa;
+}
+.end-button-container button.reset-btn {
+    font-size: 20px;
+    letter-spacing: 2px;
+    background-color: #ff0000;
+}
+.end-button-container button#continue-button {
+    font-size: 20px;
+    letter-spacing: 2px;
+    background-color: #008000;
 }
 /******************links to share result********************/
 /**************code taken fron youtube tutorial https://www.youtube.com/watch?v=YcEshVZNA5E*/

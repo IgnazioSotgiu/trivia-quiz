@@ -2,7 +2,7 @@
 ## Trivia Quiz
 ---  
 
-Trivia Quiz is a website designed to entertain and encourage the users to test their knowledge on different fields or subjects, answering different questions, challenging them to improve their performance with different difficulty levels.    
+Trivia Quiz is a website designed to entertain and encourage the users to test their knowledge on different fields or subjects, answering different questions, challenging themselves to improve their performance with different difficulty levels.    
 Before starting the game the user will be able to choose the category and the level of difficulty and then will start the question challenge. The question type is chosen randomly from the remote api, and can be a True/False or a multiple choice.  
 ![](./assets/docs/mockup-trivia-quiz.png)
 The goal is to build a simple website where the user will want to spend time playing in, share with friends and learn some new notions. The owner goal overtime is to gain exposure, promoting new challenges, selling advertising space, developing the range of games, creating a database of users giving them the choice if they like to be contacted info regarding new features or upcoming challenges.  
@@ -28,14 +28,14 @@ The owner goal is to get as many people as he can to play on his website, and ge
 
 
 ## Website Structure   
-The Trivia Quiz website is composed of one homepage and the registration for newsletter page. The links present in the navbar connect to the registration page, a link to open a modal with the contact form and also a modal for the game instructions.
+The Trivia Quiz website is composed of one homepage and the registration for newsletter page. The links present in the navbar connect to the registration modal, a modal with the contact form and also a modal for the game instructions. All links can be opened without refreshing the game page, in case the user doesn't want to quit his current game.
   
   ---
   ![](./assets/docs/trivia-quiz-site-structure.png)  
    
   ---  
- In the navbar is also present the adjust icon to change between Light and Dark Theme. From the homepage the user can choose the difficulty level and the category with 2 other modals windows.  
- After the selections are made the start button will show the users the questions and in the end after the last question the user will be present with a screen of the result of the performance in the end of the page window.
+ In the screen is also present aswitch to change between Light and Dark Theme. From the homepage the user can choose to start the game, that will open a category choice screen and then the difficulty choice screen.  
+ After the selections are made there will be a countdown form 3 to 0 before the first question is displayed. After the round of questions the user will be present with a result summary of his performance with the options to share on Twitter or Facebook, continue the game or reset the game starting a new session with the reset button.
  
 The website has a linear structure with only 2 pages, Homepage and Registration Page.
 

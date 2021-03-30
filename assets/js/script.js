@@ -368,11 +368,11 @@ function displayEndPage() {
         </div>
     </div>
     <div class="row btn-end-test">
-        <div class="col-6 end-button-container">
-            <a href="index.html"><button type="button" class="btn btn-warning">Home</button></a>
-        </div>
-        <div class="col-6 end-button-container">
+        <div class="col-12 col-md-6 end-button-container">
             <button type="button" class="btn btn-warning" id="continue-button">Continue</button>
+        </div>
+        <div class="col-12 col-md-6 end-button-container">
+            <a href="index.html"><button type="button" class="btn btn-warning reset-btn">Reset</button></a>
         </div>
     </div>`;
     shareResult();
