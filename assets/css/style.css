@@ -33,7 +33,7 @@ body {
     padding-right: 30px;
     display: none;
 }
-/**************************toggle dark light mode**************************/
+/***toggle dark light mode switch from tutorial https://www.youtube.com/watch?v=xodD0nw2veQ**/
 .change-mode-icon {
     position: absolute;
     right: 50px;
@@ -154,16 +154,16 @@ body {
     line-height: 50px;
 }
 /*******buttons container homepage*************/
-.go-btn-section {
+.start-btn-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 50px 100px 200px;
 }
-.start-btn-section {
+.countdown-section {
     display: none;
 }
-.start-btn-section {
+.countdown-section {
     flex-direction: column;
     justify-content: center;
     margin: 20px 100px 200px;
@@ -189,7 +189,7 @@ body {
     font-size: 30px;
     color: #c32aa3;
 }
-.go-button-text {
+.start-button-text {
     font-size: 40px;
     letter-spacing: 10px;
     font-weight: 600;
@@ -223,7 +223,7 @@ body {
     font-weight: 400;
     color: #000;
 }
-/**************************countdown***************************/
+/**************countdown***************************/
 .countdown-container {
     position: relative;
     display: flex;
@@ -416,26 +416,6 @@ button#share-btn:focus {
     align-items: center;
     padding: 0 20px;
 }
-/*.toggle-button ul li {
-    justify-content: center;
-}
-.toggle-button ul li .text {
-    font-weight: 500;
-    font-size: 24px;
-    letter-spacing: 10px;
-    color: #000;
-    margin-right: 10px;
-}
-/*.toggle-button ul li .icon {
-    width: 35px;
-    height: 35px;
-    color: #111;
-    background-color: #713200;
-    display: inline-block;
-    border-radius: 50%;
-    transition: all 1s ease;
-    position: relative;
-}*/
 .toggle-button ul li a .icon i {
     position: absolute;
     top: 50%;
@@ -664,9 +644,6 @@ button#share-btn:focus {
 .contact-form-message {
     margin-bottom: 30px;
 }
-.contact-email-row {
-    margin-top: 30px;
-}
 .contact-form-input {
     text-align: center;
     padding-top: 30px;
@@ -715,9 +692,6 @@ button#share-btn:focus {
 }
 .registration-form-message {
     margin-bottom: 30px;
-}
-.registration-email-row {
-    margin-top: 30px;
 }
 .registration-form-input {
     text-align: center;
@@ -946,10 +920,10 @@ button#share-btn:focus {
     .main-page-game-container {
         margin-bottom: 120px;
     }
-    .go-btn-section {
+    .start-btn-section {
         margin: 50px 10px;
     }
-    .start-btn-section {
+    .countdown-section {
         margin: 20px 10px;
     }
     .start-button-container .btn-success {

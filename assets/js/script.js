@@ -50,11 +50,10 @@ function selectCategory() {
             setTimeout(function(){
                 categoryChoiceModal.style.display = "none";
                 selectDifficultyLevel(chosenCategory);
-            },500);   
+            },500);  
         });
     }
 }
-
 /******************************difficulty level selection function************** */
 function selectDifficultyLevel() {
     let difficultyChoiceModal = document.getElementById("difficulty-choice-modal");
@@ -136,6 +135,7 @@ function getQuestionArray(chosenCategory, difficultyLevel){
 // for the true and false button that the user will click to 
 // select the right answer
 function startQuestions(event) {
+    console.log(overallCorrect, overallIncorrect)
     if (i < questionListArray.results.length) {
         let correctAnswer = questionListArray.results[i].correct_answer;
         displayQuestion();
@@ -209,7 +209,7 @@ function multipleChoiceAnswerIsIncorrect(correctAnswer) {
 }
 /******************function display question************ */
 function displayQuestion() {
-    overallQuestions++;
+    //overallQuestions++;
     document.getElementById("replace-question-container").innerHTML =
     `<div class="question-container">
         <h2 id="question-number">Question # ${i+1}</h2>
@@ -288,7 +288,7 @@ function checkMultipleChoiceAnswer(correctAnswer) {
     for (let answerButton of multipleAnswerButtons) {
         answerButton.addEventListener("click", function() {
             let value = this.getAttribute("value");
-            if(value == correctAnswer) {
+            if(value === correctAnswer) {
                 this.style.backgroundColor = "green";
                 answerIsCorrect();
             } else {
@@ -315,6 +315,7 @@ function calculatePercentageCorrect() {
 }
 // calculate the overall percentace of correct answers of the game session
 function overallPercentageCorrect() {
+    overallQuestions = (overallCorrect + overallIncorrect);
     overallResult = ((overallCorrect*100)/overallQuestions).toFixed(2);
     return overallResult;
 }
@@ -374,6 +375,10 @@ function displayEndPage() {
             <button type="button" class="btn btn-warning" id="continue-button">Continue</button>
         </div>
     </div>`;
+    shareResult();
+}
+/*******************function to share resul on twitter and facebook***************** */
+function shareResult() {
     let toggleButton = document.getElementById("tggl-btn");
     let shareBox = document.getElementById("share-box");
     shareBox.addEventListener("click", function() {
@@ -384,18 +389,18 @@ function displayEndPage() {
 function continueGame() {
     document.getElementById("replace-question-container").innerHTML =
     `<div class="container-fluid message-home" id="message-homepage">
-        <p>Get ready for round number ${questionRound}</p>
+        <h2>Get ready for round number ${questionRound}</h2>
     </div>
-    <div class="go-btn-section" id="go-button-section">
+    <div class="start-btn-section" id="go-button-section">
         <div class="row">
             <div class="col-12" id="homepage-btn-container">
-                <button class="start-game-btn" id="start-game-button"><span class="go-button-text">Start</span></button>
+                <button class="start-game-btn" id="start-game-button"><span class="start-button-text">Start</span></button>
             </div>
         </div>
     </div>
-    <div class="start-btn-section" id="countdown-section">
+    <div class="countdown-section" id="countdown-section">
         <div class="container-fluid message-home">
-            <p>Ready to start!!!! <br>Good Luck.. and Enjoy!!</p>
+            <h2>Ready to start!!!! <br>Good Luck.. and Enjoy!!</h2>
         </div>
         <div class="countdown-container">
             <div class="countdown-timer">
@@ -441,29 +446,25 @@ instructionsLink.addEventListener("click", function() {
 /**********************contact modal******************************/
 let contactLink = document.getElementById("contact-link");
 let contactModal = document.getElementById("contact-modal");
-if(contactLink) {
-    contactLink.addEventListener("click", function() {
-        contactModal.style.display = "block";
-        window.onclick = function(event) {
-        if (event.target == contactModal) {
-            contactModal.style.display = "none";
-            }
-        };
-    });
-}
+contactLink.addEventListener("click", function() {
+    contactModal.style.display = "block";
+    window.onclick = function(event) {
+    if (event.target == contactModal) {
+        contactModal.style.display = "none";
+        }
+    };
+});
 /**********************registration modal******************************/
 let registrationLink = document.getElementById("registration-link");
 let registrationModal = document.getElementById("registration-modal");
-if(registrationLink) {
-    registrationLink.addEventListener("click", function() {
-        registrationModal.style.display = "block";
-        window.onclick = function(event) {
-        if (event.target == registrationModal) {
-            registrationModal.style.display = "none";
-            }
-        };
-    });
-}
+registrationLink.addEventListener("click", function() {
+    registrationModal.style.display = "block";
+    window.onclick = function(event) {
+    if (event.target == registrationModal) {
+        registrationModal.style.display = "none";
+        }
+    };
+});
 /********************switching dark light mode************************** */
 let darkLightToggle = document.getElementById("dark-light-toggle");
 darkLightToggle.addEventListener("click", changeMode);
