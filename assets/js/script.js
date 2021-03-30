@@ -342,7 +342,7 @@ function displayEndPage() {
     document.getElementById("replace-question-container").innerHTML =
     `<div class="container-fluid message-finish-test">
         <p>You have finished the game.<br><spam id="valuation"><h2>${vote}</h2></spam></p>
-        <p>Your score for this session is:<br><span id="total-correct-answers">${totCorrect}</span> Correct answers<br><span id="final-incorrect-answers">${totIncorrect}</span> Incorrect answers</p>
+        <p>Your score for the last round is:<br><span id="total-correct-answers">${totCorrect}</span> Correct answers<br><span id="final-incorrect-answers">${totIncorrect}</span> Incorrect answers</p>
         <p>You got <span id="correct-precentage">${result}</span>% of correct answers!</p>
         <br>
         <p>Your overall score:<br><span>You have answered a total of ${overallQuestions} questions.</span><br><span id="overall-correct-answers">${overallCorrect}</span> Correct answers<br><span id="overall-incorrect-answers">${overallIncorrect}</span> Incorrect answers</p>
