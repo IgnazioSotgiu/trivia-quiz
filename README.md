@@ -129,7 +129,21 @@ The wireframes were done using [balsamiq](https://balsamiq.com/)
 * Created a contact form connected to gmail using EmailJs service
 * Implemented theme choice with a switch to toggle dark/light mode
 * Added Score summary at the end fo the game providing user information about his/her performance with info about last round odf questions and the overall session
-* Added a button for sharing the result through Twitter or Facebook
+* Added a button for sharing the result through Twitter or Facebook    
+### Future Features  
+* Promote deals to sell ads spaces on the website  
+* Add a timer to the game  
+* Create a form to create new Questions and Answers and add them to the database  
+* Add to the pages Popup windows with tips and suggestions to help the user thorough the game  
+* Develop an app to play trivia quiz offline  
+
+## Testing  
+### Validation services:
+* W3C HTML validator
+* W3C CSS validator
+* JSHint for javascript
+* Chrome DevTools Lighthouse
+
     
 
 ## Bugs 
@@ -142,22 +156,64 @@ Following the steps to trigger and report the bug:
 * Error
 1. Description of the unwanted behevior.
 
+## Deployment
+This project was developed using gitpod.io workspace, using git to push it into Github remote repository. 
+This is the procedure that I follow to deploy the final version to Github pages:  
+1. Open Chrome browser on my Computer  
+1. Navigate to github.com
+1. Log in with my name and password to access my repositories
+1. On the top left, in the search function input "Trivia Quiz" to find repository
+1. Click on "IgnazioSotgiu/trivia-quiz" to open repository
+1. Click on the Settings link on the repository menu
+1. Scroll down to the Github Pages section
+1. In the source button select Branch: master
+1. Once the Branch is selected save the changes with the button on the right
+1. The project has now been deployed
+1. After the page has been refreshed scroll down to Github pages section again to find the link to the live website https://ignaziosotgiu.github.io/trivia-quiz/
+1. Click on the link to navigate to the website  
+### Running Trivia Quiz Locally
+1. Navigate to Github.com
+1. Navigate to "IgnazioSotgiu/trivia-quiz" repository  
+1. Click on "IgnazioSotgiu/trivia-quiz" to open repository
+1. Click on the Code button
+1. Select copy the URL in the dropbox
+1. Open your favourite IDE and select source
+1. Paste the URL and  then you can navigate through the repository files
+
+to clone the repository input this command:
+git clone https://github.com/IgnazioSotgiu/trivia-quiz.git
+
+
 ## Credits
-Background image in homepage:  
-<a href='https://pngtree.com/free-backgrounds'>free background photos from pngtree.com</a>
-<a href='https://pngtree.com/free-backgrounds'>free background photos from pngtree.com</a>
-
-dark question mark band https://www.freepik.com/free-photo/color-interrogation-symbols_973682.htm#page=1&query=question%20mark&position=38
-
-green circle tick Animated icon by <a href='http://icons8.com'>Icons8</a>
-
-loading circles Animated icon by <a href='http://icons8.com'>Icons8</a>
-Image by <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1090829">Gerd Altmann</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1090829">Pixabay</a>  
+---
+### Images
+* Favicon generated with [favicon generator](https://www.favicon-generator.org/search/)  
+* Homepage  
+Background image dark theme:  
+<a href='https://pngtree.com/free-backgrounds'>free background photos from pngtree.com</a>  
+Header background dark theme:  
+https://www.freepik.com/free-photo/color-interrogation-symbols_973682.htm#page=1&query=question%20mark&position=3    
+Background image light theme:  
 Image by <a href="https://pixabay.com/users/artturi_mantysaari-1625672/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1562743">Artturi Mäntysaari</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1562743">Pixabay</a>  
-Image by <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4243604">Gerd Altmann</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4243604">Pixabay</a>  
-Image by <a href="https://pixabay.com/users/manuchi-1728328/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2462431">Денис Марчук</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2462431">Pixabay</a>   
+Header background light theme:  
+Image by <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1090829">Gerd Altmann</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1090829">Pixabay</a>  
+* Contact form image 
 Icon by <a href='https://iconpacks.net/?utm_source=link-attribution&utm_content=1204'>Iconpacks</a>  
-Icon by <a href='https://iconpacks.net/?utm_source=link-attribution&utm_content=1204'>Iconpacks</a>  
-Icon by <a href='https://iconpacks.net/?utm_source=link-attribution&utm_content=7039'>Iconpacks</a>  
-Icon by <a href='https://iconpacks.net/?utm_source=link-attribution&utm_content=6695'>Iconpacks</a>  
-Icon by <a href='https://iconpacks.net/?utm_source=link-attribution&utm_content=3334'>Iconpacks</a>
+* Registration form image
+Icon by <a href='https://iconpacks.net/?utm_source=link-attribution&utm_content=7039'>Iconpacks</a> 
+### Tutorials:  
+* To build the countdown sequence before the questions:  
+https://www.youtube.com/watch?v=vSV_Ml2_A88  
+* To build the dark/light toggle switch:  
+https://www.youtube.com/watch?v=xodD0nw2veQ  
+* To build the sharing toggle button at the end of the game page:  
+https://www.youtube.com/watch?v=YcEshVZNA5E&t=526s
+## Acknowledgements:  
+I receive inspiration and guidance for this project from:
+
+* Code Institute  
+* W3schools Website
+* Stack Overflow  
+*  Bootstrap Library  
+
+Special Thanks to mentor Narender Singh.
