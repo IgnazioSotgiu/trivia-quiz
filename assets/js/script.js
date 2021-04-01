@@ -93,7 +93,6 @@ function countdown() {
     setTimeout(function() {
         startQuestions();
     }, 3800);
-
 }
 // passing the difficulty level to a function for 
 // getting the list of question from remote api
@@ -451,7 +450,6 @@ let instructionsLink = document.getElementById("instructions-link");
 let instructionsModal = document.getElementById("instructions-modal");
 instructionsLink.addEventListener("click", function() {
     instructionsModal.style.display = "block";
-    introJs().start();
     let exitInstructions = document.getElementById("exit-instructions");
     exitInstructions.addEventListener("click", function() {
         instructionsModal.style.display = "none";
