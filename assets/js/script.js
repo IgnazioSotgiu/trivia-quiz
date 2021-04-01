@@ -13,6 +13,7 @@ let overallQuestions = 0;
 let questionRound = 2;
 let result;
 let overallResult;
+
 // wait for the DOM to finish loading page
 //add event listeners for the category choice, the level 
 // of difficulty, and the start button.
@@ -126,18 +127,27 @@ function getQuestionArray(chosenCategory, difficultyLevel){
     xhr.onreadystatechange = function() {
     if(this.readyState === 4 && this.status === 200) {
         questionListArray = JSON.parse(this.responseText);
-        $("#start-button").css({"background-color": "#1fe24c"});
+        console.log(questionListArray);
         }
     };
     return questionListArray;
 }
+// function to decode html special characters to compare the correct 
+// answer with multiple answer value after displayed on screen
+// function taken from stack overflow
+function decodeHtml(html) {
+           var txt = document.createElement("textarea");
+           txt.innerHTML = html;
+            return txt.value;
+        }
 // display the question on the array and creating a event listener
 // for the true and false button that the user will click to 
 // select the right answer
 function startQuestions(event) {
-    console.log(overallCorrect, overallIncorrect)
     if (i < questionListArray.results.length) {
-        let correctAnswer = questionListArray.results[i].correct_answer;
+        let encodedAnswer = questionListArray.results[i].correct_answer;
+        let correctAnswer = decodeHtml(encodedAnswer);
+        console.log(correctAnswer);
         displayQuestion();
             if (questionListArray.results[i].type === "boolean") {
                 displayBooleanAnswerButtons();
@@ -209,7 +219,6 @@ function multipleChoiceAnswerIsIncorrect(correctAnswer) {
 }
 /******************function display question************ */
 function displayQuestion() {
-    //overallQuestions++;
     document.getElementById("replace-question-container").innerHTML =
     `<div class="question-container">
         <h2 id="question-number">Question # ${i+1}</h2>
@@ -227,21 +236,22 @@ function displayBooleanAnswerButtons() {
 }
 /******************function display multiple choice buttons************** */
 function displayMultipleChoiceAnswerButtons() {
-    let possibleAnswers = [questionListArray.results[i].incorrect_answers[0],questionListArray.results[i].incorrect_answers[1], questionListArray.results[i].incorrect_answers[2],questionListArray.results[i].correct_answer];
-    shuffle(possibleAnswers);
+    let multipleAnswers = [questionListArray.results[i].incorrect_answers[0],questionListArray.results[i].incorrect_answers[1], questionListArray.results[i].incorrect_answers[2], questionListArray.results[i].correct_answer];
+    shuffle(multipleAnswers);
+    console.log(multipleAnswers);
     document.getElementById("replace-question-container").innerHTML +=
     `<div class="row row-center multiple-answer-container">
         <div class="col-12 col-sm-6">
-            <button class=" btn btn-secondary multiple-answer-button" id="btn-1" type="button" name="answer" value="${possibleAnswers[0]}">${possibleAnswers[0]}</button>
+            <button class=" btn btn-secondary multiple-answer-button" id="btn-1" type="button" name="answer" value="${multipleAnswers[0]}">${multipleAnswers[0]}</button>
         </div>
         <div class="col-12 col-sm-6">
-            <button class="btn btn-secondary multiple-answer-button" id="btn-2" type="button" name="answer" value="${possibleAnswers[1]}">${possibleAnswers[1]}</button>
+            <button class="btn btn-secondary multiple-answer-button" id="btn-2" type="button" name="answer" value="${multipleAnswers[1]}">${multipleAnswers[1]}</button>
         </div>
         <div class="col-12 col-sm-6">
-            <button class="btn btn-secondary multiple-answer-button" id="btn-3" type="button" name="answer" value="${possibleAnswers[2]}">${possibleAnswers[2]}</button>
+            <button class="btn btn-secondary multiple-answer-button" id="btn-3" type="button" name="answer" value="${multipleAnswers[2]}">${multipleAnswers[2]}</button>
         </div>
         <div class="col-12 col-sm-6">
-            <button class="btn btn-secondary multiple-answer-button" id="btn-4" type="button" name="answer" value="${possibleAnswers[3]}">${possibleAnswers[3]}</button>
+            <button class="btn btn-secondary multiple-answer-button" id="btn-4" type="button" name="answer" value="${multipleAnswers[3]}">${multipleAnswers[3]}</button>
         </div>
     </div>`;
 }
@@ -272,7 +282,7 @@ function checkBooleanAnswer(correctAnswer) {
     for (let button of booleanAnswerButtons) {
         button.addEventListener("click", function() {
             let value = this.getAttribute("value");
-            if(value == correctAnswer) {
+            if(value === correctAnswer) {
                 this.style.backgroundColor = "green";
                 answerIsCorrect();
             } else {
@@ -310,19 +320,19 @@ function incrementIncorrect() {
 }
 // calculate the percentage of correct answers
 function calculatePercentageCorrect() {
-    result = ((totCorrect*100)/questionListArray.results.length).toFixed(2);
+    result = parseFloat((totCorrect*100)/questionListArray.results.length).toFixed(2);
     return result;
 }
 // calculate the overall percentace of correct answers of the game session
 function overallPercentageCorrect() {
-    overallQuestions = (overallCorrect + overallIncorrect);
-    overallResult = ((overallCorrect*100)/overallQuestions).toFixed(2);
+    overallQuestions = parseInt(overallCorrect + overallIncorrect);
+    overallResult = parseFloat((overallCorrect*100)/overallQuestions).toFixed(2);
     return overallResult;
 }
 // Depending of the value of the variable result 
 // evaluate the user performance in the test
 function giveTestEvaluation(result) {
-    if(result === 100) {
+    if(result == 100.00) {
         vote = "You got top score... Perfect!";
     } else if (result >= 80 && result < 100) {
         vote = "Congratulation You did really good!";
@@ -415,16 +425,16 @@ function continueGame() {
     startPage();
 }
 // function taken from stack overflow
-function shuffle(possibleAnswers) {
-    var currentIndex = possibleAnswers.length, temporaryValue, randomIndex;
+function shuffle(multipleAnswers) {
+    var currentIndex = multipleAnswers.length, temporaryValue, randomIndex;
     while (0 !== currentIndex) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
-        temporaryValue = possibleAnswers[currentIndex];
-        possibleAnswers[currentIndex] = possibleAnswers[randomIndex];
-        possibleAnswers[randomIndex] = temporaryValue;
+        temporaryValue = multipleAnswers[currentIndex];
+        multipleAnswers[currentIndex] = multipleAnswers[randomIndex];
+        multipleAnswers[randomIndex] = temporaryValue;
     }
-    return possibleAnswers;
+    return multipleAnswers;
 }
 /**************************modal section*********************************** */
 /****************************instructions modal******************************/
