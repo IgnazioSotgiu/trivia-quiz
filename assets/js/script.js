@@ -7,11 +7,11 @@ let i = 0;
 let totCorrect = 0;
 let totIncorrect = 0;
 let vote = "";
+let result;
 let overallCorrect = 0;
 let overallIncorrect = 0;
 let overallQuestions = 0;
 let questionRound = 2;
-let result;
 let overallResult;
 
 // wait for the DOM to finish loading page
@@ -36,20 +36,14 @@ function startPage() {
 }
 //***************category selection function************************* */
 function selectCategory() {
-    let categoryChoiceModal = document.getElementById("category-choice-modal");
-    categoryChoiceModal.style.display = "block";
+    openSelectCategoryModal();
     let categories = document.getElementsByClassName("category-choice-btn");
-    window.onclick = function(event) {
-        if (event.target == categoryChoiceModal) {
-            categoryChoiceModal.style.display = "none";
-            }
-        };
     for(let category of categories) {
         category.addEventListener("click", function() {
             chosenCategory = this.getAttribute("value");
             this.style.backgroundColor = "rgb(42, 235, 42)";
             setTimeout(function(){
-                categoryChoiceModal.style.display = "none";
+                $("#category-choice-modal").css("display", "none");
                 selectDifficultyLevel(chosenCategory);
             },500);  
         });
@@ -57,19 +51,13 @@ function selectCategory() {
 }
 /******************************difficulty level selection function************** */
 function selectDifficultyLevel() {
-    let difficultyChoiceModal = document.getElementById("difficulty-choice-modal");
-    difficultyChoiceModal.style.display = "block";
-    let difficulties = document.getElementsByClassName("difficulty-sel-input");
-    window.onclick = function(event) {
-        if (event.target == difficultyChoiceModal) {
-            difficultyChoiceModal.style.display = "none";
-            }
-        };
+    openDifficultyLevelModal();
+    let difficulties = document.getElementsByClassName("difficulty-sel-input");    
     for(let difficulty of difficulties) {
         difficulty.addEventListener("click", function() {
             difficultyLevel = this.getAttribute("value");
             setTimeout(function(){
-                difficultyChoiceModal.style.display = "none";
+                $("#difficulty-choice-modal").css("display", "none");
                 showCountdown(chosenCategory, difficultyLevel);
             },500);
         });
@@ -90,6 +78,7 @@ function showCountdown(chosenCategory, difficultyLevel) {
     countdown();
 }
 //***************************countdown sequence*********************** */
+//https://www.youtube.com/watch?v=vSV_Ml2_A88 tutorial
 function countdown() {
     let timeLeftDisplay = document.getElementById("time-left");
     let timeLeft = 3;
@@ -127,10 +116,12 @@ function getQuestionArray(chosenCategory, difficultyLevel){
     xhr.onreadystatechange = function() {
     if(this.readyState === 4 && this.status === 200) {
         questionListArray = JSON.parse(this.responseText);
-        console.log(questionListArray);
+        
         }
     };
-    return questionListArray;
+    setTimeout(function() {
+        return questionListArray
+    }, 500);
 }
 // function to decode html special characters to compare the correct 
 // answer with multiple answer value after displayed on screen
@@ -147,7 +138,6 @@ function startQuestions(event) {
     if (i < questionListArray.results.length) {
         let encodedAnswer = questionListArray.results[i].correct_answer;
         let correctAnswer = decodeHtml(encodedAnswer);
-        console.log(correctAnswer);
         displayQuestion();
             if (questionListArray.results[i].type === "boolean") {
                 displayBooleanAnswerButtons();
@@ -238,7 +228,6 @@ function displayBooleanAnswerButtons() {
 function displayMultipleChoiceAnswerButtons() {
     let multipleAnswers = [questionListArray.results[i].incorrect_answers[0],questionListArray.results[i].incorrect_answers[1], questionListArray.results[i].incorrect_answers[2], questionListArray.results[i].correct_answer];
     shuffle(multipleAnswers);
-    console.log(multipleAnswers);
     document.getElementById("replace-question-container").innerHTML +=
     `<div class="row row-center multiple-answer-container">
         <div class="col-12 col-sm-6">
@@ -437,6 +426,26 @@ function shuffle(multipleAnswers) {
     return multipleAnswers;
 }
 /**************************modal section*********************************** */
+/***************************difficulty level modal************************** */
+function openDifficultyLevelModal() {
+    let difficultyChoiceModal = document.getElementById("difficulty-choice-modal");
+    difficultyChoiceModal.style.display = "block";
+    window.onclick = function(event) {
+        if (event.target == difficultyChoiceModal) {
+            difficultyChoiceModal.style.display = "none";
+            }
+        };
+}
+/*****************************category selection modal******************** */
+function openSelectCategoryModal() {
+    let categoryChoiceModal = document.getElementById("category-choice-modal");
+    categoryChoiceModal.style.display = "block";
+    window.onclick = function(event) {
+        if (event.target == categoryChoiceModal) {
+            categoryChoiceModal.style.display = "none";
+            }
+        };
+}
 /****************************instructions modal******************************/
 let instructionsLink = document.getElementById("instructions-link");
 let instructionsModal = document.getElementById("instructions-modal");
