@@ -126,17 +126,16 @@ function getQuestionArray(chosenCategory, difficultyLevel){
 // answer with multiple answer value after displayed on screen
 // function taken from stack overflow
 function decodeHtml(html) {
-           var txt = document.createElement("textarea");
-           txt.innerHTML = html;
-            return txt.value;
-        }
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}
 // display the question on the array and creating a event listener
 // for the true and false button that the user will click to 
 // select the right answer
 function startQuestions(event) {
     if (i < questionListArray.results.length) {
-        let encodedAnswer = questionListArray.results[i].correct_answer;
-        let correctAnswer = decodeHtml(encodedAnswer);
+        let correctAnswer = decodeHtml(questionListArray.results[i].correct_answer);
         displayQuestion();
             if (questionListArray.results[i].type === "boolean") {
                 displayBooleanAnswerButtons();
@@ -254,8 +253,7 @@ function incorrectQuestionTypeMessage() {
 /*****************display correct/incorrect question counter**************** */
 function displayCorrectIncorrectCounter() {
     document.getElementById("replace-question-container").innerHTML +=
-    `</div>
-    <div class="row counter-container">
+    `<div class="row counter-container">
         <div class="col-12 col-sm-6">
             <span id="correct-answers">Correct Answers</span><span id="correct-number">${totCorrect}</span>
         </div>
@@ -430,20 +428,20 @@ function openDifficultyLevelModal() {
     let difficultyChoiceModal = document.getElementById("difficulty-choice-modal");
     difficultyChoiceModal.style.display = "block";
     window.onclick = function(event) {
-        if (event.target == difficultyChoiceModal) {
-            difficultyChoiceModal.style.display = "none";
-            }
-        };
+    if (event.target == difficultyChoiceModal) {
+        difficultyChoiceModal.style.display = "none";
+        }
+    };
 }
 /*****************************category selection modal******************** */
 function openSelectCategoryModal() {
     let categoryChoiceModal = document.getElementById("category-choice-modal");
     categoryChoiceModal.style.display = "block";
     window.onclick = function(event) {
-        if (event.target == categoryChoiceModal) {
-            categoryChoiceModal.style.display = "none";
-            }
-        };
+    if (event.target == categoryChoiceModal) {
+        categoryChoiceModal.style.display = "none";
+        }
+    };
 }
 /****************************instructions modal******************************/
 let instructionsLink = document.getElementById("instructions-link");

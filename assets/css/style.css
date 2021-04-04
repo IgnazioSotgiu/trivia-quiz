@@ -302,7 +302,7 @@ footer {
     text-align: center;
     background-color: #fafafa;
     border-radius: 10px;
-    margin: 50px 10%;
+    margin: 50px 80px;
 }
 #correct-answers {
     color: #008000;
@@ -811,9 +811,6 @@ button#share-btn:focus {
     }
     .message-home p {
         font-size: 20px;
-    }
-    .counter-container {
-        margin: 20px 0;
     }
     .jumbotron-reg-form {
         padding: 0;
