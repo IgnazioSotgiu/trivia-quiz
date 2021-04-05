@@ -119,7 +119,7 @@ function getQuestionArray(chosenCategory, difficultyLevel){
         }
     };
     setTimeout(function() {
-        return questionListArray
+        return questionListArray;
     }, 500);
 }
 // function to decode html special characters to compare the correct 
