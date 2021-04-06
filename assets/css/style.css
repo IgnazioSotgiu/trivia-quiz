@@ -771,6 +771,11 @@ button#share-btn:focus {
     font-family: 'Roboto';
     font-weight: 300;
 }
+.instructions-cancel-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
 .instructions-container p {
     font-size: 20px;
     line-height: 30px;

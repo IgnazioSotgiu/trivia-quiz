@@ -457,6 +457,10 @@ instructionsLink.addEventListener("click", function() {
         instructionsModal.style.display = "none";
         }
     };
+    let cancelInstructions = document.getElementById("instructions-cancel-btn");
+    cancelInstructions.addEventListener("click", function() {
+        instructionsModal.style.display = "none";
+    });
 });
 /**********************contact modal******************************/
 let contactLink = document.getElementById("contact-link");
