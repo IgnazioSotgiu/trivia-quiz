@@ -687,6 +687,7 @@ button#share-btn:focus {
     color: var(--modalText);
 }
 .registration-form-title {
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 .registration-form-message {
@@ -711,11 +712,10 @@ button#share-btn:focus {
     border: #000 1px solid;
     border-radius: 10px;
 }
-.registration-button .cancel-btn{
-    background-color: #dc3545;
-    color: #fafafa;
-    border: #000 1px solid;
-    border-radius: 10px;
+.cancel-btn {
+    position: absolute;
+    top: -10px;
+    right: 10px;
 }
 /*****************category choice modal*****************************/
 .category-choice div button {
