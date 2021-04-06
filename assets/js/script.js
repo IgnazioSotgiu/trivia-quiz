@@ -468,6 +468,10 @@ contactLink.addEventListener("click", function() {
         contactModal.style.display = "none";
         }
     };
+    let cancelBtn = document.getElementById("contact-cancel-btn");
+    cancelBtn.addEventListener("click", function() {
+        contactModal.style.display = "none";
+    });
 });
 /**********************registration modal******************************/
 let registrationLink = document.getElementById("registration-link");
@@ -479,6 +483,10 @@ registrationLink.addEventListener("click", function() {
         registrationModal.style.display = "none";
         }
     };
+    let cancelRegBtn = document.getElementById("cancel-registration-btn");
+    cancelRegBtn.addEventListener("click", function() {
+        registrationModal.style.display = "none";
+    });
 });
 /********************switching dark light mode************************** */
 let darkLightToggle = document.getElementById("dark-light-toggle");

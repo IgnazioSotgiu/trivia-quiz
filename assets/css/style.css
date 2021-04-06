@@ -658,6 +658,13 @@ button#share-btn:focus {
 .contact-button .btn-warning {
     background-color: var(--contactSubmitBtnBg);
     color: var(--contactSubmitBtnText);
+    border: #000 1px solid;
+    border-radius: 10px;
+}
+.contact-button .cancel-btn{
+    background-color: #dc3545;
+    color: #fafafa;
+    border: #000 1px solid;
     border-radius: 10px;
 }
 /*********************registration for newsletter form modal***********************/
