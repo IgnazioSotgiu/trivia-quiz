@@ -59,33 +59,34 @@ Find the trade-offs in [this link](./assets/docs/strategy-plane-trivia-quiz.pdf)
 1. As a user I like to choose the Difficulty Level.
 ![](./assets/docs/user-stories-screenshots/user-stories-3.png)
 1. As a user I like to see the score and information during and at the end of the game.  
-![](./assets/docs/user-stories-screenshots/user-stories-4.png)
+![](./assets/docs/user-stories-screenshots/user-stories-4.png)  
+![](./assets/docs/user-stories-screenshots/user-stories-4.1.png)
 1. As a user I play Trivia Quiz to test and improve my knowledge.  
 ![](./assets/docs/user-stories-screenshots/user-stories-5.png)
 1. As a user i like to be able to change background color to dark or light mode for a more relaxing game.  
-![](./assets/docs/user-stories-screenshots/user-stories-6-17.png)
+![](./assets/docs/user-stories-screenshots/user-stories-6.png)
 1. As a user I like to share my results on social media platforms.
-![](./assets/docs/user-stories-screenshots/user-stories-7-11.png)
+![](./assets/docs/user-stories-screenshots/user-stories-7.png)
 1. As a user i want to be able to contact the owner to give feedback.
-![](./assets/docs/user-stories-screenshots/user-stories-12-16.png)
+![](./assets/docs/user-stories-screenshots/user-stories-8.png)
 1. As a owner I create an interactive Trivia Quiz Website to attract and entertain people on my website.  
 ![](./assets/docs/user-stories-screenshots/user-stories-9.png)
 1. As a owner I want my website to have appealing design and color theme choice to make the user experiense more pleasant and enjoiable.  
 ![](./assets/docs/user-stories-screenshots/user-stories-10.png)
 1. As a owner I create Trivia Quiz to enable people to challenge one another sharing their best results.  
-![](./assets/docs/user-stories-screenshots/user-stories-7-11.png)
+![](./assets/docs/user-stories-screenshots/user-stories-7.png)
 1. As a owner I create Trivia Quiz contact form to allow client to contribute with game improvements ideas.  
-![](./assets/docs/user-stories-screenshots/user-stories-12-16.png)
+![](./assets/docs/user-stories-screenshots/user-stories-8.png)
 1. As a owner I want to create a newsletter registration form to allow users that wish to do so to enter they details.   
 ![](./assets/docs/user-stories-screenshots/user-stories-13.png)
 1. As a owner I want my website to have links to the main social media.  
 ![](./assets/docs/user-stories-screenshots/user-stories-14.png)
 1. As a owner I want a confirmation email to be sent after the registration for newsletter is successful.
-![](./assets/docs/user-stories-screenshots/user-stories-.png)
+![](./assets/docs/user-stories-screenshots/user-stories-15.png)
 1. As a owner I want my website to have a contact form to allow user to leave feedbacks.  
-![](./assets/docs/user-stories-screenshots/user-stories-12-16.png)
+![](./assets/docs/user-stories-screenshots/user-stories-8.png)
 1. As a owner I want my website to have a light/dark mode button to allow user to choose the theme they prefer.  
-![](./assets/docs/user-stories-screenshots/user-stories-6-17.png)
+![](./assets/docs/user-stories-screenshots/user-stories-6.png)
 
 ## Future possible implementations:  
 1. Overtime after a good numbers of users promote ads space for sale in the website.  
