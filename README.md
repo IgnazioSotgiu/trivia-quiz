@@ -52,22 +52,40 @@ The website has a simple structure with only 1 pages, all the links in the navba
 Find the user stories in [this link](./assets/docs/user-stories-trivia-quiz.pdf).  
 Find the trade-offs in [this link](./assets/docs/strategy-plane-trivia-quiz.pdf).  
 
-1. As a user I play Trivia Quiz to relax and learn new information about topics I'm interested in.
-1. As a user I like to be able to choose which category the questions are related to.
+1. As a user I play Trivia Quiz to relax and learn new information about topics I'm interested in.  
+![](./assets/docs/user-stories-screenshots/user-stories-1.png)
+1. As a user I like to be able to choose which category the questions are related to.  
+![](./assets/docs/user-stories-screenshots/user-stories-2.png)
 1. As a user I like to choose the Difficulty Level.
-1. As a user I like to see the score and information during and at the end of the game.
-1. As a user I play Trivia Quiz to test and improve my knowledge.
-1. As a user i like to be able to change background color to dark or light mode for a more relaxing game.
+![](./assets/docs/user-stories-screenshots/user-stories-3.png)
+1. As a user I like to see the score and information during and at the end of the game.  
+![](./assets/docs/user-stories-screenshots/user-stories-4.png)
+1. As a user I play Trivia Quiz to test and improve my knowledge.  
+![](./assets/docs/user-stories-screenshots/user-stories-5.png)
+1. As a user i like to be able to change background color to dark or light mode for a more relaxing game.  
+![](./assets/docs/user-stories-screenshots/user-stories-6-17.png)
 1. As a user I like to share my results on social media platforms.
+![](./assets/docs/user-stories-screenshots/user-stories-7-11.png)
 1. As a user i want to be able to contact the owner to give feedback.
-1. As a owner I create an interactive Trivia Quiz Website to attract and entertain people on my website.
-1. As a owner i want my website to have appealing design and color theme choice to make the user experiense more pleasant and enjoiable.
-1. As a owner I create Trivia Quiz to enable people to challenge one another sharing their best results.
-1. As a owner I create Trivia Quiz contact form to allow client to contribute with game improvements ideas.
-1. As a owner i want to create a newsletter registration form to allow users that wish to do so to enter they details. 
-1. As a owner i want my website to have links to the main social media.   
-1. As a owner i want my website to have a contact form to allow user to leave feedbacks.  
-1. As a owner i want my website to have a light/dark mode button to allow user to choose the theme they prefer.
+![](./assets/docs/user-stories-screenshots/user-stories-12-16.png)
+1. As a owner I create an interactive Trivia Quiz Website to attract and entertain people on my website.  
+![](./assets/docs/user-stories-screenshots/user-stories-9.png)
+1. As a owner I want my website to have appealing design and color theme choice to make the user experiense more pleasant and enjoiable.  
+![](./assets/docs/user-stories-screenshots/user-stories-10.png)
+1. As a owner I create Trivia Quiz to enable people to challenge one another sharing their best results.  
+![](./assets/docs/user-stories-screenshots/user-stories-7-11.png)
+1. As a owner I create Trivia Quiz contact form to allow client to contribute with game improvements ideas.  
+![](./assets/docs/user-stories-screenshots/user-stories-12-16.png)
+1. As a owner I want to create a newsletter registration form to allow users that wish to do so to enter they details.   
+![](./assets/docs/user-stories-screenshots/user-stories-13.png)
+1. As a owner I want my website to have links to the main social media.  
+![](./assets/docs/user-stories-screenshots/user-stories-14.png)
+1. As a owner I want a confirmation email to be sent after the registration for newsletter is successful.
+![](./assets/docs/user-stories-screenshots/user-stories-.png)
+1. As a owner I want my website to have a contact form to allow user to leave feedbacks.  
+![](./assets/docs/user-stories-screenshots/user-stories-12-16.png)
+1. As a owner I want my website to have a light/dark mode button to allow user to choose the theme they prefer.  
+![](./assets/docs/user-stories-screenshots/user-stories-6-17.png)
 
 ## Future possible implementations:  
 1. Overtime after a good numbers of users promote ads space for sale in the website.  
