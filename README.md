@@ -20,19 +20,10 @@ The owner goal is to get as many people as he can to play on his website, and ge
 >> - [Tecnologies Used](#tecnologies-used)
 >> - [Features Implemented](#features-implemented)
 >> - [Future Implementations](#future-implementations)
-
-
-
-
-
-
-
-
-
-
-
-
-
+>> - [Testing](#testing)
+>> - [Deployment](#deployment)
+>> - [Credits](#credits)
+>> - [Aknowledgements](#aknowledgements)  
 
 ## Website Structure   
 The Trivia Quiz website is composed of one homepage and the registration for newsletter page. The links present in the navbar connect to the registration modal, a modal with the contact form and also a modal for the game instructions. All links can be opened without refreshing the game page, in case the user doesn't want to quit his current game.
@@ -188,9 +179,15 @@ The wireframes were done using [balsamiq](https://balsamiq.com/)
 * JSHint for javascript  
 [script.js Result](./assets/docs/validator-results/script.js-result-validator.png)  
 [sendEmail.js Result](./assets/docs/validator-results/sendEmail.js-result-validator.png)
-* Chrome DevTools Lighthouse
+* Chrome DevTools Lighthouse  
+[Lighthouse Result](./assets/docs/validator-results/lighthouse-result.png)
 
-Find the testing informations in a separate file [testing.md](.assets/docs/testing.md)
+The user acceptance testing template was taken from [usersnap website](https://usersnap.com/)
+[tutorial](https://usersnap.com/blog/user-acceptance-testing-right/)
+[example](https://usersnap.com/blog/user-acceptance-testing-example/)
+
+Find the testing informations in a separate file:  
+[User Acceptance Test](./assets/docs/user-acceptance-test.pdf)
 
 ---   
 
@@ -199,9 +196,9 @@ I managed the bugs found through the issues section on the github repository.
 Following the steps to trigger and report the bug:
 1. Give Short bug description.
 1. Steps to trigger the bug:
-* Click the element
-* What expect to happend
-* Error
+    1. Click the element
+    1. What expect to happend
+    1. What happend instead
 1. Description of the unwanted behevior.  
 
 ---
@@ -258,6 +255,9 @@ https://www.youtube.com/watch?v=vSV_Ml2_A88
 https://www.youtube.com/watch?v=xodD0nw2veQ  
 * To build the sharing toggle button at the end of the game page:  
 https://www.youtube.com/watch?v=YcEshVZNA5E&t=526s
+* For the testing:
+https://usersnap.com/blog/user-acceptance-testing-example/
+https://usersnap.com/blog/user-acceptance-testing-right/
 ## Acknowledgements:  
 I receive inspiration and guidance for this project from:
 
