@@ -120,13 +120,13 @@ The wireframes were done using [balsamiq](https://balsamiq.com/)
 ### Languages:
 * HTML to create the elements in the page
 * CSS to style the elements
-* javascript to add functionality to the website 
+* javascript for interactive elements
 
 ### Libraries:  
 * Bootstrap to style the elements
 * Google Fonts for the Roboto font
 * Font Awesome for the icons
-* jQuery to simplify javascript code  
+* jQuery   
 
 ### Tools:
 * [Github](https://github.com/) 
@@ -192,15 +192,86 @@ Find the testing informations in a separate file:
 ---   
 
 ## Bugs 
-I managed the bugs found through the issues section on the github repository. 
+Here the bugs found during development and testing the website:
+The following steps were followed when the bug was found:  
+
+
 Following the steps to trigger and report the bug:
 1. Give Short bug description.
 1. Steps to trigger the bug:
     1. Click the element
     1. What expect to happend
     1. What happend instead
-1. Description of the unwanted behevior.  
+1. Description of the unwanted behevior.
+1. Solution Description if the problem was solved  
 
+### Bug #1
+
+1.  **Give Short bug description:**  
+On mobile device only a white vertical band appear in the screen on the right for the full height of the page also a white space appear at the bottom of the page for the full width of the screen 
+1.  **Steps to trigger the bug:**  
+    1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/  with chrome browser 
+    1. Open  chrome developer tool  
+    1. Select mobile view with the icon on the top left of developer tool windows  
+1. **Description of the unwanted behevior:**  
+    A white band appear on the right and on the bottom of the mobile screen  
+    ![](./assets/docs/bugs/bug#1.png)   
+1. **Solution found:**  
+    Find a solution on stack overflow website:  
+    Added overflow-x hidden  and relative position for html and body  
+
+### Bug #2  
+
+1.  **Give Short bug description:**  
+    Website footer doesn't stay on the bottom of the page. 
+1.  **Steps to trigger the bug:**  
+    Open the website https://ignaziosotgiu.github.io/trivia-quiz/    
+1. **Description of the unwanted behevior:**  
+    The footer stay in the middle of the page  
+    ![](./assets/docs/bugs/bug#2.png)   
+1. **Solution found:**  
+    Find a solution on stack overflow website:  
+    1. Added relative position to the html and body elements  
+    1. Added absolute position to the footer  
+    1. Added bottom 0 to the footer to stick to the bottom of the page  
+
+### Bug #3   
+
+1.  **Give Short bug description:**  
+    When email is entered on registration and contact form the email is sent even if the email address is invalid 
+1.  **Steps to trigger the bug:**  
+    1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/   
+    1. Select Register for Newsletter or Contact Us link on the navigation menu 
+    1. Enter a name in the form  
+    1. Enter an invalid email address
+    1. Tick the registration box or write a message in the Contact Us form  
+    1. The email is sent successfully message appear  
+1. **Description of the unwanted behevior:**  
+    The email is sent with an invalid email address   
+1. **Solution found:**  
+    Find a solution on stack overflow website:  
+    Added the validateEmail function in sendEmail.js to check for valid email address for both Registration and Contact Us form 
+    ![](./assets/docs/bugs/bug#3.png)  
+
+### Bug #4    
+
+1.  **Give Short bug description:**  
+    When getting the questions array from the api I store the correct answer value in correctAnswer variable.
+    The issue happend when some html characters are present. For example the ' character is store in the varible as #&039 t=from the api. The answer value selected from html page will store the character as ' .When the program will compare the answer selected by the user with the correct answer stored in the variable the 2 value will be considered different and the program will count an incorrect answer even if the user whould have selected the correct choice.
+1.  **Steps to trigger the bug:**  
+    1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/   
+    1. Select Start button
+    1. Select a category 
+    1. Select a difficulty level
+    1. Go thorugh the questions  
+    1. The issue will happend when a special html character is present in the correct answer value  
+1. **Description of the unwanted behevior:**  
+    The message will display incorrect even if the answer was correct  
+    The incorrect answer count will be updated accordingly 
+1. **Solution found:**  
+    Find a solution on stack overflow website:  
+    Added decodeHtml function to store the value of correct answer in html element and then store it from there into the correctAnswer variable. This way both answer will be read from html elements so the value will match in case of a correct answer.
+    ![](./assets/docs/bugs/bug#4.png)    
 ---
 
 ## Deployment
