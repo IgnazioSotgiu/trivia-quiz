@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */ 
 // declare global variables
+let amountQuestions;
 let questionListArray = [];
 let chosenCategory = "";
 let difficultyLevel = "";
@@ -14,12 +15,9 @@ let overallQuestions = 0;
 let questionRound = 2;
 let overallResult;
 
-// wait for the DOM to finish loading page
-//add event listeners for the category choice, the level 
-// of difficulty, and the start button.
 document.addEventListener("DOMContentLoaded", function() {
     logoAnimation();
-    startPage();
+    getStartBtn();
 });
 function logoAnimation(){
     let mainLogo = document.getElementById("logo");
@@ -29,10 +27,13 @@ function logoAnimation(){
     mainLogo.style.transform = "translate(-50%)";
     mainLogoRight.style.transform = "translate(50%)";
 }
-/****************function start page*************** */
-function startPage() {
+function getStartBtn() {
     let startGameButton = document.getElementById("start-game-button");
-    startGameButton.addEventListener("click", selectCategory);
+    if(startGameButton) {
+        startGameButton.addEventListener("click", selectCategory);
+    }else {
+        setTimeout(getStartBtn(), 500);
+    }
 }
 //***************category selection function************************* */
 function selectCategory() {
@@ -94,24 +95,30 @@ function countdown() {
         startQuestions();
     }, 3800);
 }
-// passing the difficulty level to a function for 
-// getting the list of question from remote api
-// and store it in a array questionListArray
-function getQuestionArray(chosenCategory, difficultyLevel){
-    let xhr = new XMLHttpRequest();
-    let amountQuestions;
-    if(difficultyLevel === "easy") {
-        amountQuestions = "10";
-    } else if(difficultyLevel === "medium") {
-        amountQuestions = "13";
-    } else if(difficultyLevel === "hard") {
-        amountQuestions = "15";
-    } else{
+function getQuestionsAmount() {
+    switch(difficultyLevel) {
+        case "easy":
+            amountQuestions = "10";
+            break;
+        case "medium":
+            amountQuestions = "13";
+            break;
+        case "hard":
+            amountQuestions = "15";
+            break;
+        default:
         console.log("Error. Difficulty choice not recognized");
         throw("Error. Difficulty choice not recognized. Aborting....");
     }
+    return amountQuestions;
+
+}
+/**************get the question array from open trivia db  api************** */
+function getQuestionArray(chosenCategory, difficultyLevel){
+    getQuestionsAmount();
+    let xhr = new XMLHttpRequest();
     xhr.open("GET" , `https://opentdb.com/api.php?amount=${amountQuestions}&category=${chosenCategory}&difficulty=${difficultyLevel}`);
-    xhr.send("POST");
+    xhr.send();
     xhr.onreadystatechange = function() {
     if(this.readyState === 4 && this.status === 200) {
         questionListArray = JSON.parse(this.responseText);
@@ -130,9 +137,7 @@ function decodeHtml(html) {
     txt.innerHTML = html;
     return txt.value;
 }
-// display the question on the array and creating a event listener
-// for the true and false button that the user will click to 
-// select the right answer
+//***************main game function********************** */
 function startQuestions(event) {
     if (i < questionListArray.results.length) {
         let correctAnswer = decodeHtml(questionListArray.results[i].correct_answer);
@@ -152,12 +157,16 @@ function startQuestions(event) {
         overallPercentageCorrect();
         giveTestEvaluation(result);
         displayEndPage(vote, result, overallResult);
-        let continueButton = document.getElementById("continue-button");
-        continueButton.addEventListener("click", continueGame);
+        continueBtn();
+        
     }
 }
+function continueBtn() {
+    let continueButton = document.getElementById("continue-button");
+    continueButton.addEventListener("click", continueGame);
+}
 /*****************function correct answer*************** */
-function answerIsCorrect() {
+function isAnswerCorrect() {
     incrementCorrect();
     overallCorrect++;
     i++;
@@ -270,7 +279,7 @@ function checkBooleanAnswer(correctAnswer) {
             let value = this.getAttribute("value");
             if(value === correctAnswer) {
                 this.style.backgroundColor = "green";
-                answerIsCorrect();
+                isAnswerCorrect();
             } else {
                 this.style.backgroundColor = "red";
                 booleanAnswerIsIncorrect();
@@ -286,7 +295,7 @@ function checkMultipleChoiceAnswer(correctAnswer) {
             let value = this.getAttribute("value");
             if(value === correctAnswer) {
                 this.style.backgroundColor = "green";
-                answerIsCorrect();
+                isAnswerCorrect();
             } else {
                 this.style.backgroundColor = "red";
                 multipleChoiceAnswerIsIncorrect(correctAnswer);
@@ -408,7 +417,7 @@ function continueGame() {
     totCorrect = 0;
     totIncorrect = 0;
     i = 0;
-    startPage();
+    getStartBtn();
 }
 // function taken from stack overflow
 function shuffle(multipleAnswers) {
