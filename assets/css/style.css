@@ -169,14 +169,14 @@ body {
     margin: 20px 100px 200px;
 }
 .start-game-btn {
-    position: absolute;
+    /*position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
     width: 250px;
     height: 50px;
-    margin-top: 30px;
-    padding-top: 10px;
+    /*margin-top: 30px;
+    padding-top: 10px;*/
     border: 2px solid #111111;
     border-radius: 50px;
     font-weight: 400;
@@ -545,6 +545,8 @@ button#share-btn:focus {
     --changeModeIconBg: var(--darkBlueColor);
     --countdownColor: var(--blackColor);
     --countdownCircleColor: var(--blackColor);
+    --instructionsBgColor: var(--rustyLightColor);
+    --instructionsTextColor: var(--blackColor);
 }
 .dark-theme {
     --mainHeaderHomepage: var(--headerBgDark);
@@ -577,6 +579,8 @@ button#share-btn:focus {
     --changeModeIconBg: var(--lightBlueColor);
     --countdownColor: var(--goldenColor);
     --countdownCircleColor: var(--goldenColor);
+    --instructionsBgColor: var(--rustyColor);
+    --instructionsTextColor: var(--whiteColor);
 }
 /****************transition dark to white mode*********/
 * {
@@ -784,18 +788,32 @@ button#share-btn:focus {
 }
 .exit-instructions {
     margin: 0;
-    border-color: #dc3545;
-    width: 200px;
-    border-radius: 50px;
+    border-color: #000;
+    background-color: var(--instructionsBgColor);
+    color: var(--instructionsTextColor);
+    width: 80px;
+    border-radius: 10px;
+}
+.exit-instructions:hover {
+    color: #000;
+    border-color: #000;
+    background-color: var(--instructionsBgColor);
+    color: var(--instructionsTextColor);
+}
+.btn-danger:not(:disabled):not(.disabled):active {
+    color: #000;
+    border-color: #000;
+    background-color: var(--instructionsBgColor);
+    color: var(--instructionsTextColor);
 }
 /****************responsive elements**********************/
 @media screen and (min-width:1000px) {
     .main-page-game-container {
         display: flex;
         flex-direction: column;
-        margin-bottom: 100px;
+       /* margin-bottom: 100px;
         margin-left: 150px;
-        margin-right: 150px;
+        margin-right: 150px;*/
     }
     .question-container {
         padding: 10px 25%;
