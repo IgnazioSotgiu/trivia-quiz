@@ -630,11 +630,11 @@ button#share-btn:focus {
     margin-bottom: 20px;
 }
 .contact-form-message {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .contact-form-input {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 20px;
 }
 .contact-form-input input {
     border-radius: 10px;
@@ -996,12 +996,15 @@ button#share-btn:focus {
         font-size: 18px;
     }
     .jumbotron {
-        padding: 0;
+        padding: 15px 10px;
     }
     .difficulty-selection-container {
         padding-left: 10px;
         padding-right: 0;
         font-size: 15px;
+    }
+    .boolean-answer-container {
+        margin: 50px 0px;
     }
     .footer-container {
         padding: 20px 5px 5px;
@@ -1011,5 +1014,14 @@ button#share-btn:focus {
     .copyright-container {
         font-size: 10px;
         padding-top: 10px;
+    }
+    .registration-jumbotron {
+        padding: 15px;
+    }
+    .contact-form-container {
+    padding: 10px 10px;
+    }
+    .contact-form-input {
+        padding: 10px 5px;
     }
 }

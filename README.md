@@ -3,7 +3,7 @@
 ---  
 
 Trivia Quiz is a website designed to entertain and encourage the users to test their knowledge on different fields or subjects, answering different questions, challenging themselves to improve their performance with different difficulty levels.    
-Before starting the game the user will be able to choose the category and the level of difficulty and then will start the question challenge. The question type is chosen randomly from the remote api, and can be a True/False or a multiple choice.  
+Before starting the game the user will be able to choose the category and the level of difficulty and then will start the question challenge. The question type is chosen randomly from the remote API, and can be a True/False or a multiple choice.  
 
 ![](./assets/docs/mockup-trivia-quiz.png)  
 
@@ -17,13 +17,13 @@ The owner goal is to get as many people as he can to play on his website, and ge
 >> - [User Stories](#user-stories)  
 >> - [Design Choices](#design-choices)
 >> - [Wireframes](#wireframes)
->> - [Tecnologies Used](#tecnologies-used)
+>> - [Technologies Used](#technologies-used)
 >> - [Features Implemented](#features-implemented)
 >> - [Future Implementations](#future-implementations)
 >> - [Testing](#testing)
 >> - [Deployment](#deployment)
 >> - [Credits](#credits)
->> - [Aknowledgements](#aknowledgements)  
+>> - [Acknowledgements](#acknowledgements)  
 
 ## Website Structure   
 The Trivia Quiz website is composed of one homepage and the registration for newsletter page. The links present in the navbar connect to the registration modal, a modal with the contact form and also a modal for the game instructions. All links can be opened without refreshing the game page, in case the user doesn't want to quit his current game.
@@ -32,10 +32,10 @@ The Trivia Quiz website is composed of one homepage and the registration for new
   ![](./assets/docs/trivia-quiz-site-structure.png)  
    
   ---  
- In the screen is also present a switch to change between Light and Dark Theme. From the homepage the user can choose to start the game, that will open a category choice screen and then the difficulty choice screen.  
+ In the screen is also present a switch to change between Light and Dark Theme. From the homepage the user can choose to start the game. The “Start” button will open a category choice screen and then the difficulty choice screen.  
  After the selections are made there will be a countdown form 3 to 0 before the first question is displayed. After the round of questions the user will be present with a result summary of his performance with the options to share on Twitter or Facebook, continue the game or reset the game starting a new session with the reset button.
  
-The website has a simple structure with only 1 pages, all the links in the navbar are connected to modals.  
+The website has a simple structure with only 1 page, all the links in the navbar are connected to modals.  
 
 ---
 
@@ -54,47 +54,48 @@ Find the trade-offs in [this link](./assets/docs/strategy-plane-trivia-quiz.pdf)
 ![](./assets/docs/user-stories-screenshots/user-stories-4.1.png)
 1. As a user I play Trivia Quiz to test and improve my knowledge.  
 ![](./assets/docs/user-stories-screenshots/user-stories-5.png)
-1. As a user i like to be able to change background color to dark or light mode for a more relaxing game.  
+1. As a user I like to be able to change background colour to dark or light mode for a more relaxing game.  
 ![](./assets/docs/user-stories-screenshots/user-stories-6.png)
 1. As a user I like to share my results on social media platforms.
 ![](./assets/docs/user-stories-screenshots/user-stories-7.png)
-1. As a user i want to be able to contact the owner to give feedback.
+1. As a user I want to be able to contact the owner to give feedback.
 ![](./assets/docs/user-stories-screenshots/user-stories-8.png)
-1. As a owner I create an interactive Trivia Quiz Website to attract and entertain people on my website.  
+1. As an owner I create an interactive Trivia Quiz Website to attract and entertain people on my website.  
 ![](./assets/docs/user-stories-screenshots/user-stories-9.png)
-1. As a owner I want my website to have appealing design and color theme choice to make the user experiense more pleasant and enjoiable.  
+1. As an owner I want my website to have appealing design and colour theme choice to make the user experience more pleasant and enjoyable.  
 ![](./assets/docs/user-stories-screenshots/user-stories-10.png)
-1. As a owner I create Trivia Quiz to enable people to challenge one another sharing their best results.  
+1. As an owner I create Trivia Quiz to enable people to challenge one another sharing their best results.  
 ![](./assets/docs/user-stories-screenshots/user-stories-7.png)
-1. As a owner I create Trivia Quiz contact form to allow client to contribute with game improvements ideas.  
+1. As an owner I create Trivia Quiz contact form to allow client to contribute with game improvements ideas. 
+
 ![](./assets/docs/user-stories-screenshots/user-stories-8.png)
-1. As a owner I want to create a newsletter registration form to allow users that wish to do so to enter they details.   
+1. As an owner I want to create a newsletter registration form to allow users that wish to do so to enter their details.   
 ![](./assets/docs/user-stories-screenshots/user-stories-13.png)
-1. As a owner I want my website to have links to the main social media.  
+1. As an owner I want my website to have links to the main social media.  
 ![](./assets/docs/user-stories-screenshots/user-stories-14.png)
-1. As a owner I want a confirmation email to be sent after the registration for newsletter is successful.
+1. As an owner I want a confirmation email to be sent after the registration for newsletter is successful.
 ![](./assets/docs/user-stories-screenshots/user-stories-15.png)
-1. As a owner I want my website to have a contact form to allow user to leave feedbacks.  
+1. As an owner I want my website to have a contact form to allow user to leave feedbacks.  
 ![](./assets/docs/user-stories-screenshots/user-stories-8.png)
-1. As a owner I want my website to have a light/dark mode button to allow user to choose the theme they prefer.  
+1. As an owner I want my website to have a light/dark mode button to allow user to choose the theme they prefer.  
 ![](./assets/docs/user-stories-screenshots/user-stories-6.png)
 
 ## Future possible implementations:  
 1. Overtime after a good numbers of users promote ads space for sale in the website.  
 1. Add a timer to the game to increase difficulty.  
 1. Create form where users can add new Q&A to the question database.  
-1. Develop a mobile app to play Trivia Quiz, with a offline plane mode.  
+1. Develop a mobile app to play Trivia Quiz, with an offline plane mode.  
 
 ---
   
   
 ## Design Choices
 ### Fonts:
-I have choose Roboto font for the whole website.
-### Color Palette:  
+I have chosen Roboto font for the whole website.
+### Colour Palette:  
 
-As the owner want the user to spend time playing in our website one of the features decided to implement was a Dark/Light mode switch changing color theme depending of the user color preference.  
-Color palette images were taken with [coolors](https://coolors.co/).
+As the owner wants the user to spend time playing in our website one of the features decided to implement was a Dark/Light mode switch changing colour theme depending of the user colour preference.  
+Colour palette images were taken with [coolors](https://coolors.co/).
 
 ### Dark Theme:
 ![](./assets/docs/dark-color-palette-trivia-quiz.png)
@@ -115,7 +116,7 @@ The wireframes were done using [balsamiq](https://balsamiq.com/)
 [Registration and Contact forms](./assets/wireframes/registration-and-contact-form-wireframes.pdf)  
 
 ---  
-## Tecnologies Used  
+## Technologies Used  
 
 ### Languages:
 * HTML to create the elements in the page
@@ -136,15 +137,15 @@ The wireframes were done using [balsamiq](https://balsamiq.com/)
     * Microsoft Word for User Stories Sheet
 * [Balsamiq](https://balsamiq.com/) for wireframes  
 * [EmailJs](https://www.emailjs.com/)  
-    * emailJs was used to link the contact form and the register for newsletter form to a email address. The registration form also send an automatic message to the user email.  
+    * emailJs was used to link the contact form and the register for newsletter form to a email address. The registration form also sends an automatic message to the user email.  
 * [Open Trivia database](https://opentdb.com/api_config.php)
-    * Open Trivia Database is a free JSON api used for import questions and answers
+    * Open Trivia Database is a free JSON API used for import questions and answers
 * [SweetAlert](https://sweetalert.js.org/)  
     * SweetAlert was used to display popup messages   
 * [favicon generator](https://www.favicon-generator.org/search/)  
-    * Used to create the favicon fo the title  
+    * Used to create the favicon for the title  
 * [coolors](https://coolors.co/)
-    * Used to create the color palette  
+    * Used to create the colour palette  
 * [Am I responsive?](http://ami.responsivedesign.is/)  
     * Used to generate the mockup image [mockup-trivia-quiz.png](./assets/docs/mockup-trivia-quiz.png)  
 ---
@@ -159,7 +160,7 @@ The wireframes were done using [balsamiq](https://balsamiq.com/)
 * Added links to social media platforms
 * Created a contact form connected to gmail using EmailJs service
 * Implemented theme choice with a switch to toggle dark/light mode
-* Added Score summary at the end fo the game providing user information about his/her performance with info about last round odf questions and the overall session
+* Added Score summary at the end of the game providing user information about his/her performance with info about last round of questions and the overall session
 * Added a button for sharing the result through Twitter or Facebook   
 --- 
 ### Future Features  
@@ -183,10 +184,10 @@ The wireframes were done using [balsamiq](https://balsamiq.com/)
 [Lighthouse Result](./assets/docs/validator-results/lighthouse-result.png)
 
 The user acceptance testing template was taken from [usersnap website](https://usersnap.com/)
-[tutorial](https://usersnap.com/blog/user-acceptance-testing-right/)
-[example](https://usersnap.com/blog/user-acceptance-testing-example/)
+[Tutorial](https://usersnap.com/blog/user-acceptance-testing-right/)
+[Example](https://usersnap.com/blog/user-acceptance-testing-example/)
 
-Find the testing informations in a separate file:  
+Find the testing information in a separate file:  
 [User Acceptance Test](./assets/docs/user-acceptance-test.pdf)
 
 ---   
@@ -200,10 +201,10 @@ Following the steps to trigger and report the bug:
 1. Give Short bug description.
 1. Steps to trigger the bug:
     1. Click the element
-    1. What expect to happend
-    1. What happend instead
-1. Description of the unwanted behevior.
-1. Solution Description if the problem was solved  
+    1. What expect to happened
+    1. What happened instead?
+1. Description of the unwanted behaviour.
+1. Solution found if the problem was solved  
 
 ### Bug #1
 
@@ -211,14 +212,14 @@ Following the steps to trigger and report the bug:
 On mobile device only a white vertical band appear in the screen on the right for the full height of the page also a white space appear at the bottom of the page for the full width of the screen 
 1.  **Steps to trigger the bug:**  
     1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/  with chrome browser 
-    1. Open  chrome developer tool  
+    1. Open chrome developer tool  
     1. Select mobile view with the icon on the top left of developer tool windows  
-1. **Description of the unwanted behevior:**  
+1. **Description of the unwanted behaviour:**  
     A white band appear on the right and on the bottom of the mobile screen  
     ![](./assets/docs/bugs/bug#1.png)   
 1. **Solution found:**  
     Find a solution on stack overflow website:  
-    Added overflow-x hidden  and relative position for html and body  
+    Added overflow-x hidden and relative position for html and body  
 
 ### Bug #2  
 
@@ -226,8 +227,8 @@ On mobile device only a white vertical band appear in the screen on the right fo
     Website footer doesn't stay on the bottom of the page. 
 1.  **Steps to trigger the bug:**  
     Open the website https://ignaziosotgiu.github.io/trivia-quiz/    
-1. **Description of the unwanted behevior:**  
-    The footer stay in the middle of the page  
+1. **Description of the unwanted behaviour:**  
+    The footer stays in the middle of the page  
     ![](./assets/docs/bugs/bug#2.png)   
 1. **Solution found:**  
     Find a solution on stack overflow website:  
@@ -246,7 +247,7 @@ On mobile device only a white vertical band appear in the screen on the right fo
     1. Enter an invalid email address
     1. Tick the registration box or write a message in the Contact Us form  
     1. The email is sent successfully message appear  
-1. **Description of the unwanted behevior:**  
+1. **Description of the unwanted behaviour:**  
     The email is sent with an invalid email address   
 1. **Solution found:**  
     Find a solution on stack overflow website:  
@@ -256,22 +257,39 @@ On mobile device only a white vertical band appear in the screen on the right fo
 ### Bug #4    
 
 1.  **Give Short bug description:**  
-    When getting the questions array from the api I store the correct answer value in correctAnswer variable.
-    The issue happend when some html characters are present. For example the ' character is store in the varible as #&039 t=from the api. The answer value selected from html page will store the character as ' .When the program will compare the answer selected by the user with the correct answer stored in the variable the 2 value will be considered different and the program will count an incorrect answer even if the user whould have selected the correct choice.
+    When getting the questions array from the API I store the correct answer value in correctAnswer variable.
+    The issue happened when some html characters are present. For example the ' character is store in the variable as #&039 t=from the API. The answer value selected from html page will store the character as ' .When the program will compare the answer selected by the user with the correct answer stored in the variable the 2 value will be considered different and the program will count an incorrect answer even if the user would have selected the correct choice.
 1.  **Steps to trigger the bug:**  
     1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/   
     1. Select Start button
     1. Select a category 
     1. Select a difficulty level
-    1. Go thorugh the questions  
-    1. The issue will happend when a special html character is present in the correct answer value  
-1. **Description of the unwanted behevior:**  
+    1. Go through the questions  
+    1. The issue will happen when a special html character is present in the correct answer value  
+1. **Description of the unwanted behaviour:**  
     The message will display incorrect even if the answer was correct  
     The incorrect answer count will be updated accordingly 
 1. **Solution found:**  
     Find a solution on stack overflow website:  
     Added decodeHtml function to store the value of correct answer in html element and then store it from there into the correctAnswer variable. This way both answer will be read from html elements so the value will match in case of a correct answer.
     ![](./assets/docs/bugs/bug#4.png)    
+
+### Bug #5    
+
+1.  **Give Short bug description:**  
+    The correct answer always display in the same button
+1.  **Steps to trigger the bug:**  
+    1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/   
+    1. Select Start button
+    1. Select a category 
+    1. Select a difficulty level
+    1. Go through the questions   
+1. **Description of the unwanted behaviour:**  
+    The correct answer is always the bottom right button 
+1. **Solution found:**  
+    Find a solution on stack overflow website:  
+    Passing the multipleAnswer array thorough the shuffle functions will assign each array value a random position.
+    ![](./assets/docs/bugs/bug#5.png)    
 ---
 
 ## Deployment
@@ -296,9 +314,9 @@ This is the procedure that I follow to deploy the final version to Github pages:
 1. Click on the Code button
 1. Select copy the URL in the dropbox
 1. Open your favourite IDE and select source
-1. Paste the URL and  then you can navigate through the repository files
+1. Paste the URL and then you can navigate through the repository files
 
-to clone the repository input this command:
+To clone the repository input this command:
 git clone https://github.com/IgnazioSotgiu/trivia-quiz.git
 
 
