@@ -339,6 +339,10 @@ footer {
 .message-finish-test p {
     padding-top: 10px;
 }
+.results-color {
+    color: var(--resultsColor);
+    font-weight: 600;
+}
 .end-button-container {
     text-align: center;
 }
@@ -512,6 +516,7 @@ button#share-btn:focus {
   --noOverlayColor: rgba(0, 0, 0, 0);
   --darkBlueColor: #111;
   --lightBlueColor: #0d78a9;
+  --redColor:#dc3545;
 }
 /*set light theme colors*/
 .light-theme {
@@ -547,6 +552,7 @@ button#share-btn:focus {
     --countdownCircleColor: var(--blackColor);
     --instructionsBgColor: var(--rustyLightColor);
     --instructionsTextColor: var(--blackColor);
+    --resultsColor: var(--redColor);
 }
 .dark-theme {
     --mainHeaderHomepage: var(--headerBgDark);
@@ -581,6 +587,7 @@ button#share-btn:focus {
     --countdownCircleColor: var(--goldenColor);
     --instructionsBgColor: var(--rustyColor);
     --instructionsTextColor: var(--whiteColor);
+    --resultsColor: var(--whiteColor);
 }
 /****************transition dark to white mode*********/
 * {
