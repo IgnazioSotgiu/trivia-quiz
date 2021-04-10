@@ -126,18 +126,15 @@ body {
 /******************************homepage message container*******************/
 .main-page-game-container {
     position: relative;
+    top: 0;
+    margin-bottom: 86px;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
-    margin-bottom: 85.56px;
-    margin-left: 10px;
-    margin-right: 10px;
-    }
-.main-page-game-container .col-12 {
-    position: relative;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 .message-home {
-    margin-top: 50px;
     padding: 30px;
     color: var(--messageHomepage);
     background-color: var(--messageHomepageBgColor);
@@ -155,10 +152,7 @@ body {
 }
 /*******buttons container homepage*************/
 .start-btn-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 50px 100px 200px;
+    margin-top: 50px;
 }
 .countdown-section {
     display: none;
@@ -169,14 +163,8 @@ body {
     margin: 20px 100px 200px;
 }
 .start-game-btn {
-    /*position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);*/
     width: 250px;
     height: 50px;
-    /*margin-top: 30px;
-    padding-top: 10px;*/
     border: 2px solid #111111;
     border-radius: 50px;
     font-weight: 400;
@@ -296,13 +284,15 @@ footer {
     background-color: #4cecd7;
     color: #000;
     border-radius: 50px;
+    width: 60%;
 }
 /***********counter container*****************/
 .counter-container {
     text-align: center;
+    width: 50%;
     background-color: #fafafa;
     border-radius: 10px;
-    margin: 50px 80px;
+    margin: 50px 30px;
 }
 #correct-answers {
     color: #008000;
@@ -356,6 +346,9 @@ footer {
     border-radius: 50px;
     font-weight: 400;
     color: #fafafa;
+}
+.btn-end-test {
+    margin-bottom: 126px;
 }
 .end-button-container button.reset-btn {
     font-size: 20px;
@@ -815,21 +808,11 @@ button#share-btn:focus {
 }
 /****************responsive elements**********************/
 @media screen and (min-width:1000px) {
-    .main-page-game-container {
-        display: flex;
-        flex-direction: column;
-       /* margin-bottom: 100px;
-        margin-left: 150px;
-        margin-right: 150px;*/
-    }
     .question-container {
         padding: 10px 25%;
     }
     .multiple-answer-container {
         padding: 10px 15%;
-    }
-    .counter-container {
-        margin: 20px 20%;
     }
     .footer-container {
         padding: 20px 250px 5px;
@@ -845,6 +828,9 @@ button#share-btn:focus {
     }
     .message-home p {
         font-size: 20px;
+    }
+    .counter-container {
+        width: 80%;
     }
     .jumbotron-reg-form {
         padding: 0;
@@ -940,14 +926,8 @@ button#share-btn:focus {
         text-decoration: none;
         background-color: transparent;
     }
-    .main-page-game-container {
-        margin-bottom: 120px;
-    }
-    .start-btn-section {
-        margin: 50px 10px;
-    }
     .countdown-section {
-        margin: 20px 10px;
+        margin: 20px 10px 126px;
     }
     .start-button-container .btn-success {
         margin-top: 0px;
@@ -966,9 +946,6 @@ button#share-btn:focus {
     .start-button-container {
         margin: 50px 0;
         text-align: center;
-    }
-    .counter-container {
-        margin: 20px 0px;
     }
     .footer-container {
         padding: 20px 20px 5px;
@@ -995,9 +972,9 @@ button#share-btn:focus {
         padding: 10px;
     }
     .multiple-answer-container {
-        margin: 50px 0 20px;
+        margin: 0px;
     }
-    .btn-end-test .col-6 {
+    .btn-end-test .col-sm-6 {
         padding: 0;
     }
     .jumbotron-reg-form {
@@ -1021,17 +998,29 @@ button#share-btn:focus {
         font-size: 18px;
     }
     .jumbotron {
-        padding: 15px 10px;
+        padding: 10px 5px;
+    }
+    .category-choice div button {
+        width: 90px;
+        height: 90px;
+        margin: 10px 5px;
     }
     .difficulty-selection-container {
         padding-left: 10px;
         padding-right: 0;
         font-size: 15px;
     }
+    .difficulty-choice div button {
+        width: 90px;
+        height: 90px;
+        margin: 10px 0;
+    }
     .boolean-answer-container {
         margin: 50px 0px;
     }
     .footer-container {
+        position: absolute;
+        bottom: 0;
         padding: 20px 5px 5px;
         text-align: center;
         color: #fafafa;
