@@ -368,7 +368,7 @@ function giveTestEvaluation(result) {
 function displayEndPage() {
     questionRound++;
     document.getElementById("replace-question-container").innerHTML =
-    `<div class="container-fluid message-finish-test">
+    `<div class="message-finish-test">
         <p>You have finished the game.<br><spam id="valuation"><h2>${vote}</h2></spam></p>
         <p>Your score for the last round is:<br><span class="results-color" id="total-correct-answers">${totCorrect}</span> Correct answers<br><span class="results-color" id="final-incorrect-answers">${totIncorrect}</span> Incorrect answers</p>
         <p>You got <span class="results-color" id="correct-precentage">${result}%</span> of correct answers!</p>
@@ -426,7 +426,7 @@ function shareResult() {
 function continueGame() {
     let nextRound = (questionRound + 1);
     document.getElementById("replace-question-container").innerHTML =
-    `<div class="container-fluid message-home" id="message-homepage">
+    `<div class="message-home" id="message-homepage">
         <h2>Get ready for round number ${nextRound}</h2>
     </div>
     <div class="start-btn-section" id="go-button-section">
