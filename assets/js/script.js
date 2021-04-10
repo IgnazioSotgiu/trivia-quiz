@@ -12,14 +12,31 @@ let result;
 let overallCorrect = 0;
 let overallIncorrect = 0;
 let overallQuestions = 0;
-let questionRound = 2;
+let questionRound ;
 let overallResult;
 
 document.addEventListener("DOMContentLoaded", function() {
+    logoResetBtn();
+    checkStoredData();
     logoAnimation();
     getStartBtn();
 });
-function logoAnimation(){
+function logoResetBtn() {
+    let logoBtn = document.getElementById("logo-right");
+    logoBtn.addEventListener("click", resetGame);
+}
+function checkStoredData() {
+    questionRound = parseInt(localStorage.getItem("round"), 10);
+    if(questionRound) {
+        overallCorrect = parseInt(localStorage.getItem("total correct"), 10);
+        overallIncorrect = parseInt(localStorage.getItem("total incorrect"), 10);
+        overallQuestions = parseInt(localStorage.getItem("total questions"),10);
+        overallResult = parseFloat(localStorage.getItem("percentage correct"));
+    } else {
+        questionRound = 0;
+    }
+}
+function logoAnimation() {
     let mainLogo = document.getElementById("logo");
     let mainLogoRight = document.getElementById("logo-right");
     mainLogo.style.left = "50%";
@@ -158,12 +175,17 @@ function startQuestions(event) {
         giveTestEvaluation(result);
         displayEndPage(vote, result, overallResult);
         continueBtn();
+        resetBtn()
         
     }
 }
 function continueBtn() {
     let continueButton = document.getElementById("continue-button");
     continueButton.addEventListener("click", continueGame);
+}
+function resetBtn() {
+    let resetButton = document.getElementById("reset-button");
+    resetButton.addEventListener("click", resetGame);
 }
 /*****************function correct answer*************** */
 function isAnswerCorrect() {
@@ -344,13 +366,14 @@ function giveTestEvaluation(result) {
 }
 // Display the final screen with the results of the test
 function displayEndPage() {
+    questionRound++;
     document.getElementById("replace-question-container").innerHTML =
     `<div class="container-fluid message-finish-test">
         <p>You have finished the game.<br><spam id="valuation"><h2>${vote}</h2></spam></p>
         <p>Your score for the last round is:<br><span class="results-color" id="total-correct-answers">${totCorrect}</span> Correct answers<br><span class="results-color" id="final-incorrect-answers">${totIncorrect}</span> Incorrect answers</p>
         <p>You got <span class="results-color" id="correct-precentage">${result}%</span> of correct answers!</p>
         <br>
-        <p>Your overall score:<br><span>You have answered a total of ${overallQuestions} questions.</span><br><span class="results-color" id="overall-correct-answers">${overallCorrect}</span> Correct answers<br><span class="results-color" id="overall-incorrect-answers">${overallIncorrect}</span> Incorrect answers</p>
+        <p>Your overall score:<br><span>You have answered a total of <span class="results-color">${overallQuestions}</span> questions.</span><br><span class="results-color" id="overall-correct-answers">${overallCorrect}</span> Correct answers<br><span class="results-color" id="overall-incorrect-answers">${overallIncorrect}</span> Incorrect answers</p>
         <p>You got <span class="results-color" id="correct-precentage">${overallResult}%</span> of correct answers!</p>
     </div>
     <!--------------------share buttons popup--------------------->
@@ -377,10 +400,19 @@ function displayEndPage() {
             <button type="button" class="btn btn-warning" id="continue-button">Continue</button>
         </div>
         <div class="col-12 col-sm-6 end-button-container">
-            <a href="index.html"><button type="button" class="btn btn-warning reset-btn">Reset</button></a>
+            <a href="index.html"><button type="button" class="btn btn-warning reset-btn" id="reset-button">Reset</button></a>
         </div>
     </div>`;
+    storeResult();
     shareResult();
+}
+function storeResult() {
+    localStorage.setItem("round", questionRound);
+    localStorage.setItem("total questions", overallQuestions);
+    localStorage.setItem("total correct", overallCorrect);
+    localStorage.setItem("total incorrect", overallIncorrect);
+    localStorage.setItem("percentage correct", overallResult);
+    console.log(localStorage);
 }
 /*******************function to share resul on twitter and facebook***************** */
 function shareResult() {
@@ -392,9 +424,10 @@ function shareResult() {
 }
 /************function to continue with new round of questions keeping the overall score */
 function continueGame() {
+    let nextRound = (questionRound + 1);
     document.getElementById("replace-question-container").innerHTML =
     `<div class="container-fluid message-home" id="message-homepage">
-        <h2>Get ready for round number ${questionRound}</h2>
+        <h2>Get ready for round number ${nextRound}</h2>
     </div>
     <div class="start-btn-section" id="go-button-section">
         <div class="row">
@@ -413,11 +446,14 @@ function continueGame() {
             </div>
         </div>
     </div>`;
-    questionRound++;
     totCorrect = 0;
     totIncorrect = 0;
     i = 0;
     getStartBtn();
+}
+// function reset game
+function resetGame() {
+    localStorage.clear();
 }
 // function taken from stack overflow
 function shuffle(multipleAnswers) {
