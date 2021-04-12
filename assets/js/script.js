@@ -16,14 +16,18 @@ let questionRound ;
 let overallResult;
 
 document.addEventListener("DOMContentLoaded", function() {
-    logoResetBtn();
+    navLinkResetBtn();
     checkStoredData();
     logoAnimation();
-    getStartBtn();
+    startGameBtn();
 });
-function logoResetBtn() {
-    let logoBtn = document.getElementById("logo-right");
-    logoBtn.addEventListener("click", resetGame);
+function navLinkResetBtn() {
+    let navResetBtn = document.getElementById("reset-btn");
+    if(navResetBtn) {
+        navResetBtn.addEventListener("click", resetGame);
+    }else {
+        setTimeout(navLinkResetBtn, 500);
+    }
 }
 function checkStoredData() {
     questionRound = parseInt(localStorage.getItem("round"), 10);
@@ -44,56 +48,79 @@ function logoAnimation() {
     mainLogo.style.transform = "translate(-50%)";
     mainLogoRight.style.transform = "translate(50%)";
 }
-function getStartBtn() {
+function startGameBtn() {
     let startGameButton = document.getElementById("start-game-button");
     if(startGameButton) {
         startGameButton.addEventListener("click", selectCategory);
     }else {
-        setTimeout(getStartBtn(), 500);
+        setTimeout(startGameBtn, 500);
     }
 }
 //***************category selection function************************* */
 function selectCategory() {
     openSelectCategoryModal();
     let categories = document.getElementsByClassName("category-choice-btn");
-    for(let category of categories) {
-        category.addEventListener("click", function() {
-            chosenCategory = this.getAttribute("value");
-            this.style.backgroundColor = "rgb(42, 235, 42)";
-            setTimeout(function(){
-                $("#category-choice-modal").css("display", "none");
-                selectDifficultyLevel(chosenCategory);
-            },500);  
-        });
+    if(categories) {
+        for(let category of categories) {
+            category.addEventListener("click", function() {
+                chosenCategory = this.getAttribute("value");
+                this.style.backgroundColor = "rgb(42, 235, 42)";
+                setTimeout(function(){
+                    $("#category-choice-modal").css("display", "none");
+                    selectDifficultyLevel(chosenCategory);
+                },500);  
+            });
+        }
+    }else{
+        setTimeout(selectCategory, 500);
     }
 }
 /******************************difficulty level selection function************** */
 function selectDifficultyLevel() {
     openDifficultyLevelModal();
-    let difficulties = document.getElementsByClassName("difficulty-sel-input");    
-    for(let difficulty of difficulties) {
-        difficulty.addEventListener("click", function() {
-            difficultyLevel = this.getAttribute("value");
-            setTimeout(function(){
-                $("#difficulty-choice-modal").css("display", "none");
-                showCountdown(chosenCategory, difficultyLevel);
-            },500);
-        });
+    let difficulties = document.getElementsByClassName("difficulty-sel-input");
+    if(difficulties)  {
+        for(let difficulty of difficulties) {
+            difficulty.addEventListener("click", function() {
+                difficultyLevel = this.getAttribute("value");
+                setTimeout(function(){
+                    $("#difficulty-choice-modal").css("display", "none");
+                    showCountdown(chosenCategory, difficultyLevel);
+                },500);
+            });
+        }
+    }else {
+        setTimeout(selectDifficultyLevel, 500);
     }
 }
-/**********************Create start button after the category and level selection ****** */
+/**********************Countdown after category and level selection ****** */
 function showCountdown(chosenCategory, difficultyLevel) {
     getQuestionArray(chosenCategory, difficultyLevel);
 
     let messageHomepage = document.getElementById("message-homepage");
     messageHomepage.style.display = "none";
     
-    let goButtonSection = document.getElementById("go-button-section");
-    goButtonSection.style.display = "none";
+    let startButtonSection = document.getElementById("start-button-section");
+    startButtonSection.style.display = "none";
 
     let countdownSection = document.getElementById("countdown-section");
     countdownSection.style.display = "flex";
     countdown();
+}
+/**************get the question array from open trivia db  api************** */
+function getQuestionArray(chosenCategory, difficultyLevel){
+    getQuestionsAmount();
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET" , `https://opentdb.com/api.php?amount=${amountQuestions}&category=${chosenCategory}&difficulty=${difficultyLevel}`);
+    xhr.send();
+    xhr.onreadystatechange = function() {
+    if(this.readyState === 4 && this.status === 200) {
+        questionListArray = JSON.parse(this.responseText);
+        }
+    };
+    setTimeout(function() {
+        return questionListArray;
+    }, 500);
 }
 //***************************countdown sequence*********************** */
 //https://www.youtube.com/watch?v=vSV_Ml2_A88 tutorial
@@ -108,51 +135,29 @@ function countdown() {
         timeLeftDisplay.innerHTML = timeLeft;
         timeLeft -= 1;
     }, 1000);
-    setTimeout(function() {
-        startQuestions();
-    }, 3800);
+    setTimeout(startQuestions, 3800);
 }
 function getQuestionsAmount() {
     switch(difficultyLevel) {
         case "easy":
             amountQuestions = "10";
-            break;
+        break;
         case "medium":
             amountQuestions = "13";
-            break;
+        break;
         case "hard":
             amountQuestions = "15";
-            break;
+        break;
         default:
-        console.log("Error. Difficulty choice not recognized");
-        throw("Error. Difficulty choice not recognized. Aborting....");
+            errorDataMessage();
+        break;
     }
     return amountQuestions;
-
 }
-/**************get the question array from open trivia db  api************** */
-function getQuestionArray(chosenCategory, difficultyLevel){
-    getQuestionsAmount();
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET" , `https://opentdb.com/api.php?amount=${amountQuestions}&category=${chosenCategory}&difficulty=${difficultyLevel}`);
-    xhr.send();
-    xhr.onreadystatechange = function() {
-    if(this.readyState === 4 && this.status === 200) {
-        questionListArray = JSON.parse(this.responseText);
-        
-        }
-    };
-    setTimeout(function() {
-        return questionListArray;
-    }, 500);
-}
-// function to decode html special characters to compare the correct 
-// answer with multiple answer value after displayed on screen
-// function taken from stack overflow
-function decodeHtml(html) {
-    var txt = document.createElement("textarea");
-    txt.innerHTML = html;
-    return txt.value;
+/*****************display error in case not recognized data******** */
+function errorDataMessage() {
+    console.log("Error. Data not recognized");
+    throw("Error. Data not recognized. Aborting....");
 }
 //***************main game function********************** */
 function startQuestions(event) {
@@ -176,19 +181,34 @@ function startQuestions(event) {
         displayEndPage(vote, result, overallResult);
         continueBtn();
         resetBtn()
-        
     }
+}
+// function to decode html special characters to compare the correct 
+// answer with multiple answer value after displayed on screen
+// function taken from stack overflow
+function decodeHtml(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
 }
 function continueBtn() {
     let continueButton = document.getElementById("continue-button");
-    continueButton.addEventListener("click", continueGame);
+    if(continueButton) {
+        continueButton.addEventListener("click", continueGame);
+    }else {
+        setTimeout(continueBtn, 500);
+    }
 }
 function resetBtn() {
     let resetButton = document.getElementById("reset-button");
-    resetButton.addEventListener("click", resetGame);
+    if(resetButton) {
+        resetButton.addEventListener("click", resetGame);
+    }else {
+        setTimeout(resetBtn, 500);
+    }
 }
 /*****************function correct answer*************** */
-function isAnswerCorrect() {
+function answerCorrect() {
     incrementCorrect();
     overallCorrect++;
     i++;
@@ -204,7 +224,7 @@ function isAnswerCorrect() {
     }, 1000);
 }
 /*****************function incorrect boolean answer*********** */
-function booleanAnswerIsIncorrect() {
+function booleanAnswerIncorrect() {
     incrementIncorrect();
     overallIncorrect++;
     i++;
@@ -220,7 +240,7 @@ function booleanAnswerIsIncorrect() {
     }, 1000);
 }
 /********function incorrect multiple choice answer */
-function multipleChoiceAnswerIsIncorrect(correctAnswer) {
+function multipleChoiceAnswerIncorrect(correctAnswer) {
     incrementIncorrect();
     overallIncorrect++;
     i++;
@@ -296,51 +316,59 @@ function displayCorrectIncorrectCounter() {
 /*************** function check if boolean answer is correct******************** */
 function checkBooleanAnswer(correctAnswer) {
     let booleanAnswerButtons = document.getElementsByClassName("boolean-answer-button");
-    for (let button of booleanAnswerButtons) {
-        button.addEventListener("click", function() {
-            let value = this.getAttribute("value");
-            if(value === correctAnswer) {
-                this.style.backgroundColor = "green";
-                isAnswerCorrect();
-            } else {
-                this.style.backgroundColor = "red";
-                booleanAnswerIsIncorrect();
-            }
-        });
+    if(booleanAnswerButtons) {
+        for (let button of booleanAnswerButtons) {
+            button.addEventListener("click", function() {
+                let value = this.getAttribute("value");
+                if(value === correctAnswer) {
+                    this.style.backgroundColor = "green";
+                    answerCorrect();
+                } else {
+                    this.style.backgroundColor = "red";
+                    booleanAnswerIncorrect();
+                }
+            });
+        }
+    }else {
+        setTimeout(checkBooleanAnswer, 500);
     }
 }
 /**********************check multiple choice answer if correct *************/
 function checkMultipleChoiceAnswer(correctAnswer) {
     let multipleAnswerButtons = document.getElementsByClassName("multiple-answer-button");
-    for (let answerButton of multipleAnswerButtons) {
-        answerButton.addEventListener("click", function() {
-            let value = this.getAttribute("value");
-            if(value === correctAnswer) {
-                this.style.backgroundColor = "green";
-                isAnswerCorrect();
-            } else {
-                this.style.backgroundColor = "red";
-                multipleChoiceAnswerIsIncorrect(correctAnswer);
-            }
-        });
+    if(multipleAnswerButtons) {
+        for (let answerButton of multipleAnswerButtons) {
+            answerButton.addEventListener("click", function() {
+                let value = this.getAttribute("value");
+                if(value === correctAnswer) {
+                    this.style.backgroundColor = "green";
+                    answerCorrect();
+                } else {
+                    this.style.backgroundColor = "red";
+                    multipleChoiceAnswerIncorrect(correctAnswer);
+                }
+            });
+        }
+    }else {
+        setTimeout(checkMultipleChoiceAnswer, 500);
     }
 }
-// adding correct answer to the count
+// adding correct answer counter
 function incrementCorrect() {
     totCorrect = parseInt(document.getElementById("correct-number").innerHTML);
     document.getElementById("correct-number").innerHTML = ++totCorrect;
 }
-// adding incorrect answer to the count
+// adding incorrect answer to counter
 function incrementIncorrect() {
     totIncorrect = parseInt(document.getElementById("incorrect-number").innerHTML);
     document.getElementById("incorrect-number").innerHTML = ++totIncorrect;
 }
-// calculate the percentage of correct answers
+// calculate correct answers percentage
 function calculatePercentageCorrect() {
     result = parseFloat((totCorrect*100)/questionListArray.results.length).toFixed(2);
     return result;
 }
-// calculate the overall percentace of correct answers of the game session
+// calculate the overall correct answers percentage
 function overallPercentageCorrect() {
     overallQuestions = parseInt(overallCorrect + overallIncorrect);
     overallResult = parseFloat((overallCorrect*100)/overallQuestions).toFixed(2);
@@ -412,7 +440,6 @@ function storeResult() {
     localStorage.setItem("total correct", overallCorrect);
     localStorage.setItem("total incorrect", overallIncorrect);
     localStorage.setItem("percentage correct", overallResult);
-    console.log(localStorage);
 }
 /*******************function to share resul on twitter and facebook***************** */
 function shareResult() {
@@ -429,7 +456,7 @@ function continueGame() {
     `<div class="message-home" id="message-homepage">
         <h2>Get ready for round number ${nextRound}</h2>
     </div>
-    <div class="start-btn-section" id="go-button-section">
+    <div class="start-btn-section" id="start-button-section">
         <div class="row">
             <div class="col-12" id="homepage-btn-container">
                 <button class="start-game-btn" id="start-game-button"><span class="start-button-text">Start</span></button>
@@ -449,7 +476,7 @@ function continueGame() {
     totCorrect = 0;
     totIncorrect = 0;
     i = 0;
-    getStartBtn();
+    startGameBtn();
 }
 // function reset game
 function resetGame() {
