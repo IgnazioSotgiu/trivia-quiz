@@ -132,7 +132,8 @@ The wireframes were done using [balsamiq](https://balsamiq.com/)
 ### Tools:
 * [Github](https://github.com/) 
     * Git was used for version control and Gitpod.io to develop and push to the repository.    
-* Chrome developer tool  
+* Chrome developer tool 
+* Window.localStorage 
 * Microsoft Word
     * Microsoft Word for User Stories Sheet
 * [Balsamiq](https://balsamiq.com/) for wireframes  
@@ -346,7 +347,9 @@ https://www.youtube.com/watch?v=xodD0nw2veQ
 https://www.youtube.com/watch?v=YcEshVZNA5E&t=526s
 * For the testing:
 https://usersnap.com/blog/user-acceptance-testing-example/
-https://usersnap.com/blog/user-acceptance-testing-right/
+https://usersnap.com/blog/user-acceptance-testing-right/  
+* Local storage javascript tutorial:
+https://blog.logrocket.com/localstorage-javascript-complete-guide/
 ## Acknowledgements:  
 I receive inspiration and guidance for this project from:
 

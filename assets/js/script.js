@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function navLinkResetBtn() {
     let navResetBtn = document.getElementById("reset-btn");
     if(navResetBtn) {
-        navResetBtn.addEventListener("click", resetGame);
+        navResetBtn.addEventListener("click", displayWarning);
     }else {
         setTimeout(navLinkResetBtn, 500);
     }
@@ -202,7 +202,7 @@ function continueBtn() {
 function resetBtn() {
     let resetButton = document.getElementById("reset-button");
     if(resetButton) {
-        resetButton.addEventListener("click", resetGame);
+        resetButton.addEventListener("click", displayWarning);
     }else {
         setTimeout(resetBtn, 500);
     }
@@ -592,4 +592,32 @@ function disableMultipleChoiceButtons(){
         answerButton.disabled = false;
         }
     }, 1500);  
+}
+/**************function display warning contrainer************** */
+function displayWarning(event) {
+    event.preventDefault();
+    $("#warning-container").css("display", "block");
+    let warningButtons = document.getElementsByClassName("reset-warning-btn");
+    for(let warningButton of warningButtons)
+        warningButton.addEventListener("click", function() {
+        let resetChoice = this.getAttribute("value");
+        console.log(resetChoice);
+        if(resetChoice === "cancel") {
+            $("#warning-container").css("display", "none");
+        }else if(resetChoice === "reset") {
+            resetGame();
+            $(".swal-overlay").css("display", "block");
+            swal({
+                title: "Data Deleted",
+                icon: "success",
+            });
+            setTimeout(function() {
+                $(".swal-overlay").css("display", "none");
+                $("#warning-container").css("display", "none");
+            }, 1000);
+            location.reload();
+        }else {
+            errorDataMessage();
+        }
+    });
 }
