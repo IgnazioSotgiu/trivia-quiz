@@ -201,7 +201,7 @@ Find the testing information in a separate file:
 
 ## Bugs 
 Here the bugs found during development and testing the website:
-The following steps were followed when the bug was found:  
+The following steps were used when the bug was found:  
 
 
 Following the steps to trigger and report the bug:
@@ -297,6 +297,50 @@ On mobile device only a white vertical band appear in the screen on the right fo
     Find a solution on stack overflow website:  
     Passing the multipleAnswer array thorough the shuffle functions will assign each array value a random position.
     ![](./assets/docs/bugs/bug#5.png)    
+
+### Bug #6    
+
+1.  **Give Short bug description:**  
+    The welcome message and start button in the homepage doesn't stay at the center of the screen.
+1.  **Steps to trigger the bug:**  
+    1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/   
+    1. In bigger screens the message stays on the top part of the page  
+1. **Description of the unwanted behaviour:**  
+    The message should stay in the center of the page but when the screens is large the user can see the message staying on top leaving a large part of the screen empty.
+    ![](./assets/docs/bugs/bug#6.png) 
+1. **Solution found:**  
+    Using flexbox I was able to get responsive positioning of the message depending of the size of the screen used.
+    ![](./assets/docs/bugs/bug#6.1.png)  
+
+### Bug #7    
+
+1.  **Give Short bug description:**  
+    In the game if user clicks quickly the answer button many times the program will count those clicks and add correct/incorrect question count. Also the program will skip question number so the user will have less questions to answer.
+1.  **Steps to trigger the bug:**  
+    1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/  
+    1. Click Start button  
+    1. Choose a Category
+    1. Choose a Difficulty Level
+    1. Wait for the countdown screen to show the first question
+    1. Click rapidly a numberof times on any button
+1. **Description of the unwanted behaviour:**  
+    The game will add a number of clicks to the counter and the game will skip a number of questions 
+1. **Solution found:**  
+    Deactivate the buttons after the user first click solve the problem. Then adding a timeout to activate the buttons again for the user's next question
+    ![](./assets/docs/bugs/bug#7.png)   
+
+### Bug #8    
+
+1.  **Give Short bug description:**  
+    The warning message after the reset button is clicked doesn't stay in the center of the screen
+1.  **Steps to trigger the bug:**  
+    1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/  
+    1. Click the reset button on the navbar
+1. **Description of the unwanted behaviour:**  
+    The warning message is not centered. In the reset button in the ent of the game page this behaviour is more noticeable
+1. **Solution found:**  
+    Give warning container position fixed.
+    ![](./assets/docs/bugs/bug#8.png)  
 ---
 
 ## Deployment

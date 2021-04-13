@@ -63,6 +63,7 @@ function selectCategory() {
     if(categories) {
         for(let category of categories) {
             category.addEventListener("click", function() {
+                disableCategoryButtons();
                 chosenCategory = this.getAttribute("value");
                 this.style.backgroundColor = "rgb(42, 235, 42)";
                 setTimeout(function(){
@@ -82,6 +83,7 @@ function selectDifficultyLevel() {
     if(difficulties)  {
         for(let difficulty of difficulties) {
             difficulty.addEventListener("click", function() {
+                disableDifficultyLevelButtons();
                 difficultyLevel = this.getAttribute("value");
                 setTimeout(function(){
                     $("#difficulty-choice-modal").css("display", "none");
@@ -570,6 +572,33 @@ function changeMode() {
     document.body.classList.toggle('light-theme');
     document.body.classList.toggle('dark-theme');
 }
+/***************disable buttons after selection********************* */
+function disableCategoryButtons(){
+    let categories = document.getElementsByClassName("category-choice-btn");
+    if(categories) {
+        for(let category of categories) {
+            category.disabled = true;
+        }
+        setTimeout(function() {
+            for(let category of categories) {
+                category.disabled = false;
+            }
+        }, 500);
+    }
+}
+function disableDifficultyLevelButtons() {
+    let difficulties = document.getElementsByClassName("difficulty-sel-input");
+    if(difficulties)  {
+        for(let difficulty of difficulties) {
+            difficulty.disabled = true;
+        }
+        setTimeout(function() {
+            for(let difficulty of difficulties) {
+            difficulty.disabled = false;
+            }
+        }, 500);
+    }
+}
 /***************disable buttons after answer********************* */
 function disableBooleanButtons(){
     let booleanAnswerButtons = document.getElementsByClassName("boolean-answer-button");
@@ -608,14 +637,14 @@ function displayWarning(event) {
             resetGame();
             $(".swal-overlay").css("display", "block");
             swal({
-                title: "Data Deleted",
+                title: "Reset",
                 icon: "success",
             });
             setTimeout(function() {
                 $(".swal-overlay").css("display", "none");
                 $("#warning-container").css("display", "none");
-            }, 1000);
-            location.reload();
+                location.reload();
+            }, 1500);
         }else {
             errorDataMessage();
         }
