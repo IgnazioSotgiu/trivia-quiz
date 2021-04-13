@@ -3,7 +3,7 @@
 ---  
 
 Trivia Quiz is a website designed to entertain and encourage the users to test their knowledge on different fields or subjects, answering different questions, challenging themselves to improve their performance with different difficulty levels.    
-Before starting the game the user will be able to choose the category and the level of difficulty and then will start the question challenge. The question type is chosen randomly from the remote API, and can be a True/False or a multiple choice.  
+Before starting the game the user will be able to choose the category and the level of difficulty and then will start the question challenge. The questions are chosen randomly from the remote API. The type of questions will be a True/False or a multiple choice.  
 
 ![](./assets/docs/mockup-trivia-quiz.png)  
 
@@ -60,6 +60,9 @@ Find the trade-offs in [this link](./assets/docs/strategy-plane-trivia-quiz.pdf)
 ![](./assets/docs/user-stories-screenshots/user-stories-7.png)
 1. As a user I want to be able to contact the owner to give feedback.
 ![](./assets/docs/user-stories-screenshots/user-stories-8.png)
+1. As a user I want my score to be saved and loaded for me when I go back to play.
+1. As a user I want to be able to reset the score of the game.  
+![](./assets/docs/user-stories-screenshots/user-stories-9.1.png)
 1. As an owner I create an interactive Trivia Quiz Website to attract and entertain people on my website.  
 ![](./assets/docs/user-stories-screenshots/user-stories-9.png)
 1. As an owner I want my website to have appealing design and colour theme choice to make the user experience more pleasant and enjoyable.  
@@ -67,7 +70,6 @@ Find the trade-offs in [this link](./assets/docs/strategy-plane-trivia-quiz.pdf)
 1. As an owner I create Trivia Quiz to enable people to challenge one another sharing their best results.  
 ![](./assets/docs/user-stories-screenshots/user-stories-7.png)
 1. As an owner I create Trivia Quiz contact form to allow client to contribute with game improvements ideas. 
-
 ![](./assets/docs/user-stories-screenshots/user-stories-8.png)
 1. As an owner I want to create a newsletter registration form to allow users that wish to do so to enter their details.   
 ![](./assets/docs/user-stories-screenshots/user-stories-13.png)
@@ -78,7 +80,11 @@ Find the trade-offs in [this link](./assets/docs/strategy-plane-trivia-quiz.pdf)
 1. As an owner I want my website to have a contact form to allow user to leave feedbacks.  
 ![](./assets/docs/user-stories-screenshots/user-stories-8.png)
 1. As an owner I want my website to have a light/dark mode button to allow user to choose the theme they prefer.  
-![](./assets/docs/user-stories-screenshots/user-stories-6.png)
+![](./assets/docs/user-stories-screenshots/user-stories-6.png)  
+1. As a owner I want the user's score to be kept until the user will decide to reset it.  
+![](./assets/docs/user-stories-screenshots/user-stories-9.1.png)  
+1. As a owner I want a warning message to be displayed to warn the user before the score is reset.  
+![](./assets/docs/user-stories-screenshots/user-stories-21.png) 
 
 ## Future possible implementations:  
 1. Overtime after a good numbers of users promote ads space for sale in the website.  
