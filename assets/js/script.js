@@ -211,15 +211,14 @@ function resetBtn() {
 function answerCorrect() {
     incrementCorrect();
     overallCorrect++;
-    i++;
-    $(".swal-button, .swal-overlay").css("display", "block");
+    i++;  
+    $(".swal-overlay").css("display", "block");
     swal({
         title: "Good job!",
         icon: "success",
-        button: "OK",
     });
     setTimeout(function(){
-        $(".swal-button, .swal-overlay").css("display", "none");
+        $(".swal-overlay").css("display", "none");
         startQuestions();
     }, 1000);
 }
@@ -228,14 +227,13 @@ function booleanAnswerIncorrect() {
     incrementIncorrect();
     overallIncorrect++;
     i++;
-    $(".swal-button, .swal-overlay").css("display", "block");
+    $(".swal-overlay").css("display", "block");
     swal({
         title: "Incorrect!",
         icon: "error",
-        button: "OK",
         });
     setTimeout(function(){
-        $(".swal-button, .swal-overlay").css("display", "none");
+        $(".swal-overlay").css("display", "none");
         startQuestions();
     }, 1000);
 }
@@ -244,15 +242,14 @@ function multipleChoiceAnswerIncorrect(correctAnswer) {
     incrementIncorrect();
     overallIncorrect++;
     i++;
-    $(".swal-button, .swal-overlay").css("display", "block");
+    $(".swal-overlay").css("display", "block");
     swal({
         title: "Incorrect!",
         icon: "error",                            
         text: `The correct answer was ${correctAnswer}`,
-        button: "OK",
         });
     setTimeout(function(){
-        $(".swal-button, .swal-overlay").css("display", "none");
+        $(".swal-overlay").css("display", "none");
         startQuestions();
     }, 1500);
 }
@@ -319,6 +316,7 @@ function checkBooleanAnswer(correctAnswer) {
     if(booleanAnswerButtons) {
         for (let button of booleanAnswerButtons) {
             button.addEventListener("click", function() {
+                disableBooleanButtons();
                 let value = this.getAttribute("value");
                 if(value === correctAnswer) {
                     this.style.backgroundColor = "green";
@@ -339,6 +337,7 @@ function checkMultipleChoiceAnswer(correctAnswer) {
     if(multipleAnswerButtons) {
         for (let answerButton of multipleAnswerButtons) {
             answerButton.addEventListener("click", function() {
+                disableMultipleChoiceButtons();
                 let value = this.getAttribute("value");
                 if(value === correctAnswer) {
                     this.style.backgroundColor = "green";
@@ -570,4 +569,27 @@ darkLightToggle.addEventListener("click", changeMode);
 function changeMode() {
     document.body.classList.toggle('light-theme');
     document.body.classList.toggle('dark-theme');
+}
+/***************disable buttons after answer********************* */
+function disableBooleanButtons(){
+    let booleanAnswerButtons = document.getElementsByClassName("boolean-answer-button");
+    for (let button of booleanAnswerButtons) {
+        button.disabled = true;
+    }
+    setTimeout(function() {
+        for (let button of booleanAnswerButtons) {
+        button.disabled = false;
+        }
+    }, 1000);  
+}
+function disableMultipleChoiceButtons(){
+    let multipleAnswerButtons = document.getElementsByClassName("multiple-answer-button");
+    for (let answerButton of multipleAnswerButtons) {
+        answerButton.disabled = true;
+    }
+    setTimeout(function() {
+        for (let answerButton of multipleAnswerButtons) {
+        answerButton.disabled = false;
+        }
+    }, 1500);  
 }

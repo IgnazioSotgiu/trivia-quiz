@@ -41,7 +41,7 @@ function validateEmail(email) {
 
 function messageMissingField(contactName, validEmail, contactEnquiry) {
     if(!contactName){
-        $(".swal-button, .swal-overlay").css("display", "block");
+        $(".swal-overlay").css("display", "block");
         swal({
             title: "Error!",
             icon: "info",
@@ -49,7 +49,7 @@ function messageMissingField(contactName, validEmail, contactEnquiry) {
             button: "OK",
         });
     } else if(!validEmail) {
-        $(".swal-button, .swal-overlay").css("display", "block");
+        $(".swal-overlay").css("display", "block");
         swal({
             title: "Error!",
             icon: "info",
@@ -57,7 +57,7 @@ function messageMissingField(contactName, validEmail, contactEnquiry) {
             button: "OK",
         });
     } else {
-        $(".swal-button, .swal-overlay").css("display", "block");
+        $(".swal-overlay").css("display", "block");
         swal({
             title: "Error!",
             icon: "info",
@@ -68,7 +68,7 @@ function messageMissingField(contactName, validEmail, contactEnquiry) {
 }
 
 function messageSuccess() {
-    $(".swal-button, .swal-overlay").css("display", "block");
+    $(".swal-overlay").css("display", "block");
     swal({
         title: "Success!",
         icon: "success",
@@ -76,14 +76,14 @@ function messageSuccess() {
         button: "OK",
     });
     setTimeout(function(){
-        $(".swal-button, .swal-overlay").css("display", "none");
+        $(".swal-overlay").css("display", "none");
         $("#contact-modal").css("display", "none");
         $("#registration-modal").css("display", "none");
     }, 3000);
 }
 
 function messageError() {
-    $(".swal-button, .swal-overlay").css("display", "block");
+    $(".swal-overlay").css("display", "block");
     swal({
         title: "Error!",
         icon: "error",
@@ -116,7 +116,7 @@ function checkRegistrationForm(event) {
 
 function messageMissingRegistrationField(registrationName, validRegistrationEmail, newsletter) {
     if(!registrationName){
-        $(".swal-button, .swal-overlay").css("display", "block");
+        $(".swal-overlay").css("display", "block");
         swal({
             title: "Error!",
             icon: "info",
@@ -124,7 +124,7 @@ function messageMissingRegistrationField(registrationName, validRegistrationEmai
             button: "OK",
         });
     } else if(!validRegistrationEmail) {
-        $(".swal-button, .swal-overlay").css("display", "block");
+        $(".swal-overlay").css("display", "block");
         swal({
             title: "Error!",
             icon: "info",
@@ -132,7 +132,7 @@ function messageMissingRegistrationField(registrationName, validRegistrationEmai
             button: "OK",
         });
     } else {
-        $(".swal-button, .swal-overlay").css("display", "block");
+        $(".swal-overlay").css("display", "block");
         swal({
             title: "Error!",
             icon: "info",

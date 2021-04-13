@@ -43,8 +43,15 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 20px;
-    border: 1px solid red;
-    background-color: red;
+    border: 1px solid #ff0000;
+    background-color: #ff0000;
+}
+.reset-link:hover {
+    background-color: #a20606;
+}
+.reset-nav-link:hover {
+    color: #fafafa;
+    text-decoration: none;
 }
 /***toggle dark light mode switch from tutorial https://www.youtube.com/watch?v=xodD0nw2veQ**/
 .change-mode-icon {
@@ -249,7 +256,7 @@ footer {
 }
 /***********************question display and answers buttons************************/
 .question-container {
-    margin-top: 50px;
+    margin: 50px 50px 0;
     padding: 20px;
     text-align: center;
     color: var(--questionColor);
@@ -369,10 +376,20 @@ footer {
     letter-spacing: 2px;
     background-color: #ff0000;
 }
+.end-button-container button.reset-btn:hover {
+    background-color: #a20606;
+    border: transparent;
+    color: #fafafa;
+}
 .end-button-container button#continue-button {
     font-size: 20px;
     letter-spacing: 2px;
     background-color: #008000;
+}
+.end-button-container button#continue-button:hover{
+    color: #fafafa;
+    border: transparent;
+    background-color: #094e09;
 }
 /******************links to share result********************/
 /**************code taken fron youtube tutorial https://www.youtube.com/watch?v=YcEshVZNA5E*/
@@ -454,7 +471,7 @@ button#share-btn:focus {
 }
 /*************************sweet alert modal style*********************/
 .swal-overlay {
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.50);
 }
 .swal-modal {
     background-color: var(--swalModalBgColor);
