@@ -56,7 +56,7 @@ function startGameBtn() {
         setTimeout(startGameBtn, 500);
     }
 }
-//***************category selection function************************* */
+//category selection
 function selectCategory() {
     openSelectCategoryModal();
     let categories = document.getElementsByClassName("category-choice-btn");
@@ -76,7 +76,7 @@ function selectCategory() {
         setTimeout(selectCategory, 500);
     }
 }
-/******************************difficulty level selection function************** */
+//difficulty level selection
 function selectDifficultyLevel() {
     openDifficultyLevelModal();
     let difficulties = document.getElementsByClassName("difficulty-sel-input");
@@ -95,7 +95,7 @@ function selectDifficultyLevel() {
         setTimeout(selectDifficultyLevel, 500);
     }
 }
-/**********************Countdown after category and level selection ****** */
+//Countdown after category and level selection
 function showCountdown(chosenCategory, difficultyLevel) {
     getQuestionArray(chosenCategory, difficultyLevel);
 
@@ -109,7 +109,7 @@ function showCountdown(chosenCategory, difficultyLevel) {
     countdownSection.style.display = "flex";
     countdown();
 }
-/**************get the question array from open trivia db  api************** */
+//get the question array from open trivia db api
 function getQuestionArray(chosenCategory, difficultyLevel){
     getQuestionsAmount();
     let xhr = new XMLHttpRequest();
@@ -124,8 +124,7 @@ function getQuestionArray(chosenCategory, difficultyLevel){
         return questionListArray;
     }, 500);
 }
-//***************************countdown sequence*********************** */
-//https://www.youtube.com/watch?v=vSV_Ml2_A88 tutorial
+//countdown sequence
 function countdown() {
     let timeLeftDisplay = document.getElementById("time-left");
     let timeLeft = 3;
@@ -156,12 +155,12 @@ function getQuestionsAmount() {
     }
     return amountQuestions;
 }
-/*****************display error in case not recognized data******** */
+//display error in case not recognized data
 function errorDataMessage() {
     console.log("Error. Data not recognized");
     throw("Error. Data not recognized. Aborting....");
 }
-//***************main game function********************** */
+//main game function
 function startQuestions(event) {
     if (i < questionListArray.results.length) {
         let correctAnswer = decodeHtml(questionListArray.results[i].correct_answer);
@@ -182,12 +181,10 @@ function startQuestions(event) {
         giveTestEvaluation(result);
         displayEndPage(vote, result, overallResult);
         continueBtn();
-        resetBtn()
+        resetBtn();
     }
 }
-// function to decode html special characters to compare the correct 
-// answer with multiple answer value after displayed on screen
-// function taken from stack overflow
+// function taken from stack overflow before comparing answer to correct answer
 function decodeHtml(html) {
     var txt = document.createElement("textarea");
     txt.innerHTML = html;
@@ -209,7 +206,7 @@ function resetBtn() {
         setTimeout(resetBtn, 500);
     }
 }
-/*****************function correct answer*************** */
+//correct answer message
 function answerCorrect() {
     incrementCorrect();
     overallCorrect++;
@@ -224,7 +221,7 @@ function answerCorrect() {
         startQuestions();
     }, 1000);
 }
-/*****************function incorrect boolean answer*********** */
+//incorrect boolean answer message
 function booleanAnswerIncorrect() {
     incrementIncorrect();
     overallIncorrect++;
@@ -239,7 +236,7 @@ function booleanAnswerIncorrect() {
         startQuestions();
     }, 1000);
 }
-/********function incorrect multiple choice answer */
+//incorrect multiple choice answer message
 function multipleChoiceAnswerIncorrect(correctAnswer) {
     incrementIncorrect();
     overallIncorrect++;
@@ -255,7 +252,6 @@ function multipleChoiceAnswerIncorrect(correctAnswer) {
         startQuestions();
     }, 1500);
 }
-/******************function display question************ */
 function displayQuestion() {
     document.getElementById("replace-question-container").innerHTML =
     `<div class="question-container">
@@ -264,7 +260,7 @@ function displayQuestion() {
         <p id="question-text">${questionListArray.results[i].question}</p>
     </div>`;
 }
-/******************function display boolean true / false buttons************* */
+//display boolean true / false buttons
 function displayBooleanAnswerButtons() {
     document.getElementById("replace-question-container").innerHTML +=
     `<div class="boolean-answer-container">
@@ -272,7 +268,7 @@ function displayBooleanAnswerButtons() {
         <button type="button" value="False" class="btn btn-danger boolean-answer-button">False</button>
     </div>`;
 }
-/******************function display multiple choice buttons************** */
+//display multiple choice buttons
 function displayMultipleChoiceAnswerButtons() {
     let multipleAnswers = [questionListArray.results[i].incorrect_answers[0],questionListArray.results[i].incorrect_answers[1], questionListArray.results[i].incorrect_answers[2], questionListArray.results[i].correct_answer];
     shuffle(multipleAnswers);
@@ -292,7 +288,7 @@ function displayMultipleChoiceAnswerButtons() {
         </div>
     </div>`;
 }
-/********************incorrect question type message display************** */
+//incorrect question type message
 function incorrectQuestionTypeMessage() {
     document.getElementById("replace-question-container").innerHTML +=
     `<div>
@@ -300,7 +296,7 @@ function incorrectQuestionTypeMessage() {
     </div>`;
     throw "Error... Incorrect question type... Aborting...";
 }
-/*****************display correct/incorrect question counter**************** */
+//correct/incorrect question counter
 function displayCorrectIncorrectCounter() {
     document.getElementById("replace-question-container").innerHTML +=
     `<div class="row counter-container">
@@ -312,7 +308,7 @@ function displayCorrectIncorrectCounter() {
         </div>    
     </div>`;
 }
-/*************** function check if boolean answer is correct******************** */
+//check boolean answer
 function checkBooleanAnswer(correctAnswer) {
     let booleanAnswerButtons = document.getElementsByClassName("boolean-answer-button");
     if(booleanAnswerButtons) {
@@ -333,7 +329,7 @@ function checkBooleanAnswer(correctAnswer) {
         setTimeout(checkBooleanAnswer, 500);
     }
 }
-/**********************check multiple choice answer if correct *************/
+//check multiple choice answer
 function checkMultipleChoiceAnswer(correctAnswer) {
     let multipleAnswerButtons = document.getElementsByClassName("multiple-answer-button");
     if(multipleAnswerButtons) {
@@ -354,29 +350,28 @@ function checkMultipleChoiceAnswer(correctAnswer) {
         setTimeout(checkMultipleChoiceAnswer, 500);
     }
 }
-// adding correct answer counter
+// adding correct answer
 function incrementCorrect() {
     totCorrect = parseInt(document.getElementById("correct-number").innerHTML);
     document.getElementById("correct-number").innerHTML = ++totCorrect;
 }
-// adding incorrect answer to counter
+// adding incorrect answer
 function incrementIncorrect() {
     totIncorrect = parseInt(document.getElementById("incorrect-number").innerHTML);
     document.getElementById("incorrect-number").innerHTML = ++totIncorrect;
 }
-// calculate correct answers percentage
+// calculate correct percentage
 function calculatePercentageCorrect() {
     result = parseFloat((totCorrect*100)/questionListArray.results.length).toFixed(2);
     return result;
 }
-// calculate the overall correct answers percentage
+// calculate the overall correct percentage
 function overallPercentageCorrect() {
     overallQuestions = parseInt(overallCorrect + overallIncorrect);
     overallResult = parseFloat((overallCorrect*100)/overallQuestions).toFixed(2);
     return overallResult;
-}
-// Depending of the value of the variable result 
-// evaluate the user performance in the test
+} 
+// assign user performance in the test
 function giveTestEvaluation(result) {
     if(result == 100.00) {
         vote = "You got top score... Perfect!";
@@ -393,7 +388,7 @@ function giveTestEvaluation(result) {
     }
     return vote;
 }
-// Display the final screen with the results of the test
+// Display results of the test
 function displayEndPage() {
     questionRound++;
     document.getElementById("replace-question-container").innerHTML =
@@ -442,7 +437,7 @@ function storeResult() {
     localStorage.setItem("total incorrect", overallIncorrect);
     localStorage.setItem("percentage correct", overallResult);
 }
-/*******************function to share resul on twitter and facebook***************** */
+//share result on twitter and facebook
 function shareResult() {
     let toggleButton = document.getElementById("tggl-btn");
     let shareBox = document.getElementById("share-box");
@@ -450,7 +445,7 @@ function shareResult() {
         toggleButton.classList.toggle("active");
     });
 }
-/************function to continue with new round of questions keeping the overall score */
+//continue with new round of questions
 function continueGame() {
     let nextRound = (questionRound + 1);
     document.getElementById("replace-question-container").innerHTML =
@@ -479,11 +474,11 @@ function continueGame() {
     i = 0;
     startGameBtn();
 }
-// function reset game
+//reset game
 function resetGame() {
     localStorage.clear();
 }
-// function taken from stack overflow
+//taken from stack overflow
 function shuffle(multipleAnswers) {
     var currentIndex = multipleAnswers.length, temporaryValue, randomIndex;
     while (0 !== currentIndex) {
@@ -495,8 +490,8 @@ function shuffle(multipleAnswers) {
     }
     return multipleAnswers;
 }
-/**************************modal section*********************************** */
-/***************************difficulty level modal************************** */
+//modal section
+//difficulty level 
 function openDifficultyLevelModal() {
     let difficultyChoiceModal = document.getElementById("difficulty-choice-modal");
     difficultyChoiceModal.style.display = "block";
@@ -506,7 +501,7 @@ function openDifficultyLevelModal() {
         }
     };
 }
-/*****************************category selection modal******************** */
+//category selection 
 function openSelectCategoryModal() {
     let categoryChoiceModal = document.getElementById("category-choice-modal");
     categoryChoiceModal.style.display = "block";
@@ -516,7 +511,7 @@ function openSelectCategoryModal() {
         }
     };
 }
-/****************************instructions modal******************************/
+//instructions
 let instructionsLink = document.getElementById("instructions-link");
 let instructionsModal = document.getElementById("instructions-modal");
 instructionsLink.addEventListener("click", function() {
@@ -535,7 +530,7 @@ instructionsLink.addEventListener("click", function() {
         instructionsModal.style.display = "none";
     });
 });
-/**********************contact modal******************************/
+//contact us
 let contactLink = document.getElementById("contact-link");
 let contactModal = document.getElementById("contact-modal");
 contactLink.addEventListener("click", function() {
@@ -550,7 +545,7 @@ contactLink.addEventListener("click", function() {
         contactModal.style.display = "none";
     });
 });
-/**********************registration modal******************************/
+//registration modal
 let registrationLink = document.getElementById("registration-link");
 let registrationModal = document.getElementById("registration-modal");
 registrationLink.addEventListener("click", function() {
@@ -565,14 +560,14 @@ registrationLink.addEventListener("click", function() {
         registrationModal.style.display = "none";
     });
 });
-/********************switching dark light mode************************** */
+//switching dark light mode
 let darkLightToggle = document.getElementById("dark-light-toggle");
 darkLightToggle.addEventListener("click", changeMode);
 function changeMode() {
     document.body.classList.toggle('light-theme');
     document.body.classList.toggle('dark-theme');
 }
-/***************disable buttons after selection********************* */
+//disable buttons after selection
 function disableCategoryButtons(){
     let categories = document.getElementsByClassName("category-choice-btn");
     if(categories) {
@@ -599,7 +594,7 @@ function disableDifficultyLevelButtons() {
         }, 500);
     }
 }
-/***************disable buttons after answer********************* */
+//disable buttons after answer
 function disableBooleanButtons(){
     let booleanAnswerButtons = document.getElementsByClassName("boolean-answer-button");
     for (let button of booleanAnswerButtons) {
@@ -622,7 +617,7 @@ function disableMultipleChoiceButtons(){
         }
     }, 1500);  
 }
-/**************function display warning contrainer************** */
+//display warning
 function displayWarning(event) {
     event.preventDefault();
     $("#warning-container").css("display", "block");
@@ -630,7 +625,6 @@ function displayWarning(event) {
     for(let warningButton of warningButtons)
         warningButton.addEventListener("click", function() {
         let resetChoice = this.getAttribute("value");
-        console.log(resetChoice);
         if(resetChoice === "cancel") {
             $("#warning-container").css("display", "none");
         }else if(resetChoice === "reset") {

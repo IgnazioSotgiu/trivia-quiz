@@ -33,7 +33,7 @@ function checkForm(event) {
     }
 }
 
-/************function taken from stack overflow*********** */
+//function taken from stack overflow
 function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
@@ -96,7 +96,7 @@ function messageError() {
 }
 
 
-//******sending email with details for registration to Newsletter****** */
+//sending email with details for registration to Newsletter
 let registrationBtn = document.getElementById("registration-submit-btn");
 registrationBtn.addEventListener("click", checkRegistrationForm);
 
