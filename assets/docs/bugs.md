@@ -10,7 +10,7 @@ On mobile device only a white vertical band appear in the screen on the right fo
     1. Select mobile view with the icon on the top left of developer tool windows  
 1. **Description of the unwanted behaviour:**  
     A white band appear on the right and on the bottom of the mobile screen  
-    ![](./bugs/bug#1.png)   
+    ![](./bugs/bug-1.png)  
 1. **Solution found:**  
     Find a solution on stack overflow website:  
     Added overflow-x hidden and relative position for html and body  
@@ -23,7 +23,7 @@ On mobile device only a white vertical band appear in the screen on the right fo
     Open the website https://ignaziosotgiu.github.io/trivia-quiz/    
 1. **Description of the unwanted behaviour:**  
     The footer stays in the middle of the page  
-    ![](./bugs/bug#2.png)   
+    ![](./bugs/bug-2.png)   
 1. **Solution found:**  
     Find a solution on stack overflow website:  
     1. Added relative position to the html and body elements  
@@ -46,7 +46,7 @@ On mobile device only a white vertical band appear in the screen on the right fo
 1. **Solution found:**  
     Find a solution on stack overflow website:  
     Added the validateEmail function in sendEmail.js to check for valid email address for both Registration and Contact Us form 
-    ![](./bugs/bug#3.png)  
+    ![](./bugs/bug-3.png)  
 
 ### Bug #4    
 
@@ -66,7 +66,7 @@ On mobile device only a white vertical band appear in the screen on the right fo
 1. **Solution found:**  
     Find a solution on stack overflow website:  
     Added decodeHtml function to store the value of correct answer in html element and then store it from there into the correctAnswer variable. This way both answer will be read from html elements so the value will match in case of a correct answer.
-    ![](./bugs/bug#4.png)    
+    ![](./bugs/bug-4.png)    
 
 ### Bug #5    
 
@@ -83,7 +83,7 @@ On mobile device only a white vertical band appear in the screen on the right fo
 1. **Solution found:**  
     Find a solution on stack overflow website:  
     Passing the multipleAnswer array thorough the shuffle functions will assign each array value a random position.
-    ![](./bugs/bug#5.png)    
+    ![](./bugs/bug-5.png)    
 
 ### Bug #6    
 
@@ -94,10 +94,10 @@ On mobile device only a white vertical band appear in the screen on the right fo
     1. In bigger screens the message stays on the top part of the page  
 1. **Description of the unwanted behaviour:**  
     The message should stay in the center of the page but when the screens is large the user can see the message staying on top leaving a large part of the screen empty.
-    ![](./bugs/bug#6.png) 
+    ![](./bugs/bug-6.png) 
 1. **Solution found:**  
     Using flexbox I was able to get responsive positioning of the message depending of the size of the screen used.
-    ![](./bugs/bug#6.1.png)  
+    ![](./bugs/bug-6.1.png)  
 
 ### Bug #7    
 
@@ -114,7 +114,7 @@ On mobile device only a white vertical band appear in the screen on the right fo
     The game will add a number of clicks to the counter and the game will skip a number of questions 
 1. **Solution found:**  
     Deactivate the buttons after the user first click solve the problem. Then adding a timeout to activate the buttons again for the user's next question
-    ![](./bugs/bug#7.png)   
+    ![](./bugs/bug-7.png)   
 
 ### Bug #8    
 
@@ -125,7 +125,7 @@ On mobile device only a white vertical band appear in the screen on the right fo
     1. Click the reset button on the navbar
 1. **Description of the unwanted behaviour:**  
     The warning message is not centered. In the reset button in the ent of the game page this behaviour is more noticeable
-    ![](./bugs/bug#8.png)
+    ![](./bugs/bug-8.png)
 1. **Solution found:**  
     Give warning container position fixed.
      
