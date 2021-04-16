@@ -173,9 +173,9 @@ This is the procedure that I follow to deploy the final version to Github pages:
 1. Open Chrome browser on my Computer  
 1. Navigate to github.com
 1. Log in with my name and password to access my repositories
-1. On the top left, in the search function input "Trivia Quiz" to find repository
+1. On the top left, in the search input "Trivia Quiz" to find repository
 1. Click on "IgnazioSotgiu/trivia-quiz" to open repository
-1. Click on the Settings link on the repository menu
+1. Click on the Settings on the repository menu
 1. Scroll down to the Github Pages section
 1. In the source button select Branch: master
 1. Once the Branch is selected save the changes with the button on the right
@@ -187,7 +187,7 @@ This is the procedure that I follow to deploy the final version to Github pages:
 1. Navigate to "IgnazioSotgiu/trivia-quiz" repository  
 1. Click on "IgnazioSotgiu/trivia-quiz" to open repository
 1. Click on the Code button
-1. Select copy the URL in the dropbox
+1. Select copy the URL in the dropdown menu
 1. Open your favourite IDE and select source
 1. Paste the URL and then you can navigate through the repository files
 

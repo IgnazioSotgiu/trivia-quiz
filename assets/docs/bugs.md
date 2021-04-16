@@ -3,7 +3,7 @@
 ### Bug #1
 
 1.  **Give Short bug description:**  
-On mobile device only a white vertical band appear in the screen on the right for the full height of the page also a white space appear at the bottom of the page for the full width of the screen 
+On mobile device a white vertical band appear in the screen on the right for the full height of the page also a white space appear at the bottom of the page for the full width of the screen 
 1.  **Steps to trigger the bug:**  
     1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/  with chrome browser 
     1. Open chrome developer tool  
@@ -20,9 +20,10 @@ On mobile device only a white vertical band appear in the screen on the right fo
 1.  **Give Short bug description:**  
     Website footer doesn't stay on the bottom of the page. 
 1.  **Steps to trigger the bug:**  
-    Open the website https://ignaziosotgiu.github.io/trivia-quiz/    
+    Open the website https://ignaziosotgiu.github.io/trivia-quiz/ 
+    Scroll down to the footer of the page   
 1. **Description of the unwanted behaviour:**  
-    The footer stays in the middle of the page  
+    The footer doesn't stay at the bottom of the page  
     ![](./bugs/bug-2.png)   
 1. **Solution found:**  
     Find a solution on stack overflow website:  
@@ -52,7 +53,7 @@ On mobile device only a white vertical band appear in the screen on the right fo
 
 1.  **Give Short bug description:**  
     When getting the questions array from the API I store the correct answer value in correctAnswer variable.
-    The issue happened when some html characters are present. For example the ' character is store in the variable as #&039 t=from the API. The answer value selected from html page will store the character as ' .When the program will compare the answer selected by the user with the correct answer stored in the variable the 2 value will be considered different and the program will count an incorrect answer even if the user would have selected the correct choice.
+    The issue happens when some html characters are present. For example the ' character is store in the variable as #&039 from the API. The answer value selected from html page will store the character as ' . When the program will compare the answer selected by the user, with the correct answer stored in the variable the 2 value will be considered different. The program will count an incorrect answer even if the user would have selected the correct one.
 1.  **Steps to trigger the bug:**  
     1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/   
     1. Select Start button
@@ -65,13 +66,13 @@ On mobile device only a white vertical band appear in the screen on the right fo
     The incorrect answer count will be updated accordingly 
 1. **Solution found:**  
     Find a solution on stack overflow website:  
-    Added decodeHtml function to store the value of correct answer in html element and then store it from there into the correctAnswer variable. This way both answer will be read from html elements so the value will match in case of a correct answer.
+    Added decodeHtml function to store the value of correct answer in html element and then assign the html eklement value to a variable "correctAnswer". This way both answer will be read from html elements so the value will match in case of a correct answer.
     ![](./bugs/bug-4.png)    
 
 ### Bug #5    
 
 1.  **Give Short bug description:**  
-    The correct answer always display in the same button
+    The correct answer in multiple choice questions always display in the same button
 1.  **Steps to trigger the bug:**  
     1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/   
     1. Select Start button
@@ -93,7 +94,7 @@ On mobile device only a white vertical band appear in the screen on the right fo
     1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/   
     1. In bigger screens the message stays on the top part of the page  
 1. **Description of the unwanted behaviour:**  
-    The message should stay in the center of the page but when the screens is large the user can see the message staying on top leaving a large part of the screen empty.
+    The message should stay in the center of the page but when the screen is large the user can see the message close to the top leaving a large unused empty space.
     ![](./bugs/bug-6.png) 
 1. **Solution found:**  
     Using flexbox I was able to get responsive positioning of the message depending of the size of the screen used.
@@ -102,14 +103,14 @@ On mobile device only a white vertical band appear in the screen on the right fo
 ### Bug #7    
 
 1.  **Give Short bug description:**  
-    In the game if user clicks quickly the answer button many times the program will count those clicks and add correct/incorrect question count. Also the program will skip question number so the user will have less questions to answer.
+    In the game if user clicks quickly the answer button many times the program will count those clicks and add correct/incorrect question count. Also the program will skip question number so the user will have fewer questions to answer.
 1.  **Steps to trigger the bug:**  
     1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/  
     1. Click Start button  
     1. Choose a Category
     1. Choose a Difficulty Level
     1. Wait for the countdown screen to show the first question
-    1. Click rapidly a numberof times on any button
+    1. Click rapidly a number of times on any button
 1. **Description of the unwanted behaviour:**  
     The game will add a number of clicks to the counter and the game will skip a number of questions 
 1. **Solution found:**  
@@ -119,13 +120,18 @@ On mobile device only a white vertical band appear in the screen on the right fo
 ### Bug #8    
 
 1.  **Give Short bug description:**  
-    The warning message after the reset button is clicked doesn't stay in the center of the screen
+    The warning message after the reset button at the end of the game page is clicked doesn't stay in the center of the screen
 1.  **Steps to trigger the bug:**  
     1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/  
-    1. Click the reset button on the navbar
+    1. Click start  
+    1. Choose a category
+    1. Choose a difficulty level
+    1. Answer all the questions
+    1. After the last question is answered scroll down to the bottom of the page
+    1. Click reset 
 1. **Description of the unwanted behaviour:**  
-    The warning message is not centered. In the reset button in the ent of the game page this behaviour is more noticeable
+    The warning message is not centered on the screen
     ![](./bugs/bug-8.png)
 1. **Solution found:**  
-    Give warning container position fixed.
+    Give warning container position fixed will center the message.
      
