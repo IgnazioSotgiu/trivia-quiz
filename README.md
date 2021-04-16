@@ -19,8 +19,9 @@ The owner goal is to get as many people as he can to play on his website, and ge
 >> - [Wireframes](#wireframes)
 >> - [Technologies Used](#technologies-used)
 >> - [Features Implemented](#features-implemented)
->> - [Future Implementations](#future-implementations)
+>> - [Future Features](#future-features)
 >> - [Testing](#testing)
+>> - [Bugs](#bugs)
 >> - [Deployment](#deployment)
 >> - [Credits](#credits)
 >> - [Acknowledgements](#acknowledgements)  
@@ -120,7 +121,7 @@ The wireframes were done using [balsamiq](https://balsamiq.com/)
 * Added Score summary at the end of the game providing user information about his/her performance with info about last round of questions and the overall session
 * Added a button for sharing the result through Twitter or Facebook   
 --- 
-### Future Features  
+## Future Features  
 * Promote deals to sell ads spaces on the website  
 * Add a timer to the game  
 * Create a form to create new Questions and Answers and add them to the database  
@@ -227,8 +228,9 @@ https://blog.logrocket.com/localstorage-javascript-complete-guide/
 * The user acceptance testing template was taken from:  
 [usersnap website](https://usersnap.com/)  
 [Tutorial](https://usersnap.com/blog/user-acceptance-testing-right/)
-[Example](https://usersnap.com/blog/user-acceptance-testing-example/)
-## Acknowledgements:  
+[Example](https://usersnap.com/blog/user-acceptance-testing-example/)  
+
+## Acknowledgements  
 I receive inspiration and guidance for this project from:
 
 * Code Institute   
