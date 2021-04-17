@@ -7,8 +7,8 @@ Before starting the game the user will be able to choose the category and the le
 
 ![](./assets/docs/mockup-trivia-quiz.png)  
 
-The goal is to build a simple website where the user will want to spend time playing in, share with friends and learn some new notions. The owner goal overtime is to gain exposure, promoting new challenges, selling advertising space, developing the range of games, creating a database of users giving them the choice if they like to be contacted info regarding new features or upcoming challenges.  
-The owner goal is to get as many people as he can to play on his website, and get the company name promoted through user social media sharing.  
+The goal is to build a simple website where the user will want to spend time playing, share with friends and learn some new notions. The owner's goal over time is to gain exposure, promoting new challenges, selling advertising space, developing the range of games, creating a database of users giving them the choice if they like to be contacted info regarding new features or upcoming challenges.  
+The owner wants to get as many people as he can to play on his website and get the company name promoted through social media sharing.  
 
 ---  
 
@@ -24,17 +24,17 @@ The owner goal is to get as many people as he can to play on his website, and ge
 >> - [Bugs](#bugs)
 >> - [Deployment](#deployment)
 >> - [Credits](#credits)
->> - [Acknowledgements](#acknowledgements)  
+>> - [Acknowledgments](#acknowledgments)  
 
 ## Website Structure   
-The Trivia Quiz website is composed of one homepage and the registration for newsletter page. The links present in the navbar connect to the registration modal, a modal with the contact form and also a modal for the game instructions. All links can be opened without refreshing the game page, in case the user doesn't want to quit his current game.
+The Trivia Quiz website is composed of one homepage and the registration for the newsletter page. The links present in the navbar connect to the registration modal, a modal with the contact form, and also a modal for the game instructions. All links can be opened without refreshing the game page, in case the user doesn't want to quit his current game.
   
   ---
   ![](./assets/docs/trivia-quiz-site-structure.png)  
    
   ---  
- In the screen is also present a switch to change between Light and Dark Theme. From the homepage the user can choose to start the game. The “Start” button will open a category choice screen and then the difficulty choice screen.  
- After the selections are made there will be a countdown form 3 to 0 before the first question is displayed. After the round of questions the user will be present with a result summary of his performance with the options to share on Twitter or Facebook, continue the game or reset the game starting a new session with the reset button.
+ In the screen is also present a switch to change between Light and Dark Theme. From the homepage, the user can choose to start the game. The “Start” button will open a category choice screen and then the difficulty choice screen.  
+ After the selections are made there will be a countdown from 3 to 0 before the first question is displayed. After the round of questions, the user will be present with a result summary of his performance with the options to share on Twitter or Facebook, continue the game or reset the game starting a new session with the reset button.
  
 The website has a simple structure with only 1 page, all the links in the navbar are connected to modals.  
 
@@ -51,7 +51,7 @@ Find the user stories in a separate document [user-stories.md](./assets/docs/use
 I have chosen Roboto font for the whole website.
 ### Colour Palette:  
 
-As the owner wants the user to spend time playing in our website one of the features decided to implement was a Dark/Light mode switch changing colour theme depending of the user colour preference.  
+As the owner wants the user to spend time playing on our website one of the features decided to implement was a Dark/Light mode switch changing color theme depending on the user color preference.  
 Colour palette images were taken with [coolors](https://coolors.co/).
 
 ### Dark Theme:
@@ -63,7 +63,7 @@ Colour palette images were taken with [coolors](https://coolors.co/).
 ---
 
 ## Wireframes  
-The wireframes were done using [balsamiq](https://balsamiq.com/)  
+The wireframes were done using [Balsamiq](https://balsamiq.com/)  
 
 
 [Homepage Trivia Quiz](./assets/wireframes/trivia-quiz-wireframes-homepage.pdf)  
@@ -95,7 +95,7 @@ The wireframes were done using [balsamiq](https://balsamiq.com/)
     * Microsoft Word for User Stories Sheet
 * [Balsamiq](https://balsamiq.com/) for wireframes  
 * [EmailJs](https://www.emailjs.com/)  
-    * emailJs was used to link the contact form and the register for newsletter form to a email address. The registration form also sends an automatic message to the user email.  
+    * EmailJs was used to link the contact form and the register for newsletter form to an email address. The registration form also sends an automatic message to the user's email.  
 * [Open Trivia database](https://opentdb.com/api_config.php)
     * Open Trivia Database is a free JSON API used for import questions and answers
 * [SweetAlert](https://sweetalert.js.org/)  
@@ -103,29 +103,29 @@ The wireframes were done using [balsamiq](https://balsamiq.com/)
 * [favicon generator](https://www.favicon-generator.org/search/)  
     * Used to create the favicon for the title  
 * [coolors](https://coolors.co/)
-    * Used to create the colour palette  
+    * Used to create the color palette  
 * [Am I responsive?](http://ami.responsivedesign.is/)  
     * Used to generate the mockup image [mockup-trivia-quiz.png](./assets/docs/mockup-trivia-quiz.png)  
 ---
 
 ## Features Implemented
-* Responsive mobile first design.
-* Clear instruction for a user friendly experience  
+* Responsive mobile-first design.
+* Clear instruction for a user-friendly experience  
 * Created an interactive quiz game
 * Created a registration form for newsletter with an automatic email sent to the user to confirm his/her subscription using EmailJs service
 * Implemented category questions selection
 * Implemented difficulty level questions selection
 * Added links to social media platforms
-* Created a contact form connected to gmail using EmailJs service
+* Created a contact form connected to Gmail using EmailJs service
 * Implemented theme choice with a switch to toggle dark/light mode
-* Added Score summary at the end of the game providing user information about his/her performance with info about last round of questions and the overall session
+* Added Score summary at the end of the game providing useful information about user's performance with info about the last round of questions and the overall session
 * Added a button for sharing the result through Twitter or Facebook   
 --- 
 ## Future Features  
-* Promote deals to sell ads spaces on the website  
+* Promote Deals to sell ads spaces on the website  
 * Add a timer to the game  
 * Create a form to create new Questions and Answers and add them to the database  
-* Add to the pages Popup windows with tips and suggestions to help the user thorough the game  
+* Add to the pages Popup windows with tips and suggestions to help the user through the game  
 * Develop an app to play trivia quiz offline 
 --- 
 
@@ -149,17 +149,18 @@ The wireframes were done using [balsamiq](https://balsamiq.com/)
 ---   
 
 ## Bugs 
-Here the bugs found during development and testing the website:
+Here the bugs found during the development and testing of the website:  
+
 The following steps were used when the bug was found:  
 
 
 Following the steps to trigger and report the bug:
-1. Give Short bug description.
+1. Give a short description of the problem
 1. Steps to trigger the bug:
     1. Click the element
-    1. What expect to happened
+    1. What expect to happen
     1. What happened instead?
-1. Description of the unwanted behaviour.
+1. Description of the unwanted behavior.
 1. Solution found if the problem was solved 
 
 ### List of bugs found in separate file [bugs.md](./assets/docs/bugs.md)
@@ -172,9 +173,9 @@ This project was developed using gitpod.io workspace, using git to push it into 
 This is the procedure that I follow to deploy the final version to Github pages:  
 1. Open Chrome browser on my Computer  
 1. Navigate to github.com
-1. Log in with my name and password to access my repositories
-1. On the top left, in the search input "Trivia Quiz" to find repository
-1. Click on "IgnazioSotgiu/trivia-quiz" to open repository
+1. Login with my name and password to access my repositories
+1. On the top left, in the search input "Trivia Quiz" to find the repository
+1. Click on "IgnazioSotgiu/trivia-quiz" to open the repository
 1. Click on the Settings on the repository menu
 1. Scroll down to the Github Pages section
 1. In the source button select Branch: master
@@ -185,10 +186,10 @@ This is the procedure that I follow to deploy the final version to Github pages:
 ### Running Trivia Quiz Locally
 1. Navigate to Github.com
 1. Navigate to "IgnazioSotgiu/trivia-quiz" repository  
-1. Click on "IgnazioSotgiu/trivia-quiz" to open repository
+1. Click on "IgnazioSotgiu/trivia-quiz" to open the repository
 1. Click on the Code button
 1. Select copy the URL in the dropdown menu
-1. Open your favourite IDE and select source
+1. Open your favorite IDE and select source
 1. Paste the URL and then you can navigate through the repository files
 
 To clone the repository input this command:
@@ -230,7 +231,7 @@ https://blog.logrocket.com/localstorage-javascript-complete-guide/
 [Tutorial](https://usersnap.com/blog/user-acceptance-testing-right/)
 [Example](https://usersnap.com/blog/user-acceptance-testing-example/)  
 
-## Acknowledgements  
+## Acknowledgments  
 I receive inspiration and guidance for this project from:
 
 * Code Institute   
