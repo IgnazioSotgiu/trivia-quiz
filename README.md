@@ -24,7 +24,7 @@ The owner wants to get as many people as he can to play on his website and get t
 >> - [Bugs](#bugs)
 >> - [Deployment](#deployment)
 >> - [Credits](#credits)
->> - [Acknowledgments](#acknowledgments)  
+>> - [Acknowledgements](#acknowledgements)  
 
 ## Website Structure   
 The Trivia Quiz website is composed of one homepage and the registration for the newsletter page. The links present in the navbar connect to the registration modal, a modal with the contact form, and also a modal for the game instructions. All links can be opened without refreshing the game page, in case the user doesn't want to quit his current game.
@@ -51,7 +51,7 @@ Find the user stories in a separate document [user-stories.md](./assets/docs/use
 I have chosen Roboto font for the whole website.
 ### Colour Palette:  
 
-As the owner wants the user to spend time playing on our website one of the features decided to implement was a Dark/Light mode switch changing color theme depending on the user color preference.  
+As the owner wants the user to spend time playing on our website one of the features decided to implement was a Dark/Light mode switch changing colour theme depending on the user colour preference.  
 Colour palette images were taken with [coolors](https://coolors.co/).
 
 ### Dark Theme:
@@ -160,7 +160,7 @@ Following the steps to trigger and report the bug:
     1. Click the element
     1. What expect to happen
     1. What happened instead?
-1. Description of the unwanted behavior.
+1. Description of the unwanted behaviour.
 1. Solution found if the problem was solved 
 
 ### List of bugs found in separate file [bugs.md](./assets/docs/bugs.md)
@@ -189,7 +189,7 @@ This is the procedure that I follow to deploy the final version to Github pages:
 1. Click on "IgnazioSotgiu/trivia-quiz" to open the repository
 1. Click on the Code button
 1. Select copy the URL in the dropdown menu
-1. Open your favorite IDE and select source
+1. Open your favourite IDE and select source
 1. Paste the URL and then you can navigate through the repository files
 
 To clone the repository input this command:
@@ -231,7 +231,7 @@ https://blog.logrocket.com/localstorage-javascript-complete-guide/
 [Tutorial](https://usersnap.com/blog/user-acceptance-testing-right/)
 [Example](https://usersnap.com/blog/user-acceptance-testing-example/)  
 
-## Acknowledgments  
+## Acknowledgements  
 I receive inspiration and guidance for this project from:
 
 * Code Institute   

@@ -8,7 +8,7 @@ On mobile device a white vertical band appear in the screen on the right for the
     1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/  with chrome browser 
     1. Open chrome developer tool  
     1. Select mobile view with the icon on the top left of developer tool windows  
-1. **Description of the unwanted behavior:**  
+1. **Description of the unwanted behaviour:**  
     A white band appear on the right and the bottom of the mobile screen  
     ![](./bugs/bug-1.png)  
 1. **Solution found:**  
@@ -22,7 +22,7 @@ On mobile device a white vertical band appear in the screen on the right for the
 1.  **Steps to trigger the bug:**  
     Open the website https://ignaziosotgiu.github.io/trivia-quiz/ 
     Scroll down to the footer of the page   
-1. **Description of the unwanted behavior:**  
+1. **Description of the unwanted behaviour:**  
     The footer doesn't stay at the bottom of the page  
     ![](./bugs/bug-2.png)   
 1. **Solution found:**  
@@ -42,7 +42,7 @@ On mobile device a white vertical band appear in the screen on the right for the
     1. Enter an invalid email address
     1. Tick the registration box or write a message in the Contact Us form  
     1. The email is sent successfully message appears  
-1. **Description of the unwanted behavior:**  
+1. **Description of the unwanted behaviour:**  
     The email is sent with an invalid email address   
 1. **Solution found:**  
     Find a solution on stack overflow website:  
@@ -61,7 +61,7 @@ On mobile device a white vertical band appear in the screen on the right for the
     1. Select a difficulty level
     1. Go through the questions  
     1. The issue will happen when a special HTML character is present in the correct answer value  
-1. **Description of the unwanted behavior:**  
+1. **Description of the unwanted behaviour:**  
     The message will display incorrect even if the answer was correct  
     The incorrect answer count will be updated accordingly 
 1. **Solution found:**  
@@ -79,7 +79,7 @@ On mobile device a white vertical band appear in the screen on the right for the
     1. Select a category 
     1. Select a difficulty level
     1. Go through the questions   
-1. **Description of the unwanted behavior:**  
+1. **Description of the unwanted behaviour:**  
     The correct answer is always the bottom right button 
 1. **Solution found:**  
     Find a solution on stack overflow website:  
@@ -93,7 +93,7 @@ On mobile device a white vertical band appear in the screen on the right for the
 1.  **Steps to trigger the bug:**  
     1. Open the website https://ignaziosotgiu.github.io/trivia-quiz/   
     1. On bigger screens the message stays on the top part of the page  
-1. **Description of the unwanted behavior:**  
+1. **Description of the unwanted behaviour:**  
     The message should stay in the center of the page but when the screen is large the user can see the message close to the top leaving a large unused space.
     ![](./bugs/bug-6.png) 
 1. **Solution found:**  
@@ -111,7 +111,7 @@ On mobile device a white vertical band appear in the screen on the right for the
     1. Choose a Difficulty Level
     1. Wait for the countdown screen to show the first question
     1. Click rapidly several times on any button
-1. **Description of the unwanted behavior:**  
+1. **Description of the unwanted behaviour:**  
     The game will add few numbers to the counter and the game will skip some questions 
 1. **Solution found:**  
     Deactivate the buttons after the user's first click solve the problem. Then adding a timeout to activate the buttons again for the user's next question
@@ -129,7 +129,7 @@ On mobile device a white vertical band appear in the screen on the right for the
     1. Answer all the questions
     1. After the last question is answered scroll down to the bottom of the page
     1. Click reset 
-1. **Description of the unwanted behavior:**  
+1. **Description of the unwanted behaviour:**  
     The warning message is not centered on the screen
     ![](./bugs/bug-8.png)
 1. **Solution found:**  
